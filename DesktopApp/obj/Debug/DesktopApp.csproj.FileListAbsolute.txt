@@ -7,3 +7,4 @@ F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.Properties.Resources.reso
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csproj.GenerateResource.cache
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.exe
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.pdb
+F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.PremiereForm.resources

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.logoPanel = new System.Windows.Forms.Panel();
-            this.authorPanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.btnPremiere = new System.Windows.Forms.Button();
-            this.btnSeance = new System.Windows.Forms.Button();
-            this.btnPriceList = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnPriceList = new System.Windows.Forms.Button();
+            this.btnSeance = new System.Windows.Forms.Button();
+            this.btnPremiere = new System.Windows.Forms.Button();
+            this.logoPanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.authorPanel = new System.Windows.Forms.Panel();
             this.authorLabel = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
@@ -57,65 +57,20 @@
             this.menuPanel.Size = new System.Drawing.Size(234, 761);
             this.menuPanel.TabIndex = 0;
             // 
-            // logoPanel
+            // btnLogin
             // 
-            this.logoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.logoPanel.Controls.Add(this.titleLabel);
-            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logoPanel.Location = new System.Drawing.Point(0, 0);
-            this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(234, 100);
-            this.logoPanel.TabIndex = 0;
-            // 
-            // authorPanel
-            // 
-            this.authorPanel.Controls.Add(this.authorLabel);
-            this.authorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.authorPanel.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.authorPanel.Location = new System.Drawing.Point(234, 681);
-            this.authorPanel.Name = "authorPanel";
-            this.authorPanel.Size = new System.Drawing.Size(1150, 80);
-            this.authorPanel.TabIndex = 1;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Matura MT Script Capitals", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.titleLabel.Location = new System.Drawing.Point(23, 31);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(189, 36);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "SCRUTER";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnPremiere
-            // 
-            this.btnPremiere.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPremiere.FlatAppearance.BorderSize = 0;
-            this.btnPremiere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPremiere.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPremiere.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPremiere.Location = new System.Drawing.Point(0, 116);
-            this.btnPremiere.Name = "btnPremiere";
-            this.btnPremiere.Size = new System.Drawing.Size(234, 77);
-            this.btnPremiere.TabIndex = 1;
-            this.btnPremiere.Text = "Premiery";
-            this.btnPremiere.UseVisualStyleBackColor = true;
-            // 
-            // btnSeance
-            // 
-            this.btnSeance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeance.FlatAppearance.BorderSize = 0;
-            this.btnSeance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSeance.Location = new System.Drawing.Point(-3, 199);
-            this.btnSeance.Name = "btnSeance";
-            this.btnSeance.Size = new System.Drawing.Size(237, 77);
-            this.btnSeance.TabIndex = 2;
-            this.btnSeance.Text = "Repertuar";
-            this.btnSeance.UseVisualStyleBackColor = true;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogin.Location = new System.Drawing.Point(0, 684);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(234, 77);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Logowanie";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // btnPriceList
             // 
@@ -131,20 +86,66 @@
             this.btnPriceList.Text = "Cennik";
             this.btnPriceList.UseVisualStyleBackColor = true;
             // 
-            // btnLogin
+            // btnSeance
             // 
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(0, 684);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(234, 77);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Logowanie";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnSeance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeance.FlatAppearance.BorderSize = 0;
+            this.btnSeance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSeance.Location = new System.Drawing.Point(-3, 199);
+            this.btnSeance.Name = "btnSeance";
+            this.btnSeance.Size = new System.Drawing.Size(237, 77);
+            this.btnSeance.TabIndex = 2;
+            this.btnSeance.Text = "Repertuar";
+            this.btnSeance.UseVisualStyleBackColor = true;
+            // 
+            // btnPremiere
+            // 
+            this.btnPremiere.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPremiere.FlatAppearance.BorderSize = 0;
+            this.btnPremiere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPremiere.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPremiere.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPremiere.Location = new System.Drawing.Point(0, 116);
+            this.btnPremiere.Name = "btnPremiere";
+            this.btnPremiere.Size = new System.Drawing.Size(234, 77);
+            this.btnPremiere.TabIndex = 1;
+            this.btnPremiere.Text = "Premiery";
+            this.btnPremiere.UseVisualStyleBackColor = true;
+            this.btnPremiere.Click += new System.EventHandler(this.btnPremiere_Click);
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.logoPanel.Controls.Add(this.titleLabel);
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(234, 100);
+            this.logoPanel.TabIndex = 0;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Matura MT Script Capitals", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titleLabel.Location = new System.Drawing.Point(23, 31);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(189, 36);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "SCRUTER";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // authorPanel
+            // 
+            this.authorPanel.Controls.Add(this.authorLabel);
+            this.authorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.authorPanel.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.authorPanel.Location = new System.Drawing.Point(234, 681);
+            this.authorPanel.Name = "authorPanel";
+            this.authorPanel.Size = new System.Drawing.Size(1150, 80);
+            this.authorPanel.TabIndex = 1;
             // 
             // authorLabel
             // 
@@ -176,7 +177,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.menuPanel.ResumeLayout(false);
