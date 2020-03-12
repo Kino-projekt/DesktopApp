@@ -1,10 +1,10 @@
 F:\Projekty\DesktopApp\DesktopApp\bin\Debug\DesktopApp.exe.config
 F:\Projekty\DesktopApp\DesktopApp\bin\Debug\DesktopApp.exe
 F:\Projekty\DesktopApp\DesktopApp\bin\Debug\DesktopApp.pdb
-F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csprojAssemblyReference.cache
-F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.MainForm.resources
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.Properties.Resources.resources
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csproj.GenerateResource.cache
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.exe
 F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.pdb
-F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.PremiereForm.resources
+F:\Projekty\DesktopApp\DesktopApp\bin\Debug\MaterialSkin.dll
+F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csproj.CopyComplete
+F:\Projekty\DesktopApp\DesktopApp\obj\Debug\DesktopApp.MainForm.MainForm.resources
