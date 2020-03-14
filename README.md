@@ -13,7 +13,7 @@ bin/Debug/DesktopApp.exe
 ## Technologies
 
 .Net and WinForms
-```
+
 
 ## Project
 The project was created for the needs of the State University of Applied Sciences in Legnica.
