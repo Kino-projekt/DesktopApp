@@ -21,5 +21,10 @@ namespace DesktopApp.MainForm
             manager.AddFormToManage(this);
             manager.Theme = MaterialSkinManager.Themes.DARK;
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
