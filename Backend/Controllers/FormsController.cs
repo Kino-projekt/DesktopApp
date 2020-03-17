@@ -7,7 +7,7 @@ using DesktopApp.Backend.Services;
 
 namespace DesktopApp.Backend.Controllers
 {
-    class FormsController
+    public class FormsController
     {
         private static FormService formService;
 
