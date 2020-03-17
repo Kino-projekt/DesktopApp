@@ -6,7 +6,7 @@ namespace DesktopApp.Backend.Controllers
     {
         private static UserService userService;
 
-        public static UserService GetFormService()
+        public static UserService GetUserService()
         {
             if (userService == null)
             {

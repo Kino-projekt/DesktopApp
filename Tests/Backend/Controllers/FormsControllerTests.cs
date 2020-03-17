@@ -8,7 +8,7 @@ namespace Tests.Backend.Controllers
     {
 
         [Test]
-        public void isOnlyOneServiceInstance()
+        public void isOnlyOneFormsServiceInstance()
         {
             FormService formServiceOne = FormsController.GetFormService();
             FormService formServiceTwo = FormsController.GetFormService();

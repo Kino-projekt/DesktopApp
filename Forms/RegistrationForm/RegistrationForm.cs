@@ -33,7 +33,7 @@ namespace DesktopApp.Forms.RegistrationForm
 
         private void regitstrationButton_Click(object sender, EventArgs e)
         {
-            UserService userService = UserController.GetFormService();
+            UserService userService = UserController.GetUserService();
             if (userService.RegisterNewUser(emailField.Text, passwordField.Text))
             {
                 // Registraction currect

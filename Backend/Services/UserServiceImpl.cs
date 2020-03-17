@@ -23,5 +23,10 @@ namespace DesktopApp.Backend.Services
         {
             return false;
         }
+
+        public void SetConnectionService(ConnectionService connectionService)
+        {
+            this.connection = connectionService;
+        }
     }
 }

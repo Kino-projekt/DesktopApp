@@ -5,6 +5,8 @@
         private string email;
         private string password;
 
+        public User() { }
+
         public User(string email, string password)
         {
             this.email = email;

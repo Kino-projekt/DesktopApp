@@ -7,7 +7,7 @@ namespace DesktopApp.Backend.Services
 {
     public class ConnectionServiceImpl : ConnectionService
     {
-        private static string SERVER_ADRESS = "https://afternoon-waters-37189.herokuapp.com/";
+        private static string SERVER_ADRESS = "https://afternoon-waters-37189.herokuapp.com";
 
         private HttpClient client;
 
@@ -25,6 +25,7 @@ namespace DesktopApp.Backend.Services
             HttpResponseMessage response = client.PostAsync("/api/auth/signup", content).Result;
             if (response.IsSuccessStatusCode)
             {
+                // Get response from server in future
                 return true;
             }
             return false;
