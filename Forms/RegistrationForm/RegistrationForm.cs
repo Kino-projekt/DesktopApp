@@ -26,9 +26,19 @@ namespace DesktopApp.Forms.RegistrationForm
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormService formService = FormsController.getFormService();
+            Close();
+            FormService formService = FormsController.GetFormService();
             formService.OpenLoginForm();
+        }
+
+        private void regitstrationButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = UserController.GetFormService();
+            if (userService.RegisterNewUser(emailField.Text, passwordField.Text))
+            {
+                // Registraction currect
+                Close();
+            }
         }
     }
 }

@@ -77,6 +77,7 @@
             this.regitstrationButton.TabIndex = 7;
             this.regitstrationButton.Text = "Rejestracja";
             this.regitstrationButton.UseVisualStyleBackColor = true;
+            this.regitstrationButton.Click += new System.EventHandler(this.regitstrationButton_Click);
             // 
             // passwordField
             // 

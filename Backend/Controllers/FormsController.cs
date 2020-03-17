@@ -11,7 +11,7 @@ namespace DesktopApp.Backend.Controllers
     {
         private static FormService formService;
 
-        public static FormService getFormService()
+        public static FormService GetFormService()
         {
             if (formService == null)
             {

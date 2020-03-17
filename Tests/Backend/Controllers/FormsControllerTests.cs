@@ -10,8 +10,8 @@ namespace Tests.Backend.Controllers
         [Test]
         public void isOnlyOneServiceInstance()
         {
-            FormService formServiceOne = FormsController.getFormService();
-            FormService formServiceTwo = FormsController.getFormService();
+            FormService formServiceOne = FormsController.GetFormService();
+            FormService formServiceTwo = FormsController.GetFormService();
             Assert.AreSame(formServiceOne, formServiceTwo);
         }
     }

@@ -20,7 +20,7 @@ namespace DesktopApp.Forms.LoginForm
         private void registractionButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormService formService = FormsController.getFormService();
+            FormService formService = FormsController.GetFormService();
             formService.OpenRegitrationForm();
         }
     }

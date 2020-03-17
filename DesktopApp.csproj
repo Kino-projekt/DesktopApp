@@ -49,9 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\Controllers\ConnectionController.cs" />
     <Compile Include="Backend\Controllers\FormsController.cs" />
+    <Compile Include="Backend\Controllers\UserController.cs" />
+    <Compile Include="Backend\Data\User.cs" />
+    <Compile Include="Backend\Services\ConnectionService.cs" />
+    <Compile Include="Backend\Services\ConnectionServiceImpl.cs" />
     <Compile Include="Backend\Services\FormService.cs" />
     <Compile Include="Backend\Services\FormServiceImpl.cs" />
+    <Compile Include="Backend\Services\UserService.cs" />
+    <Compile Include="Backend\Services\UserServiceImpl.cs" />
     <Compile Include="Forms\LoginForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
