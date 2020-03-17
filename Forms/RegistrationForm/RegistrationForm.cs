@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Services;
-using DesktopApp.Forms.LoginForm;
-using DesktopApp.Forms.RegistrationForm;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
-namespace DesktopApp.MainForm
+namespace DesktopApp.Forms.RegistrationForm
 {
-    public partial class MainForm : MaterialForm
+    public partial class RegistrationForm : MaterialForm
     {
-        public MainForm()
+        public RegistrationForm()
         {
             InitializeComponent();
             MaterialSkin.MaterialSkinManager manager = MaterialSkin.MaterialSkinManager.Instance;
@@ -25,16 +24,21 @@ namespace DesktopApp.MainForm
             manager.Theme = MaterialSkinManager.Themes.DARK;
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
-            FormService formService = new FormServiceImpl();
+            Close();
+            FormService formService = FormsController.GetFormService();
             formService.OpenLoginForm();
         }
 
+        private void regitstrationButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = UserController.GetFormService();
+            if (userService.RegisterNewUser(emailField.Text, passwordField.Text))
+            {
+                // Registraction currect
+                Close();
+            }
+        }
     }
 }

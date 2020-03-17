@@ -29,26 +29,34 @@
         private void InitializeComponent()
         {
             this.topPanel = new System.Windows.Forms.Panel();
-            this.exitPanel = new System.Windows.Forms.Panel();
-            this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.contentPanel = new System.Windows.Forms.Panel();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.mainTabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             this.mainTabControler = new MaterialSkin.Controls.MaterialTabControl();
             this.startTab = new System.Windows.Forms.TabPage();
             this.tabRepertoire = new System.Windows.Forms.TabPage();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.mainTabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             this.priceListTab = new System.Windows.Forms.TabPage();
             this.cinemaHallsTab = new System.Windows.Forms.TabPage();
+            this.exitPanel = new System.Windows.Forms.Panel();
+            this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.contentPanel = new System.Windows.Forms.Panel();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.logoPanel = new System.Windows.Forms.Panel();
+            this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.logolabel = new MaterialSkin.Controls.MaterialLabel();
             this.topPanel.SuspendLayout();
+            this.menuPanel.SuspendLayout();
+            this.mainTabControler.SuspendLayout();
             this.exitPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
-            this.mainTabControler.SuspendLayout();
-            this.menuPanel.SuspendLayout();
+            this.loginPanel.SuspendLayout();
+            this.logoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
             // 
             this.topPanel.Controls.Add(this.menuPanel);
+            this.topPanel.Controls.Add(this.logoPanel);
+            this.topPanel.Controls.Add(this.loginPanel);
             this.topPanel.Controls.Add(this.exitPanel);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
@@ -57,40 +65,26 @@
             this.topPanel.Size = new System.Drawing.Size(1173, 76);
             this.topPanel.TabIndex = 1;
             // 
-            // exitPanel
+            // menuPanel
             // 
-            this.exitPanel.Controls.Add(this.exitButton);
-            this.exitPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exitPanel.Location = new System.Drawing.Point(1011, 0);
-            this.exitPanel.Name = "exitPanel";
-            this.exitPanel.Size = new System.Drawing.Size(162, 76);
-            this.exitPanel.TabIndex = 0;
+            this.menuPanel.Controls.Add(this.mainTabSelector);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuPanel.Location = new System.Drawing.Point(160, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(691, 76);
+            this.menuPanel.TabIndex = 1;
             // 
-            // exitButton
+            // mainTabSelector
             // 
-            this.exitButton.AutoSize = true;
-            this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.exitButton.Depth = 0;
-            this.exitButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exitButton.Location = new System.Drawing.Point(0, 0);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.exitButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Primary = false;
-            this.exitButton.Size = new System.Drawing.Size(162, 76);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Wyjście";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // contentPanel
-            // 
-            this.contentPanel.Controls.Add(this.mainTabControler);
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(0, 76);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1173, 595);
-            this.contentPanel.TabIndex = 2;
+            this.mainTabSelector.BaseTabControl = this.mainTabControler;
+            this.mainTabSelector.Depth = 0;
+            this.mainTabSelector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTabSelector.Location = new System.Drawing.Point(0, 0);
+            this.mainTabSelector.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mainTabSelector.Name = "mainTabSelector";
+            this.mainTabSelector.Size = new System.Drawing.Size(691, 76);
+            this.mainTabSelector.TabIndex = 0;
+            this.mainTabSelector.Text = "Menu";
             // 
             // mainTabControler
             // 
@@ -127,27 +121,6 @@
             this.tabRepertoire.Text = "Repertuar";
             this.tabRepertoire.UseVisualStyleBackColor = true;
             // 
-            // menuPanel
-            // 
-            this.menuPanel.Controls.Add(this.mainTabSelector);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(1011, 76);
-            this.menuPanel.TabIndex = 1;
-            // 
-            // mainTabSelector
-            // 
-            this.mainTabSelector.BaseTabControl = this.mainTabControler;
-            this.mainTabSelector.Depth = 0;
-            this.mainTabSelector.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTabSelector.Location = new System.Drawing.Point(0, 0);
-            this.mainTabSelector.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mainTabSelector.Name = "mainTabSelector";
-            this.mainTabSelector.Size = new System.Drawing.Size(1011, 76);
-            this.mainTabSelector.TabIndex = 0;
-            this.mainTabSelector.Text = "Menu";
-            // 
             // priceListTab
             // 
             this.priceListTab.Location = new System.Drawing.Point(4, 22);
@@ -168,6 +141,91 @@
             this.cinemaHallsTab.Text = "Sale kinowe";
             this.cinemaHallsTab.UseVisualStyleBackColor = true;
             // 
+            // exitPanel
+            // 
+            this.exitPanel.Controls.Add(this.exitButton);
+            this.exitPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitPanel.Location = new System.Drawing.Point(1011, 0);
+            this.exitPanel.Name = "exitPanel";
+            this.exitPanel.Size = new System.Drawing.Size(162, 76);
+            this.exitPanel.TabIndex = 0;
+            // 
+            // exitButton
+            // 
+            this.exitButton.AutoSize = true;
+            this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.Depth = 0;
+            this.exitButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exitButton.Location = new System.Drawing.Point(0, 0);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.exitButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Primary = false;
+            this.exitButton.Size = new System.Drawing.Size(162, 76);
+            this.exitButton.TabIndex = 0;
+            this.exitButton.Text = "Wyjście";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Controls.Add(this.mainTabControler);
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(0, 76);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1173, 595);
+            this.contentPanel.TabIndex = 2;
+            // 
+            // loginPanel
+            // 
+            this.loginPanel.Controls.Add(this.loginButton);
+            this.loginPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.loginPanel.Location = new System.Drawing.Point(851, 0);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(160, 76);
+            this.loginPanel.TabIndex = 1;
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.Controls.Add(this.logolabel);
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(160, 76);
+            this.logoPanel.TabIndex = 2;
+            // 
+            // loginButton
+            // 
+            this.loginButton.AutoSize = true;
+            this.loginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButton.Depth = 0;
+            this.loginButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginButton.Location = new System.Drawing.Point(0, 0);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Primary = false;
+            this.loginButton.Size = new System.Drawing.Size(160, 76);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Logowanie";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // logolabel
+            // 
+            this.logolabel.AutoSize = true;
+            this.logolabel.Depth = 0;
+            this.logolabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.logolabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.logolabel.Location = new System.Drawing.Point(48, 28);
+            this.logolabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.logolabel.Name = "logolabel";
+            this.logolabel.Size = new System.Drawing.Size(43, 19);
+            this.logolabel.TabIndex = 0;
+            this.logolabel.Text = "Logo";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,11 +237,15 @@
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.topPanel.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
+            this.mainTabControler.ResumeLayout(false);
             this.exitPanel.ResumeLayout(false);
             this.exitPanel.PerformLayout();
             this.contentPanel.ResumeLayout(false);
-            this.mainTabControler.ResumeLayout(false);
-            this.menuPanel.ResumeLayout(false);
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
+            this.logoPanel.ResumeLayout(false);
+            this.logoPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +262,9 @@
         private MaterialSkin.Controls.MaterialTabSelector mainTabSelector;
         private System.Windows.Forms.TabPage priceListTab;
         private System.Windows.Forms.TabPage cinemaHallsTab;
+        private System.Windows.Forms.Panel logoPanel;
+        private System.Windows.Forms.Panel loginPanel;
+        private MaterialSkin.Controls.MaterialFlatButton loginButton;
+        private MaterialSkin.Controls.MaterialLabel logolabel;
     }
 }
