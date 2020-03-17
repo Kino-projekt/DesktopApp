@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\Controllers\FormsController.cs" />
     <Compile Include="Backend\Services\FormService.cs" />
     <Compile Include="Backend\Services\FormServiceImpl.cs" />
     <Compile Include="Forms\LoginForm\LoginForm.cs">

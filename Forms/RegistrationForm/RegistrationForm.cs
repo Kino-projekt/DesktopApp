@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Services;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -26,7 +27,7 @@ namespace DesktopApp.Forms.RegistrationForm
         private void loginButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormService formService = new FormServiceImpl();
+            FormService formService = FormsController.getFormService();
             formService.OpenLoginForm();
         }
     }
