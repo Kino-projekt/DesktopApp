@@ -22,36 +22,32 @@ namespace Tests.Backend.Services.AccessServices.LoginServices
         [Test]
         public void LoginEmptyUser()
         {
-            SetEmailAndPassword("","");
             Assert.IsFalse(loginService.LoginNewUser());
         }
 
         [Test]
         public void LoginWithEmptyEmail()
         {
-            SetEmailAndPassword("", currectPassword);
+            loginService.SetUserPassword(currectPassword);
             Assert.IsFalse(loginService.LoginNewUser());
         }
 
         [Test]
         public void LoginWithEmptyPassword()
         {
-            SetEmailAndPassword(currectEmail, "");
+            loginService.SetUserEmail(currectEmail);
             Assert.IsFalse(loginService.LoginNewUser());
         }
 
         [Test]
         public void LoginCurrectUserData()
         {
-            SetEmailAndPassword(currectEmail, currectPassword);
+            loginService.SetUserEmail(currectEmail);
+            loginService.SetUserPassword(currectPassword);
             Assert.IsTrue(loginService.LoginNewUser());
         }
 
-        private void SetEmailAndPassword(string email, string password)
-        {
-            loginService.SetUserEmail(email);
-            loginService.SetUserPassword(password);
-        }
+        
 
     }
 }

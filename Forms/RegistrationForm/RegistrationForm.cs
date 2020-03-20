@@ -51,8 +51,8 @@ namespace DesktopApp.Forms.RegistrationForm
 
             if (currectEmail && currectPassword)
             {
-                registrationService.RegisterNewUser();
-                Close(); //registration form
+                if(registrationService.RegisterNewUser())
+                    Close(); //registration form
             }
         }
     }

@@ -8,12 +8,7 @@ namespace DesktopApp.Backend.Controllers.AccessControllers
 
         public static RegistrationService GetRegistrationService()
         {
-            if (registrationService == null)
-            {
-                registrationService = new RegistrationServiceImpl();
-            }
-
-            return registrationService;
+            return registrationService = new RegistrationServiceImpl();
         }
     }
 }

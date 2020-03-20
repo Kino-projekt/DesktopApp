@@ -8,12 +8,7 @@ namespace DesktopApp.Backend.Controllers.AccessControllers
 
         public static LoginService GetLoginService()
         {
-            if (loginService == null)
-            {
-                loginService = new LoginServiceImpl();
-            }
-
-            return loginService;
+            return loginService = new LoginServiceImpl(); ;
         }
     }
 }
