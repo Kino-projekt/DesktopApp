@@ -1,5 +1,6 @@
 ﻿using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Services.FormServices;
 using NUnit.Framework;
 
 namespace Tests.Backend.Controllers
@@ -8,7 +9,7 @@ namespace Tests.Backend.Controllers
     {
 
         [Test]
-        public void isOnlyOneServiceInstance()
+        public void isOnlyOneFormsServiceInstance()
         {
             FormService formServiceOne = FormsController.GetFormService();
             FormService formServiceTwo = FormsController.GetFormService();

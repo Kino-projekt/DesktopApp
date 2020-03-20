@@ -1,7 +1,7 @@
 ﻿using DesktopApp.Forms.LoginForm;
 using DesktopApp.Forms.RegistrationForm;
 
-namespace DesktopApp.Backend.Services
+namespace DesktopApp.Backend.Services.FormServices
 {
     public class FormServiceImpl : FormService
     {

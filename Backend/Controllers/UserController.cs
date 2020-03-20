@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.UserServices;
 
 namespace DesktopApp.Backend.Controllers
 {
@@ -6,7 +7,7 @@ namespace DesktopApp.Backend.Controllers
     {
         private static UserService userService;
 
-        public static UserService GetFormService()
+        public static UserService GetUserService()
         {
             if (userService == null)
             {
