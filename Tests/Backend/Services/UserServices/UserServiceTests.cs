@@ -2,10 +2,11 @@
 using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.UserServices;
 using NUnit.Framework;
 using Tests.Imitations;
 
-namespace Tests.Backend.Services
+namespace Tests.Backend.Services.UserServices
 {
     public class UserServiceTests
     {
@@ -21,7 +22,7 @@ namespace Tests.Backend.Services
         [Test]
         public void RegistrationEmptyUser()
         {
-            Assert.IsFalse(userService.RegisterNewUser("", ""));
+            Assert.IsFalse(userService.RegisterNewUser());
         }
 
 

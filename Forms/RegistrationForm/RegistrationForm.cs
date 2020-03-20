@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.FormServices;
+using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -34,7 +36,7 @@ namespace DesktopApp.Forms.RegistrationForm
         private void regitstrationButton_Click(object sender, EventArgs e)
         {
             UserService userService = UserController.GetUserService();
-            if (userService.RegisterNewUser(emailField.Text, passwordField.Text))
+            if (userService.RegisterNewUser())
             {
                 // Registraction currect
                 Close();

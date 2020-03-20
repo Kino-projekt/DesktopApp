@@ -1,6 +1,6 @@
 ﻿using DesktopApp.Backend.Data;
 
-namespace DesktopApp.Backend.Services
+namespace DesktopApp.Backend.Services.ConnectionServices
 {
     public interface ConnectionService
     {

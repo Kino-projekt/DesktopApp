@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.UserServices;
 
 namespace DesktopApp.Backend.Controllers
 {

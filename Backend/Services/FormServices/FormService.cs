@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesktopApp.Backend.Services
+namespace DesktopApp.Backend.Services.FormServices
 {
     public interface FormService
     {

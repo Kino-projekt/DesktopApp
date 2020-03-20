@@ -1,5 +1,6 @@
 ﻿using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.ConnectionServices;
 
 namespace Tests.Imitations
 {
