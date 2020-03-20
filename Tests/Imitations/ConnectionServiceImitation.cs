@@ -12,5 +12,10 @@ namespace Tests.Imitations
         {
             return true;
         }
+
+        public bool Singin(User user)
+        {
+            return true;
+        }
     }
 }

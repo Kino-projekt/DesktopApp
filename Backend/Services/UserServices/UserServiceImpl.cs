@@ -6,41 +6,13 @@ namespace DesktopApp.Backend.Services.UserServices
 {
     public class UserServiceImpl : UserService
     {
-        private User accountUser;
-        private User newUser;
-        private ConnectionService connection;
+        private User accountUser = null;
 
-        public UserServiceImpl()
+        public bool IsUserExist()
         {
-            connection = ConnectionController.GetConnectionService();
-            newUser = new User();
-        }
-
-        public bool RegisterNewUser()
-        {
-            return connection.Singup(newUser);
-        }
-
-        public bool LoginToSystem()
-        {
-            return false;
-        }
-
-        public bool SetUserEmail(string email)
-        {
-            newUser.SetEmail(email);
+            if (accountUser == null)
+                return false;
             return true;
-        }
-
-        public bool SetUserPassword(string password)
-        {
-            newUser.SetPassword(password);
-            return true;
-        }
-
-        public void SetConnectionService(ConnectionService connectionService)
-        {
-            this.connection = connectionService;
         }
     }
 }

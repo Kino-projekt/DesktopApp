@@ -33,6 +33,10 @@
             this.regitstrationButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.passwordField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.passwordCharLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.passwordSizeLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.wrongPasswordLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.wrongEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // loginButton
@@ -69,7 +73,7 @@
             // 
             this.regitstrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.regitstrationButton.Depth = 0;
-            this.regitstrationButton.Location = new System.Drawing.Point(132, 288);
+            this.regitstrationButton.Location = new System.Drawing.Point(123, 304);
             this.regitstrationButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.regitstrationButton.Name = "regitstrationButton";
             this.regitstrationButton.Primary = true;
@@ -109,11 +113,71 @@
             this.emailField.TabIndex = 5;
             this.emailField.UseSystemPasswordChar = false;
             // 
+            // passwordCharLabel
+            // 
+            this.passwordCharLabel.AutoSize = true;
+            this.passwordCharLabel.Depth = 0;
+            this.passwordCharLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passwordCharLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passwordCharLabel.Location = new System.Drawing.Point(31, 262);
+            this.passwordCharLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passwordCharLabel.Name = "passwordCharLabel";
+            this.passwordCharLabel.Size = new System.Drawing.Size(342, 19);
+            this.passwordCharLabel.TabIndex = 13;
+            this.passwordCharLabel.Text = "Hasło musi zawierać dużą, małą literę oraz liczbę!";
+            this.passwordCharLabel.Visible = false;
+            // 
+            // passwordSizeLabel
+            // 
+            this.passwordSizeLabel.AutoSize = true;
+            this.passwordSizeLabel.Depth = 0;
+            this.passwordSizeLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passwordSizeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passwordSizeLabel.Location = new System.Drawing.Point(77, 243);
+            this.passwordSizeLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passwordSizeLabel.Name = "passwordSizeLabel";
+            this.passwordSizeLabel.Size = new System.Drawing.Size(256, 19);
+            this.passwordSizeLabel.TabIndex = 12;
+            this.passwordSizeLabel.Text = "Hasło musi mieć od 6 do 20 znaków!";
+            this.passwordSizeLabel.Visible = false;
+            // 
+            // wrongPasswordLabel
+            // 
+            this.wrongPasswordLabel.AutoSize = true;
+            this.wrongPasswordLabel.Depth = 0;
+            this.wrongPasswordLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.wrongPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.wrongPasswordLabel.Location = new System.Drawing.Point(74, 193);
+            this.wrongPasswordLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.wrongPasswordLabel.Name = "wrongPasswordLabel";
+            this.wrongPasswordLabel.Size = new System.Drawing.Size(139, 19);
+            this.wrongPasswordLabel.TabIndex = 11;
+            this.wrongPasswordLabel.Text = "Niewłaściwe hasło!";
+            this.wrongPasswordLabel.Visible = false;
+            // 
+            // wrongEmailLabel
+            // 
+            this.wrongEmailLabel.AutoSize = true;
+            this.wrongEmailLabel.Depth = 0;
+            this.wrongEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.wrongEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.wrongEmailLabel.Location = new System.Drawing.Point(74, 123);
+            this.wrongEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.wrongEmailLabel.Name = "wrongEmailLabel";
+            this.wrongEmailLabel.Size = new System.Drawing.Size(183, 19);
+            this.wrongEmailLabel.TabIndex = 10;
+            this.wrongEmailLabel.Text = "Niewłaściwy adres e-mail!";
+            this.wrongEmailLabel.Visible = false;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 500);
+            this.Controls.Add(this.passwordCharLabel);
+            this.Controls.Add(this.passwordSizeLabel);
+            this.Controls.Add(this.wrongPasswordLabel);
+            this.Controls.Add(this.wrongEmailLabel);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.regitstrationButton);
@@ -136,5 +200,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton regitstrationButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField passwordField;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailField;
+        private MaterialSkin.Controls.MaterialLabel passwordCharLabel;
+        private MaterialSkin.Controls.MaterialLabel passwordSizeLabel;
+        private MaterialSkin.Controls.MaterialLabel wrongPasswordLabel;
+        private MaterialSkin.Controls.MaterialLabel wrongEmailLabel;
     }
 }

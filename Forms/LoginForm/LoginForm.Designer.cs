@@ -33,6 +33,8 @@
             this.loginButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.registractionButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.wrongEmailLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.wrongPasswordLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // emailField
@@ -69,7 +71,7 @@
             // 
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.Depth = 0;
-            this.loginButton.Location = new System.Drawing.Point(131, 287);
+            this.loginButton.Location = new System.Drawing.Point(122, 303);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
             this.loginButton.Primary = true;
@@ -77,6 +79,7 @@
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Logowanie";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // materialLabel1
             // 
@@ -108,11 +111,41 @@
             this.registractionButton.UseVisualStyleBackColor = true;
             this.registractionButton.Click += new System.EventHandler(this.registractionButton_Click);
             // 
+            // wrongEmailLabel
+            // 
+            this.wrongEmailLabel.AutoSize = true;
+            this.wrongEmailLabel.Depth = 0;
+            this.wrongEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.wrongEmailLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongEmailLabel.Location = new System.Drawing.Point(73, 122);
+            this.wrongEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.wrongEmailLabel.Name = "wrongEmailLabel";
+            this.wrongEmailLabel.Size = new System.Drawing.Size(183, 19);
+            this.wrongEmailLabel.TabIndex = 5;
+            this.wrongEmailLabel.Text = "Niewłaściwy adres e-mail!";
+            this.wrongEmailLabel.Visible = false;
+            // 
+            // wrongPasswordLabel
+            // 
+            this.wrongPasswordLabel.AutoSize = true;
+            this.wrongPasswordLabel.Depth = 0;
+            this.wrongPasswordLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.wrongPasswordLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongPasswordLabel.Location = new System.Drawing.Point(73, 192);
+            this.wrongPasswordLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.wrongPasswordLabel.Name = "wrongPasswordLabel";
+            this.wrongPasswordLabel.Size = new System.Drawing.Size(139, 19);
+            this.wrongPasswordLabel.TabIndex = 6;
+            this.wrongPasswordLabel.Text = "Niewłaściwe hasło!";
+            this.wrongPasswordLabel.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 500);
+            this.Controls.Add(this.wrongPasswordLabel);
+            this.Controls.Add(this.wrongEmailLabel);
             this.Controls.Add(this.registractionButton);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.loginButton);
@@ -137,5 +170,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton loginButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialFlatButton registractionButton;
+        private MaterialSkin.Controls.MaterialLabel wrongEmailLabel;
+        private MaterialSkin.Controls.MaterialLabel wrongPasswordLabel;
     }
 }

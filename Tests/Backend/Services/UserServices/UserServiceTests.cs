@@ -1,10 +1,6 @@
-﻿using System;
-using DesktopApp.Backend.Controllers;
-using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services;
+﻿using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Services.UserServices;
 using NUnit.Framework;
-using Tests.Imitations;
 
 namespace Tests.Backend.Services.UserServices
 {
@@ -16,15 +12,13 @@ namespace Tests.Backend.Services.UserServices
         public void Setup()
         {
             userService = UserController.GetUserService();
-            userService.SetConnectionService(new ConnectionServiceImitation());
         }
 
         [Test]
-        public void RegistrationEmptyUser()
+        public void UserIsNullOnStart()
         {
-            Assert.IsFalse(userService.RegisterNewUser());
+            Assert.IsFalse(userService.IsUserExist());
         }
-
 
     }
 }

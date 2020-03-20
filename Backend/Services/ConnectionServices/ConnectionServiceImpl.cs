@@ -32,6 +32,18 @@ namespace DesktopApp.Backend.Services.ConnectionServices
             return false;
         }
 
+        public bool Singin(User user)
+        {
+            var content = createContent(user);
+            HttpResponseMessage response = client.PostAsync("/api/auth/signin", content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                // Get response from server in future
+                return true;
+            }
+            return false;
+        }
+
         private FormUrlEncodedContent createContent(User user)
         {
             var pairs = new List<KeyValuePair<string, string>>

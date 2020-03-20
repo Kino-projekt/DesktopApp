@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.AccessControllers;
 using DesktopApp.Backend.Services;
+using DesktopApp.Backend.Services.AccessServices.RegistrationServices;
 using DesktopApp.Backend.Services.FormServices;
 using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin;
@@ -35,11 +37,22 @@ namespace DesktopApp.Forms.RegistrationForm
 
         private void regitstrationButton_Click(object sender, EventArgs e)
         {
-            UserService userService = UserController.GetUserService();
-            if (userService.RegisterNewUser())
+            RegistrationService registrationService = RegistrationController.GetRegistrationService();
+            bool currectEmail = registrationService.SetUserEmail(emailField.Text);
+            if (!currectEmail)
+                wrongEmailLabel.Visible = true;
+            bool currectPassword = registrationService.SetUserPassword(passwordField.Text);
+            if (!currectPassword)
             {
-                // Registraction currect
-                Close();
+                wrongPasswordLabel.Visible = true;
+                passwordSizeLabel.Visible = true;
+                passwordCharLabel.Visible = true;
+            }
+
+            if (currectEmail && currectPassword)
+            {
+                registrationService.RegisterNewUser();
+                Close(); //registration form
             }
         }
     }
