@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using DesktopApp.Backend.Configuration;
+using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.UserServices;
 
 
 namespace DesktopApp.Backend.Services.ConnectionServices
@@ -39,6 +41,10 @@ namespace DesktopApp.Backend.Services.ConnectionServices
             if (response.IsSuccessStatusCode)
             {
                 // Get response from server in future
+                UserData userData = new UserData();
+                userData.setEmail(user.GetEmail());
+                UserService userService = UserController.GetUserService();
+                userService.PutNewUser(userData);
                 return true;
             }
             return false;

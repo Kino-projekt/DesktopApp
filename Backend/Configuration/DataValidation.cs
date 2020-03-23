@@ -1,4 +1,10 @@
-﻿namespace DesktopApp.Backend.Configuration
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace DesktopApp.Backend.Configuration
 {
     public class DataValidation
     {
@@ -7,20 +13,33 @@
 
         public static bool CheckPassword(string password)
         {
-            // first version of validation 
-            int size = password.Length;
-            if (size <= MIN_PASSWORD_SIZE)
-                return false;
-            if (size >= MAX_PASSWORD_SIZE)
-                return false;
-            return true;
+            {
+                if (String.IsNullOrEmpty(password) || password.Length < MIN_PASSWORD_SIZE  || password.Length > MAX_PASSWORD_SIZE)
+                {
+                    return false;
+                }
+
+                string pattern = "^[a-zA-Z0-9]+$";
+                if (!Regex.IsMatch(password, pattern))
+
+                {
+                    return false;
+                }
+                return true;
+            }
         }
 
         public static bool CheckEmail(string email)
         {
-            if (email.Length == 0)
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
                 return false;
-            return true;
+            }
         }
 
 

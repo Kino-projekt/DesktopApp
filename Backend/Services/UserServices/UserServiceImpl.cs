@@ -1,18 +1,27 @@
-﻿using DesktopApp.Backend.Controllers;
-using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services.ConnectionServices;
+﻿using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.UserServices
 {
     public class UserServiceImpl : UserService
     {
-        private User accountUser = null;
+        private UserData userData;
+        private bool isUserExist;
 
         public bool IsUserExist()
         {
-            if (accountUser == null)
-                return false;
-            return true;
+            return isUserExist;
+        }
+
+        public void PutNewUser(UserData newUserData)
+        {
+            this.userData = newUserData;
+            isUserExist = true;
+        }
+
+        public void RemoveUser()
+        {
+            userData = null;
+            isUserExist = false;
         }
     }
 }
