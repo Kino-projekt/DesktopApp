@@ -18,6 +18,7 @@ namespace DesktopApp.Backend.Services.UserServices
             this.userData = newUserData;
             userStatus = true;
             SendUserStatusToMainForm();
+            NewArticleToTest();
         }
 
         public void RemoveUser()
@@ -30,6 +31,16 @@ namespace DesktopApp.Backend.Services.UserServices
         private void SendUserStatusToMainForm()
         {
             FormsController.GetFormService().GetMainForm().SetUserStatus(userStatus);
+        }
+
+        private void NewArticleToTest()
+        {
+            Article article = new Article();
+            article.SetTitle("Jaskot");
+            article.SetDescription("Życie jest za krótkie by programować w C#");
+
+
+            ConnectionController.GetConnectionService().SendArticle(userData, article);
         }
     }
 }

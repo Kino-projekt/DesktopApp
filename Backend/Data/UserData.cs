@@ -4,14 +4,26 @@
     {
         private string email;
 
-        public string getEmail()
+        private string token;
+
+        public string GetEmail()
         {
             return email;
         }
 
-        public void setEmail(string email)
+        public void SetEmail(string email)
         {
             this.email = email;
+        }
+
+        public void SetToken(string token)
+        {
+            this.token = token;
+        }
+
+        public string GetToken()
+        {
+            return token;
         }
     }
 }

@@ -6,5 +6,7 @@ namespace DesktopApp.Backend.Services.ConnectionServices
     {
         bool Singup(User user);
         bool Singin(User user);
+
+        void SendArticle(UserData userData, Article article);
     }
 }
