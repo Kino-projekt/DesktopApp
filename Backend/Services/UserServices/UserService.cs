@@ -5,9 +5,8 @@ namespace DesktopApp.Backend.Services.UserServices
 {
     public interface UserService
     {
-        bool IsUserExist();
+        bool GetUserStatus();
         void PutNewUser(UserData userData);
-
         void RemoveUser();
     }
 }

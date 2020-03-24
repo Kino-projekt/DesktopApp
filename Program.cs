@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers;
+using DesktopApp.Forms;
 
 namespace DesktopApp
 {
@@ -16,7 +18,8 @@ namespace DesktopApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm.MainForm());
+            MainForm.MainForm mainForm = FormsController.GetFormService().GetMainForm();
+            Application.Run(mainForm);
         }
     }
 }

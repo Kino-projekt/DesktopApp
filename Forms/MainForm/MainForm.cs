@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Services.FormServices;
+using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Forms.LoginForm;
 using DesktopApp.Forms.RegistrationForm;
 using MaterialSkin;
@@ -19,6 +20,8 @@ namespace DesktopApp.MainForm
 {
     public partial class MainForm : MaterialForm
     {
+        private bool userStatus;
+
         public MainForm()
         {
             InitializeComponent();
@@ -36,6 +39,32 @@ namespace DesktopApp.MainForm
         {
             FormService formService = new FormServiceImpl();
             formService.OpenLoginForm();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = UserController.GetUserService();
+            userService.RemoveUser();
+        }
+
+        public void SetUserStatus(bool userStatus)
+        {
+            this.userStatus = userStatus;
+            ChangeUserStatus();
+        }
+
+        private void ChangeUserStatus()
+        {
+            if (userStatus == false)
+            {
+                loginButton.Visible = true;
+                logoutButton.Visible = false;
+            }
+            else
+            {
+                loginButton.Visible = false;
+                logoutButton.Visible = true;
+            }
         }
 
     }

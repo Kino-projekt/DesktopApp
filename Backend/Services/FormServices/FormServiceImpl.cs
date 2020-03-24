@@ -5,7 +5,7 @@ namespace DesktopApp.Backend.Services.FormServices
 {
     public class FormServiceImpl : FormService
     {
-
+        private MainForm.MainForm mainForm;
 
         public void OpenLoginForm()
         {
@@ -19,5 +19,13 @@ namespace DesktopApp.Backend.Services.FormServices
             registrationForm.ShowDialog();
         }
 
+        public MainForm.MainForm GetMainForm()
+        {
+            if (mainForm == null)
+            {
+                mainForm = new MainForm.MainForm();
+            }
+            return mainForm;
+        }
     }
 }

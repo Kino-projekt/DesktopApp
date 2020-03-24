@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 using NUnit.Framework;
 
@@ -17,7 +18,7 @@ namespace Tests.Backend.Services.UserServices
         [Test]
         public void UserIsNullOnStart()
         {
-            Assert.IsFalse(userService.IsUserExist());
+            Assert.IsFalse(userService.GetUserStatus());
         }
 
     }
