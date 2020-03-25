@@ -23,9 +23,7 @@ namespace DesktopApp.Forms.RegistrationForm
         public RegistrationForm()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager manager = MaterialSkin.MaterialSkinManager.Instance;
-            manager.AddFormToManage(this);
-            manager.Theme = MaterialSkinManager.Themes.DARK;
+            DesingerController.GetDesingerService().AddFormToDesinger(this);
         }
 
         private void loginButton_Click(object sender, EventArgs e)

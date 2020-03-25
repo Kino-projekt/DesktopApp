@@ -71,7 +71,7 @@
             // 
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.Depth = 0;
-            this.loginButton.Location = new System.Drawing.Point(122, 303);
+            this.loginButton.Location = new System.Drawing.Point(138, 292);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
             this.loginButton.Primary = true;
@@ -87,7 +87,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 375);
+            this.materialLabel1.Location = new System.Drawing.Point(31, 375);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(225, 19);
@@ -116,7 +116,7 @@
             this.wrongEmailLabel.AutoSize = true;
             this.wrongEmailLabel.Depth = 0;
             this.wrongEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.wrongEmailLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.wrongEmailLabel.Location = new System.Drawing.Point(73, 122);
             this.wrongEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.wrongEmailLabel.Name = "wrongEmailLabel";
@@ -130,7 +130,7 @@
             this.wrongPasswordLabel.AutoSize = true;
             this.wrongPasswordLabel.Depth = 0;
             this.wrongPasswordLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.wrongPasswordLabel.ForeColor = System.Drawing.Color.Red;
+            this.wrongPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.wrongPasswordLabel.Location = new System.Drawing.Point(73, 192);
             this.wrongPasswordLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.wrongPasswordLabel.Name = "wrongPasswordLabel";

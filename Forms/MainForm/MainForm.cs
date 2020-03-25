@@ -25,14 +25,7 @@ namespace DesktopApp.MainForm
         public MainForm()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager manager = MaterialSkin.MaterialSkinManager.Instance;
-            manager.AddFormToManage(this);
-            manager.Theme = MaterialSkinManager.Themes.DARK;
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            DesingerController.GetDesingerService().AddFormToDesinger(this);
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -67,5 +60,19 @@ namespace DesktopApp.MainForm
             }
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            DesingerController.GetDesingerService().SetDarkTheme();
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            DesingerController.GetDesingerService().SetLightTheme();
+        }
     }
 }

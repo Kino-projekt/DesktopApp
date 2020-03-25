@@ -36,7 +36,7 @@ namespace DesktopApp.Backend.Configuration
                 MailAddress m = new MailAddress(email);
                 return true;
             }
-            catch (FormatException)
+            catch 
             {
                 return false;
             }

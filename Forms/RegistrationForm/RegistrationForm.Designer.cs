@@ -62,7 +62,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(13, 376);
+            this.materialLabel1.Location = new System.Drawing.Point(31, 376);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(200, 19);
@@ -73,7 +73,7 @@
             // 
             this.regitstrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.regitstrationButton.Depth = 0;
-            this.regitstrationButton.Location = new System.Drawing.Point(123, 304);
+            this.regitstrationButton.Location = new System.Drawing.Point(138, 303);
             this.regitstrationButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.regitstrationButton.Name = "regitstrationButton";
             this.regitstrationButton.Primary = true;
