@@ -1,4 +1,4 @@
-﻿using DesktopApp.Backend.Services.ConnectionServices;
+﻿using DesktopApp.Backend.Controllers.Connection;
 
 namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
 {
@@ -9,7 +9,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
         bool SetUserEmail(string email);
         bool SetUserPassword(string password);
 
-        void SetConnectionService(ConnectionService connectionService);
+        void SetConnectionService(ConnectionController connection);
 
     }
 }

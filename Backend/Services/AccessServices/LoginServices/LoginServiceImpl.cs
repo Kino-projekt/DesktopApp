@@ -1,14 +1,15 @@
 ﻿using System.Security.Policy;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services.ConnectionServices;
+
 
 namespace DesktopApp.Backend.Services.AccessServices.LoginServices
 {
     public class LoginServiceImpl : LoginService
     {
-        private ConnectionService connection;
+        private ConnectionController connection;
         private User user;
         private bool emailCurrect = false;
         private bool passwordCurrect = false;
@@ -20,7 +21,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
 
         private LoginServiceImpl()
         {
-            connection = ConnectionController.GetConnectionService();
+            connection = ConnectionControllerImpl.GetController();
             user = new User();
         }
 
@@ -57,7 +58,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
             return false;
         }
 
-        public void SetConnectionService(ConnectionService connectionService)
+        public void SetConnectionService(ConnectionController connectionService)
         {
             connection = connectionService;
         }

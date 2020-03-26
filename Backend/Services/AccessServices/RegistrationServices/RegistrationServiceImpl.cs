@@ -1,13 +1,13 @@
 ﻿using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services.ConnectionServices;
 
 namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
 {
     public class RegistrationServiceImpl : RegistrationService
     {
-        private ConnectionService connection;
+        private ConnectionController connection;
         private User user;
 
         public static RegistrationService GetService()
@@ -17,7 +17,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
 
         private RegistrationServiceImpl()
         {
-            connection = ConnectionController.GetConnectionService();
+            connection = ConnectionControllerImpl.GetController();
             user = new User();
         }
 
@@ -46,9 +46,9 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
             return false;
         }
 
-        public void SetConnectionService(ConnectionService connectionService)
+        public void SetConnectionService(ConnectionController connection)
         {
-            connection = connectionService;
+            this.connection = connection;
         }
     }
 }

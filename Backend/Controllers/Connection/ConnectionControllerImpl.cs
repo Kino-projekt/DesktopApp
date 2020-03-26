@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using DesktopApp.Backend.Configuration;
+using DesktopApp.Backend.Controllers.Connection.Methods;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 using Newtonsoft.Json;
 
 namespace DesktopApp.Backend.Controllers.Connection
 {
-    public class ConnectionControllerImpl
+    public class ConnectionControllerImpl : ConnectionController
     {
         private HttpClient client;
         private string serverAdress = BasicConfiguration.GetServerAdress();
 
-        public ConnectionControllerImpl()
+        public static ConnectionController GetController()
+        {
+            return new ConnectionControllerImpl();
+        }
+
+        private ConnectionControllerImpl()
         {
             client = new HttpClient
             {
@@ -24,11 +30,10 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public bool Singup(User user)
         {
-            var content = createContent(user);
+            var content = ContentCreator.CreateContent(user);
             HttpResponseMessage response = client.PostAsync("/api/auth/signup", content).Result;
             if (response.IsSuccessStatusCode)
             {
-                // Get response from server in future
                 return true;
             }
             return false;
@@ -36,12 +41,10 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public bool Singin(User user)
         {
-            var content = createContent(user);
+            var content = ContentCreator.CreateContent(user);
             HttpResponseMessage response = client.PostAsync("/api/auth/signin", content).Result;
             if (response.IsSuccessStatusCode)
             {
-
-                // Get response from server in future
                 string tokenBody = response.Content.ReadAsStringAsync().Result;
                 dynamic stuff = JsonConvert.DeserializeObject(tokenBody);
                 string token = stuff.accessToken;
@@ -59,31 +62,11 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public void SendArticle(UserData userData, Article article)
         {
-            var pairs = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("title", article.GetTitle()),
-                new KeyValuePair<string, string>("description", article.GetDescription())
-            };
-            FormUrlEncodedContent content = new FormUrlEncodedContent(pairs);
-
+            var content = ContentCreator.CreateContent(article);
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userData.GetToken());
             HttpResponseMessage response = client.PostAsync("/api/articles", content).Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-
-            }
+            if (response.IsSuccessStatusCode) {}
         }
 
-        private FormUrlEncodedContent createContent(User user)
-        {
-            var pairs = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("email", user.GetEmail()),
-                new KeyValuePair<string, string>("password", user.GetPassword())
-            };
-            FormUrlEncodedContent content = new FormUrlEncodedContent(pairs);
-            return content;
-        }
     }
 }

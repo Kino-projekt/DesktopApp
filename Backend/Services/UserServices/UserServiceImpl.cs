@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using FormsController = DesktopApp.Backend.Controllers.Forms.FormsController;
@@ -43,7 +44,6 @@ namespace DesktopApp.Backend.Services.UserServices
             FormsController formsController = FormsControllerImpl.GetInstance();
             MainForm.MainForm mainForm = formsController.GetMainForm();
             mainForm.SetUserStatus(userStatus);
-            //FormsController.GetFormService().GetMainForm().SetUserStatus(userStatus);
         }
 
         private void NewArticleToTest()
@@ -52,8 +52,8 @@ namespace DesktopApp.Backend.Services.UserServices
             article.SetTitle("Jaskot");
             article.SetDescription("Życie jest za krótkie by programować w C#");
 
-
-            ConnectionController.GetConnectionService().SendArticle(userData, article);
+            ConnectionController connectionController = ConnectionControllerImpl.GetController();
+            connectionController.SendArticle(userData, article);
         }
     }
 }
