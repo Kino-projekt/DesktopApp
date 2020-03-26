@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DesktopApp.Backend.Services.FormServices
+﻿namespace DesktopApp.Backend.Controllers.Forms
 {
-    public interface FormService
+    public interface FormsController
     {
         void OpenLoginForm();
         void OpenRegitrationForm();

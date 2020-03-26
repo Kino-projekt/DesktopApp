@@ -12,7 +12,7 @@ namespace Tests.Backend.Services.UserServices
         [SetUp]
         public void Setup()
         {
-            userService = UserController.GetUserService();
+            userService = UserServiceImpl.GetInstance();
         }
 
         [Test]

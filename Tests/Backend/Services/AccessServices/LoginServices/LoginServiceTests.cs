@@ -15,7 +15,7 @@ namespace Tests.Backend.Services.AccessServices.LoginServices
         [SetUp]
         public void Setup()
         {
-            loginService = LoginController.GetLoginService();
+            loginService = LoginServiceImpl.GetService();
             loginService.SetConnectionService(new ConnectionServiceImitation());
         }
 

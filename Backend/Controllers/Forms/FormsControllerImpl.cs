@@ -1,11 +1,19 @@
 ﻿using DesktopApp.Forms.LoginForm;
 using DesktopApp.Forms.RegistrationForm;
 
-namespace DesktopApp.Backend.Services.FormServices
+namespace DesktopApp.Backend.Controllers.Forms
 {
-    public class FormServiceImpl : FormService
+    public class FormsControllerImpl : FormsController
     {
+        private static FormsController formsController = new FormsControllerImpl();
         private MainForm.MainForm mainForm;
+
+        public static FormsController GetInstance()
+        {
+            return formsController;
+        }
+
+        private FormsControllerImpl() { }
 
         public void OpenLoginForm()
         {

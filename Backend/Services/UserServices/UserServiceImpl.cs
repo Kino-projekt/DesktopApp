@@ -1,12 +1,22 @@
 ﻿using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
+using FormsController = DesktopApp.Backend.Controllers.Forms.FormsController;
 
 namespace DesktopApp.Backend.Services.UserServices
 {
     public class UserServiceImpl : UserService
     {
+        private static UserService userService = new UserServiceImpl();
         private UserData userData;
         private bool userStatus;
+
+        public static UserService GetInstance()
+        {
+            return userService;
+        }
+
+        private UserServiceImpl() { }
 
         public bool GetUserStatus()
         {
@@ -30,7 +40,10 @@ namespace DesktopApp.Backend.Services.UserServices
 
         private void SendUserStatusToMainForm()
         {
-            FormsController.GetFormService().GetMainForm().SetUserStatus(userStatus);
+            FormsController formsController = FormsControllerImpl.GetInstance();
+            MainForm.MainForm mainForm = formsController.GetMainForm();
+            mainForm.SetUserStatus(userStatus);
+            //FormsController.GetFormService().GetMainForm().SetUserStatus(userStatus);
         }
 
         private void NewArticleToTest()

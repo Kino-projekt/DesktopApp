@@ -10,7 +10,12 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
         private ConnectionService connection;
         private User user;
 
-        public RegistrationServiceImpl()
+        public static RegistrationService GetService()
+        {
+            return new RegistrationServiceImpl();
+        }
+
+        private RegistrationServiceImpl()
         {
             connection = ConnectionController.GetConnectionService();
             user = new User();

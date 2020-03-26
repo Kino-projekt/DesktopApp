@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Forms;
 
 namespace DesktopApp
@@ -18,7 +18,9 @@ namespace DesktopApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MainForm.MainForm mainForm = FormsController.GetFormService().GetMainForm();
+
+            FormsController formsController = FormsControllerImpl.GetInstance();
+            MainForm.MainForm mainForm = formsController.GetMainForm();
             Application.Run(mainForm);
         }
     }

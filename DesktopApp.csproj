@@ -54,17 +54,13 @@
   <ItemGroup>
     <Compile Include="Backend\Configuration\BasicConfiguration.cs" />
     <Compile Include="Backend\Configuration\DataValidation.cs" />
-    <Compile Include="Backend\Controllers\AccessControllers\LoginController.cs" />
     <Compile Include="Backend\Controllers\ConnectionController.cs" />
-    <Compile Include="Backend\Controllers\DesingerController.cs" />
-    <Compile Include="Backend\Controllers\FormsController.cs" />
-    <Compile Include="Backend\Controllers\AccessControllers\RegistrationController.cs" />
-    <Compile Include="Backend\Controllers\ObserverSystem\Observable.cs" />
-    <Compile Include="Backend\Controllers\ObserverSystem\Observer.cs" />
-    <Compile Include="Backend\Controllers\UserController.cs" />
+    <Compile Include="Backend\Controllers\Connection\ConnectionController.cs" />
+    <Compile Include="Backend\Controllers\Connection\ConnectionControllerImpl.cs" />
+    <Compile Include="Backend\Controllers\Forms\FormsController.cs" />
+    <Compile Include="Backend\Controllers\Forms\FormsControllerImpl.cs" />
     <Compile Include="Backend\Data\Article.cs" />
     <Compile Include="Backend\Data\User.cs" />
-    <Compile Include="Backend\Data\UserAccount.cs" />
     <Compile Include="Backend\Data\UserData.cs" />
     <Compile Include="Backend\Services\AccessServices\LoginServices\LoginService.cs" />
     <Compile Include="Backend\Services\AccessServices\LoginServices\LoginServiceImpl.cs" />
@@ -75,8 +71,6 @@
     <Compile Include="Backend\Services\ConnectionServices\ConnectionServiceImpl.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
-    <Compile Include="Backend\Services\FormServices\FormService.cs" />
-    <Compile Include="Backend\Services\FormServices\FormServiceImpl.cs" />
     <Compile Include="Backend\Services\UserServices\UserService.cs" />
     <Compile Include="Backend\Services\UserServices\UserServiceImpl.cs" />
     <Compile Include="Forms\LoginForm\LoginForm.cs">

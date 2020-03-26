@@ -1,4 +1,5 @@
-﻿using DesktopApp.Backend.Configuration;
+﻿using System.Security.Policy;
+using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.ConnectionServices;
@@ -12,7 +13,12 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
         private bool emailCurrect = false;
         private bool passwordCurrect = false;
 
-        public LoginServiceImpl()
+        public static LoginService GetService()
+        {
+            return new LoginServiceImpl();
+        }
+
+        private LoginServiceImpl()
         {
             connection = ConnectionController.GetConnectionService();
             user = new User();

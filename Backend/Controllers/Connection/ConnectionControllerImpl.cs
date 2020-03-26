@@ -1,26 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading;
 using DesktopApp.Backend.Configuration;
-using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 using Newtonsoft.Json;
 
-namespace DesktopApp.Backend.Services.ConnectionServices
+namespace DesktopApp.Backend.Controllers.Connection
 {
-    public class ConnectionServiceImpl : ConnectionService
+    public class ConnectionControllerImpl
     {
         private HttpClient client;
         private string serverAdress = BasicConfiguration.GetServerAdress();
 
-        public ConnectionServiceImpl()
+        public ConnectionControllerImpl()
         {
             client = new HttpClient
             {
@@ -48,10 +42,10 @@ namespace DesktopApp.Backend.Services.ConnectionServices
             {
 
                 // Get response from server in future
-                string tokenBody =  response.Content.ReadAsStringAsync().Result;
+                string tokenBody = response.Content.ReadAsStringAsync().Result;
                 dynamic stuff = JsonConvert.DeserializeObject(tokenBody);
                 string token = stuff.accessToken;
-                
+
                 UserData userData = new UserData();
                 userData.SetEmail(user.GetEmail());
                 userData.SetToken(token);
@@ -71,7 +65,7 @@ namespace DesktopApp.Backend.Services.ConnectionServices
                 new KeyValuePair<string, string>("description", article.GetDescription())
             };
             FormUrlEncodedContent content = new FormUrlEncodedContent(pairs);
-            
+
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userData.GetToken());
             HttpResponseMessage response = client.PostAsync("/api/articles", content).Result;
 
@@ -88,7 +82,7 @@ namespace DesktopApp.Backend.Services.ConnectionServices
                 new KeyValuePair<string, string>("email", user.GetEmail()),
                 new KeyValuePair<string, string>("password", user.GetPassword())
             };
-            FormUrlEncodedContent content =new FormUrlEncodedContent(pairs);
+            FormUrlEncodedContent content = new FormUrlEncodedContent(pairs);
             return content;
         }
     }

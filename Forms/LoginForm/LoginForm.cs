@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using DesktopApp.Backend.Controllers;
-using DesktopApp.Backend.Controllers.AccessControllers;
+using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Services.AccessServices.LoginServices;
-using DesktopApp.Backend.Services.FormServices;
+using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -15,19 +14,20 @@ namespace DesktopApp.Forms.LoginForm
         public LoginForm()
         {
             InitializeComponent();
-            DesingerController.GetDesingerService().AddFormToDesinger(this);
+            DesingerService desingerService = DesingerServiceImpl.GetInstance();
+            desingerService.AddFormToDesinger(this);
         }
 
         private void registractionButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormService formService = FormsController.GetFormService();
-            formService.OpenRegitrationForm();
+            Close();
+            FormsController formsController = FormsControllerImpl.GetInstance();
+            formsController.OpenRegitrationForm();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            LoginService loginService = LoginController.GetLoginService();
+            LoginService loginService = LoginServiceImpl.GetService();
             bool currectEmail = loginService.SetUserEmail(emailField.Text);
             if (!currectEmail)
                 wrongEmailLabel.Visible = true;

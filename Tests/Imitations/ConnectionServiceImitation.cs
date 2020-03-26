@@ -17,5 +17,10 @@ namespace Tests.Imitations
         {
             return true;
         }
+
+        public void SendArticle(UserData userData, Article article)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
