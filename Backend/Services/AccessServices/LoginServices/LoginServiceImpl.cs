@@ -58,7 +58,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
             return false;
         }
 
-        public void SetConnectionService(ConnectionController connectionService)
+        public void SetConnectionController(ConnectionController connectionService)
         {
             connection = connectionService;
         }

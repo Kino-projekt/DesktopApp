@@ -1,5 +1,4 @@
-﻿using DesktopApp.Backend.Controllers.AccessControllers;
-using DesktopApp.Backend.Services.AccessServices.LoginServices;
+﻿using DesktopApp.Backend.Services.AccessServices.LoginServices;
 using NUnit.Framework;
 using Tests.Imitations;
 
@@ -16,7 +15,7 @@ namespace Tests.Backend.Services.AccessServices.LoginServices
         public void Setup()
         {
             loginService = LoginServiceImpl.GetService();
-            loginService.SetConnectionService(new ConnectionServiceImitation());
+            loginService.SetConnectionController(new ConnectionControllerImitation());
         }
 
         [Test]

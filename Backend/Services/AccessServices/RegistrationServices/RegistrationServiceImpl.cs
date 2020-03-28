@@ -46,7 +46,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
             return false;
         }
 
-        public void SetConnectionService(ConnectionController connection)
+        public void SetConnectionController(ConnectionController connection)
         {
             this.connection = connection;
         }

@@ -9,7 +9,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
         bool SetUserEmail(string email);
         bool SetUserPassword(string password);
 
-        void SetConnectionService(ConnectionController connection);
+        void SetConnectionController(ConnectionController connection);
 
     }
 }

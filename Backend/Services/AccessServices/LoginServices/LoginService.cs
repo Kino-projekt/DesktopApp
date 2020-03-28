@@ -8,6 +8,6 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
         bool SetUserEmail(string email);
         bool SetUserPassword(string password);
 
-        void SetConnectionService(ConnectionController connectionService);
+        void SetConnectionController(ConnectionController connectionService);
     }
 }
