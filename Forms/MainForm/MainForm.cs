@@ -53,13 +53,13 @@ namespace DesktopApp.MainForm
         {
             if (userStatus == false)
             {
-                loginButton.Visible = true;
-                logoutButton.Visible = false;
+                //loginButton.Visible = true;
+                //logoutButton.Visible = false;
             }
             else
             {
-                loginButton.Visible = false;
-                logoutButton.Visible = true;
+                //loginButton.Visible = false;
+                //logoutButton.Visible = true;
             }
         }
 
@@ -77,5 +77,6 @@ namespace DesktopApp.MainForm
         {
             desingerService.SetLightTheme();
         }
+
     }
 }
