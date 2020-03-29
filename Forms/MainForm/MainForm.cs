@@ -53,30 +53,40 @@ namespace DesktopApp.MainForm
         {
             if (userStatus == false)
             {
-                //loginButton.Visible = true;
-                //logoutButton.Visible = false;
+
+                EmptyUserSetting();
             }
             else
             {
-                //loginButton.Visible = false;
-                //logoutButton.Visible = true;
+                StandardUserSetting();
             }
+        }
+
+        private void EmptyUserSetting()
+        {
+            loginButton.Visible = true;
+            logoutButton.Visible = false;
+            userEmailLabel.Visible = false;
+        }
+
+        private void StandardUserSetting()
+        {
+            loginButton.Visible = false;
+            logoutButton.Visible = true;
+
+            userEmailLabel.Text = GetUserEmailFromService();
+            userEmailLabel.Visible = true;
+        }
+
+        private string GetUserEmailFromService()
+        {
+            UserService userService = UserServiceImpl.GetInstance();
+            return userService.GetUserEmail();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
-        {
-            desingerService.SetDarkTheme();
-        }
-
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-            desingerService.SetLightTheme();
-        }
-
     }
 }

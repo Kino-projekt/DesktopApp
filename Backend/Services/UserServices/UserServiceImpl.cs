@@ -9,7 +9,7 @@ namespace DesktopApp.Backend.Services.UserServices
     public class UserServiceImpl : UserService
     {
         private static UserService userService = new UserServiceImpl();
-        private UserData userData;
+        private User userData;
         private bool userStatus;
 
         public static UserService GetInstance()
@@ -24,12 +24,11 @@ namespace DesktopApp.Backend.Services.UserServices
             return userStatus;
         }
 
-        public void PutNewUser(UserData newUserData)
+        public void PutNewUser(User newUserData)
         {
             this.userData = newUserData;
             userStatus = true;
             SendUserStatusToMainForm();
-            NewArticleToTest();
         }
 
         public void RemoveUser()
@@ -46,14 +45,9 @@ namespace DesktopApp.Backend.Services.UserServices
             mainForm.SetUserStatus(userStatus);
         }
 
-        private void NewArticleToTest()
+        public string GetUserEmail()
         {
-            Article article = new Article();
-            article.SetTitle("Jaskot");
-            article.SetDescription("Życie jest za krótkie by programować w C#");
-
-            ConnectionController connectionController = ConnectionControllerImpl.GetController();
-            connectionController.SendArticle(userData, article);
+            return userData.GetEmail();
         }
     }
 }

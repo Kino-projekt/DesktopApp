@@ -20,27 +20,27 @@ namespace Tests.Backend.Services.AccessServices.RegistrationServices
         }
 
         [Test]
-        public void LoginEmptyUser()
+        public void RegisterEmptyUser()
         {
             Assert.IsFalse(registrationService.RegisterNewUser());
         }
 
         [Test]
-        public void LoginWithEmptyEmail()
+        public void RegisterWithEmptyEmail()
         {
             registrationService.SetUserPassword(currectPassword);
             Assert.IsFalse(registrationService.RegisterNewUser());
         }
 
         [Test]
-        public void LoginWithEmptyPassword()
+        public void RegisterWithEmptyPassword()
         {
             registrationService.SetUserEmail(currectEmail);
             Assert.IsFalse(registrationService.RegisterNewUser());
         }
 
         [Test]
-        public void LoginCurrectUserData()
+        public void RegisterCurrectUserData()
         {
             registrationService.SetUserEmail(currectEmail);
             registrationService.SetUserPassword(currectPassword);

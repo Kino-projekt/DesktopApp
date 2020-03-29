@@ -7,7 +7,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
     public class ContentCreator
     {
 
-        public static FormUrlEncodedContent CreateContent(User user)
+        public static FormUrlEncodedContent CreateContent(AuthData user)
         {
             return new FormUrlEncodedContent(CreatePairs(user));
         }
@@ -17,7 +17,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
             return new FormUrlEncodedContent(CreatePairs(article));
         }
 
-        private static List<KeyValuePair<string, string>> CreatePairs(User user)
+        private static List<KeyValuePair<string, string>> CreatePairs(AuthData user)
         {
             var pairs = new List<KeyValuePair<string, string>>
             {

@@ -10,7 +10,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
     public class LoginServiceImpl : LoginService
     {
         private ConnectionController connection;
-        private User user;
+        private AuthData user;
         private bool emailCurrect = false;
         private bool passwordCurrect = false;
 
@@ -22,7 +22,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
         private LoginServiceImpl()
         {
             connection = ConnectionControllerImpl.GetController();
-            user = new User();
+            user = new AuthData();
         }
 
         public bool LoginNewUser()

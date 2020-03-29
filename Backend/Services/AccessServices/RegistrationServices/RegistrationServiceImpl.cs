@@ -8,7 +8,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
     public class RegistrationServiceImpl : RegistrationService
     {
         private ConnectionController connection;
-        private User user;
+        private AuthData user;
 
         public static RegistrationService GetService()
         {
@@ -18,7 +18,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
         private RegistrationServiceImpl()
         {
             connection = ConnectionControllerImpl.GetController();
-            user = new User();
+            user = new AuthData();
         }
 
         public bool RegisterNewUser()

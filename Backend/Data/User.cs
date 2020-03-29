@@ -2,15 +2,17 @@
 {
     public class User
     {
+
+
         private string email;
-        private string password;
 
-        public User() { }
+        private string role;
 
-        public User(string email, string password)
+        private string token;
+
+        public string GetEmail()
         {
-            this.email = email;
-            this.password = password;
+            return email;
         }
 
         public void SetEmail(string email)
@@ -18,19 +20,24 @@
             this.email = email;
         }
 
-        public string GetEmail()
+        public void SetRole(string role)
         {
-            return email;
+            this.role = role;
         }
 
-        public void SetPassword(string password)
+        public string GetRole()
         {
-            this.password = password;
+            return role;
         }
 
-        public string GetPassword()
+        public void SetToken(string token)
         {
-            return password;
+            this.token = token;
+        }
+
+        public string GetToken()
+        {
+            return token;
         }
     }
 }

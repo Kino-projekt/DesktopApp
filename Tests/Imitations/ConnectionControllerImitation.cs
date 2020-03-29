@@ -7,17 +7,17 @@ namespace Tests.Imitations
     {
         // imitation server connect for test, every method always return true
 
-        public bool Singup(User user)
+        public bool Singup(AuthData user)
         {
             return true;
         }
 
-        public bool Singin(User user)
+        public bool Singin(AuthData user)
         {
             return true;
         }
 
-        public void SendArticle(UserData userData, Article article)
+        public void SendArticle(User userData, Article article)
         {
         }
     }

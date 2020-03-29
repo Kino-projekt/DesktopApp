@@ -19,12 +19,18 @@ namespace DesktopApp.Backend.Configuration
                     return false;
                 }
 
-                string pattern = "^[a-zA-Z0-9]+$";
-                if (!Regex.IsMatch(password, pattern))
-
-                {
+                var hasLowerChar = new Regex(@"[a-z]+");
+                if (!hasLowerChar.IsMatch(password))
                     return false;
-                }
+
+                var hasNumber = new Regex(@"[0-9]+");
+                if (!hasNumber.IsMatch(password))
+                    return false;
+
+                var hasUpperChar = new Regex(@"[A-Z]+");
+                if (!hasUpperChar.IsMatch(password))
+                    return false;
+                
                 return true;
             }
         }

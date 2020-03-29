@@ -4,8 +4,8 @@ namespace DesktopApp.Backend.Controllers.Connection
 {
     public interface ConnectionController
     {
-        bool Singup(User user);
-        bool Singin(User user);
-        void SendArticle(UserData userData, Article article);
+        bool Singup(AuthData user);
+        bool Singin(AuthData user);
+        void SendArticle(User userData, Article article);
     }
 }

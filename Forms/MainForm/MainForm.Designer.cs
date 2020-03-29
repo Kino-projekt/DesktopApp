@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.settingsButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.priceButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.usertPanel = new System.Windows.Forms.Panel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.usertPanel = new System.Windows.Forms.Panel();
-            this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.priceButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.settingsButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.menuPanel.SuspendLayout();
+            this.usertPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -57,6 +59,83 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(200, 600);
             this.menuPanel.TabIndex = 0;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.AutoSize = true;
+            this.settingsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settingsButton.Depth = 0;
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsButton.Location = new System.Drawing.Point(0, 228);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.settingsButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Primary = false;
+            this.settingsButton.Size = new System.Drawing.Size(200, 36);
+            this.settingsButton.TabIndex = 7;
+            this.settingsButton.Text = "Ustawienia";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            // 
+            // priceButton
+            // 
+            this.priceButton.AutoSize = true;
+            this.priceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.priceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.priceButton.Depth = 0;
+            this.priceButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.priceButton.Location = new System.Drawing.Point(0, 192);
+            this.priceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.priceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.priceButton.Name = "priceButton";
+            this.priceButton.Primary = false;
+            this.priceButton.Size = new System.Drawing.Size(200, 36);
+            this.priceButton.TabIndex = 6;
+            this.priceButton.Text = "Cennik";
+            this.priceButton.UseVisualStyleBackColor = true;
+            // 
+            // seancebutton
+            // 
+            this.seancebutton.AutoSize = true;
+            this.seancebutton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.seancebutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.seancebutton.Depth = 0;
+            this.seancebutton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.seancebutton.Location = new System.Drawing.Point(0, 156);
+            this.seancebutton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.seancebutton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.seancebutton.Name = "seancebutton";
+            this.seancebutton.Primary = false;
+            this.seancebutton.Size = new System.Drawing.Size(200, 36);
+            this.seancebutton.TabIndex = 5;
+            this.seancebutton.Text = "Seanse";
+            this.seancebutton.UseVisualStyleBackColor = true;
+            // 
+            // newsButton
+            // 
+            this.newsButton.AutoSize = true;
+            this.newsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.newsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newsButton.Depth = 0;
+            this.newsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.newsButton.Location = new System.Drawing.Point(0, 120);
+            this.newsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.newsButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.newsButton.Name = "newsButton";
+            this.newsButton.Primary = false;
+            this.newsButton.Size = new System.Drawing.Size(200, 36);
+            this.newsButton.TabIndex = 4;
+            this.newsButton.Text = "Nowości";
+            this.newsButton.UseVisualStyleBackColor = true;
+            // 
+            // usertPanel
+            // 
+            this.usertPanel.Controls.Add(this.userEmailLabel);
+            this.usertPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usertPanel.Location = new System.Drawing.Point(0, 0);
+            this.usertPanel.Name = "usertPanel";
+            this.usertPanel.Size = new System.Drawing.Size(200, 120);
+            this.usertPanel.TabIndex = 3;
             // 
             // logoutButton
             // 
@@ -121,81 +200,20 @@
             this.contentPanel.Size = new System.Drawing.Size(800, 600);
             this.contentPanel.TabIndex = 1;
             // 
-            // usertPanel
+            // userEmailLabel
             // 
-            this.usertPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usertPanel.Location = new System.Drawing.Point(0, 0);
-            this.usertPanel.Name = "usertPanel";
-            this.usertPanel.Size = new System.Drawing.Size(200, 120);
-            this.usertPanel.TabIndex = 3;
-            // 
-            // newsButton
-            // 
-            this.newsButton.AutoSize = true;
-            this.newsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.newsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newsButton.Depth = 0;
-            this.newsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.newsButton.Location = new System.Drawing.Point(0, 120);
-            this.newsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.newsButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.newsButton.Name = "newsButton";
-            this.newsButton.Primary = false;
-            this.newsButton.Size = new System.Drawing.Size(200, 36);
-            this.newsButton.TabIndex = 4;
-            this.newsButton.Text = "Nowości";
-            this.newsButton.UseVisualStyleBackColor = true;
-            // 
-            // seancebutton
-            // 
-            this.seancebutton.AutoSize = true;
-            this.seancebutton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.seancebutton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.seancebutton.Depth = 0;
-            this.seancebutton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.seancebutton.Location = new System.Drawing.Point(0, 156);
-            this.seancebutton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.seancebutton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.seancebutton.Name = "seancebutton";
-            this.seancebutton.Primary = false;
-            this.seancebutton.Size = new System.Drawing.Size(200, 36);
-            this.seancebutton.TabIndex = 5;
-            this.seancebutton.Text = "Seanse";
-            this.seancebutton.UseVisualStyleBackColor = true;
-            // 
-            // priceButton
-            // 
-            this.priceButton.AutoSize = true;
-            this.priceButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.priceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.priceButton.Depth = 0;
-            this.priceButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.priceButton.Location = new System.Drawing.Point(0, 192);
-            this.priceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.priceButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.priceButton.Name = "priceButton";
-            this.priceButton.Primary = false;
-            this.priceButton.Size = new System.Drawing.Size(200, 36);
-            this.priceButton.TabIndex = 6;
-            this.priceButton.Text = "Cennik";
-            this.priceButton.UseVisualStyleBackColor = true;
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.AutoSize = true;
-            this.settingsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsButton.Depth = 0;
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsButton.Location = new System.Drawing.Point(0, 228);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.settingsButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Primary = false;
-            this.settingsButton.Size = new System.Drawing.Size(200, 36);
-            this.settingsButton.TabIndex = 7;
-            this.settingsButton.Text = "Ustawienia";
-            this.settingsButton.UseVisualStyleBackColor = true;
+            this.userEmailLabel.AutoSize = true;
+            this.userEmailLabel.Depth = 0;
+            this.userEmailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.userEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.userEmailLabel.Location = new System.Drawing.Point(0, 0);
+            this.userEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userEmailLabel.Name = "userEmailLabel";
+            this.userEmailLabel.Size = new System.Drawing.Size(47, 19);
+            this.userEmailLabel.TabIndex = 0;
+            this.userEmailLabel.Text = "Email";
+            this.userEmailLabel.Visible = false;
             // 
             // MainForm
             // 
@@ -212,6 +230,8 @@
             this.Text = "MainForm";
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
+            this.usertPanel.ResumeLayout(false);
+            this.usertPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +248,6 @@
         private MaterialSkin.Controls.MaterialFlatButton seancebutton;
         private MaterialSkin.Controls.MaterialFlatButton newsButton;
         private MaterialSkin.Controls.MaterialFlatButton settingsButton;
+        private MaterialSkin.Controls.MaterialLabel userEmailLabel;
     }
 }
