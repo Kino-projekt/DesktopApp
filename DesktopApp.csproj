@@ -84,6 +84,24 @@
     <Compile Include="Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MenuForms\News\NewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\News\NewsForm.Designer.cs">
+      <DependentUpon>NewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Price\PriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Price\PriceForm.Designer.cs">
+      <DependentUpon>PriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Seance\SeanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Seance\SeanceForm.Designer.cs">
+      <DependentUpon>SeanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuForms\Settings\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\News\NewsForm.resx">
+      <DependentUpon>NewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Price\PriceForm.resx">
+      <DependentUpon>PriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Seance\SeanceForm.resx">
+      <DependentUpon>SeanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Settings\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>

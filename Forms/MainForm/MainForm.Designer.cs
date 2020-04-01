@@ -94,6 +94,7 @@
             this.priceButton.TabIndex = 6;
             this.priceButton.Text = "Cennik";
             this.priceButton.UseVisualStyleBackColor = true;
+            this.priceButton.Click += new System.EventHandler(this.priceButton_Click);
             // 
             // seancebutton
             // 
@@ -111,6 +112,7 @@
             this.seancebutton.TabIndex = 5;
             this.seancebutton.Text = "Seanse";
             this.seancebutton.UseVisualStyleBackColor = true;
+            this.seancebutton.Click += new System.EventHandler(this.seancebutton_Click);
             // 
             // newsButton
             // 
@@ -128,6 +130,7 @@
             this.newsButton.TabIndex = 4;
             this.newsButton.Text = "Nowości";
             this.newsButton.UseVisualStyleBackColor = true;
+            this.newsButton.Click += new System.EventHandler(this.newsButton_Click);
             // 
             // usertPanel
             // 

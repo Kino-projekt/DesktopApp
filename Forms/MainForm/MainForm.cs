@@ -13,6 +13,9 @@ using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Forms.LoginForm;
+using DesktopApp.Forms.MenuForms.News;
+using DesktopApp.Forms.MenuForms.Price;
+using DesktopApp.Forms.MenuForms.Seance;
 using DesktopApp.Forms.MenuForms.Settings;
 using DesktopApp.Forms.RegistrationForm;
 using MaterialSkin;
@@ -109,6 +112,21 @@ namespace DesktopApp.MainForm
         private void settingsButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new SettingsForm());
+        }
+
+        private void priceButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PriceForm());
+        }
+
+        private void newsButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new NewsForm());
+        }
+
+        private void seancebutton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SeanceForm());
         }
     }
 }
