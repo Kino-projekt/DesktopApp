@@ -34,11 +34,11 @@
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.usertPanel = new System.Windows.Forms.Panel();
+            this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.menuPanel.SuspendLayout();
             this.usertPanel.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,7 @@
             this.settingsButton.TabIndex = 7;
             this.settingsButton.Text = "Ustawienia";
             this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // priceButton
             // 
@@ -136,6 +137,21 @@
             this.usertPanel.Name = "usertPanel";
             this.usertPanel.Size = new System.Drawing.Size(200, 120);
             this.usertPanel.TabIndex = 3;
+            // 
+            // userEmailLabel
+            // 
+            this.userEmailLabel.AutoSize = true;
+            this.userEmailLabel.Depth = 0;
+            this.userEmailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.userEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.userEmailLabel.Location = new System.Drawing.Point(0, 0);
+            this.userEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userEmailLabel.Name = "userEmailLabel";
+            this.userEmailLabel.Size = new System.Drawing.Size(47, 19);
+            this.userEmailLabel.TabIndex = 0;
+            this.userEmailLabel.Text = "Email";
+            this.userEmailLabel.Visible = false;
             // 
             // logoutButton
             // 
@@ -199,21 +215,6 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(800, 600);
             this.contentPanel.TabIndex = 1;
-            // 
-            // userEmailLabel
-            // 
-            this.userEmailLabel.AutoSize = true;
-            this.userEmailLabel.Depth = 0;
-            this.userEmailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userEmailLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.userEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.userEmailLabel.Location = new System.Drawing.Point(0, 0);
-            this.userEmailLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.userEmailLabel.Name = "userEmailLabel";
-            this.userEmailLabel.Size = new System.Drawing.Size(47, 19);
-            this.userEmailLabel.TabIndex = 0;
-            this.userEmailLabel.Text = "Email";
-            this.userEmailLabel.Visible = false;
             // 
             // MainForm
             // 

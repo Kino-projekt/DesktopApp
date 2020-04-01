@@ -13,6 +13,7 @@ using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Forms.LoginForm;
+using DesktopApp.Forms.MenuForms.Settings;
 using DesktopApp.Forms.RegistrationForm;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -62,6 +63,22 @@ namespace DesktopApp.MainForm
             }
         }
 
+        private MaterialForm activeForm = null;
+
+        private void OpenChildForm(MaterialForm childForm)
+        {
+            if(activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(childForm);
+            contentPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void EmptyUserSetting()
         {
             loginButton.Visible = true;
@@ -87,6 +104,11 @@ namespace DesktopApp.MainForm
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SettingsForm());
         }
     }
 }
