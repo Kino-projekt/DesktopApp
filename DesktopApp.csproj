@@ -58,6 +58,9 @@
     <Compile Include="Backend\Controllers\Connection\ConnectionControllerImpl.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\ContentCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\UserCreator.cs" />
+    <Compile Include="Backend\Controllers\ContentPanel\ContentPanelController.cs" />
+    <Compile Include="Backend\Controllers\ContentPanel\ContentPanelControllerImpl.cs" />
+    <Compile Include="Backend\Controllers\ContentPanel\Methods\ContentCreator.cs" />
     <Compile Include="Backend\Controllers\Forms\FormsController.cs" />
     <Compile Include="Backend\Controllers\Forms\FormsControllerImpl.cs" />
     <Compile Include="Backend\Data\Article.cs" />

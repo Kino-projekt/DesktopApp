@@ -1,24 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopApp.Backend.Controllers;
+using DesktopApp.Backend.Controllers.ContentPanel;
 using DesktopApp.Backend.Controllers.Forms;
-using DesktopApp.Backend.Services;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
-using DesktopApp.Forms.LoginForm;
-using DesktopApp.Forms.MenuForms.News;
-using DesktopApp.Forms.MenuForms.Price;
-using DesktopApp.Forms.MenuForms.Seance;
-using DesktopApp.Forms.MenuForms.Settings;
-using DesktopApp.Forms.RegistrationForm;
-using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.MainForm
@@ -27,12 +12,14 @@ namespace DesktopApp.MainForm
     {
         private bool userStatus;
         private DesingerService desingerService;
+        private ContentPanelController contentPanelController;
 
         public MainForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -66,22 +53,6 @@ namespace DesktopApp.MainForm
             }
         }
 
-        private MaterialForm activeForm = null;
-
-        private void OpenChildForm(MaterialForm childForm)
-        {
-            if(activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            contentPanel.Controls.Add(childForm);
-            contentPanel.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
         private void EmptyUserSetting()
         {
             loginButton.Visible = true;
@@ -111,22 +82,22 @@ namespace DesktopApp.MainForm
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SettingsForm());
+            contentPanelController.OpenSettingForm();
         }
 
         private void priceButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PriceForm());
+            contentPanelController.OpenPriceForm();
         }
 
         private void newsButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new NewsForm());
+            contentPanelController.OpenNewsForm();
         }
 
         private void seancebutton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SeanceForm());
+            contentPanelController.OpenSeanceForm();
         }
     }
 }
