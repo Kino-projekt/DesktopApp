@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using DesktopApp.Backend.Configuration;
@@ -35,7 +36,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         {
             var content = ContentCreator.CreateContent(user);
             HttpResponseMessage response = client.PostAsync("/api/auth/signup", content).Result;
-            if (response.IsSuccessStatusCode)
+            if (response.StatusCode == HttpStatusCode.Created)
             {
                 return true;
             }
@@ -46,7 +47,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         {
             var content = ContentCreator.CreateContent(user);
             HttpResponseMessage response = client.PostAsync("/api/auth/signin", content).Result;
-            if (response.IsSuccessStatusCode)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
                 UserCreator.PutUserToSystem(response);
                 return true;
@@ -59,8 +60,20 @@ namespace DesktopApp.Backend.Controllers.Connection
             var content = ContentCreator.CreateContent(article);
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userData.GetToken());
             HttpResponseMessage response = client.PostAsync("/api/articles", content).Result;
-            if (response.IsSuccessStatusCode) {}
+            if (response.StatusCode == HttpStatusCode.Created)
+            {
+
+            }
         }
 
+        public List<Article> GetArticlesFromServer()
+        {
+            HttpResponseMessage response = client.GetAsync("/api/articles").Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return ArticleListCreator.CreateArticles(response);
+            }
+            return null;
+        }
     }
 }

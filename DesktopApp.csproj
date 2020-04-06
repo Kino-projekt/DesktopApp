@@ -56,6 +56,7 @@
     <Compile Include="Backend\Configuration\DataValidation.cs" />
     <Compile Include="Backend\Controllers\Connection\ConnectionController.cs" />
     <Compile Include="Backend\Controllers\Connection\ConnectionControllerImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\Methods\ArticleListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\ContentCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\UserCreator.cs" />
     <Compile Include="Backend\Controllers\ContentPanel\ContentPanelController.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Backend\Services\AccessServices\RegistrationServices\RegistrationService.cs" />
     <Compile Include="Backend\Services\AccessServices\RegistrationServices\RegistrationServiceImpl.cs" />
     <Compile Include="Backend\Services\ArticleServices\ArticleService.cs" />
+    <Compile Include="Backend\Services\ArticleServices\ArticleServiceImpl.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
     <Compile Include="Backend\Services\UserServices\UserService.cs" />

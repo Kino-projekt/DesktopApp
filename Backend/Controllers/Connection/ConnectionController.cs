@@ -1,4 +1,6 @@
-﻿using DesktopApp.Backend.Data;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Controllers.Connection
 {
@@ -7,5 +9,6 @@ namespace DesktopApp.Backend.Controllers.Connection
         bool Singup(AuthData user);
         bool Singin(AuthData user);
         void SendArticle(User userData, Article article);
+        List<Article> GetArticlesFromServer();
     }
 }

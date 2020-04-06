@@ -10,8 +10,6 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
 {
     public class UserCreator
     {
-
-
         public static void PutUserToSystem(HttpResponseMessage response)
         {
             string body = response.Content.ReadAsStringAsync().Result;
@@ -42,13 +40,10 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
 
             return user;
         }
-
         private static void SendUserToSystem(User user)
         {
             UserService userService = UserServiceImpl.GetInstance();
             userService.PutNewUser(user);
         }
-        
-
     }
 }
