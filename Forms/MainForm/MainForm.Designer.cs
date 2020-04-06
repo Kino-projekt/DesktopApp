@@ -30,34 +30,38 @@
         {
             this.menuPanel = new System.Windows.Forms.Panel();
             this.settingsButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.adminButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.userButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.priceButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.usertPanel = new System.Windows.Forms.Panel();
+            this.logoPanel = new System.Windows.Forms.Panel();
             this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
-            this.usertPanel.SuspendLayout();
+            this.logoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.menuPanel.Controls.Add(this.settingsButton);
+            this.menuPanel.Controls.Add(this.adminButton);
+            this.menuPanel.Controls.Add(this.userButton);
             this.menuPanel.Controls.Add(this.priceButton);
             this.menuPanel.Controls.Add(this.seancebutton);
             this.menuPanel.Controls.Add(this.newsButton);
-            this.menuPanel.Controls.Add(this.usertPanel);
+            this.menuPanel.Controls.Add(this.logoPanel);
             this.menuPanel.Controls.Add(this.logoutButton);
             this.menuPanel.Controls.Add(this.loginButton);
             this.menuPanel.Controls.Add(this.exitButton);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(200, 600);
+            this.menuPanel.Size = new System.Drawing.Size(200, 601);
             this.menuPanel.TabIndex = 0;
             // 
             // settingsButton
@@ -67,7 +71,7 @@
             this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsButton.Depth = 0;
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsButton.Location = new System.Drawing.Point(0, 228);
+            this.settingsButton.Location = new System.Drawing.Point(0, 300);
             this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.settingsButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.settingsButton.Name = "settingsButton";
@@ -77,6 +81,44 @@
             this.settingsButton.Text = "Ustawienia";
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
+            // adminButton
+            // 
+            this.adminButton.AutoSize = true;
+            this.adminButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.adminButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminButton.Depth = 0;
+            this.adminButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.adminButton.Location = new System.Drawing.Point(0, 264);
+            this.adminButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.adminButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Primary = false;
+            this.adminButton.Size = new System.Drawing.Size(200, 36);
+            this.adminButton.TabIndex = 9;
+            this.adminButton.Text = "Administrator";
+            this.adminButton.UseVisualStyleBackColor = true;
+            this.adminButton.Visible = false;
+            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
+            // 
+            // userButton
+            // 
+            this.userButton.AutoSize = true;
+            this.userButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userButton.Depth = 0;
+            this.userButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userButton.Location = new System.Drawing.Point(0, 228);
+            this.userButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.userButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userButton.Name = "userButton";
+            this.userButton.Primary = false;
+            this.userButton.Size = new System.Drawing.Size(200, 36);
+            this.userButton.TabIndex = 8;
+            this.userButton.Text = "Użytkownik";
+            this.userButton.UseVisualStyleBackColor = true;
+            this.userButton.Visible = false;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
             // 
             // priceButton
             // 
@@ -132,14 +174,14 @@
             this.newsButton.UseVisualStyleBackColor = true;
             this.newsButton.Click += new System.EventHandler(this.newsButton_Click);
             // 
-            // usertPanel
+            // logoPanel
             // 
-            this.usertPanel.Controls.Add(this.userEmailLabel);
-            this.usertPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usertPanel.Location = new System.Drawing.Point(0, 0);
-            this.usertPanel.Name = "usertPanel";
-            this.usertPanel.Size = new System.Drawing.Size(200, 120);
-            this.usertPanel.TabIndex = 3;
+            this.logoPanel.Controls.Add(this.userEmailLabel);
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(200, 120);
+            this.logoPanel.TabIndex = 3;
             // 
             // userEmailLabel
             // 
@@ -163,7 +205,7 @@
             this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoutButton.Depth = 0;
             this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logoutButton.Location = new System.Drawing.Point(0, 492);
+            this.logoutButton.Location = new System.Drawing.Point(0, 493);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.logoutButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.logoutButton.Name = "logoutButton";
@@ -182,7 +224,7 @@
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.Depth = 0;
             this.loginButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.loginButton.Location = new System.Drawing.Point(0, 528);
+            this.loginButton.Location = new System.Drawing.Point(0, 529);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
@@ -200,7 +242,7 @@
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.Depth = 0;
             this.exitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.exitButton.Location = new System.Drawing.Point(0, 564);
+            this.exitButton.Location = new System.Drawing.Point(0, 565);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.exitButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.exitButton.Name = "exitButton";
@@ -216,26 +258,28 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(800, 600);
+            this.contentPanel.Size = new System.Drawing.Size(800, 601);
             this.contentPanel.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1000, 601);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.menuPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Scruter";
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
-            this.usertPanel.ResumeLayout(false);
-            this.usertPanel.PerformLayout();
+            this.logoPanel.ResumeLayout(false);
+            this.logoPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,11 +291,13 @@
         private System.Windows.Forms.Panel contentPanel;
         private MaterialSkin.Controls.MaterialFlatButton logoutButton;
         private MaterialSkin.Controls.MaterialFlatButton loginButton;
-        private System.Windows.Forms.Panel usertPanel;
+        private System.Windows.Forms.Panel logoPanel;
         private MaterialSkin.Controls.MaterialFlatButton priceButton;
         private MaterialSkin.Controls.MaterialFlatButton seancebutton;
         private MaterialSkin.Controls.MaterialFlatButton newsButton;
         private MaterialSkin.Controls.MaterialFlatButton settingsButton;
         private MaterialSkin.Controls.MaterialLabel userEmailLabel;
+        private MaterialSkin.Controls.MaterialFlatButton adminButton;
+        private MaterialSkin.Controls.MaterialFlatButton userButton;
     }
 }

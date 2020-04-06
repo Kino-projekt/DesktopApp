@@ -29,60 +29,107 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
-            this.contentPanel.Controls.Add(this.groupBox4);
-            this.contentPanel.Controls.Add(this.groupBox3);
-            this.contentPanel.Controls.Add(this.groupBox2);
-            this.contentPanel.Controls.Add(this.groupBox1);
+            this.contentPanel.Controls.Add(this.materialLabel1);
+            this.contentPanel.Controls.Add(this.panel3);
+            this.contentPanel.Controls.Add(this.panel2);
+            this.contentPanel.Controls.Add(this.panel1);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(800, 600);
             this.contentPanel.TabIndex = 0;
             // 
-            // groupBox1
+            // panel3
             // 
-            this.groupBox1.Location = new System.Drawing.Point(88, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 196);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.panel3.Controls.Add(this.materialRaisedButton3);
+            this.panel3.Location = new System.Drawing.Point(544, 161);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 250);
+            this.panel3.TabIndex = 3;
             // 
-            // groupBox2
+            // materialRaisedButton3
             // 
-            this.groupBox2.Location = new System.Drawing.Point(487, 54);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 196);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(0, 180);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(200, 70);
+            this.materialRaisedButton3.TabIndex = 0;
+            this.materialRaisedButton3.Text = "materialRaisedButton3";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // panel2
             // 
-            this.groupBox3.Location = new System.Drawing.Point(88, 297);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 218);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.panel2.Controls.Add(this.materialRaisedButton2);
+            this.panel2.Location = new System.Drawing.Point(294, 161);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 250);
+            this.panel2.TabIndex = 3;
             // 
-            // groupBox4
+            // materialRaisedButton2
             // 
-            this.groupBox4.Location = new System.Drawing.Point(487, 297);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 218);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(0, 180);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(200, 70);
+            this.materialRaisedButton2.TabIndex = 0;
+            this.materialRaisedButton2.Text = "materialRaisedButton2";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.materialRaisedButton1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel1.Location = new System.Drawing.Point(52, 161);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 250);
+            this.panel1.TabIndex = 2;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(0, 180);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(200, 70);
+            this.materialRaisedButton1.TabIndex = 0;
+            this.materialRaisedButton1.Text = "materialRaisedButton1";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(337, 89);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(95, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Ceny biletów";
             // 
             // PriceForm
             // 
@@ -93,6 +140,10 @@
             this.Name = "PriceForm";
             this.Text = "PriceForm";
             this.contentPanel.ResumeLayout(false);
+            this.contentPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,9 +151,12 @@
         #endregion
 
         private System.Windows.Forms.Panel contentPanel;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel3;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

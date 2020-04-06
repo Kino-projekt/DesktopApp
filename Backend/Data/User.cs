@@ -6,7 +6,7 @@
 
         private string email;
 
-        private string role;
+        private Role role;
 
         private string token;
 
@@ -20,12 +20,12 @@
             this.email = email;
         }
 
-        public void SetRole(string role)
+        public void SetRole(Role role)
         {
             this.role = role;
         }
 
-        public string GetRole()
+        public Role GetRole()
         {
             return role;
         }

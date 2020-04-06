@@ -71,7 +71,7 @@
             // 
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.Depth = 0;
-            this.loginButton.Location = new System.Drawing.Point(138, 292);
+            this.loginButton.Location = new System.Drawing.Point(138, 299);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
             this.loginButton.Primary = true;
@@ -157,7 +157,6 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie do systemu";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

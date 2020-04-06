@@ -4,7 +4,7 @@ namespace DesktopApp.Backend.Services.UserServices
 {
     public interface UserService
     {
-        bool GetUserStatus();
+        Role GetUserRole();
         void PutNewUser(User userData);
         void RemoveUser();
         string GetUserEmail();

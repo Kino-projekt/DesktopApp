@@ -186,6 +186,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistrationForm";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rejestracja do systemu";
             this.ResumeLayout(false);

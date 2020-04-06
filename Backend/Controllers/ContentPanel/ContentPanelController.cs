@@ -8,6 +8,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
         void OpenPriceForm();
         void OpenNewsForm();
         void OpenSeanceForm();
-
+        void OpenAdminForms();
+        void OpenUserForm();
     }
 }

@@ -32,7 +32,15 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
 
             dynamic role = userObject.role;
             string userRole = role;
-            user.SetRole(userRole);
+            if (userRole == "ADMIN")
+            {
+                user.SetRole(Role.ADMIN);
+            }
+            else
+            {
+                user.SetRole(Role.CUSTOMER);
+
+            }
 
             dynamic token = tokenObject.accessToken;
             string userToken = token;

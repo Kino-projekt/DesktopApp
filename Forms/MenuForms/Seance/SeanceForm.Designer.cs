@@ -29,15 +29,31 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.materialLabel1);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(800, 600);
             this.contentPanel.TabIndex = 0;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(329, 250);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Lista seansów";
             // 
             // SeanceForm
             // 
@@ -47,6 +63,8 @@
             this.Controls.Add(this.contentPanel);
             this.Name = "SeanceForm";
             this.Text = "SeanceForm";
+            this.contentPanel.ResumeLayout(false);
+            this.contentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -54,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Panel contentPanel;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

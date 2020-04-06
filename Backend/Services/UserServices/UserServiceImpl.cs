@@ -10,7 +10,6 @@ namespace DesktopApp.Backend.Services.UserServices
     {
         private static UserService userService = new UserServiceImpl();
         private User userData;
-        private bool userStatus;
 
         public static UserService GetInstance()
         {
@@ -19,22 +18,24 @@ namespace DesktopApp.Backend.Services.UserServices
 
         private UserServiceImpl() { }
 
-        public bool GetUserStatus()
+        public Role GetUserRole()
         {
-            return userStatus;
+            if (userData == null)
+            {
+                return Role.DEFAULT;
+            }
+            return userData.GetRole();
         }
 
         public void PutNewUser(User newUserData)
         {
             this.userData = newUserData;
-            userStatus = true;
             SendUserStatusToMainForm();
         }
 
         public void RemoveUser()
         {
             userData = null;
-            userStatus = false;
             SendUserStatusToMainForm();
         }
 
@@ -42,7 +43,7 @@ namespace DesktopApp.Backend.Services.UserServices
         {
             FormsController formsController = FormsControllerImpl.GetInstance();
             MainForm.MainForm mainForm = formsController.GetMainForm();
-            mainForm.SetUserStatus(userStatus);
+            mainForm.SetUserRole(GetUserRole());
         }
 
         public string GetUserEmail()

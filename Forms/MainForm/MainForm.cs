@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel;
 using DesktopApp.Backend.Controllers.Forms;
+using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin.Controls;
@@ -10,7 +11,6 @@ namespace DesktopApp.MainForm
 {
     public partial class MainForm : MaterialForm
     {
-        private bool userStatus;
         private DesingerService desingerService;
         private ContentPanelController contentPanelController;
 
@@ -20,6 +20,7 @@ namespace DesktopApp.MainForm
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
             contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
+            contentPanelController.OpenNewsForm();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -34,30 +35,32 @@ namespace DesktopApp.MainForm
             userService.RemoveUser();
         }
 
-        public void SetUserStatus(bool userStatus)
+        public void SetUserRole(Role role)
         {
-            this.userStatus = userStatus;
-            ChangeUserStatus();
-        }
-
-        private void ChangeUserStatus()
-        {
-            if (userStatus == false)
-            {
-
-                EmptyUserSetting();
-            }
-            else
+            contentPanelController.OpenNewsForm();
+            if (role == Role.CUSTOMER)
             {
                 StandardUserSetting();
             }
+            else if (role == Role.ADMIN)
+            {
+                AdminUserSettings();
+            }
+            else
+            {
+                EmptyUserSetting();
+            }
         }
+
 
         private void EmptyUserSetting()
         {
             loginButton.Visible = true;
             logoutButton.Visible = false;
             userEmailLabel.Visible = false;
+
+            userButton.Visible = false;
+            adminButton.Visible = false;
         }
 
         private void StandardUserSetting()
@@ -67,6 +70,15 @@ namespace DesktopApp.MainForm
 
             userEmailLabel.Text = GetUserEmailFromService();
             userEmailLabel.Visible = true;
+
+            userButton.Visible = true;
+            adminButton.Visible = false;
+        }
+
+        private void AdminUserSettings()
+        {
+            StandardUserSetting();
+            adminButton.Visible = true;
         }
 
         private string GetUserEmailFromService()
@@ -98,6 +110,17 @@ namespace DesktopApp.MainForm
         private void seancebutton_Click(object sender, EventArgs e)
         {
             contentPanelController.OpenSeanceForm();
+        }
+
+        private void userButton_Click(object sender, EventArgs e)
+        {
+
+            contentPanelController.OpenUserForm();
+        }
+
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+         contentPanelController.OpenAdminForms();   
         }
     }
 }
