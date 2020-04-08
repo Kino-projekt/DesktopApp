@@ -19,11 +19,13 @@ namespace DesktopApp.Forms.RegistrationForm
 {
     public partial class RegistrationForm : MaterialForm
     {
+        private RegistrationService registrationService;
         public RegistrationForm()
         {
             InitializeComponent();
             DesingerService desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            registrationService = RegistrationServiceImpl.GetService();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -35,23 +37,40 @@ namespace DesktopApp.Forms.RegistrationForm
 
         private void regitstrationButton_Click(object sender, EventArgs e)
         {
-            RegistrationService registrationService = RegistrationServiceImpl.GetService();
-            bool currectEmail = registrationService.SetUserEmail(emailField.Text);
-            if (!currectEmail)
-                wrongEmailLabel.Visible = true;
-            bool currectPassword = registrationService.SetUserPassword(passwordField.Text);
-            if (!currectPassword)
-            {
-                wrongPasswordLabel.Visible = true;
-                passwordSizeLabel.Visible = true;
-                passwordCharLabel.Visible = true;
-            }
 
-            if (currectEmail && currectPassword)
+            if (CheckEmail() && CheckPassword())
             {
-                if(registrationService.RegisterNewUser())
+                if (registrationService.RegisterNewUser())
                     Close(); //registration form
             }
+        }
+
+        private bool CheckEmail()
+        {
+            string email = emailField.Text;
+            if (registrationService.SetUserEmail(email))
+            {
+                wrongEmailLabel.Visible = false;
+                return true;
+            }
+            else
+                wrongEmailLabel.Visible = true;
+
+            return false;
+        }
+
+        private bool CheckPassword()
+        {
+            string password = passwordField.Text;
+            if (registrationService.SetUserPassword(password))
+            {
+                wrongPasswordLabel.Visible = false;
+                return true;
+            }
+            else
+                wrongPasswordLabel.Visible = true;
+
+            return false;
         }
     }
 }

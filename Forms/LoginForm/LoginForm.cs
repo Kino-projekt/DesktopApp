@@ -11,11 +11,14 @@ namespace DesktopApp.Forms.LoginForm
 {
     public partial class LoginForm : MaterialForm
     {
+        private LoginService loginService;
         public LoginForm()
         {
             InitializeComponent();
             DesingerService desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+
+            loginService = LoginServiceImpl.GetService();
         }
 
         private void registractionButton_Click(object sender, EventArgs e)
@@ -27,19 +30,39 @@ namespace DesktopApp.Forms.LoginForm
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            LoginService loginService = LoginServiceImpl.GetService();
-            bool currectEmail = loginService.SetUserEmail(emailField.Text);
-            if (!currectEmail)
+            if (CheckEmail() && CheckPassword())
+            {
+                if (loginService.LoginNewUser())
+                        Close(); //registration form
+            }
+        }
+
+        private bool CheckEmail()
+        {
+            string email = emailField.Text;
+            if (loginService.SetUserEmail(email))
+            {
+                wrongEmailLabel.Visible = false;
+                return true;
+            }
+            else
                 wrongEmailLabel.Visible = true;
-            bool currectPassword = loginService.SetUserPassword(passwordField.Text);
-            if (!currectPassword)
+
+            return false;
+        }
+
+        private bool CheckPassword()
+        {
+            string password = passwordField.Text;
+            if (loginService.SetUserPassword(password))
+            {
+                wrongPasswordLabel.Visible = false;
+                return true;
+            }
+            else
                 wrongPasswordLabel.Visible = true;
 
-            if (currectEmail && currectPassword)
-            {
-                if(loginService.LoginNewUser())
-                    Close(); //registration form
-            }
+            return false;
         }
     }
 }
