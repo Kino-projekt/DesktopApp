@@ -40,8 +40,10 @@ namespace DesktopApp.Forms.RegistrationForm
 
             if (CheckEmail() && CheckPassword())
             {
+                Cursor.Current = Cursors.WaitCursor;
                 if (registrationService.RegisterNewUser())
                     Close(); //registration form
+                Cursor.Current = Cursors.Default;
             }
         }
 

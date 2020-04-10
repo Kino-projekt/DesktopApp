@@ -151,6 +151,7 @@
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordField);
             this.Controls.Add(this.emailField);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
