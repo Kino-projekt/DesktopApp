@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 using Newtonsoft.Json;
 
-namespace DesktopApp.Backend.Controllers.Connection.Methods
+namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
     public class UserCreator
     {
@@ -26,9 +25,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
 
             User user = new User();
 
-            dynamic email = userObject.email;
-            string userEmail = email;
-            user.SetEmail(userEmail);
+            user.SetEmail((string) userObject.email);
 
             dynamic role = userObject.role;
             string userRole = role;
@@ -42,9 +39,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
 
             }
 
-            dynamic token = tokenObject.accessToken;
-            string userToken = token;
-            user.SetToken(userToken);
+            user.SetToken((string)tokenObject.accessToken);
 
             return user;
         }

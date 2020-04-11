@@ -2,7 +2,7 @@
 using System.Net.Http;
 using DesktopApp.Backend.Data;
 
-namespace DesktopApp.Backend.Controllers.Connection.Methods
+namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
     public class ContentCreator
     {

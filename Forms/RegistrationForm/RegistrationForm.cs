@@ -67,11 +67,16 @@ namespace DesktopApp.Forms.RegistrationForm
             if (registrationService.SetUserPassword(password))
             {
                 wrongPasswordLabel.Visible = false;
+                passwordSizeLabel.Visible = false;
+                passwordCharLabel.Visible = false;
                 return true;
             }
             else
+            {
                 wrongPasswordLabel.Visible = true;
-
+                passwordSizeLabel.Visible = true;
+                passwordCharLabel.Visible = true;
+            }
             return false;
         }
     }

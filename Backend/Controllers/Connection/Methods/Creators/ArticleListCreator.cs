@@ -4,7 +4,7 @@ using System.Net.Http;
 using DesktopApp.Backend.Data;
 using Newtonsoft.Json;
 
-namespace DesktopApp.Backend.Controllers.Connection.Methods
+namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
     public class ArticleListCreator
     {
@@ -32,13 +32,8 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods
                 Article article = new Article();
                 dynamic articeObject = objects[i];
 
-                dynamic title = articeObject.title;
-                string aTitle = title;
-                article.SetTitle(aTitle);
-
-                dynamic description = articeObject.description;
-                string aDescription = description;
-                article.SetDescription(aDescription);
+                article.SetTitle((string)articeObject.title);
+                article.SetDescription((string)articeObject.description);
 
                 articles.Add(article);
             }
