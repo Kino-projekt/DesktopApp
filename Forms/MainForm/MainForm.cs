@@ -87,11 +87,6 @@ namespace DesktopApp.MainForm
             return userService.GetUserEmail();
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void settingsButton_Click(object sender, EventArgs e)
         {
             contentPanelController.OpenSettingForm();
@@ -121,6 +116,39 @@ namespace DesktopApp.MainForm
         private void adminButton_Click(object sender, EventArgs e)
         {
          contentPanelController.OpenAdminForms();   
+        }
+
+        private void moviesButton_Click(object sender, EventArgs e)
+        {
+            contentPanelController.OpenMoviesForm();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = CloseDialog();
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DialogResult dialog = CloseDialog();
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private DialogResult CloseDialog()
+        {
+            DialogResult dialog = dialog = MessageBox.Show("Czy na pewno chcesz zamknąć ten program?", "Scruter", MessageBoxButtons.YesNo);
+            return dialog;
         }
     }
 }

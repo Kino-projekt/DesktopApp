@@ -10,5 +10,6 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
         void OpenSeanceForm();
         void OpenAdminForms();
         void OpenUserForm();
+        void OpenMoviesForm();
     }
 }

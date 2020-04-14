@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Forms.MenuForms.Admin;
+using DesktopApp.Forms.MenuForms.Movies;
 using DesktopApp.Forms.MenuForms.News;
 using DesktopApp.Forms.MenuForms.Price;
 using DesktopApp.Forms.MenuForms.Seance;
@@ -51,6 +52,11 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
         public void OpenUserForm()
         {
             content.Open(new UserForm());
+        }
+
+        public void OpenMoviesForm()
+        {
+            content.Open(new MoviesForm());
         }
     }
 }

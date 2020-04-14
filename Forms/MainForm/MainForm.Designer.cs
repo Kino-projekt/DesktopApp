@@ -1,4 +1,6 @@
-﻿namespace DesktopApp.MainForm
+﻿using System.ComponentModel;
+
+namespace DesktopApp.MainForm
 {
     partial class MainForm
     {
@@ -33,6 +35,7 @@
             this.adminButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.userButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.priceButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.moviesButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.logoPanel = new System.Windows.Forms.Panel();
@@ -52,6 +55,7 @@
             this.menuPanel.Controls.Add(this.adminButton);
             this.menuPanel.Controls.Add(this.userButton);
             this.menuPanel.Controls.Add(this.priceButton);
+            this.menuPanel.Controls.Add(this.moviesButton);
             this.menuPanel.Controls.Add(this.seancebutton);
             this.menuPanel.Controls.Add(this.newsButton);
             this.menuPanel.Controls.Add(this.logoPanel);
@@ -71,7 +75,7 @@
             this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsButton.Depth = 0;
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsButton.Location = new System.Drawing.Point(0, 300);
+            this.settingsButton.Location = new System.Drawing.Point(0, 336);
             this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.settingsButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.settingsButton.Name = "settingsButton";
@@ -89,7 +93,7 @@
             this.adminButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminButton.Depth = 0;
             this.adminButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.adminButton.Location = new System.Drawing.Point(0, 264);
+            this.adminButton.Location = new System.Drawing.Point(0, 300);
             this.adminButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.adminButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.adminButton.Name = "adminButton";
@@ -108,7 +112,7 @@
             this.userButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userButton.Depth = 0;
             this.userButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userButton.Location = new System.Drawing.Point(0, 228);
+            this.userButton.Location = new System.Drawing.Point(0, 264);
             this.userButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.userButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.userButton.Name = "userButton";
@@ -127,7 +131,7 @@
             this.priceButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.priceButton.Depth = 0;
             this.priceButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.priceButton.Location = new System.Drawing.Point(0, 192);
+            this.priceButton.Location = new System.Drawing.Point(0, 228);
             this.priceButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.priceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.priceButton.Name = "priceButton";
@@ -137,6 +141,24 @@
             this.priceButton.Text = "Cennik";
             this.priceButton.UseVisualStyleBackColor = true;
             this.priceButton.Click += new System.EventHandler(this.priceButton_Click);
+            // 
+            // moviesButton
+            // 
+            this.moviesButton.AutoSize = true;
+            this.moviesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.moviesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moviesButton.Depth = 0;
+            this.moviesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.moviesButton.Location = new System.Drawing.Point(0, 192);
+            this.moviesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.moviesButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.moviesButton.Name = "moviesButton";
+            this.moviesButton.Primary = false;
+            this.moviesButton.Size = new System.Drawing.Size(200, 36);
+            this.moviesButton.TabIndex = 7;
+            this.moviesButton.Text = "Filmoteka";
+            this.moviesButton.UseVisualStyleBackColor = true;
+            this.moviesButton.Click += new System.EventHandler(this.moviesButton_Click);
             // 
             // seancebutton
             // 
@@ -276,6 +298,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scruter";
+            this.Closing += new CancelEventHandler(this.MainForm_FormClosing);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             this.logoPanel.ResumeLayout(false);
@@ -299,5 +322,6 @@
         private MaterialSkin.Controls.MaterialLabel userEmailLabel;
         private MaterialSkin.Controls.MaterialFlatButton adminButton;
         private MaterialSkin.Controls.MaterialFlatButton userButton;
+        private MaterialSkin.Controls.MaterialFlatButton moviesButton;
     }
 }

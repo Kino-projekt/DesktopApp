@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.menuPanel = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tabMenu = new MaterialSkin.Controls.MaterialTabControl();
+            this.mainMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.seanceTab = new System.Windows.Forms.TabPage();
-            this.ticketTab = new System.Windows.Forms.TabPage();
+            this.newsTab = new System.Windows.Forms.TabPage();
+            this.seancesTab = new System.Windows.Forms.TabPage();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.moviesTab = new System.Windows.Forms.TabPage();
+            this.roomsTab = new System.Windows.Forms.TabPage();
             this.usersTab = new System.Windows.Forms.TabPage();
             this.mainPanel.SuspendLayout();
-            this.menuPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
-            this.tabMenu.SuspendLayout();
+            this.mainMenu.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -53,6 +56,83 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(800, 600);
             this.mainPanel.TabIndex = 0;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Controls.Add(this.mainMenu);
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(0, 60);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(800, 540);
+            this.contentPanel.TabIndex = 2;
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.Controls.Add(this.seanceTab);
+            this.mainMenu.Controls.Add(this.newsTab);
+            this.mainMenu.Controls.Add(this.seancesTab);
+            this.mainMenu.Controls.Add(this.moviesTab);
+            this.mainMenu.Controls.Add(this.roomsTab);
+            this.mainMenu.Controls.Add(this.usersTab);
+            this.mainMenu.Depth = 0;
+            this.mainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.SelectedIndex = 0;
+            this.mainMenu.Size = new System.Drawing.Size(800, 540);
+            this.mainMenu.TabIndex = 0;
+            // 
+            // seanceTab
+            // 
+            this.seanceTab.Location = new System.Drawing.Point(4, 22);
+            this.seanceTab.Name = "seanceTab";
+            this.seanceTab.Padding = new System.Windows.Forms.Padding(3);
+            this.seanceTab.Size = new System.Drawing.Size(792, 514);
+            this.seanceTab.TabIndex = 0;
+            this.seanceTab.Text = "Sprawdzarka biletów";
+            this.seanceTab.UseVisualStyleBackColor = true;
+            // 
+            // newsTab
+            // 
+            this.newsTab.Location = new System.Drawing.Point(4, 22);
+            this.newsTab.Name = "newsTab";
+            this.newsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.newsTab.Size = new System.Drawing.Size(792, 514);
+            this.newsTab.TabIndex = 1;
+            this.newsTab.Text = "Newsy";
+            this.newsTab.UseVisualStyleBackColor = true;
+            // 
+            // seancesTab
+            // 
+            this.seancesTab.Location = new System.Drawing.Point(4, 22);
+            this.seancesTab.Name = "seancesTab";
+            this.seancesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.seancesTab.Size = new System.Drawing.Size(792, 514);
+            this.seancesTab.TabIndex = 2;
+            this.seancesTab.Text = "Seanse";
+            this.seancesTab.UseVisualStyleBackColor = true;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.Controls.Add(this.materialTabSelector1);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(800, 60);
+            this.menuPanel.TabIndex = 1;
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.mainMenu;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(800, 60);
+            this.materialTabSelector1.TabIndex = 0;
+            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // materialLabel1
             // 
@@ -67,69 +147,25 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
             // 
-            // menuPanel
+            // moviesTab
             // 
-            this.menuPanel.Controls.Add(this.materialTabSelector1);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(800, 60);
-            this.menuPanel.TabIndex = 1;
+            this.moviesTab.Location = new System.Drawing.Point(4, 22);
+            this.moviesTab.Name = "moviesTab";
+            this.moviesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.moviesTab.Size = new System.Drawing.Size(792, 514);
+            this.moviesTab.TabIndex = 3;
+            this.moviesTab.Text = "Filmy";
+            this.moviesTab.UseVisualStyleBackColor = true;
             // 
-            // contentPanel
+            // roomsTab
             // 
-            this.contentPanel.Controls.Add(this.tabMenu);
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(0, 60);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(800, 540);
-            this.contentPanel.TabIndex = 2;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.tabMenu;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(800, 60);
-            this.materialTabSelector1.TabIndex = 0;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // tabMenu
-            // 
-            this.tabMenu.Controls.Add(this.seanceTab);
-            this.tabMenu.Controls.Add(this.ticketTab);
-            this.tabMenu.Controls.Add(this.usersTab);
-            this.tabMenu.Depth = 0;
-            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMenu.Location = new System.Drawing.Point(0, 0);
-            this.tabMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabMenu.Name = "tabMenu";
-            this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(800, 540);
-            this.tabMenu.TabIndex = 0;
-            // 
-            // seanceTab
-            // 
-            this.seanceTab.Location = new System.Drawing.Point(4, 22);
-            this.seanceTab.Name = "seanceTab";
-            this.seanceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.seanceTab.Size = new System.Drawing.Size(792, 514);
-            this.seanceTab.TabIndex = 0;
-            this.seanceTab.Text = "Zarządzaj seansami";
-            this.seanceTab.UseVisualStyleBackColor = true;
-            // 
-            // ticketTab
-            // 
-            this.ticketTab.Location = new System.Drawing.Point(4, 22);
-            this.ticketTab.Name = "ticketTab";
-            this.ticketTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ticketTab.Size = new System.Drawing.Size(792, 514);
-            this.ticketTab.TabIndex = 1;
-            this.ticketTab.Text = "Sprawdzarka biletów";
-            this.ticketTab.UseVisualStyleBackColor = true;
+            this.roomsTab.Location = new System.Drawing.Point(4, 22);
+            this.roomsTab.Name = "roomsTab";
+            this.roomsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.roomsTab.Size = new System.Drawing.Size(792, 514);
+            this.roomsTab.TabIndex = 4;
+            this.roomsTab.Text = "Sale";
+            this.roomsTab.UseVisualStyleBackColor = true;
             // 
             // usersTab
             // 
@@ -137,7 +173,7 @@
             this.usersTab.Name = "usersTab";
             this.usersTab.Padding = new System.Windows.Forms.Padding(3);
             this.usersTab.Size = new System.Drawing.Size(792, 514);
-            this.usersTab.TabIndex = 2;
+            this.usersTab.TabIndex = 5;
             this.usersTab.Text = "Użytkownicy";
             this.usersTab.UseVisualStyleBackColor = true;
             // 
@@ -151,9 +187,9 @@
             this.Text = "AdminForm";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            this.menuPanel.ResumeLayout(false);
             this.contentPanel.ResumeLayout(false);
-            this.tabMenu.ResumeLayout(false);
+            this.mainMenu.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,10 +200,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel menuPanel;
-        private MaterialSkin.Controls.MaterialTabControl tabMenu;
-        private System.Windows.Forms.TabPage seanceTab;
-        private System.Windows.Forms.TabPage ticketTab;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabControl mainMenu;
+        private System.Windows.Forms.TabPage newsTab;
+        private System.Windows.Forms.TabPage seancesTab;
+        private System.Windows.Forms.TabPage seanceTab;
+        private System.Windows.Forms.TabPage moviesTab;
+        private System.Windows.Forms.TabPage roomsTab;
         private System.Windows.Forms.TabPage usersTab;
     }
 }
