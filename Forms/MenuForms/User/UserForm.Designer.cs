@@ -34,27 +34,27 @@
             this.reservationTab = new System.Windows.Forms.TabPage();
             this.statisticTab = new System.Windows.Forms.TabPage();
             this.settingsTab = new System.Windows.Forms.TabPage();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
-            this.passwordPanel = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.oldPasswordField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.newPasswordField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.saveNewPasswordButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.passwordPanel = new System.Windows.Forms.Panel();
+            this.saveNewPasswordButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.newPasswordField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.oldPasswordField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.settingsTab.SuspendLayout();
-            this.menuPanel.SuspendLayout();
-            this.passwordPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.passwordPanel.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -122,126 +122,6 @@
             this.settingsTab.Text = "Ustawienia konta";
             this.settingsTab.UseVisualStyleBackColor = true;
             // 
-            // menuPanel
-            // 
-            this.menuPanel.Controls.Add(this.tabSelector);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(800, 60);
-            this.menuPanel.TabIndex = 0;
-            // 
-            // tabSelector
-            // 
-            this.tabSelector.BaseTabControl = this.tabMenu;
-            this.tabSelector.Depth = 0;
-            this.tabSelector.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabSelector.Location = new System.Drawing.Point(0, 0);
-            this.tabSelector.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabSelector.Name = "tabSelector";
-            this.tabSelector.Size = new System.Drawing.Size(800, 60);
-            this.tabSelector.TabIndex = 0;
-            this.tabSelector.Text = "materialTabSelector1";
-            // 
-            // passwordPanel
-            // 
-            this.passwordPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.passwordPanel.Controls.Add(this.saveNewPasswordButton);
-            this.passwordPanel.Controls.Add(this.materialLabel3);
-            this.passwordPanel.Controls.Add(this.newPasswordField);
-            this.passwordPanel.Controls.Add(this.materialLabel2);
-            this.passwordPanel.Controls.Add(this.oldPasswordField);
-            this.passwordPanel.Controls.Add(this.materialLabel1);
-            this.passwordPanel.Location = new System.Drawing.Point(15, 13);
-            this.passwordPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.passwordPanel.Name = "passwordPanel";
-            this.passwordPanel.Size = new System.Drawing.Size(762, 120);
-            this.passwordPanel.TabIndex = 1;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(312, 17);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(99, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Zmiana hasła";
-            // 
-            // oldPasswordField
-            // 
-            this.oldPasswordField.Depth = 0;
-            this.oldPasswordField.Hint = "Password";
-            this.oldPasswordField.Location = new System.Drawing.Point(33, 79);
-            this.oldPasswordField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.oldPasswordField.Name = "oldPasswordField";
-            this.oldPasswordField.PasswordChar = '\0';
-            this.oldPasswordField.SelectedText = "";
-            this.oldPasswordField.SelectionLength = 0;
-            this.oldPasswordField.SelectionStart = 0;
-            this.oldPasswordField.Size = new System.Drawing.Size(191, 23);
-            this.oldPasswordField.TabIndex = 1;
-            this.oldPasswordField.UseSystemPasswordChar = false;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(71, 57);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(100, 19);
-            this.materialLabel2.TabIndex = 2;
-            this.materialLabel2.Text = "Obecne hasło";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(369, 57);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(89, 19);
-            this.materialLabel3.TabIndex = 4;
-            this.materialLabel3.Text = "Nowe hasło";
-            // 
-            // newPasswordField
-            // 
-            this.newPasswordField.Depth = 0;
-            this.newPasswordField.Hint = "Password";
-            this.newPasswordField.Location = new System.Drawing.Point(331, 79);
-            this.newPasswordField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.newPasswordField.Name = "newPasswordField";
-            this.newPasswordField.PasswordChar = '\0';
-            this.newPasswordField.SelectedText = "";
-            this.newPasswordField.SelectionLength = 0;
-            this.newPasswordField.SelectionStart = 0;
-            this.newPasswordField.Size = new System.Drawing.Size(191, 23);
-            this.newPasswordField.TabIndex = 3;
-            this.newPasswordField.UseSystemPasswordChar = false;
-            // 
-            // saveNewPasswordButton
-            // 
-            this.saveNewPasswordButton.AutoSize = true;
-            this.saveNewPasswordButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveNewPasswordButton.Depth = 0;
-            this.saveNewPasswordButton.Location = new System.Drawing.Point(619, 66);
-            this.saveNewPasswordButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.saveNewPasswordButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.saveNewPasswordButton.Name = "saveNewPasswordButton";
-            this.saveNewPasswordButton.Primary = false;
-            this.saveNewPasswordButton.Size = new System.Drawing.Size(113, 36);
-            this.saveNewPasswordButton.TabIndex = 5;
-            this.saveNewPasswordButton.Text = "Zapisz zmianę";
-            this.saveNewPasswordButton.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -254,6 +134,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(762, 120);
             this.panel1.TabIndex = 2;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.BackColor = System.Drawing.Color.MintCream;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(619, 63);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(97, 36);
+            this.materialFlatButton1.TabIndex = 3;
+            this.materialFlatButton1.Text = "Usuń konto";
+            this.materialFlatButton1.UseVisualStyleBackColor = false;
             // 
             // materialLabel5
             // 
@@ -289,28 +185,132 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(327, 21);
+            this.materialLabel6.Location = new System.Drawing.Point(312, 19);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(86, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(122, 19);
             this.materialLabel6.TabIndex = 0;
-            this.materialLabel6.Text = "Usuń konto";
+            this.materialLabel6.Text = "Likwidacja konta";
             // 
-            // materialFlatButton1
+            // passwordPanel
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.BackColor = System.Drawing.Color.MintCream;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(619, 63);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(97, 36);
-            this.materialFlatButton1.TabIndex = 3;
-            this.materialFlatButton1.Text = "Usuń konto";
-            this.materialFlatButton1.UseVisualStyleBackColor = false;
+            this.passwordPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.passwordPanel.Controls.Add(this.saveNewPasswordButton);
+            this.passwordPanel.Controls.Add(this.materialLabel3);
+            this.passwordPanel.Controls.Add(this.newPasswordField);
+            this.passwordPanel.Controls.Add(this.materialLabel2);
+            this.passwordPanel.Controls.Add(this.oldPasswordField);
+            this.passwordPanel.Controls.Add(this.materialLabel1);
+            this.passwordPanel.Location = new System.Drawing.Point(15, 13);
+            this.passwordPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.passwordPanel.Name = "passwordPanel";
+            this.passwordPanel.Size = new System.Drawing.Size(762, 120);
+            this.passwordPanel.TabIndex = 1;
+            // 
+            // saveNewPasswordButton
+            // 
+            this.saveNewPasswordButton.AutoSize = true;
+            this.saveNewPasswordButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.saveNewPasswordButton.Depth = 0;
+            this.saveNewPasswordButton.Location = new System.Drawing.Point(619, 66);
+            this.saveNewPasswordButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.saveNewPasswordButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saveNewPasswordButton.Name = "saveNewPasswordButton";
+            this.saveNewPasswordButton.Primary = false;
+            this.saveNewPasswordButton.Size = new System.Drawing.Size(113, 36);
+            this.saveNewPasswordButton.TabIndex = 5;
+            this.saveNewPasswordButton.Text = "Zapisz zmianę";
+            this.saveNewPasswordButton.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(369, 57);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel3.TabIndex = 4;
+            this.materialLabel3.Text = "Nowe hasło";
+            // 
+            // newPasswordField
+            // 
+            this.newPasswordField.Depth = 0;
+            this.newPasswordField.Hint = "Password";
+            this.newPasswordField.Location = new System.Drawing.Point(331, 79);
+            this.newPasswordField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.newPasswordField.Name = "newPasswordField";
+            this.newPasswordField.PasswordChar = '\0';
+            this.newPasswordField.SelectedText = "";
+            this.newPasswordField.SelectionLength = 0;
+            this.newPasswordField.SelectionStart = 0;
+            this.newPasswordField.Size = new System.Drawing.Size(191, 23);
+            this.newPasswordField.TabIndex = 3;
+            this.newPasswordField.UseSystemPasswordChar = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(71, 57);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(100, 19);
+            this.materialLabel2.TabIndex = 2;
+            this.materialLabel2.Text = "Obecne hasło";
+            // 
+            // oldPasswordField
+            // 
+            this.oldPasswordField.Depth = 0;
+            this.oldPasswordField.Hint = "Password";
+            this.oldPasswordField.Location = new System.Drawing.Point(33, 79);
+            this.oldPasswordField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.oldPasswordField.Name = "oldPasswordField";
+            this.oldPasswordField.PasswordChar = '\0';
+            this.oldPasswordField.SelectedText = "";
+            this.oldPasswordField.SelectionLength = 0;
+            this.oldPasswordField.SelectionStart = 0;
+            this.oldPasswordField.Size = new System.Drawing.Size(191, 23);
+            this.oldPasswordField.TabIndex = 1;
+            this.oldPasswordField.UseSystemPasswordChar = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(312, 17);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Zmiana hasła";
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.Controls.Add(this.tabSelector);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(800, 60);
+            this.menuPanel.TabIndex = 0;
+            // 
+            // tabSelector
+            // 
+            this.tabSelector.BaseTabControl = this.tabMenu;
+            this.tabSelector.Depth = 0;
+            this.tabSelector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabSelector.Location = new System.Drawing.Point(0, 0);
+            this.tabSelector.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabSelector.Name = "tabSelector";
+            this.tabSelector.Size = new System.Drawing.Size(800, 60);
+            this.tabSelector.TabIndex = 0;
+            this.tabSelector.Text = "materialTabSelector1";
             // 
             // UserForm
             // 
@@ -324,11 +324,11 @@
             this.contentPanel.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.settingsTab.ResumeLayout(false);
-            this.menuPanel.ResumeLayout(false);
-            this.passwordPanel.ResumeLayout(false);
-            this.passwordPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.passwordPanel.ResumeLayout(false);
+            this.passwordPanel.PerformLayout();
+            this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

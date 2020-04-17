@@ -32,5 +32,6 @@ namespace DesktopApp.Forms.MenuForms.Settings
         {
             desingerService.SetLightTheme();
         }
+
     }
 }
