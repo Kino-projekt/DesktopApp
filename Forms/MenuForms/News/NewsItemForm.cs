@@ -13,14 +13,20 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.News
 {
-    public partial class NewsForm : MaterialForm
+    public partial class NewsItemForm : MaterialForm
     {
         private DesingerService desingerService;
-        public NewsForm()
+        private Article article;
+
+        public NewsItemForm(Article article)
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+
+            this.article = article;
+            titleLabel.Text = article.GetTitle();
+            descriptionLabel.Text = article.GetDescription();
         }
     }
 }

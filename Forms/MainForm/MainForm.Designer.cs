@@ -298,7 +298,7 @@ namespace DesktopApp.MainForm
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scruter";
-            this.Closing += new CancelEventHandler(this.MainForm_FormClosing);
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_FormClosing);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             this.logoPanel.ResumeLayout(false);
