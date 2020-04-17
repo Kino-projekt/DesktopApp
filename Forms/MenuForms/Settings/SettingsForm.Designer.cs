@@ -73,6 +73,7 @@
             // 
             // lightColorButton
             // 
+            this.lightColorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lightColorButton.Depth = 0;
             this.lightColorButton.Location = new System.Drawing.Point(498, 40);
             this.lightColorButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -86,6 +87,7 @@
             // 
             // darkColorButton
             // 
+            this.darkColorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.darkColorButton.Depth = 0;
             this.darkColorButton.Location = new System.Drawing.Point(252, 40);
             this.darkColorButton.MouseState = MaterialSkin.MouseState.HOVER;
