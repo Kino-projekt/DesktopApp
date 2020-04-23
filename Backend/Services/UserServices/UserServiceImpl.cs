@@ -50,5 +50,10 @@ namespace DesktopApp.Backend.Services.UserServices
         {
             return userData.GetEmail();
         }
+
+        public string GetUserToken()
+        {
+            return userData.GetToken();
+        }
     }
 }

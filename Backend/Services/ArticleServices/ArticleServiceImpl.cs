@@ -25,9 +25,9 @@ namespace DesktopApp.Backend.Services.ArticleServices
             return articles;
         }
 
-        public void SendArticleToServer(User user, Article article)
+        public void SendArticleToServer( Article article)
         {
-            connectionController.SendArticle(user, article);
+            connectionController.SendArticle(article);
         }
 
         private void GetArticlesFromServer()

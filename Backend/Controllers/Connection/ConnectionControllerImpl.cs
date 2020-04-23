@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.UserServices;
 
 namespace DesktopApp.Backend.Controllers.Connection
 {
@@ -50,10 +51,11 @@ namespace DesktopApp.Backend.Controllers.Connection
             return false;
         }
 
-        public void SendArticle(User userData, Article article)
+        public void SendArticle(Article article)
         {
             var content = ContentCreator.CreateContent(article);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userData.GetToken());
+            UserService userService = UserServiceImpl.GetInstance();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
             HttpResponseMessage response = client.PostAsync("/api/articles", content).Result;
             if (response.StatusCode == HttpStatusCode.Created)
             {

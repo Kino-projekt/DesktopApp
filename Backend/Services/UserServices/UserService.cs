@@ -8,5 +8,7 @@ namespace DesktopApp.Backend.Services.UserServices
         void PutNewUser(User userData);
         void RemoveUser();
         string GetUserEmail();
+
+        string GetUserToken();
     }
 }

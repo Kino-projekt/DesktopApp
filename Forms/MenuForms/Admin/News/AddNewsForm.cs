@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.ArticleServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
@@ -20,6 +22,16 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+        }
+
+        private void sendButton_Click(object sender, EventArgs e)
+        {
+            Article article = new Article();
+            article.SetTitle(titleField.Text);
+            article.SetDescription(descriptionField.Text);
+
+            ArticleService articleService = ArticleServiceImpl.GetService();
+            articleService.SendArticleToServer(article);
         }
     }
 }

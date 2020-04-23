@@ -31,8 +31,12 @@ namespace DesktopApp.MainForm
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            UserService userService = UserServiceImpl.GetInstance();
-            userService.RemoveUser();
+            DialogResult dialog = LogoutDialog();
+            if (dialog == DialogResult.Yes)
+            {
+                UserService userService = UserServiceImpl.GetInstance();
+                userService.RemoveUser();
+            }
         }
 
         public void SetUserRole(Role role)
@@ -148,6 +152,12 @@ namespace DesktopApp.MainForm
         private DialogResult CloseDialog()
         {
             DialogResult dialog = dialog = MessageBox.Show("Czy na pewno chcesz zamknąć ten program?", "Scruter", MessageBoxButtons.YesNo);
+            return dialog;
+        }
+
+        private DialogResult LogoutDialog()
+        {
+            DialogResult dialog = dialog = MessageBox.Show("Czy na pewno chcesz się wylogować z programu?", "Scruter", MessageBoxButtons.YesNo);
             return dialog;
         }
     }
