@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Windows.Forms;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Data;
@@ -56,10 +57,18 @@ namespace DesktopApp.Backend.Controllers.Connection
             var content = ContentCreator.CreateContent(article);
             UserService userService = UserServiceImpl.GetInstance();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
-            HttpResponseMessage response = client.PostAsync("/api/articles", content).Result;
+            HttpResponseMessage response = client.PostAsync("/api/admin/articles", content).Result;
             if (response.StatusCode == HttpStatusCode.Created)
             {
-
+                ShowInfo("Ogłoszenie wysłane");
+            }
+            else if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                ShowInfo("Brak dostępu!");
+            }
+            else
+            {
+                ShowInfo("Błąd nieznany!");
             }
         }
 
@@ -71,6 +80,11 @@ namespace DesktopApp.Backend.Controllers.Connection
                 return ArticleListCreator.CreateArticles(response);
             }
             return null;
+        }
+
+        private void ShowInfo(string message)
+        {
+            DialogResult dialog = dialog = MessageBox.Show(message, "Scruter", MessageBoxButtons.OK);
         }
 
     }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.User
@@ -20,6 +21,11 @@ namespace DesktopApp.Forms.MenuForms.User
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+
+            UserService userService = UserServiceImpl.GetInstance();
+
+            emailField.Text = userService.GetUserEmail();
+            tokenField.Text = userService.GetUserToken();
         }
     }
 }

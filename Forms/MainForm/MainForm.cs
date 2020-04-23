@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel;
 using DesktopApp.Backend.Controllers.Forms;
@@ -27,6 +28,8 @@ namespace DesktopApp.MainForm
         {
             FormsController formsController = FormsControllerImpl.GetInstance();
             formsController.OpenLoginForm();
+
+            
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -99,6 +102,7 @@ namespace DesktopApp.MainForm
         private void priceButton_Click(object sender, EventArgs e)
         {
             contentPanelController.OpenPriceForm();
+            
         }
 
         private void newsButton_Click(object sender, EventArgs e)
@@ -160,5 +164,6 @@ namespace DesktopApp.MainForm
             DialogResult dialog = dialog = MessageBox.Show("Czy na pewno chcesz się wylogować z programu?", "Scruter", MessageBoxButtons.YesNo);
             return dialog;
         }
+
     }
 }

@@ -48,13 +48,19 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.tabMenu.SuspendLayout();
+            this.statisticTab.SuspendLayout();
             this.settingsTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.passwordPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -102,6 +108,7 @@
             // 
             // statisticTab
             // 
+            this.statisticTab.Controls.Add(this.panel2);
             this.statisticTab.Location = new System.Drawing.Point(4, 22);
             this.statisticTab.Name = "statisticTab";
             this.statisticTab.Padding = new System.Windows.Forms.Padding(3);
@@ -312,6 +319,62 @@
             this.tabSelector.TabIndex = 0;
             this.tabSelector.Text = "materialTabSelector1";
             // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(200, 22);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(268, 18);
+            this.materialLabel4.TabIndex = 0;
+            this.materialLabel4.Text = "Chwilowe info o użytkowniku do testów";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.emailField);
+            this.panel2.Controls.Add(this.tokenField);
+            this.panel2.Controls.Add(this.materialLabel4);
+            this.panel2.Location = new System.Drawing.Point(35, 113);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(668, 211);
+            this.panel2.TabIndex = 1;
+            // 
+            // tokenField
+            // 
+            this.tokenField.Depth = 0;
+            this.tokenField.Hint = "";
+            this.tokenField.Location = new System.Drawing.Point(18, 138);
+            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tokenField.Name = "tokenField";
+            this.tokenField.PasswordChar = '\0';
+            this.tokenField.SelectedText = "";
+            this.tokenField.SelectionLength = 0;
+            this.tokenField.SelectionStart = 0;
+            this.tokenField.Size = new System.Drawing.Size(633, 23);
+            this.tokenField.TabIndex = 1;
+            this.tokenField.Text = "token";
+            this.tokenField.UseSystemPasswordChar = false;
+            // 
+            // emailField
+            // 
+            this.emailField.Depth = 0;
+            this.emailField.Hint = "";
+            this.emailField.Location = new System.Drawing.Point(18, 76);
+            this.emailField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailField.Name = "emailField";
+            this.emailField.PasswordChar = '\0';
+            this.emailField.SelectedText = "";
+            this.emailField.SelectionLength = 0;
+            this.emailField.SelectionStart = 0;
+            this.emailField.Size = new System.Drawing.Size(633, 23);
+            this.emailField.TabIndex = 2;
+            this.emailField.Text = "email";
+            this.emailField.UseSystemPasswordChar = false;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,12 +386,15 @@
             this.mainPanel.ResumeLayout(false);
             this.contentPanel.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
+            this.statisticTab.ResumeLayout(false);
             this.settingsTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.passwordPanel.ResumeLayout(false);
             this.passwordPanel.PerformLayout();
             this.menuPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -355,5 +421,9 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField emailField;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tokenField;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

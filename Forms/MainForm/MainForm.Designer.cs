@@ -30,6 +30,7 @@ namespace DesktopApp.MainForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.settingsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.adminButton = new MaterialSkin.Controls.MaterialFlatButton();
@@ -44,6 +45,7 @@ namespace DesktopApp.MainForm
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -283,6 +285,11 @@ namespace DesktopApp.MainForm
             this.contentPanel.Size = new System.Drawing.Size(800, 601);
             this.contentPanel.TabIndex = 1;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +330,6 @@ namespace DesktopApp.MainForm
         private MaterialSkin.Controls.MaterialFlatButton adminButton;
         private MaterialSkin.Controls.MaterialFlatButton userButton;
         private MaterialSkin.Controls.MaterialFlatButton moviesButton;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
