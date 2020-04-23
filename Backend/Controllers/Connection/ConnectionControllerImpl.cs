@@ -58,17 +58,9 @@ namespace DesktopApp.Backend.Controllers.Connection
             UserService userService = UserServiceImpl.GetInstance();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
             HttpResponseMessage response = client.PostAsync("/api/admin/articles", content).Result;
-            if (response.StatusCode == HttpStatusCode.Created)
+            if (response.StatusCode != HttpStatusCode.Created)
             {
-                ShowInfo("Ogłoszenie wysłane");
-            }
-            else if (response.StatusCode == HttpStatusCode.Unauthorized)
-            {
-                ShowInfo("Brak dostępu!");
-            }
-            else
-            {
-                ShowInfo("Błąd nieznany!");
+                ShowInfo("Błąd wysyłania!");
             }
         }
 
@@ -79,6 +71,22 @@ namespace DesktopApp.Backend.Controllers.Connection
             {
                 return ArticleListCreator.CreateArticles(response);
             }
+            return null;
+        }
+
+        public List<Article> GetAdminArticlesFromServer()
+        {
+            UserService userService = UserServiceImpl.GetInstance();
+            List<Article> articles;
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
+            HttpResponseMessage response = client.GetAsync("/api/admin/articles").Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                articles = ArticleListCreator.CreateArticles(response);
+                return articles;
+            }
+            ShowInfo("Błąd pobierania artykułów!");
             return null;
         }
 

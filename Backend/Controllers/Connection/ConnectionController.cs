@@ -10,5 +10,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         bool Singin(AuthData user);
         void SendArticle(Article article);
         List<Article> GetArticlesFromServer();
+
+        List<Article> GetAdminArticlesFromServer();
     }
 }
