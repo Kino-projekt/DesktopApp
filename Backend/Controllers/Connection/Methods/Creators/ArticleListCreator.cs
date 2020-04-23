@@ -32,8 +32,10 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 Article article = new Article();
                 dynamic articeObject = objects[i];
 
+                article.SetId((int)articeObject.id);
                 article.SetTitle((string)articeObject.title);
                 article.SetDescription((string)articeObject.description);
+                article.SetStatus((string)articeObject.status);
 
                 articles.Add(article);
             }
