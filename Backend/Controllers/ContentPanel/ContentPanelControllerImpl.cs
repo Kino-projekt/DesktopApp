@@ -12,7 +12,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
 {
     public class ContentPanelControllerImpl : ContentPanelController
     {
-        private ContentCreator content;
+        private PanelCreator content;
 
         public static ContentPanelController CreateController(Panel panel)
         {
@@ -21,7 +21,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
 
         private ContentPanelControllerImpl(Panel panel)
         {
-            content = new ContentCreator(panel);
+            content = new PanelCreator(panel);
         }
 
         public void OpenSettingForm()

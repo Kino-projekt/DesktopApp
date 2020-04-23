@@ -3,12 +3,12 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Backend.Controllers.ContentPanel.Methods
 {
-    public class ContentCreator
+    public class PanelCreator
     {
         private Panel panel;
         private MaterialForm activeForm = null;
 
-        public ContentCreator(Panel panel)
+        public PanelCreator(Panel panel)
         {
             this.panel = panel;
         }

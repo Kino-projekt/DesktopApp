@@ -65,7 +65,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         private void CreateNewsPanel(Panel panel, int number)
         {
             panel.Visible = true;
-            ContentCreator contentPanel = new ContentCreator(panel);
+            PanelCreator contentPanel = new PanelCreator(panel);
             contentPanel.Open(new NewsInfoForm(articles[number]));
         }
 

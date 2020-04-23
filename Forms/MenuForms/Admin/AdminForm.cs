@@ -17,7 +17,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
     public partial class AdminForm : MaterialForm
     {
         private DesingerService desingerService;
-        private ContentCreator newsContent;
+        private PanelCreator newsContent;
 
         public AdminForm()
         {
@@ -25,7 +25,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
 
-            newsContent = new ContentCreator(newsPanel);
+            newsContent = new PanelCreator(newsPanel);
             newsContent.Open(new NewsListForm());
         }
 
