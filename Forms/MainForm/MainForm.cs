@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.ContentPanel;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
+using DesktopApp.Properties;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.MainForm
@@ -23,6 +25,7 @@ namespace DesktopApp.MainForm
             desingerService.AddPanelToChangeColor(menuPanel);
             contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
             contentPanelController.OpenNewsForm();
+            
         }
 
         private void loginButton_Click(object sender, EventArgs e)

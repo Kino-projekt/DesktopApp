@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using DesktopApp.Properties;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -23,7 +24,7 @@ namespace DesktopApp.Backend.Services.DesingerServices
             manager = MaterialSkin.MaterialSkinManager.Instance;
             manager.Theme = MaterialSkinManager.Themes.DARK;
             panels = new List<Panel>();
-            color = ColorStyle.Blue;
+            color = (ColorStyle) Settings.Default.Color;
         }
 
         public void AddFormToDesinger(MaterialForm materialForm)
@@ -50,6 +51,8 @@ namespace DesktopApp.Backend.Services.DesingerServices
         public void SetColorStyle(ColorStyle color)
         {
             this.color = color;
+            Properties.Settings.Default.Color = (int) color;
+            Properties.Settings.Default.Save();
             foreach (var panel in panels)
             {
                 SetColorForPanel(panel);
@@ -58,45 +61,48 @@ namespace DesktopApp.Backend.Services.DesingerServices
 
         private void SetColorForPanel(Panel panel)
         {
-            if (color == ColorStyle.Blue)
+            switch (color)
             {
-                panel.BackColor = Color.RoyalBlue;
-                SetDarkTheme();
-            }
-            else if (color == ColorStyle.Red)
-            {
-                panel.BackColor = Color.DarkRed;
-                SetDarkTheme();
-            }
-            else if (color == ColorStyle.Green)
-            {
-                panel.BackColor = Color.DarkGreen;
-                SetDarkTheme();
-            }
-            else if (color == ColorStyle.Purple)
-            {
-                panel.BackColor = Color.DarkMagenta;
-                SetDarkTheme();
-            }
-            else if (color == ColorStyle.Orange)
-            {
-                panel.BackColor = Color.Orange;
-                SetLightTheme();
-            }
-            else if (color == ColorStyle.Pink)
-            {
-                panel.BackColor = Color.Tomato;
-                SetLightTheme();
-            }
-            else if (color == ColorStyle.LightGreen)
-            {
-                panel.BackColor = Color.SpringGreen;
-                SetLightTheme();
-            }
-            else if (color == ColorStyle.LightBlue)
-            {
-                panel.BackColor = Color.DeepSkyBlue;
-                SetLightTheme();
+                case ColorStyle.Blue:
+                    panel.BackColor = Color.RoyalBlue;
+                    SetDarkTheme();
+                    break;
+
+                case ColorStyle.Red:
+                    panel.BackColor = Color.DarkRed;
+                    SetDarkTheme();
+                    break;
+
+                case ColorStyle.Green:
+                    panel.BackColor = Color.DarkGreen;
+                    SetDarkTheme();
+                    break;
+
+                case ColorStyle.Purple:
+                    panel.BackColor = Color.DarkMagenta;
+                    SetDarkTheme();
+                    break;
+
+                case ColorStyle.Orange:
+                    panel.BackColor = Color.Orange;
+                    SetLightTheme();
+                    break;
+
+                case ColorStyle.Pink:
+                    panel.BackColor = Color.Tomato;
+                    SetLightTheme();
+                    break;
+
+                case ColorStyle.LightGreen:
+                    panel.BackColor = Color.SpringGreen;
+                    SetLightTheme();
+                    break;
+
+                case ColorStyle.LightBlue:
+                    panel.BackColor = Color.DeepSkyBlue;
+                    SetLightTheme();
+                    break;
+
             }
         }
     }
