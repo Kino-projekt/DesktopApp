@@ -24,6 +24,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         private List<Article> articles;
         private int lastArticle;
         private int sizeList;
+        private int pageNumber;
 
         public NewsListForm()
         {
@@ -32,6 +33,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             desingerService.AddFormToDesinger(this);
 
             articleService = ArticleAdminServiceImpl.GetService();
+            pageNumber = 1;
             DownloadArticlesList();
             ShowNews();
         }
@@ -81,17 +83,20 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         private void previusPageButton_Click(object sender, EventArgs e)
         {
             lastArticle = lastArticle - 6;
+            pageNumber--;
             ShowNews();
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)
         {
             lastArticle = lastArticle + 6;
+            pageNumber++;
             ShowNews();
         }
 
         private void CleanContentPanel()
         {
+            SetPageNumberLabel();
             previusPageButton.Visible = false;
             nextPageButton.Visible = false;
 
@@ -101,6 +106,11 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             panel4.Visible = false;
             panel5.Visible = false;
             panel6.Visible = false;
+        }
+
+        private void SetPageNumberLabel()
+        {
+            pageNumberLabel.Text = "Strona: " + pageNumber;
         }
     }
 }

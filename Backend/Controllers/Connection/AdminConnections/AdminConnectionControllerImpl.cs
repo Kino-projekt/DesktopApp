@@ -72,11 +72,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             {
                 Content = content
             }).Result;
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                DialogMessage.ShowInfo("Status zmieniony!");
-            }
-            else
+            if (response.StatusCode != HttpStatusCode.OK)
             {
                 DialogMessage.ShowInfo("Błąd zmiany statusu!");
             }

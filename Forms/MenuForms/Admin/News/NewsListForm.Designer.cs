@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.nextPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.previusPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pageNumberLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.pageNumberLabel);
             this.contentPanel.Controls.Add(this.panel6);
             this.contentPanel.Controls.Add(this.panel5);
             this.contentPanel.Controls.Add(this.panel4);
@@ -56,11 +58,54 @@
             this.contentPanel.Size = new System.Drawing.Size(786, 455);
             this.contentPanel.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(12, 342);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(760, 60);
+            this.panel6.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(12, 276);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(760, 60);
+            this.panel5.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(12, 210);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(760, 60);
+            this.panel4.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(12, 144);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(760, 60);
+            this.panel3.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 60);
+            this.panel2.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(760, 60);
+            this.panel1.TabIndex = 9;
+            // 
             // nextPageButton
             // 
             this.nextPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nextPageButton.Depth = 0;
-            this.nextPageButton.Location = new System.Drawing.Point(385, 409);
+            this.nextPageButton.Location = new System.Drawing.Point(440, 408);
             this.nextPageButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.nextPageButton.Name = "nextPageButton";
             this.nextPageButton.Primary = true;
@@ -74,7 +119,7 @@
             // 
             this.previusPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.previusPageButton.Depth = 0;
-            this.previusPageButton.Location = new System.Drawing.Point(213, 409);
+            this.previusPageButton.Location = new System.Drawing.Point(166, 408);
             this.previusPageButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.previusPageButton.Name = "previusPageButton";
             this.previusPageButton.Primary = true;
@@ -84,48 +129,18 @@
             this.previusPageButton.UseVisualStyleBackColor = true;
             this.previusPageButton.Click += new System.EventHandler(this.previusPageButton_Click);
             // 
-            // panel1
+            // pageNumberLabel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 60);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(12, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 60);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(12, 144);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(760, 60);
-            this.panel3.TabIndex = 11;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(12, 210);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(760, 60);
-            this.panel4.TabIndex = 12;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(12, 276);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(760, 60);
-            this.panel5.TabIndex = 13;
-            // 
-            // panel6
-            // 
-            this.panel6.Location = new System.Drawing.Point(12, 342);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(760, 60);
-            this.panel6.TabIndex = 14;
+            this.pageNumberLabel.AutoSize = true;
+            this.pageNumberLabel.Depth = 0;
+            this.pageNumberLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.pageNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pageNumberLabel.Location = new System.Drawing.Point(350, 416);
+            this.pageNumberLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pageNumberLabel.Name = "pageNumberLabel";
+            this.pageNumberLabel.Size = new System.Drawing.Size(53, 19);
+            this.pageNumberLabel.TabIndex = 15;
+            this.pageNumberLabel.Text = "Strona";
             // 
             // NewsListForm
             // 
@@ -136,6 +151,7 @@
             this.Name = "NewsListForm";
             this.Text = "NewsListForm";
             this.contentPanel.ResumeLayout(false);
+            this.contentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -151,5 +167,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialLabel pageNumberLabel;
     }
 }

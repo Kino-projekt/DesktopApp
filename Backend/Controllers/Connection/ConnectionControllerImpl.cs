@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Windows.Forms;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
+using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 
@@ -37,6 +38,7 @@ namespace DesktopApp.Backend.Controllers.Connection
             {
                 return true;
             }
+            DialogMessage.ShowInfo("Rejestracja nieudana!");
             return false;
         }
 
@@ -49,6 +51,7 @@ namespace DesktopApp.Backend.Controllers.Connection
                 UserCreator.PutUserToSystem(response);
                 return true;
             }
+            DialogMessage.ShowInfo("Logowanie nieudane!");
             return false;
         }
 
