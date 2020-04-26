@@ -21,6 +21,13 @@ namespace DesktopApp.Forms.MenuForms.News
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+
+            desingerService.AddPanelToChangeColor(panel1);
+            desingerService.AddPanelToChangeColor(panel2);
+            desingerService.AddPanelToChangeColor(panel3);
+            desingerService.AddPanelToChangeColor(panel4);
+            desingerService.AddPanelToChangeColor(panel5);
+            desingerService.AddPanelToChangeColor(panel6);
         }
     }
 }

@@ -21,17 +21,33 @@ namespace DesktopApp.Forms.MenuForms.Settings
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(themePanel);
         }
 
-        private void darkColorButton_Click(object sender, EventArgs e)
+
+        private void blueButton_Click(object sender, EventArgs e)
         {
+            desingerService.SetColorStyle(ColorStyle.Blue);
+            desingerService.SetDarkTheme();
+
+        }
+
+        private void greenButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.Green);
             desingerService.SetDarkTheme();
         }
 
-        private void lightColorButton_Click(object sender, EventArgs e)
+        private void redButton_Click(object sender, EventArgs e)
         {
-            desingerService.SetLightTheme();
+            desingerService.SetColorStyle(ColorStyle.Red);
+            desingerService.SetDarkTheme();
         }
 
+        private void purpleButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.Purple);
+            desingerService.SetDarkTheme();
+        }
     }
 }

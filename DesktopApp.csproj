@@ -121,6 +121,7 @@
     <Compile Include="Backend\Services\AdminServices\ArticleServices\ArticleAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\ArticleServices\ArticleServiceImpl.cs" />
+    <Compile Include="Backend\Services\DesingerServices\ColorStyle.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
     <Compile Include="Backend\Services\UserServices\UserService.cs" />

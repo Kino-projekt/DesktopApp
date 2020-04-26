@@ -31,8 +31,10 @@
             this.contentPanel = new System.Windows.Forms.Panel();
             this.themePanel = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.lightColorButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.darkColorButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.blueButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.greenButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.redButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.purpleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.themePanel.SuspendLayout();
             this.SuspendLayout();
@@ -49,9 +51,11 @@
             // themePanel
             // 
             this.themePanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.themePanel.Controls.Add(this.purpleButton);
+            this.themePanel.Controls.Add(this.redButton);
+            this.themePanel.Controls.Add(this.greenButton);
             this.themePanel.Controls.Add(this.materialLabel1);
-            this.themePanel.Controls.Add(this.lightColorButton);
-            this.themePanel.Controls.Add(this.darkColorButton);
+            this.themePanel.Controls.Add(this.blueButton);
             this.themePanel.Location = new System.Drawing.Point(19, 19);
             this.themePanel.Margin = new System.Windows.Forms.Padding(10);
             this.themePanel.Name = "themePanel";
@@ -71,33 +75,57 @@
             this.materialLabel1.TabIndex = 3;
             this.materialLabel1.Text = "Motyw graficzny:";
             // 
-            // lightColorButton
+            // blueButton
             // 
-            this.lightColorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lightColorButton.Depth = 0;
-            this.lightColorButton.Location = new System.Drawing.Point(498, 40);
-            this.lightColorButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lightColorButton.Name = "lightColorButton";
-            this.lightColorButton.Primary = true;
-            this.lightColorButton.Size = new System.Drawing.Size(193, 45);
-            this.lightColorButton.TabIndex = 2;
-            this.lightColorButton.Text = "Jasny";
-            this.lightColorButton.UseVisualStyleBackColor = true;
-            this.lightColorButton.Click += new System.EventHandler(this.lightColorButton_Click);
+            this.blueButton.Depth = 0;
+            this.blueButton.Location = new System.Drawing.Point(222, 27);
+            this.blueButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.blueButton.Name = "blueButton";
+            this.blueButton.Primary = true;
+            this.blueButton.Size = new System.Drawing.Size(123, 44);
+            this.blueButton.TabIndex = 4;
+            this.blueButton.Text = "Niebieski";
+            this.blueButton.UseVisualStyleBackColor = true;
+            this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
             // 
-            // darkColorButton
+            // greenButton
             // 
-            this.darkColorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.darkColorButton.Depth = 0;
-            this.darkColorButton.Location = new System.Drawing.Point(252, 40);
-            this.darkColorButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.darkColorButton.Name = "darkColorButton";
-            this.darkColorButton.Primary = true;
-            this.darkColorButton.Size = new System.Drawing.Size(193, 45);
-            this.darkColorButton.TabIndex = 1;
-            this.darkColorButton.Text = "Ciemny";
-            this.darkColorButton.UseVisualStyleBackColor = true;
-            this.darkColorButton.Click += new System.EventHandler(this.darkColorButton_Click);
+            this.greenButton.Depth = 0;
+            this.greenButton.Location = new System.Drawing.Point(471, 27);
+            this.greenButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.greenButton.Name = "greenButton";
+            this.greenButton.Primary = true;
+            this.greenButton.Size = new System.Drawing.Size(114, 44);
+            this.greenButton.TabIndex = 6;
+            this.greenButton.Text = "Zielony";
+            this.greenButton.UseVisualStyleBackColor = true;
+            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
+            // 
+            // redButton
+            // 
+            this.redButton.Depth = 0;
+            this.redButton.Location = new System.Drawing.Point(351, 27);
+            this.redButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.redButton.Name = "redButton";
+            this.redButton.Primary = true;
+            this.redButton.Size = new System.Drawing.Size(114, 44);
+            this.redButton.TabIndex = 7;
+            this.redButton.Text = "Czerwony";
+            this.redButton.UseVisualStyleBackColor = true;
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
+            // 
+            // purpleButton
+            // 
+            this.purpleButton.Depth = 0;
+            this.purpleButton.Location = new System.Drawing.Point(591, 27);
+            this.purpleButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.purpleButton.Name = "purpleButton";
+            this.purpleButton.Primary = true;
+            this.purpleButton.Size = new System.Drawing.Size(114, 44);
+            this.purpleButton.TabIndex = 8;
+            this.purpleButton.Text = "Fioletowy";
+            this.purpleButton.UseVisualStyleBackColor = true;
+            this.purpleButton.Click += new System.EventHandler(this.purpleButton_Click);
             // 
             // SettingsForm
             // 
@@ -117,9 +145,11 @@
         #endregion
 
         private System.Windows.Forms.Panel contentPanel;
-        private MaterialSkin.Controls.MaterialRaisedButton lightColorButton;
-        private MaterialSkin.Controls.MaterialRaisedButton darkColorButton;
         private System.Windows.Forms.Panel themePanel;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialRaisedButton blueButton;
+        private MaterialSkin.Controls.MaterialRaisedButton greenButton;
+        private MaterialSkin.Controls.MaterialRaisedButton redButton;
+        private MaterialSkin.Controls.MaterialRaisedButton purpleButton;
     }
 }

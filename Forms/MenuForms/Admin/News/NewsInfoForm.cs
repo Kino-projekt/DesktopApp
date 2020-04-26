@@ -25,6 +25,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(contentPanel);
             service = ArticleAdminServiceImpl.GetService();
             this.article = article;
             SetLabels();

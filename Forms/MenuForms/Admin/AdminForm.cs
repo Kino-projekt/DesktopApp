@@ -24,6 +24,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(checkTicketPanel);
 
             newsContent = new PanelCreator(newsPanel);
             newsContent.Open(new NewsListForm());

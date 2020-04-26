@@ -21,6 +21,9 @@ namespace DesktopApp.Forms.MenuForms.User
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(passwordPanel);
+            desingerService.AddPanelToChangeColor(accoutnDeletePanel);
+            desingerService.AddPanelToChangeColor(userStatsPanel);
 
             UserService userService = UserServiceImpl.GetInstance();
 

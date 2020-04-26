@@ -11,6 +11,8 @@ namespace DesktopApp.Backend.Services.DesingerServices
 
         void SetLightTheme();
 
-        void addPanelToChangeColor(Panel panel);
+        void AddPanelToChangeColor(Panel panel);
+
+        void SetColorStyle(ColorStyle color);
     }
 }

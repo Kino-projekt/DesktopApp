@@ -33,8 +33,12 @@
             this.tabMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.reservationTab = new System.Windows.Forms.TabPage();
             this.statisticTab = new System.Windows.Forms.TabPage();
+            this.userStatsPanel = new System.Windows.Forms.Panel();
+            this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.settingsTab = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.accoutnDeletePanel = new System.Windows.Forms.Panel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -48,19 +52,15 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.statisticTab.SuspendLayout();
+            this.userStatsPanel.SuspendLayout();
             this.settingsTab.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.accoutnDeletePanel.SuspendLayout();
             this.passwordPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -108,7 +108,7 @@
             // 
             // statisticTab
             // 
-            this.statisticTab.Controls.Add(this.panel2);
+            this.statisticTab.Controls.Add(this.userStatsPanel);
             this.statisticTab.Location = new System.Drawing.Point(4, 22);
             this.statisticTab.Name = "statisticTab";
             this.statisticTab.Padding = new System.Windows.Forms.Padding(3);
@@ -117,9 +117,65 @@
             this.statisticTab.Text = "Statystyki użytkownika";
             this.statisticTab.UseVisualStyleBackColor = true;
             // 
+            // userStatsPanel
+            // 
+            this.userStatsPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.userStatsPanel.Controls.Add(this.emailField);
+            this.userStatsPanel.Controls.Add(this.tokenField);
+            this.userStatsPanel.Controls.Add(this.materialLabel4);
+            this.userStatsPanel.Location = new System.Drawing.Point(35, 113);
+            this.userStatsPanel.Name = "userStatsPanel";
+            this.userStatsPanel.Size = new System.Drawing.Size(668, 211);
+            this.userStatsPanel.TabIndex = 1;
+            // 
+            // emailField
+            // 
+            this.emailField.Depth = 0;
+            this.emailField.Hint = "";
+            this.emailField.Location = new System.Drawing.Point(18, 76);
+            this.emailField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailField.Name = "emailField";
+            this.emailField.PasswordChar = '\0';
+            this.emailField.SelectedText = "";
+            this.emailField.SelectionLength = 0;
+            this.emailField.SelectionStart = 0;
+            this.emailField.Size = new System.Drawing.Size(633, 23);
+            this.emailField.TabIndex = 2;
+            this.emailField.Text = "email";
+            this.emailField.UseSystemPasswordChar = false;
+            // 
+            // tokenField
+            // 
+            this.tokenField.Depth = 0;
+            this.tokenField.Hint = "";
+            this.tokenField.Location = new System.Drawing.Point(18, 138);
+            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tokenField.Name = "tokenField";
+            this.tokenField.PasswordChar = '\0';
+            this.tokenField.SelectedText = "";
+            this.tokenField.SelectionLength = 0;
+            this.tokenField.SelectionStart = 0;
+            this.tokenField.Size = new System.Drawing.Size(633, 23);
+            this.tokenField.TabIndex = 1;
+            this.tokenField.Text = "token";
+            this.tokenField.UseSystemPasswordChar = false;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(200, 22);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(275, 19);
+            this.materialLabel4.TabIndex = 0;
+            this.materialLabel4.Text = "Chwilowe info o użytkowniku do testów";
+            // 
             // settingsTab
             // 
-            this.settingsTab.Controls.Add(this.panel1);
+            this.settingsTab.Controls.Add(this.accoutnDeletePanel);
             this.settingsTab.Controls.Add(this.passwordPanel);
             this.settingsTab.Location = new System.Drawing.Point(4, 22);
             this.settingsTab.Name = "settingsTab";
@@ -129,18 +185,18 @@
             this.settingsTab.Text = "Ustawienia konta";
             this.settingsTab.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // accoutnDeletePanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.materialFlatButton1);
-            this.panel1.Controls.Add(this.materialLabel5);
-            this.panel1.Controls.Add(this.materialSingleLineTextField2);
-            this.panel1.Controls.Add(this.materialLabel6);
-            this.panel1.Location = new System.Drawing.Point(15, 153);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 120);
-            this.panel1.TabIndex = 2;
+            this.accoutnDeletePanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.accoutnDeletePanel.Controls.Add(this.materialFlatButton1);
+            this.accoutnDeletePanel.Controls.Add(this.materialLabel5);
+            this.accoutnDeletePanel.Controls.Add(this.materialSingleLineTextField2);
+            this.accoutnDeletePanel.Controls.Add(this.materialLabel6);
+            this.accoutnDeletePanel.Location = new System.Drawing.Point(15, 153);
+            this.accoutnDeletePanel.Margin = new System.Windows.Forms.Padding(10);
+            this.accoutnDeletePanel.Name = "accoutnDeletePanel";
+            this.accoutnDeletePanel.Size = new System.Drawing.Size(762, 120);
+            this.accoutnDeletePanel.TabIndex = 2;
             // 
             // materialFlatButton1
             // 
@@ -319,62 +375,6 @@
             this.tabSelector.TabIndex = 0;
             this.tabSelector.Text = "materialTabSelector1";
             // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(200, 22);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(268, 18);
-            this.materialLabel4.TabIndex = 0;
-            this.materialLabel4.Text = "Chwilowe info o użytkowniku do testów";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel2.Controls.Add(this.emailField);
-            this.panel2.Controls.Add(this.tokenField);
-            this.panel2.Controls.Add(this.materialLabel4);
-            this.panel2.Location = new System.Drawing.Point(35, 113);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 211);
-            this.panel2.TabIndex = 1;
-            // 
-            // tokenField
-            // 
-            this.tokenField.Depth = 0;
-            this.tokenField.Hint = "";
-            this.tokenField.Location = new System.Drawing.Point(18, 138);
-            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tokenField.Name = "tokenField";
-            this.tokenField.PasswordChar = '\0';
-            this.tokenField.SelectedText = "";
-            this.tokenField.SelectionLength = 0;
-            this.tokenField.SelectionStart = 0;
-            this.tokenField.Size = new System.Drawing.Size(633, 23);
-            this.tokenField.TabIndex = 1;
-            this.tokenField.Text = "token";
-            this.tokenField.UseSystemPasswordChar = false;
-            // 
-            // emailField
-            // 
-            this.emailField.Depth = 0;
-            this.emailField.Hint = "";
-            this.emailField.Location = new System.Drawing.Point(18, 76);
-            this.emailField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.emailField.Name = "emailField";
-            this.emailField.PasswordChar = '\0';
-            this.emailField.SelectedText = "";
-            this.emailField.SelectionLength = 0;
-            this.emailField.SelectionStart = 0;
-            this.emailField.Size = new System.Drawing.Size(633, 23);
-            this.emailField.TabIndex = 2;
-            this.emailField.Text = "email";
-            this.emailField.UseSystemPasswordChar = false;
-            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,14 +387,14 @@
             this.contentPanel.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.statisticTab.ResumeLayout(false);
+            this.userStatsPanel.ResumeLayout(false);
+            this.userStatsPanel.PerformLayout();
             this.settingsTab.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.accoutnDeletePanel.ResumeLayout(false);
+            this.accoutnDeletePanel.PerformLayout();
             this.passwordPanel.ResumeLayout(false);
             this.passwordPanel.PerformLayout();
             this.menuPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -416,12 +416,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField oldPasswordField;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel accoutnDeletePanel;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel userStatsPanel;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailField;
         private MaterialSkin.Controls.MaterialSingleLineTextField tokenField;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;

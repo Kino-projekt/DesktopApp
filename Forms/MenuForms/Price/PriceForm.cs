@@ -20,6 +20,8 @@ namespace DesktopApp.Forms.MenuForms.Price
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(panel1);
+            desingerService.AddPanelToChangeColor(panel2);
         }
     }
 }

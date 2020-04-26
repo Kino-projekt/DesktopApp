@@ -32,6 +32,10 @@
             this.contentPanel = new System.Windows.Forms.Panel();
             this.mainMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.seanceTab = new System.Windows.Forms.TabPage();
+            this.chceckTicketButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.checkTicketPanel = new System.Windows.Forms.Panel();
+            this.ticketNumberField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.newsTab = new System.Windows.Forms.TabPage();
             this.newsPanel = new System.Windows.Forms.Panel();
             this.addNewsButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,17 +48,13 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.ticketNumberField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.chceckTicketButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.seanceTab.SuspendLayout();
+            this.checkTicketPanel.SuspendLayout();
             this.newsTab.SuspendLayout();
             this.menuPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -96,8 +96,7 @@
             // 
             // seanceTab
             // 
-            this.seanceTab.Controls.Add(this.chceckTicketButton);
-            this.seanceTab.Controls.Add(this.panel1);
+            this.seanceTab.Controls.Add(this.checkTicketPanel);
             this.seanceTab.Location = new System.Drawing.Point(4, 22);
             this.seanceTab.Name = "seanceTab";
             this.seanceTab.Padding = new System.Windows.Forms.Padding(3);
@@ -105,6 +104,59 @@
             this.seanceTab.TabIndex = 0;
             this.seanceTab.Text = "Sprawdzarka biletów";
             this.seanceTab.UseVisualStyleBackColor = true;
+            // 
+            // chceckTicketButton
+            // 
+            this.chceckTicketButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chceckTicketButton.Depth = 0;
+            this.chceckTicketButton.Location = new System.Drawing.Point(250, 98);
+            this.chceckTicketButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chceckTicketButton.Name = "chceckTicketButton";
+            this.chceckTicketButton.Primary = true;
+            this.chceckTicketButton.Size = new System.Drawing.Size(231, 39);
+            this.chceckTicketButton.TabIndex = 1;
+            this.chceckTicketButton.Text = "Sprawdź bilet";
+            this.chceckTicketButton.UseVisualStyleBackColor = true;
+            // 
+            // checkTicketPanel
+            // 
+            this.checkTicketPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.checkTicketPanel.Controls.Add(this.chceckTicketButton);
+            this.checkTicketPanel.Controls.Add(this.ticketNumberField);
+            this.checkTicketPanel.Controls.Add(this.materialLabel2);
+            this.checkTicketPanel.Location = new System.Drawing.Point(15, 13);
+            this.checkTicketPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.checkTicketPanel.Name = "checkTicketPanel";
+            this.checkTicketPanel.Size = new System.Drawing.Size(762, 150);
+            this.checkTicketPanel.TabIndex = 0;
+            // 
+            // ticketNumberField
+            // 
+            this.ticketNumberField.Depth = 0;
+            this.ticketNumberField.Hint = "";
+            this.ticketNumberField.Location = new System.Drawing.Point(182, 49);
+            this.ticketNumberField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ticketNumberField.Name = "ticketNumberField";
+            this.ticketNumberField.PasswordChar = '\0';
+            this.ticketNumberField.SelectedText = "";
+            this.ticketNumberField.SelectionLength = 0;
+            this.ticketNumberField.SelectionStart = 0;
+            this.ticketNumberField.Size = new System.Drawing.Size(506, 23);
+            this.ticketNumberField.TabIndex = 1;
+            this.ticketNumberField.UseSystemPasswordChar = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(60, 53);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel2.TabIndex = 0;
+            this.materialLabel2.Text = "Numer biletu:";
             // 
             // newsTab
             // 
@@ -243,58 +295,6 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.ticketNumberField);
-            this.panel1.Controls.Add(this.materialLabel2);
-            this.panel1.Location = new System.Drawing.Point(15, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 114);
-            this.panel1.TabIndex = 0;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(60, 53);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(99, 19);
-            this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "Numer biletu:";
-            // 
-            // ticketNumberField
-            // 
-            this.ticketNumberField.Depth = 0;
-            this.ticketNumberField.Hint = "";
-            this.ticketNumberField.Location = new System.Drawing.Point(182, 49);
-            this.ticketNumberField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ticketNumberField.Name = "ticketNumberField";
-            this.ticketNumberField.PasswordChar = '\0';
-            this.ticketNumberField.SelectedText = "";
-            this.ticketNumberField.SelectionLength = 0;
-            this.ticketNumberField.SelectionStart = 0;
-            this.ticketNumberField.Size = new System.Drawing.Size(506, 23);
-            this.ticketNumberField.TabIndex = 1;
-            this.ticketNumberField.UseSystemPasswordChar = false;
-            // 
-            // chceckTicketButton
-            // 
-            this.chceckTicketButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chceckTicketButton.Depth = 0;
-            this.chceckTicketButton.Location = new System.Drawing.Point(278, 140);
-            this.chceckTicketButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chceckTicketButton.Name = "chceckTicketButton";
-            this.chceckTicketButton.Primary = true;
-            this.chceckTicketButton.Size = new System.Drawing.Size(231, 39);
-            this.chceckTicketButton.TabIndex = 1;
-            this.chceckTicketButton.Text = "Sprawdź bilet";
-            this.chceckTicketButton.UseVisualStyleBackColor = true;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,10 +308,10 @@
             this.contentPanel.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.seanceTab.ResumeLayout(false);
+            this.checkTicketPanel.ResumeLayout(false);
+            this.checkTicketPanel.PerformLayout();
             this.newsTab.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +334,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton addNewsButton;
         private MaterialSkin.Controls.MaterialRaisedButton refreshNewsListButton;
         private MaterialSkin.Controls.MaterialRaisedButton newsListButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel checkTicketPanel;
         private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
