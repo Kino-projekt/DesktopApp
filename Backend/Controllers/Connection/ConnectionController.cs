@@ -8,9 +8,8 @@ namespace DesktopApp.Backend.Controllers.Connection
     {
         bool Singup(AuthData user);
         bool Singin(AuthData user);
-        void SendArticle(Article article);
+
         List<Article> GetArticlesFromServer();
 
-        List<Article> GetAdminArticlesFromServer();
     }
 }

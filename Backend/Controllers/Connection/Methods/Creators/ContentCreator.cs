@@ -17,6 +17,11 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(article));
         }
 
+        public static FormUrlEncodedContent CreateContent(Status status)
+        {
+            return new FormUrlEncodedContent(CreatePairs(status));
+        }
+
         private static List<KeyValuePair<string, string>> CreatePairs(AuthData user)
         {
             var pairs = new List<KeyValuePair<string, string>>
@@ -35,6 +40,26 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 new KeyValuePair<string, string>("description", article.GetDescription())
             };
             return pairs;
+        }
+
+        private static List<KeyValuePair<string, string>> CreatePairs(Status status)
+        {
+            List<KeyValuePair<string, string>> pairs;
+            if (status == Status.Active)
+            {
+                return pairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("status", "ACTIVE"),
+                };
+            }
+            else
+            {
+                return pairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("status", "INACTIVE"),
+                };
+            }
+
         }
     }
 }

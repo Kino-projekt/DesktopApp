@@ -24,15 +24,6 @@ namespace DesktopApp.Backend.Services.ArticleServices
             return articles = connectionController.GetArticlesFromServer();
         }
 
-        public List<Article> GetArticleListForAdmin()
-        {
-            return articles = connectionController.GetAdminArticlesFromServer();
-        }
-
-        public void SendArticleToServer( Article article)
-        {
-            connectionController.SendArticle(article);
-        }
 
     }
 }

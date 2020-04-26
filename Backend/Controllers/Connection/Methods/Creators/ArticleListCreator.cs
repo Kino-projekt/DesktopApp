@@ -35,8 +35,12 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 article.SetId((int)articeObject.id);
                 article.SetTitle((string)articeObject.title);
                 article.SetDescription((string)articeObject.description);
-                article.SetStatus((string)articeObject.status);
-
+                string status = (string)articeObject.status;
+                if(status=="ACTIVE")
+                    article.SetStatus(Status.Active);
+                else
+                    article.SetStatus(Status.Inactive);
+                   
                 articles.Add(article);
             }
             return articles;

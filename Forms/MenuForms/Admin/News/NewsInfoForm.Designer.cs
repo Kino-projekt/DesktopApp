@@ -66,6 +66,7 @@
             // 
             // statusButton
             // 
+            this.statusButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.statusButton.Depth = 0;
             this.statusButton.Location = new System.Drawing.Point(616, 5);
             this.statusButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -75,6 +76,7 @@
             this.statusButton.TabIndex = 3;
             this.statusButton.Text = "Zmień status";
             this.statusButton.UseVisualStyleBackColor = true;
+            this.statusButton.Click += new System.EventHandler(this.statusButton_Click);
             // 
             // statusLabel
             // 

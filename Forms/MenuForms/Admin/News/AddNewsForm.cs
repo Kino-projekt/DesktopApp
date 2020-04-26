@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.AdminServices;
+using DesktopApp.Backend.Services.AdminServices.ArticleServices;
 using DesktopApp.Backend.Services.ArticleServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
@@ -30,7 +32,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             article.SetTitle(titleField.Text);
             article.SetDescription(descriptionField.Text);
 
-            ArticleService articleService = ArticleServiceImpl.GetService();
+            ArticleAdminService articleService = ArticleAdminServiceImpl.GetService();
             articleService.SendArticleToServer(article);
         }
     }

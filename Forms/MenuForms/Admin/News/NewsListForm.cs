@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.AdminServices;
+using DesktopApp.Backend.Services.AdminServices.ArticleServices;
 using DesktopApp.Backend.Services.ArticleServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
@@ -18,7 +20,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
     public partial class NewsListForm : MaterialForm
     {
         private DesingerService desingerService;
-        private ArticleService articleService;
+        private ArticleAdminService articleService;
         private List<Article> articles;
         private int lastArticle;
         private int sizeList;
@@ -29,7 +31,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
 
-            articleService = ArticleServiceImpl.GetService();
+            articleService = ArticleAdminServiceImpl.GetService();
             DownloadArticlesList();
             ShowNews();
         }

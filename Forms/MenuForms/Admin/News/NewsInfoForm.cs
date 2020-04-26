@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.AdminServices.ArticleServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
@@ -16,6 +17,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
     public partial class NewsInfoForm : MaterialForm
     {
         private DesingerService desingerService;
+        private ArticleAdminService service;
         private Article article;
 
         public NewsInfoForm(Article article)
@@ -23,6 +25,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            service = ArticleAdminServiceImpl.GetService();
             this.article = article;
             SetLabels();
         }
@@ -32,7 +35,15 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             idLabel.Text = "Numer: " + article.GetId();
             titleLabel.Text = article.GetTitle();
             descriptionLabel.Text = article.GetDescription();
-            statusLabel.Text = article.GetStatus();
+            if (article.GetStatus() == Status.Active)
+                statusLabel.Text = "Aktywne";
+            else
+                statusLabel.Text = "Nieaktywne";
+        }
+
+        private void statusButton_Click(object sender, EventArgs e)
+        {
+            service.ChangeArticleStatus(article);
         }
     }
 }

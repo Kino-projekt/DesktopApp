@@ -5,7 +5,7 @@
         private int id;
         private string title;
         private string description;
-        private string status;
+        private Status status;
 
         public void SetId(int id)
         {
@@ -36,12 +36,12 @@
             return description;
         }
 
-        public void SetStatus(string status)
+        public void SetStatus(Status status)
         {
             this.status = status;
         }
 
-        public string GetStatus()
+        public Status GetStatus()
         {
             return status;
         }

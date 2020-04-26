@@ -52,18 +52,6 @@ namespace DesktopApp.Backend.Controllers.Connection
             return false;
         }
 
-        public void SendArticle(Article article)
-        {
-            var content = ContentCreator.CreateContent(article);
-            UserService userService = UserServiceImpl.GetInstance();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
-            HttpResponseMessage response = client.PostAsync("/api/admin/articles", content).Result;
-            if (response.StatusCode != HttpStatusCode.Created)
-            {
-                ShowInfo("Błąd wysyłania!");
-            }
-        }
-
         public List<Article> GetArticlesFromServer()
         {
             HttpResponseMessage response = client.GetAsync("/api/articles").Result;
@@ -72,27 +60,6 @@ namespace DesktopApp.Backend.Controllers.Connection
                 return ArticleListCreator.CreateArticles(response);
             }
             return null;
-        }
-
-        public List<Article> GetAdminArticlesFromServer()
-        {
-            UserService userService = UserServiceImpl.GetInstance();
-            List<Article> articles;
-
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
-            HttpResponseMessage response = client.GetAsync("/api/admin/articles").Result;
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                articles = ArticleListCreator.CreateArticles(response);
-                return articles;
-            }
-            ShowInfo("Błąd pobierania artykułów!");
-            return null;
-        }
-
-        private void ShowInfo(string message)
-        {
-            DialogResult dialog = dialog = MessageBox.Show(message, "Scruter", MessageBoxButtons.OK);
         }
 
     }
