@@ -30,11 +30,15 @@
         {
             this.contentPanel = new System.Windows.Forms.Panel();
             this.themePanel = new System.Windows.Forms.Panel();
+            this.purpleButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.redButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.greenButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.blueButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.greenButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.redButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.purpleButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lightBlueButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.orangeButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pinkButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.springButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.themePanel.SuspendLayout();
             this.SuspendLayout();
@@ -51,16 +55,59 @@
             // themePanel
             // 
             this.themePanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.themePanel.Controls.Add(this.springButton);
+            this.themePanel.Controls.Add(this.pinkButton);
             this.themePanel.Controls.Add(this.purpleButton);
-            this.themePanel.Controls.Add(this.redButton);
-            this.themePanel.Controls.Add(this.greenButton);
+            this.themePanel.Controls.Add(this.orangeButton);
+            this.themePanel.Controls.Add(this.lightBlueButton);
             this.themePanel.Controls.Add(this.materialLabel1);
+            this.themePanel.Controls.Add(this.greenButton);
+            this.themePanel.Controls.Add(this.redButton);
             this.themePanel.Controls.Add(this.blueButton);
             this.themePanel.Location = new System.Drawing.Point(19, 19);
             this.themePanel.Margin = new System.Windows.Forms.Padding(10);
             this.themePanel.Name = "themePanel";
             this.themePanel.Size = new System.Drawing.Size(762, 120);
             this.themePanel.TabIndex = 3;
+            // 
+            // purpleButton
+            // 
+            this.purpleButton.Depth = 0;
+            this.purpleButton.Location = new System.Drawing.Point(620, 13);
+            this.purpleButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.purpleButton.Name = "purpleButton";
+            this.purpleButton.Primary = true;
+            this.purpleButton.Size = new System.Drawing.Size(132, 44);
+            this.purpleButton.TabIndex = 8;
+            this.purpleButton.Text = "Fioletowy";
+            this.purpleButton.UseVisualStyleBackColor = true;
+            this.purpleButton.Click += new System.EventHandler(this.purpleButton_Click);
+            // 
+            // redButton
+            // 
+            this.redButton.Depth = 0;
+            this.redButton.Location = new System.Drawing.Point(482, 13);
+            this.redButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.redButton.Name = "redButton";
+            this.redButton.Primary = true;
+            this.redButton.Size = new System.Drawing.Size(132, 44);
+            this.redButton.TabIndex = 7;
+            this.redButton.Text = "Czerwony";
+            this.redButton.UseVisualStyleBackColor = true;
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
+            // 
+            // greenButton
+            // 
+            this.greenButton.Depth = 0;
+            this.greenButton.Location = new System.Drawing.Point(344, 13);
+            this.greenButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.greenButton.Name = "greenButton";
+            this.greenButton.Primary = true;
+            this.greenButton.Size = new System.Drawing.Size(132, 44);
+            this.greenButton.TabIndex = 6;
+            this.greenButton.Text = "Zielony";
+            this.greenButton.UseVisualStyleBackColor = true;
+            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
             // 
             // materialLabel1
             // 
@@ -77,55 +124,69 @@
             // 
             // blueButton
             // 
+            this.blueButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.blueButton.Depth = 0;
-            this.blueButton.Location = new System.Drawing.Point(222, 27);
+            this.blueButton.Location = new System.Drawing.Point(206, 13);
             this.blueButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.blueButton.Name = "blueButton";
             this.blueButton.Primary = true;
-            this.blueButton.Size = new System.Drawing.Size(123, 44);
+            this.blueButton.Size = new System.Drawing.Size(132, 44);
             this.blueButton.TabIndex = 4;
             this.blueButton.Text = "Niebieski";
             this.blueButton.UseVisualStyleBackColor = true;
             this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
             // 
-            // greenButton
+            // lightBlueButton
             // 
-            this.greenButton.Depth = 0;
-            this.greenButton.Location = new System.Drawing.Point(471, 27);
-            this.greenButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.greenButton.Name = "greenButton";
-            this.greenButton.Primary = true;
-            this.greenButton.Size = new System.Drawing.Size(114, 44);
-            this.greenButton.TabIndex = 6;
-            this.greenButton.Text = "Zielony";
-            this.greenButton.UseVisualStyleBackColor = true;
-            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
+            this.lightBlueButton.Depth = 0;
+            this.lightBlueButton.Location = new System.Drawing.Point(206, 63);
+            this.lightBlueButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lightBlueButton.Name = "lightBlueButton";
+            this.lightBlueButton.Primary = true;
+            this.lightBlueButton.Size = new System.Drawing.Size(132, 44);
+            this.lightBlueButton.TabIndex = 9;
+            this.lightBlueButton.Text = "Jasny niebieski";
+            this.lightBlueButton.UseVisualStyleBackColor = true;
+            this.lightBlueButton.Click += new System.EventHandler(this.newColorButton_Click);
             // 
-            // redButton
+            // orangeButton
             // 
-            this.redButton.Depth = 0;
-            this.redButton.Location = new System.Drawing.Point(351, 27);
-            this.redButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.redButton.Name = "redButton";
-            this.redButton.Primary = true;
-            this.redButton.Size = new System.Drawing.Size(114, 44);
-            this.redButton.TabIndex = 7;
-            this.redButton.Text = "Czerwony";
-            this.redButton.UseVisualStyleBackColor = true;
-            this.redButton.Click += new System.EventHandler(this.redButton_Click);
+            this.orangeButton.Depth = 0;
+            this.orangeButton.Location = new System.Drawing.Point(482, 63);
+            this.orangeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.orangeButton.Name = "orangeButton";
+            this.orangeButton.Primary = true;
+            this.orangeButton.Size = new System.Drawing.Size(132, 44);
+            this.orangeButton.TabIndex = 10;
+            this.orangeButton.Text = "pomarańczowy";
+            this.orangeButton.UseVisualStyleBackColor = true;
+            this.orangeButton.Click += new System.EventHandler(this.orangeButton_Click);
             // 
-            // purpleButton
+            // pinkButton
             // 
-            this.purpleButton.Depth = 0;
-            this.purpleButton.Location = new System.Drawing.Point(591, 27);
-            this.purpleButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.purpleButton.Name = "purpleButton";
-            this.purpleButton.Primary = true;
-            this.purpleButton.Size = new System.Drawing.Size(114, 44);
-            this.purpleButton.TabIndex = 8;
-            this.purpleButton.Text = "Fioletowy";
-            this.purpleButton.UseVisualStyleBackColor = true;
-            this.purpleButton.Click += new System.EventHandler(this.purpleButton_Click);
+            this.pinkButton.Depth = 0;
+            this.pinkButton.Location = new System.Drawing.Point(620, 63);
+            this.pinkButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinkButton.Name = "pinkButton";
+            this.pinkButton.Primary = true;
+            this.pinkButton.Size = new System.Drawing.Size(132, 44);
+            this.pinkButton.TabIndex = 11;
+            this.pinkButton.Text = "Różowy";
+            this.pinkButton.UseVisualStyleBackColor = true;
+            this.pinkButton.Click += new System.EventHandler(this.pinkButton_Click);
+            // 
+            // springButton
+            // 
+            this.springButton.Depth = 0;
+            this.springButton.Location = new System.Drawing.Point(344, 63);
+            this.springButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.springButton.Name = "springButton";
+            this.springButton.Primary = true;
+            this.springButton.Size = new System.Drawing.Size(132, 44);
+            this.springButton.TabIndex = 12;
+            this.springButton.Text = "jasny zielony";
+            this.springButton.UseVisualStyleBackColor = true;
+            this.springButton.Click += new System.EventHandler(this.springButton_Click);
             // 
             // SettingsForm
             // 
@@ -151,5 +212,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton greenButton;
         private MaterialSkin.Controls.MaterialRaisedButton redButton;
         private MaterialSkin.Controls.MaterialRaisedButton purpleButton;
+        private MaterialSkin.Controls.MaterialRaisedButton lightBlueButton;
+        private MaterialSkin.Controls.MaterialRaisedButton orangeButton;
+        private MaterialSkin.Controls.MaterialRaisedButton pinkButton;
+        private MaterialSkin.Controls.MaterialRaisedButton springButton;
     }
 }

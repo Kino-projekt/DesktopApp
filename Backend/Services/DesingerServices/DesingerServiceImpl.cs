@@ -59,13 +59,45 @@ namespace DesktopApp.Backend.Services.DesingerServices
         private void SetColorForPanel(Panel panel)
         {
             if (color == ColorStyle.Blue)
+            {
                 panel.BackColor = Color.RoyalBlue;
+                SetDarkTheme();
+            }
             else if (color == ColorStyle.Red)
+            {
                 panel.BackColor = Color.DarkRed;
+                SetDarkTheme();
+            }
             else if (color == ColorStyle.Green)
+            {
                 panel.BackColor = Color.DarkGreen;
+                SetDarkTheme();
+            }
             else if (color == ColorStyle.Purple)
+            {
                 panel.BackColor = Color.DarkMagenta;
+                SetDarkTheme();
+            }
+            else if (color == ColorStyle.Orange)
+            {
+                panel.BackColor = Color.Orange;
+                SetLightTheme();
+            }
+            else if (color == ColorStyle.Pink)
+            {
+                panel.BackColor = Color.Tomato;
+                SetLightTheme();
+            }
+            else if (color == ColorStyle.LightGreen)
+            {
+                panel.BackColor = Color.SpringGreen;
+                SetLightTheme();
+            }
+            else if (color == ColorStyle.LightBlue)
+            {
+                panel.BackColor = Color.DeepSkyBlue;
+                SetLightTheme();
+            }
         }
     }
 }

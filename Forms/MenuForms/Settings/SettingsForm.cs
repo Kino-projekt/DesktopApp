@@ -28,26 +28,41 @@ namespace DesktopApp.Forms.MenuForms.Settings
         private void blueButton_Click(object sender, EventArgs e)
         {
             desingerService.SetColorStyle(ColorStyle.Blue);
-            desingerService.SetDarkTheme();
-
         }
 
         private void greenButton_Click(object sender, EventArgs e)
         {
             desingerService.SetColorStyle(ColorStyle.Green);
-            desingerService.SetDarkTheme();
         }
 
         private void redButton_Click(object sender, EventArgs e)
         {
             desingerService.SetColorStyle(ColorStyle.Red);
-            desingerService.SetDarkTheme();
         }
 
         private void purpleButton_Click(object sender, EventArgs e)
         {
             desingerService.SetColorStyle(ColorStyle.Purple);
-            desingerService.SetDarkTheme();
+        }
+
+        private void newColorButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.LightBlue);
+        }
+
+        private void orangeButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.Orange);
+        }
+
+        private void pinkButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.Pink);
+        }
+
+        private void springButton_Click(object sender, EventArgs e)
+        {
+            desingerService.SetColorStyle(ColorStyle.LightGreen);
         }
     }
 }
