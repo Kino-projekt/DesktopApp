@@ -28,6 +28,11 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
             connectionController.ChangeArticleStatus(article);
         }
 
+        public void DeleteArticle(Article article)
+        {
+            connectionController.DeleteArticle(article);
+        }
+
         public List<Article> GetArticleListForAdmin()
         {
             return articles = connectionController.GetAdminArticlesFromServer();

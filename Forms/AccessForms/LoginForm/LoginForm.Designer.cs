@@ -1,4 +1,4 @@
-﻿namespace DesktopApp.Forms.LoginForm
+﻿namespace DesktopApp.Forms.AccessForms.LoginForm
 {
     partial class LoginForm
     {

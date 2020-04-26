@@ -8,5 +8,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         void SendArticle(Article article);
         List<Article> GetAdminArticlesFromServer();
         void ChangeArticleStatus(Article article);
+
+        void DeleteArticle(Article article);
     }
 }

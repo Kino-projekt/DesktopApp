@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace DesktopApp.Backend.Services.DesingerServices
 {
@@ -9,5 +10,7 @@ namespace DesktopApp.Backend.Services.DesingerServices
         void SetDarkTheme();
 
         void SetLightTheme();
+
+        void addPanelToChangeColor(Panel panel);
     }
 }

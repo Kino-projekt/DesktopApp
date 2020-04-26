@@ -10,5 +10,7 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
         void SendArticleToServer(Article article);
 
         void ChangeArticleStatus(Article article);
+
+        void DeleteArticle(Article article);
     }
 }

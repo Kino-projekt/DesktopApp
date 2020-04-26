@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Backend.Services.DesingerServices
@@ -7,6 +9,7 @@ namespace DesktopApp.Backend.Services.DesingerServices
     {
         private MaterialSkin.MaterialSkinManager manager;
         private static DesingerService desingerService = new DesingerServiceImpl();
+        
 
         public static DesingerService GetInstance()
         {
@@ -32,6 +35,11 @@ namespace DesktopApp.Backend.Services.DesingerServices
         public void SetLightTheme()
         {
             manager.Theme = MaterialSkinManager.Themes.LIGHT;
+        }
+
+        public void addPanelToChangeColor(Panel panel)
+        {
+            
         }
     }
 }

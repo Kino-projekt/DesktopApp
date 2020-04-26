@@ -49,14 +49,14 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             {
                 return pairs = new List<KeyValuePair<string, string>>
                 {
-                    new KeyValuePair<string, string>("status", "ACTIVE"),
+                    new KeyValuePair<string, string>("status", "INACTIVE"),
                 };
             }
             else
             {
                 return pairs = new List<KeyValuePair<string, string>>
                 {
-                    new KeyValuePair<string, string>("status", "INACTIVE"),
+                    new KeyValuePair<string, string>("status", "ACTIVE"),
                 };
             }
 

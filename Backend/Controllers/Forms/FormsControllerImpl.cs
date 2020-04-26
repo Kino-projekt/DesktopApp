@@ -1,5 +1,5 @@
-﻿using DesktopApp.Forms.LoginForm;
-using DesktopApp.Forms.RegistrationForm;
+﻿using DesktopApp.Forms.AccessForms.LoginForm;
+using DesktopApp.Forms.AccessForms.RegistrationForm;
 
 namespace DesktopApp.Backend.Controllers.Forms
 {

@@ -45,5 +45,10 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         {
             service.ChangeArticleStatus(article);
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            service.DeleteArticle(article);
+        }
     }
 }

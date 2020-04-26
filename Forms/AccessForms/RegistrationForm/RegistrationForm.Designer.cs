@@ -1,4 +1,4 @@
-﻿namespace DesktopApp.Forms.RegistrationForm
+﻿namespace DesktopApp.Forms.AccessForms.RegistrationForm
 {
     partial class RegistrationForm
     {

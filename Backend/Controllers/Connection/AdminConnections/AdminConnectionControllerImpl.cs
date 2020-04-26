@@ -82,6 +82,17 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             }
         }
 
+        public void DeleteArticle(Article article)
+        {
+            SetAuthorization();
+            string patchUrl = "/api/admin/articles/" + article.GetId();
+            HttpResponseMessage response = client.DeleteAsync(patchUrl).Result;
+            if (response.StatusCode != HttpStatusCode.NoContent)
+            {
+                DialogMessage.ShowInfo("Błąd usuwania artykułu!");
+            }
+        }
+
         private void SetAuthorization()
         {
             client.DefaultRequestHeaders.Authorization =

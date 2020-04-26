@@ -1,40 +1,38 @@
 ﻿using System;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Forms;
-using DesktopApp.Backend.Services;
-using DesktopApp.Backend.Services.AccessServices.LoginServices;
+using DesktopApp.Backend.Services.AccessServices.RegistrationServices;
 using DesktopApp.Backend.Services.DesingerServices;
-using MaterialSkin;
 using MaterialSkin.Controls;
 
-namespace DesktopApp.Forms.LoginForm
+namespace DesktopApp.Forms.AccessForms.RegistrationForm
 {
-    public partial class LoginForm : MaterialForm
+    public partial class RegistrationForm : MaterialForm
     {
-        private LoginService loginService;
-        public LoginForm()
+        private RegistrationService registrationService;
+        public RegistrationForm()
         {
             InitializeComponent();
             DesingerService desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
-
-            loginService = LoginServiceImpl.GetService();
-        }
-
-        private void registractionButton_Click(object sender, EventArgs e)
-        {
-            Close();
-            FormsController formsController = FormsControllerImpl.GetInstance();
-            formsController.OpenRegitrationForm();
+            registrationService = RegistrationServiceImpl.GetService();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            Close();
+            FormsController formsController = FormsControllerImpl.GetInstance();
+            formsController.OpenLoginForm();
+        }
+
+        private void regitstrationButton_Click(object sender, EventArgs e)
+        {
+
             if (CheckEmail() && CheckPassword())
             {
                 Cursor.Current = Cursors.WaitCursor;
-                if (loginService.LoginNewUser())
-                        Close(); //registration form
+                if (registrationService.RegisterNewUser())
+                    Close(); //registration form
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -42,7 +40,7 @@ namespace DesktopApp.Forms.LoginForm
         private bool CheckEmail()
         {
             string email = emailField.Text;
-            if (loginService.SetUserEmail(email))
+            if (registrationService.SetUserEmail(email))
             {
                 wrongEmailLabel.Visible = false;
                 return true;
@@ -56,14 +54,19 @@ namespace DesktopApp.Forms.LoginForm
         private bool CheckPassword()
         {
             string password = passwordField.Text;
-            if (loginService.SetUserPassword(password))
+            if (registrationService.SetUserPassword(password))
             {
                 wrongPasswordLabel.Visible = false;
+                passwordSizeLabel.Visible = false;
+                passwordCharLabel.Visible = false;
                 return true;
             }
             else
+            {
                 wrongPasswordLabel.Visible = true;
-
+                passwordSizeLabel.Visible = true;
+                passwordCharLabel.Visible = true;
+            }
             return false;
         }
     }
