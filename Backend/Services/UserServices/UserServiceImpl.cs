@@ -2,6 +2,7 @@
 using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Properties;
 using FormsController = DesktopApp.Backend.Controllers.Forms.FormsController;
 
@@ -37,9 +38,7 @@ namespace DesktopApp.Backend.Services.UserServices
         public void RemoveUser()
         {
             userData = null;
-            Settings.Default.Email = "";
-            Settings.Default.Password = "";
-            Settings.Default.Save();
+            SaveService.RemoveUser();
             SendUserStatusToMainForm();
         }
 

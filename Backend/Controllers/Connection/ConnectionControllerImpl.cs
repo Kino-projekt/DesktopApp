@@ -8,6 +8,7 @@ using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Properties;
 
@@ -50,9 +51,7 @@ namespace DesktopApp.Backend.Controllers.Connection
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 UserCreator.PutUserToSystem(response);
-                Settings.Default.Email = user.GetEmail();
-                Settings.Default.Password = user.GetPassword();
-                Settings.Default.Save();
+                SaveService.SaveUser(user);
                 return true;
             }
             DialogMessage.ShowInfo("Logowanie nieudane!");

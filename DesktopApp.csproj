@@ -142,6 +142,8 @@
     <Compile Include="Backend\Services\DesingerServices\ColorStyle.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
+    <Compile Include="Backend\Services\SaveServices\SaveService.cs" />
+    <Compile Include="Backend\Services\UserServices\Cipher.cs" />
     <Compile Include="Backend\Services\UserServices\UserService.cs" />
     <Compile Include="Backend\Services\UserServices\UserServiceImpl.cs" />
     <Compile Include="Forms\AccessForms\LoginForm\LoginForm.cs">
@@ -307,5 +309,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

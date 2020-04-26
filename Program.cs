@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Forms;
 using DesktopApp.Properties;
 
@@ -34,9 +35,8 @@ namespace DesktopApp
             string password = Settings.Default.Password;
             if (email.Length > 3)
             {
-                AuthData authData = new AuthData(email, password);
                 ConnectionController connection = ConnectionControllerImpl.GetController();
-                connection.Singin(authData);
+                connection.Singin(SaveService.GetUser());
             }
         }
     }
