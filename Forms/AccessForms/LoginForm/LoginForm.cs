@@ -4,6 +4,7 @@ using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Services.AccessServices.LoginServices;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Backend.Services.SaveServices;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.AccessForms.LoginForm
@@ -32,7 +33,7 @@ namespace DesktopApp.Forms.AccessForms.LoginForm
             if (CheckEmail() && CheckPassword())
             {
                 Cursor.Current = Cursors.WaitCursor;
-                BasicConfiguration.SetUserRemember(rememberMeButton.Checked);
+                SaveService.SetUserRemember(rememberMeButton.Checked);
                 if (loginService.LoginNewUser())
                     Close();
                 Cursor.Current = Cursors.Default;
