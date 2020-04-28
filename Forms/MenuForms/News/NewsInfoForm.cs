@@ -13,21 +13,24 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.News
 {
-    public partial class NewsForm : MaterialForm
+    public partial class NewsInfoForm : MaterialForm
     {
         private DesingerService desingerService;
-        public NewsForm()
+        private Article article;
+        public NewsInfoForm(Article article)
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            desingerService.AddPanelToChangeColor(contentPanel);
+            this.article = article;
+            SetLabels();
+        }
 
-            desingerService.AddPanelToChangeColor(panel1);
-            desingerService.AddPanelToChangeColor(panel2);
-            desingerService.AddPanelToChangeColor(panel3);
-            desingerService.AddPanelToChangeColor(panel4);
-            desingerService.AddPanelToChangeColor(panel5);
-            desingerService.AddPanelToChangeColor(panel6);
+        private void SetLabels()
+        {
+            titleLabel.Text = article.GetTitle();
+            descriptionLabel.Text = article.GetDescription();
         }
     }
 }

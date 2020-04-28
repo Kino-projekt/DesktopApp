@@ -27,7 +27,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
             desingerService.AddPanelToChangeColor(checkTicketPanel);
 
             newsContent = new PanelCreator(newsPanel);
-            newsContent.Open(new NewsListForm());
+            newsContent.Open(new NewsAdminListForm());
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
         private void newsListButton_Click(object sender, EventArgs e)
         {
-            newsContent.Open(new NewsListForm());
+            newsContent.Open(new NewsAdminListForm());
         }
     }
 }

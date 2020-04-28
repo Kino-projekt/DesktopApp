@@ -36,7 +36,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
 
         public void OpenNewsForm()
         {
-            content.Open(new NewsForm());
+            content.Open(new NewsListForm());
         }
 
         public void OpenSeanceForm()

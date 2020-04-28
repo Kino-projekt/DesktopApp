@@ -170,17 +170,17 @@
     <Compile Include="Forms\MenuForms\Admin\News\AddNewsForm.Designer.cs">
       <DependentUpon>AddNewsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForms\Admin\News\NewsInfoForm.cs">
+    <Compile Include="Forms\MenuForms\Admin\News\NewsAdminInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForms\Admin\News\NewsInfoForm.Designer.cs">
-      <DependentUpon>NewsInfoForm.cs</DependentUpon>
+    <Compile Include="Forms\MenuForms\Admin\News\NewsAdminInfoForm.Designer.cs">
+      <DependentUpon>NewsAdminInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForms\Admin\News\NewsListForm.cs">
+    <Compile Include="Forms\MenuForms\Admin\News\NewsAdminListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForms\Admin\News\NewsListForm.Designer.cs">
-      <DependentUpon>NewsListForm.cs</DependentUpon>
+    <Compile Include="Forms\MenuForms\Admin\News\NewsAdminListForm.Designer.cs">
+      <DependentUpon>NewsAdminListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\Movies\MoviesForm.cs">
       <SubType>Form</SubType>
@@ -188,11 +188,17 @@
     <Compile Include="Forms\MenuForms\Movies\MoviesForm.Designer.cs">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForms\News\NewsForm.cs">
+    <Compile Include="Forms\MenuForms\News\NewsInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForms\News\NewsForm.Designer.cs">
-      <DependentUpon>NewsForm.cs</DependentUpon>
+    <Compile Include="Forms\MenuForms\News\NewsInfoForm.Designer.cs">
+      <DependentUpon>NewsInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\News\NewsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\News\NewsListForm.Designer.cs">
+      <DependentUpon>NewsListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\Price\PriceForm.cs">
       <SubType>Form</SubType>
@@ -244,17 +250,20 @@
     <EmbeddedResource Include="Forms\MenuForms\Admin\News\AddNewsForm.resx">
       <DependentUpon>AddNewsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForms\Admin\News\NewsInfoForm.resx">
-      <DependentUpon>NewsInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\News\NewsAdminInfoForm.resx">
+      <DependentUpon>NewsAdminInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForms\Admin\News\NewsListForm.resx">
-      <DependentUpon>NewsListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\News\NewsAdminListForm.resx">
+      <DependentUpon>NewsAdminListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Movies\MoviesForm.resx">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForms\News\NewsForm.resx">
-      <DependentUpon>NewsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForms\News\NewsInfoForm.resx">
+      <DependentUpon>NewsInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\News\NewsListForm.resx">
+      <DependentUpon>NewsListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Price\PriceForm.resx">
       <DependentUpon>PriceForm.cs</DependentUpon>
@@ -309,6 +318,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\BasicMethods\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

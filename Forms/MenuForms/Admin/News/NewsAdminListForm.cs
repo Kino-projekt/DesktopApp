@@ -17,7 +17,7 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Admin.News
 {
-    public partial class NewsListForm : MaterialForm
+    public partial class NewsAdminListForm : MaterialForm
     {
         private DesingerService desingerService;
         private ArticleAdminService articleService;
@@ -26,7 +26,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         private int sizeList;
         private int pageNumber;
 
-        public NewsListForm()
+        public NewsAdminListForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
@@ -70,7 +70,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         {
             panel.Visible = true;
             PanelCreator contentPanel = new PanelCreator(panel);
-            contentPanel.Open(new NewsInfoForm(articles[number]));
+            contentPanel.Open(new NewsAdminInfoForm(articles[number]));
         }
 
         private void DownloadArticlesList()
@@ -110,7 +110,15 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
 
         private void SetPageNumberLabel()
         {
-            pageNumberLabel.Text = "Strona: " + pageNumber;
+            if (sizeList <= 8)
+            {
+                pageNumberLabel.Visible = false;
+            }
+            else
+            {
+                pageNumberLabel.Visible = true;
+                pageNumberLabel.Text = "Strona: " + pageNumber;
+            }
         }
     }
 }

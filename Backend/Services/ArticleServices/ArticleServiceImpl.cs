@@ -21,7 +21,9 @@ namespace DesktopApp.Backend.Services.ArticleServices
 
         public List<Article> GetArticleList()
         {
-            return articles = connectionController.GetArticlesFromServer();
+            if(articles==null)
+                articles = connectionController.GetArticlesFromServer();
+            return articles;
         }
 
 

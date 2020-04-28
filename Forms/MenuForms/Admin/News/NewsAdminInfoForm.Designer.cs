@@ -1,6 +1,6 @@
 ﻿namespace DesktopApp.Forms.MenuForms.Admin.News
 {
-    partial class NewsInfoForm
+    partial class NewsAdminInfoForm
     {
         /// <summary>
         /// Required designer variable.

@@ -14,13 +14,13 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Admin.News
 {
-    public partial class NewsInfoForm : MaterialForm
+    public partial class NewsAdminInfoForm : MaterialForm
     {
         private DesingerService desingerService;
         private ArticleAdminService service;
         private Article article;
 
-        public NewsInfoForm(Article article)
+        public NewsAdminInfoForm(Article article)
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
