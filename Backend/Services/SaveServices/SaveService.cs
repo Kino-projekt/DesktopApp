@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Security;
+using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Properties;
@@ -11,9 +12,12 @@ namespace DesktopApp.Backend.Services.SaveServices
 
         public static void SaveUser(AuthData user)
         {
-            Settings.Default.Email = Cipher.Encrypt(user.GetEmail());
-            Settings.Default.Password = Cipher.Encrypt(user.GetPassword());
-            Settings.Default.Save();
+            if (BasicConfiguration.GetUserRemember())
+            {
+                Settings.Default.Email = Cipher.Encrypt(user.GetEmail());
+                Settings.Default.Password = Cipher.Encrypt(user.GetPassword());
+                Settings.Default.Save();
+            }
         }
 
         public static void RemoveUser()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Services.AccessServices.LoginServices;
 using DesktopApp.Backend.Services.DesingerServices;
@@ -31,8 +32,9 @@ namespace DesktopApp.Forms.AccessForms.LoginForm
             if (CheckEmail() && CheckPassword())
             {
                 Cursor.Current = Cursors.WaitCursor;
+                BasicConfiguration.SetUserRemember(rememberMeButton.Checked);
                 if (loginService.LoginNewUser())
-                        Close(); //registration form
+                    Close();
                 Cursor.Current = Cursors.Default;
             }
         }

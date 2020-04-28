@@ -35,6 +35,7 @@
             this.registractionButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.wrongEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.wrongPasswordLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.rememberMeButton = new MaterialSkin.Controls.MaterialCheckBox();
             this.SuspendLayout();
             // 
             // emailField
@@ -139,11 +140,30 @@
             this.wrongPasswordLabel.Text = "Niewłaściwe hasło!";
             this.wrongPasswordLabel.Visible = false;
             // 
+            // rememberMeButton
+            // 
+            this.rememberMeButton.AutoSize = true;
+            this.rememberMeButton.Checked = true;
+            this.rememberMeButton.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.rememberMeButton.Depth = 0;
+            this.rememberMeButton.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rememberMeButton.Location = new System.Drawing.Point(138, 254);
+            this.rememberMeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.rememberMeButton.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rememberMeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rememberMeButton.Name = "rememberMeButton";
+            this.rememberMeButton.Ripple = true;
+            this.rememberMeButton.Size = new System.Drawing.Size(133, 30);
+            this.rememberMeButton.TabIndex = 7;
+            this.rememberMeButton.Text = "Zapamiętaj mnie";
+            this.rememberMeButton.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 500);
+            this.Controls.Add(this.rememberMeButton);
             this.Controls.Add(this.wrongPasswordLabel);
             this.Controls.Add(this.wrongEmailLabel);
             this.Controls.Add(this.registractionButton);
@@ -172,5 +192,6 @@
         private MaterialSkin.Controls.MaterialFlatButton registractionButton;
         private MaterialSkin.Controls.MaterialLabel wrongEmailLabel;
         private MaterialSkin.Controls.MaterialLabel wrongPasswordLabel;
+        private MaterialSkin.Controls.MaterialCheckBox rememberMeButton;
     }
 }
