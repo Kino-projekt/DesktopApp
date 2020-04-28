@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
+using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
@@ -21,10 +22,8 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
     {
         private DesingerService desingerService;
         private ArticleAdminService articleService;
+        private ListFormService listFormService;
         private List<Article> articles;
-        private int lastArticle;
-        private int sizeList;
-        private int pageNumber;
 
         public NewsAdminListForm()
         {
@@ -33,92 +32,52 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             desingerService.AddFormToDesinger(this);
 
             articleService = ArticleAdminServiceImpl.GetService();
-            pageNumber = 1;
+            listFormService = new ListFormService();
+
             DownloadArticlesList();
-            ShowNews();
+            listFormService.SetControlButtonsAndLabel(previusPageButton, nextPageButton, pageNumberLabel);
+
+            ConnectPanels();
+            ConnectForms();
+
+            listFormService.ShowForms();
         }
 
-        private void ShowNews()
+        private void ConnectForms()
         {
-            CleanContentPanel();
-
-            if (sizeList <= 0 || articles == null) { }
-            else
+            List<MaterialForm> forms = new List<MaterialForm>();
+            foreach (Article article in articles)
             {
-                if(sizeList>=1+lastArticle)
-                    CreateNewsPanel(panel1, 0 + lastArticle);
-                if (sizeList >= 2 + lastArticle)
-                    CreateNewsPanel(panel2, 1 + lastArticle);
-                if (sizeList >= 3 + lastArticle)
-                    CreateNewsPanel(panel3, 2 + lastArticle);
-                if (sizeList >= 4 + lastArticle)
-                    CreateNewsPanel(panel4, 3 + lastArticle);
-                if (sizeList >= 5 + lastArticle)
-                    CreateNewsPanel(panel5, 4 + lastArticle);
-                if (sizeList >= 6 + lastArticle)
-                    CreateNewsPanel(panel6, 5 + lastArticle);
-
-                if (lastArticle != 0)
-                    previusPageButton.Visible = true;
-
-                if (lastArticle + 6 < sizeList)
-                    nextPageButton.Visible = true;
+                forms.Add(new NewsAdminInfoForm(article));
             }
+            listFormService.SetForms(forms);
         }
 
-        private void CreateNewsPanel(Panel panel, int number)
+        private void ConnectPanels()
         {
-            panel.Visible = true;
-            PanelCreator contentPanel = new PanelCreator(panel);
-            contentPanel.Open(new NewsAdminInfoForm(articles[number]));
+            List<Panel> panels = new List<Panel>();
+            panels.Add(panel1);
+            panels.Add(panel2);
+            panels.Add(panel3);
+            panels.Add(panel4);
+            panels.Add(panel5);
+            panels.Add(panel6);
+            listFormService.SetPanels(panels);
         }
 
         private void DownloadArticlesList()
         {
             articles = articleService.GetArticleListForAdmin();
-            sizeList = articles.Count;
-            lastArticle = 0;
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)
         {
-            lastArticle = lastArticle - 6;
-            pageNumber--;
-            ShowNews();
+            listFormService.PreviusePage();
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)
         {
-            lastArticle = lastArticle + 6;
-            pageNumber++;
-            ShowNews();
-        }
-
-        private void CleanContentPanel()
-        {
-            SetPageNumberLabel();
-            previusPageButton.Visible = false;
-            nextPageButton.Visible = false;
-
-            panel1.Visible = false;
-            panel2.Visible = false;
-            panel3.Visible = false;
-            panel4.Visible = false;
-            panel5.Visible = false;
-            panel6.Visible = false;
-        }
-
-        private void SetPageNumberLabel()
-        {
-            if (sizeList <= 8)
-            {
-                pageNumberLabel.Visible = false;
-            }
-            else
-            {
-                pageNumberLabel.Visible = true;
-                pageNumberLabel.Text = "Strona: " + pageNumber;
-            }
+            listFormService.NextPage();
         }
     }
 }
