@@ -12,5 +12,7 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
         void ChangeArticleStatus(Article article);
 
         void DeleteArticle(Article article);
+
+        void DownloadArticleList();
     }
 }

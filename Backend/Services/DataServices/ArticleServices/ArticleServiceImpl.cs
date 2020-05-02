@@ -7,27 +7,34 @@ namespace DesktopApp.Backend.Services.DataServices.ArticleServices
 {
     public class ArticleServiceImpl : ArticleService
     {
+        private static ArticleService articleService;
         private List<Article> articles;
         private ConnectionController connectionController;
 
         private ArticleServiceImpl()
         {
             connectionController = ConnectionControllerImpl.GetController();
+            DownloadArticleList();
         }
 
         public static ArticleService GetService()
         {
-            return new ArticleServiceImpl();
+            if(articleService==null)
+                articleService = new ArticleServiceImpl();
+            return articleService;
         }
 
         public List<Article> GetArticleList()
         {
             if(articles==null)
-                articles = connectionController.GetArticlesFromServer();
+                DownloadArticleList();
             return articles;
         }
 
-
+        public void DownloadArticleList()
+        {
+            articles = connectionController.GetArticlesFromServer();
+        }
     }
 
 }

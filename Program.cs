@@ -8,6 +8,7 @@ using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Forms;
+using DesktopApp.Forms.LoadForm;
 using DesktopApp.Properties;
 
 namespace DesktopApp
@@ -25,19 +26,13 @@ namespace DesktopApp
 
             FormsController formsController = FormsControllerImpl.GetInstance();
             MainForm.MainForm mainForm = formsController.GetMainForm();
-            LoginUserFromData();
+
+            LoadingForm loadingForm = new LoadingForm();
+            loadingForm.StartDownload(true);
+
             Application.Run(mainForm);
+            
         }
 
-        private static void LoginUserFromData()
-        {
-            string email = Settings.Default.Email;
-            string password = Settings.Default.Password;
-            if (email.Length > 3)
-            {
-                ConnectionController connection = ConnectionControllerImpl.GetController();
-                connection.Singin(SaveService.GetUser());
-            }
-        }
     }
 }

@@ -180,7 +180,8 @@
             // 
             this.addNewsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewsButton.Depth = 0;
-            this.addNewsButton.Location = new System.Drawing.Point(184, 6);
+            this.addNewsButton.Location = new System.Drawing.Point(203, 13);
+            this.addNewsButton.Margin = new System.Windows.Forms.Padding(10);
             this.addNewsButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addNewsButton.Name = "addNewsButton";
             this.addNewsButton.Primary = true;
@@ -202,7 +203,8 @@
             // 
             this.refreshNewsListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshNewsListButton.Depth = 0;
-            this.refreshNewsListButton.Location = new System.Drawing.Point(624, 6);
+            this.refreshNewsListButton.Location = new System.Drawing.Point(617, 13);
+            this.refreshNewsListButton.Margin = new System.Windows.Forms.Padding(10);
             this.refreshNewsListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshNewsListButton.Name = "refreshNewsListButton";
             this.refreshNewsListButton.Primary = true;
@@ -210,12 +212,14 @@
             this.refreshNewsListButton.TabIndex = 1;
             this.refreshNewsListButton.Text = "Odświerz liste";
             this.refreshNewsListButton.UseVisualStyleBackColor = true;
+            this.refreshNewsListButton.Click += new System.EventHandler(this.refreshNewsListButton_Click);
             // 
             // newsListButton
             // 
             this.newsListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newsListButton.Depth = 0;
-            this.newsListButton.Location = new System.Drawing.Point(8, 6);
+            this.newsListButton.Location = new System.Drawing.Point(15, 13);
+            this.newsListButton.Margin = new System.Windows.Forms.Padding(10);
             this.newsListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.newsListButton.Name = "newsListButton";
             this.newsListButton.Primary = true;
@@ -280,7 +284,8 @@
             // 
             this.refreshUsersListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshUsersListButton.Depth = 0;
-            this.refreshUsersListButton.Location = new System.Drawing.Point(624, 6);
+            this.refreshUsersListButton.Location = new System.Drawing.Point(617, 13);
+            this.refreshUsersListButton.Margin = new System.Windows.Forms.Padding(10);
             this.refreshUsersListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshUsersListButton.Name = "refreshUsersListButton";
             this.refreshUsersListButton.Primary = true;
@@ -288,13 +293,13 @@
             this.refreshUsersListButton.TabIndex = 5;
             this.refreshUsersListButton.Text = "Odświerz liste";
             this.refreshUsersListButton.UseVisualStyleBackColor = true;
-            this.refreshUsersListButton.Click += new System.EventHandler(this.refreshUsersListButton_Click);
             // 
             // usersListButton
             // 
             this.usersListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usersListButton.Depth = 0;
-            this.usersListButton.Location = new System.Drawing.Point(8, 6);
+            this.usersListButton.Location = new System.Drawing.Point(15, 13);
+            this.usersListButton.Margin = new System.Windows.Forms.Padding(10);
             this.usersListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.usersListButton.Name = "usersListButton";
             this.usersListButton.Primary = true;

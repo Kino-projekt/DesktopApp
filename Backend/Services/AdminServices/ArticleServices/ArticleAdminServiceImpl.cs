@@ -6,16 +6,20 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
 {
     public class ArticleAdminServiceImpl : ArticleAdminService
     {
+        private static ArticleAdminService adminService;
         private List<Article> articles;
         private AdminConnectionController connectionController;
 
         private ArticleAdminServiceImpl()
         {
             connectionController = AdminConnectionControllerImpl.GetController();
+            DownloadArticleList();
         }
         public static ArticleAdminService GetService()
         {
-            return new ArticleAdminServiceImpl();
+            if(adminService==null)
+                adminService = new ArticleAdminServiceImpl();
+            return adminService;
         }
 
         public void SendArticleToServer(Article article)
@@ -33,9 +37,16 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
             connectionController.DeleteArticle(article);
         }
 
+        public void DownloadArticleList()
+        {
+            articles = connectionController.GetAdminArticlesFromServer();
+        }
+
         public List<Article> GetArticleListForAdmin()
         {
-            return articles = connectionController.GetAdminArticlesFromServer();
+            if (articles == null)
+                DownloadArticleList();
+            return articles;
         }
     }
 }

@@ -5,6 +5,7 @@ using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Services.AccessServices.LoginServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.SaveServices;
+using DesktopApp.Forms.LoadForm;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.AccessForms.LoginForm
@@ -35,7 +36,12 @@ namespace DesktopApp.Forms.AccessForms.LoginForm
                 Cursor.Current = Cursors.WaitCursor;
                 SaveService.SetUserRemember(rememberMeButton.Checked);
                 if (loginService.LoginNewUser())
+                {
+                    Visible = false;
+                    LoadingForm loading = new LoadingForm();
+                    loading.StartDownload(false);
                     Close();
+                }
                 Cursor.Current = Cursors.Default;
             }
         }

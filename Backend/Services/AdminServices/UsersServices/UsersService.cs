@@ -6,5 +6,7 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
     public interface UsersService
     {
         List<User> GetUsersList();
+
+        void DownloadUserList();
     }
 }

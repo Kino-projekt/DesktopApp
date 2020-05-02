@@ -7,6 +7,8 @@ using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
+using DesktopApp.Forms.LoadForm;
+using DesktopApp.Forms.MenuForms.Admin.Users;
 using DesktopApp.Properties;
 using MaterialSkin.Controls;
 
@@ -23,6 +25,7 @@ namespace DesktopApp.MainForm
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(menuPanel);
+
             contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
             contentPanelController.OpenNewsForm();
             
@@ -32,8 +35,6 @@ namespace DesktopApp.MainForm
         {
             FormsController formsController = FormsControllerImpl.GetInstance();
             formsController.OpenLoginForm();
-
-            
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
