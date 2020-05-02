@@ -32,19 +32,22 @@
             this.contentPanel = new System.Windows.Forms.Panel();
             this.mainMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.seanceTab = new System.Windows.Forms.TabPage();
-            this.chceckTicketButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.checkTicketPanel = new System.Windows.Forms.Panel();
+            this.chceckTicketButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ticketNumberField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.newsTab = new System.Windows.Forms.TabPage();
-            this.newsPanel = new System.Windows.Forms.Panel();
             this.addNewsButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.newsPanel = new System.Windows.Forms.Panel();
             this.refreshNewsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.newsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.seancesTab = new System.Windows.Forms.TabPage();
             this.moviesTab = new System.Windows.Forms.TabPage();
             this.roomsTab = new System.Windows.Forms.TabPage();
             this.usersTab = new System.Windows.Forms.TabPage();
+            this.usersPanel = new System.Windows.Forms.Panel();
+            this.refreshUsersListButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.usersListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -54,6 +57,7 @@
             this.seanceTab.SuspendLayout();
             this.checkTicketPanel.SuspendLayout();
             this.newsTab.SuspendLayout();
+            this.usersTab.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +109,18 @@
             this.seanceTab.Text = "Sprawdzarka biletów";
             this.seanceTab.UseVisualStyleBackColor = true;
             // 
+            // checkTicketPanel
+            // 
+            this.checkTicketPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.checkTicketPanel.Controls.Add(this.chceckTicketButton);
+            this.checkTicketPanel.Controls.Add(this.ticketNumberField);
+            this.checkTicketPanel.Controls.Add(this.materialLabel2);
+            this.checkTicketPanel.Location = new System.Drawing.Point(15, 13);
+            this.checkTicketPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.checkTicketPanel.Name = "checkTicketPanel";
+            this.checkTicketPanel.Size = new System.Drawing.Size(762, 150);
+            this.checkTicketPanel.TabIndex = 0;
+            // 
             // chceckTicketButton
             // 
             this.chceckTicketButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -117,18 +133,6 @@
             this.chceckTicketButton.TabIndex = 1;
             this.chceckTicketButton.Text = "Sprawdź bilet";
             this.chceckTicketButton.UseVisualStyleBackColor = true;
-            // 
-            // checkTicketPanel
-            // 
-            this.checkTicketPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.checkTicketPanel.Controls.Add(this.chceckTicketButton);
-            this.checkTicketPanel.Controls.Add(this.ticketNumberField);
-            this.checkTicketPanel.Controls.Add(this.materialLabel2);
-            this.checkTicketPanel.Location = new System.Drawing.Point(15, 13);
-            this.checkTicketPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.checkTicketPanel.Name = "checkTicketPanel";
-            this.checkTicketPanel.Size = new System.Drawing.Size(762, 150);
-            this.checkTicketPanel.TabIndex = 0;
             // 
             // ticketNumberField
             // 
@@ -160,8 +164,8 @@
             // 
             // newsTab
             // 
-            this.newsTab.Controls.Add(this.newsPanel);
             this.newsTab.Controls.Add(this.addNewsButton);
+            this.newsTab.Controls.Add(this.newsPanel);
             this.newsTab.Controls.Add(this.refreshNewsListButton);
             this.newsTab.Controls.Add(this.newsListButton);
             this.newsTab.Location = new System.Drawing.Point(4, 22);
@@ -172,19 +176,11 @@
             this.newsTab.Text = "Newsy";
             this.newsTab.UseVisualStyleBackColor = true;
             // 
-            // newsPanel
-            // 
-            this.newsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.newsPanel.Location = new System.Drawing.Point(3, 56);
-            this.newsPanel.Name = "newsPanel";
-            this.newsPanel.Size = new System.Drawing.Size(786, 455);
-            this.newsPanel.TabIndex = 3;
-            // 
             // addNewsButton
             // 
             this.addNewsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewsButton.Depth = 0;
-            this.addNewsButton.Location = new System.Drawing.Point(624, 6);
+            this.addNewsButton.Location = new System.Drawing.Point(184, 6);
             this.addNewsButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addNewsButton.Name = "addNewsButton";
             this.addNewsButton.Primary = true;
@@ -194,11 +190,19 @@
             this.addNewsButton.UseVisualStyleBackColor = true;
             this.addNewsButton.Click += new System.EventHandler(this.addNewsButton_Click);
             // 
+            // newsPanel
+            // 
+            this.newsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.newsPanel.Location = new System.Drawing.Point(3, 56);
+            this.newsPanel.Name = "newsPanel";
+            this.newsPanel.Size = new System.Drawing.Size(786, 455);
+            this.newsPanel.TabIndex = 3;
+            // 
             // refreshNewsListButton
             // 
             this.refreshNewsListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshNewsListButton.Depth = 0;
-            this.refreshNewsListButton.Location = new System.Drawing.Point(184, 6);
+            this.refreshNewsListButton.Location = new System.Drawing.Point(624, 6);
             this.refreshNewsListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshNewsListButton.Name = "refreshNewsListButton";
             this.refreshNewsListButton.Primary = true;
@@ -253,6 +257,9 @@
             // 
             // usersTab
             // 
+            this.usersTab.Controls.Add(this.usersPanel);
+            this.usersTab.Controls.Add(this.refreshUsersListButton);
+            this.usersTab.Controls.Add(this.usersListButton);
             this.usersTab.Location = new System.Drawing.Point(4, 22);
             this.usersTab.Name = "usersTab";
             this.usersTab.Padding = new System.Windows.Forms.Padding(3);
@@ -260,6 +267,42 @@
             this.usersTab.TabIndex = 5;
             this.usersTab.Text = "Użytkownicy";
             this.usersTab.UseVisualStyleBackColor = true;
+            // 
+            // usersPanel
+            // 
+            this.usersPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.usersPanel.Location = new System.Drawing.Point(3, 56);
+            this.usersPanel.Name = "usersPanel";
+            this.usersPanel.Size = new System.Drawing.Size(786, 455);
+            this.usersPanel.TabIndex = 7;
+            // 
+            // refreshUsersListButton
+            // 
+            this.refreshUsersListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshUsersListButton.Depth = 0;
+            this.refreshUsersListButton.Location = new System.Drawing.Point(624, 6);
+            this.refreshUsersListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshUsersListButton.Name = "refreshUsersListButton";
+            this.refreshUsersListButton.Primary = true;
+            this.refreshUsersListButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshUsersListButton.TabIndex = 5;
+            this.refreshUsersListButton.Text = "Odświerz liste";
+            this.refreshUsersListButton.UseVisualStyleBackColor = true;
+            this.refreshUsersListButton.Click += new System.EventHandler(this.refreshUsersListButton_Click);
+            // 
+            // usersListButton
+            // 
+            this.usersListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.usersListButton.Depth = 0;
+            this.usersListButton.Location = new System.Drawing.Point(8, 6);
+            this.usersListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.usersListButton.Name = "usersListButton";
+            this.usersListButton.Primary = true;
+            this.usersListButton.Size = new System.Drawing.Size(170, 44);
+            this.usersListButton.TabIndex = 4;
+            this.usersListButton.Text = "Lista użytkowników";
+            this.usersListButton.UseVisualStyleBackColor = true;
+            this.usersListButton.Click += new System.EventHandler(this.usersListButton_Click);
             // 
             // menuPanel
             // 
@@ -311,6 +354,7 @@
             this.checkTicketPanel.ResumeLayout(false);
             this.checkTicketPanel.PerformLayout();
             this.newsTab.ResumeLayout(false);
+            this.usersTab.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -338,5 +382,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
+        private System.Windows.Forms.Panel usersPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshUsersListButton;
+        private MaterialSkin.Controls.MaterialRaisedButton usersListButton;
     }
 }

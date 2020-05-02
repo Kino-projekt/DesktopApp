@@ -143,6 +143,8 @@
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesService.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesServiceImpl.cs" />
+    <Compile Include="Backend\Services\AdminServices\UsersServices\UsersService.cs" />
+    <Compile Include="Backend\Services\AdminServices\UsersServices\UsersServiceImpl.cs" />
     <Compile Include="Backend\Services\DesingerServices\ColorStyle.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
@@ -187,17 +189,29 @@
     <Compile Include="Forms\MenuForms\Admin\News\NewsAdminListForm.Designer.cs">
       <DependentUpon>NewsAdminListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Users\UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Users\UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Users\UsersListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Users\UsersListForm.Designer.cs">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuForms\Movies\MovieInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MenuForms\Movies\MovieInfoForm.Designer.cs">
       <DependentUpon>MovieInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForms\Movies\MoviesForm.cs">
+    <Compile Include="Forms\MenuForms\Movies\MoviesListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForms\Movies\MoviesForm.Designer.cs">
-      <DependentUpon>MoviesForm.cs</DependentUpon>
+    <Compile Include="Forms\MenuForms\Movies\MoviesListForm.Designer.cs">
+      <DependentUpon>MoviesListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\News\NewsInfoForm.cs">
       <SubType>Form</SubType>
@@ -267,11 +281,17 @@
     <EmbeddedResource Include="Forms\MenuForms\Admin\News\NewsAdminListForm.resx">
       <DependentUpon>NewsAdminListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Users\UserInfoForm.resx">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Users\UsersListForm.resx">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Movies\MovieInfoForm.resx">
       <DependentUpon>MovieInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForms\Movies\MoviesForm.resx">
-      <DependentUpon>MoviesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForms\Movies\MoviesListForm.resx">
+      <DependentUpon>MoviesListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\News\NewsInfoForm.resx">
       <DependentUpon>NewsInfoForm.cs</DependentUpon>

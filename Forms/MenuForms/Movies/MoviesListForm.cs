@@ -16,14 +16,14 @@ using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Movies
 {
-    public partial class MoviesForm : MaterialForm
+    public partial class MoviesListForm : MaterialForm
     {
         private DesingerService desingerService;
         private MoviesService moviesService;
         private ListFormService listFormService;
         private List<Movie> movies;
 
-        public MoviesForm()
+        public MoviesListForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
@@ -72,12 +72,12 @@ namespace DesktopApp.Forms.MenuForms.Movies
             movies = moviesService.GetMoviesList();
         }
 
-        private void previusPageButton_Click(object sender, EventArgs e)
+        private void previusPageButton_Click_1(object sender, EventArgs e)
         {
             listFormService.PreviusePage();
         }
 
-        private void nextPageButton_Click(object sender, EventArgs e)
+        private void nextPageButton_Click_1(object sender, EventArgs e)
         {
             listFormService.NextPage();
         }

@@ -7,31 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopApp.Backend.Controllers.ContentPanel.Methods;
-using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Controllers.Forms;
+using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.UsersServices;
+using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.News;
 using MaterialSkin.Controls;
-using DesktopApp.Backend.Services.DataServices.ArticleServices;
-using DesktopApp.Forms.MenuForms.Movies;
 
-namespace DesktopApp.Forms.MenuForms.News
+namespace DesktopApp.Forms.MenuForms.Admin.Users
 {
-    public partial class NewsListForm : MaterialForm
+    public partial class UsersListForm : MaterialForm
     {
         private DesingerService desingerService;
-        private ArticleService articleService;
+        private UsersService usersService;
         private ListFormService listFormService;
-        private List<Article> articles;
-
-        public NewsListForm()
+        private List<Backend.Data.User> users;
+        public UsersListForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
 
-            articleService = ArticleServiceImpl.GetService();
+            usersService = UsersServiceImpl.GetService();
             listFormService = new ListFormService();
 
             DownloadArticlesList();
@@ -47,9 +44,9 @@ namespace DesktopApp.Forms.MenuForms.News
         private void ConnectForms()
         {
             List<MaterialForm> forms = new List<MaterialForm>();
-            foreach (Article article in articles)
+            foreach (Backend.Data.User user in users)
             {
-                forms.Add(new NewsInfoForm(article));
+                forms.Add(new UserInfoForm(user));
             }
             listFormService.SetForms(forms);
         }
@@ -63,30 +60,22 @@ namespace DesktopApp.Forms.MenuForms.News
             panels.Add(panel4);
             panels.Add(panel5);
             panels.Add(panel6);
-            panels.Add(panel7);
             listFormService.SetPanels(panels);
         }
 
-        
         private void DownloadArticlesList()
         {
-            articles = articleService.GetArticleList();
-            if (articles == null)
-                infoLabel.Visible = true;
-            else
-                infoLabel.Visible = false;
-
-
-        }
-
-        private void previusPageButton_Click_1(object sender, EventArgs e)
-        {
-            listFormService.PreviusePage();
+            users = usersService.GetUsersList();
         }
 
         private void nextPageButton_Click_1(object sender, EventArgs e)
         {
             listFormService.NextPage();
+        }
+
+        private void previusPageButton_Click_1(object sender, EventArgs e)
+        {
+            listFormService.PreviusePage();
         }
     }
 }

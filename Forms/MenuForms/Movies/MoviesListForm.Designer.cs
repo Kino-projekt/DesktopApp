@@ -1,6 +1,6 @@
 ﻿namespace DesktopApp.Forms.MenuForms.Movies
 {
-    partial class MoviesForm
+    partial class MoviesListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.contentPanel = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.infoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.contentPanel = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.pageNumberLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nextPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.previusPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPanel.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.contentPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -54,6 +54,40 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(800, 600);
             this.mainPanel.TabIndex = 0;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Controls.Add(this.panel7);
+            this.contentPanel.Controls.Add(this.panel6);
+            this.contentPanel.Controls.Add(this.panel5);
+            this.contentPanel.Controls.Add(this.panel4);
+            this.contentPanel.Controls.Add(this.panel3);
+            this.contentPanel.Controls.Add(this.panel2);
+            this.contentPanel.Controls.Add(this.panel1);
+            this.contentPanel.Controls.Add(this.pageNumberLabel);
+            this.contentPanel.Controls.Add(this.nextPageButton);
+            this.contentPanel.Controls.Add(this.previusPageButton);
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(0, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(800, 600);
+            this.contentPanel.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(19, 499);
+            this.panel7.Margin = new System.Windows.Forms.Padding(10);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(776, 60);
+            this.panel7.TabIndex = 24;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(19, 419);
+            this.panel6.Margin = new System.Windows.Forms.Padding(10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(762, 60);
+            this.panel6.TabIndex = 22;
             // 
             // panel5
             // 
@@ -110,40 +144,6 @@
             this.panel1.Size = new System.Drawing.Size(762, 60);
             this.panel1.TabIndex = 17;
             // 
-            // contentPanel
-            // 
-            this.contentPanel.Controls.Add(this.panel7);
-            this.contentPanel.Controls.Add(this.panel6);
-            this.contentPanel.Controls.Add(this.panel5);
-            this.contentPanel.Controls.Add(this.panel4);
-            this.contentPanel.Controls.Add(this.panel3);
-            this.contentPanel.Controls.Add(this.panel2);
-            this.contentPanel.Controls.Add(this.panel1);
-            this.contentPanel.Controls.Add(this.pageNumberLabel);
-            this.contentPanel.Controls.Add(this.nextPageButton);
-            this.contentPanel.Controls.Add(this.previusPageButton);
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(0, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(800, 600);
-            this.contentPanel.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(19, 499);
-            this.panel7.Margin = new System.Windows.Forms.Padding(10);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(776, 60);
-            this.panel7.TabIndex = 24;
-            // 
-            // panel6
-            // 
-            this.panel6.Location = new System.Drawing.Point(19, 419);
-            this.panel6.Margin = new System.Windows.Forms.Padding(10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(762, 60);
-            this.panel6.TabIndex = 22;
-            // 
             // pageNumberLabel
             // 
             this.pageNumberLabel.AutoSize = true;
@@ -169,6 +169,7 @@
             this.nextPageButton.TabIndex = 9;
             this.nextPageButton.Text = "Następna strona";
             this.nextPageButton.UseVisualStyleBackColor = true;
+            this.nextPageButton.Click += new System.EventHandler(this.nextPageButton_Click_1);
             // 
             // previusPageButton
             // 
@@ -182,20 +183,21 @@
             this.previusPageButton.TabIndex = 8;
             this.previusPageButton.Text = "Poprzednia strona";
             this.previusPageButton.UseVisualStyleBackColor = true;
+            this.previusPageButton.Click += new System.EventHandler(this.previusPageButton_Click_1);
             // 
-            // MoviesForm
+            // MoviesListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.mainPanel);
-            this.Name = "MoviesForm";
+            this.Name = "MoviesListForm";
             this.Text = "MoviesForm";
             this.mainPanel.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

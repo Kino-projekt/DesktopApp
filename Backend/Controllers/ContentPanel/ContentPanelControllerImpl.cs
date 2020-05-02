@@ -56,7 +56,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
 
         public void OpenMoviesForm()
         {
-            content.Open(new MoviesForm());
+            content.Open(new MoviesListForm());
         }
     }
 }

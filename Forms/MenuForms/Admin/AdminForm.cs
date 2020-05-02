@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.News;
+using DesktopApp.Forms.MenuForms.Admin.Users;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Admin
@@ -18,6 +19,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
     {
         private DesingerService desingerService;
         private PanelCreator newsContent;
+        private PanelCreator usersContent;
 
         public AdminForm()
         {
@@ -28,6 +30,9 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
             newsContent = new PanelCreator(newsPanel);
             newsContent.Open(new NewsAdminListForm());
+
+            usersContent = new PanelCreator(usersPanel);
+            usersContent.Open(new UsersListForm());
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -38,6 +43,16 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private void newsListButton_Click(object sender, EventArgs e)
         {
             newsContent.Open(new NewsAdminListForm());
+        }
+
+        private void usersListButton_Click(object sender, EventArgs e)
+        {
+            usersContent.Open(new UsersListForm());
+        }
+
+        private void refreshUsersListButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
