@@ -293,6 +293,7 @@
             this.refreshUsersListButton.TabIndex = 5;
             this.refreshUsersListButton.Text = "Odświerz liste";
             this.refreshUsersListButton.UseVisualStyleBackColor = true;
+            this.refreshUsersListButton.Click += new System.EventHandler(this.refreshUsersListButton_Click);
             // 
             // usersListButton
             // 

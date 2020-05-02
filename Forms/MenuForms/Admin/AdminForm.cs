@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.News;
 using DesktopApp.Forms.MenuForms.Admin.Users;
@@ -53,8 +54,13 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
         private void refreshNewsListButton_Click(object sender, EventArgs e)
         {
-            ArticleAdminService articleAdmin = ArticleAdminServiceImpl.GetService();
-            articleAdmin.DownloadArticleList();
+            ArticleAdminServiceImpl.GetService().DownloadArticleList();
+            usersContent.Open(new UsersListForm());
+        }
+
+        private void refreshUsersListButton_Click(object sender, EventArgs e)
+        {
+            UsersServiceImpl.GetService().DownloadUserList();
             usersContent.Open(new UsersListForm());
         }
     }
