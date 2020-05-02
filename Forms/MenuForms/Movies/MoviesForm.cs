@@ -35,6 +35,8 @@ namespace DesktopApp.Forms.MenuForms.Movies
 
             DownloadArticlesList();
             listFormService.SetControlButtonsAndLabel(previusPageButton, nextPageButton, pageNumberLabel);
+            listFormService.SetInfoPanel(infoLabel);
+
             ConnectPanels();
             ConnectForms();
 
@@ -68,12 +70,6 @@ namespace DesktopApp.Forms.MenuForms.Movies
         private void DownloadArticlesList()
         {
             movies = moviesService.GetMoviesList();
-            if (movies == null)
-                infoLabel.Visible = true;
-            else
-                infoLabel.Visible = false;
-
-
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

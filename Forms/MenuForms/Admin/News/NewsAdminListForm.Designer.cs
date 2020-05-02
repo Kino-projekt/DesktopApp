@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.pageNumberLabel = new MaterialSkin.Controls.MaterialLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -37,8 +38,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.nextPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.previusPageButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pageNumberLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.infoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -57,6 +59,19 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(786, 455);
             this.contentPanel.TabIndex = 0;
+            // 
+            // pageNumberLabel
+            // 
+            this.pageNumberLabel.AutoSize = true;
+            this.pageNumberLabel.Depth = 0;
+            this.pageNumberLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.pageNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pageNumberLabel.Location = new System.Drawing.Point(350, 416);
+            this.pageNumberLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pageNumberLabel.Name = "pageNumberLabel";
+            this.pageNumberLabel.Size = new System.Drawing.Size(53, 19);
+            this.pageNumberLabel.TabIndex = 15;
+            this.pageNumberLabel.Text = "Strona";
             // 
             // panel6
             // 
@@ -81,6 +96,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.infoLabel);
             this.panel3.Location = new System.Drawing.Point(12, 144);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(760, 60);
@@ -129,29 +145,31 @@
             this.previusPageButton.UseVisualStyleBackColor = true;
             this.previusPageButton.Click += new System.EventHandler(this.previusPageButton_Click);
             // 
-            // pageNumberLabel
+            // infoLabel
             // 
-            this.pageNumberLabel.AutoSize = true;
-            this.pageNumberLabel.Depth = 0;
-            this.pageNumberLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.pageNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pageNumberLabel.Location = new System.Drawing.Point(350, 416);
-            this.pageNumberLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pageNumberLabel.Name = "pageNumberLabel";
-            this.pageNumberLabel.Size = new System.Drawing.Size(53, 19);
-            this.pageNumberLabel.TabIndex = 15;
-            this.pageNumberLabel.Text = "Strona";
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Depth = 0;
+            this.infoLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.infoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.infoLabel.Location = new System.Drawing.Point(292, 44);
+            this.infoLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(180, 19);
+            this.infoLabel.TabIndex = 0;
+            this.infoLabel.Text = "Błąd pobierania z servera!";
             // 
-            // NewsListForm
+            // NewsAdminListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 455);
             this.Controls.Add(this.contentPanel);
-            this.Name = "NewsListForm";
+            this.Name = "NewsAdminListForm";
             this.Text = "NewsListForm";
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,5 +186,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel pageNumberLabel;
+        private MaterialSkin.Controls.MaterialLabel infoLabel;
     }
 }

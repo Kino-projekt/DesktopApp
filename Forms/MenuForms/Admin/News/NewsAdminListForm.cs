@@ -35,6 +35,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
 
             DownloadArticlesList();
             listFormService.SetControlButtonsAndLabel(previusPageButton, nextPageButton, pageNumberLabel);
+            listFormService.SetInfoPanel(infoLabel);
 
             ConnectPanels();
             ConnectForms();

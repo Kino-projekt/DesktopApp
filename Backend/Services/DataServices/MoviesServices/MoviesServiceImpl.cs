@@ -6,7 +6,7 @@ namespace DesktopApp.Backend.Services.DataServices.MoviesServices
 {
     public class MoviesServiceImpl : MoviesService
     {
-        private List<Movie> articles;
+        private List<Movie> movies;
         private ConnectionController connectionController;
 
         private MoviesServiceImpl()
@@ -21,7 +21,8 @@ namespace DesktopApp.Backend.Services.DataServices.MoviesServices
 
         public List<Movie> GetMoviesList()
         {
-            throw new System.NotImplementedException();
+            movies = connectionController.GetMoviesFromServer();
+            return movies;
         }
 
     }

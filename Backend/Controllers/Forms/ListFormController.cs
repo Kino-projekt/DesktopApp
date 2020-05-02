@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
+using DesktopApp.Backend.Services.DataServices.MoviesServices;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Backend.Controllers.Forms
@@ -12,6 +13,7 @@ namespace DesktopApp.Backend.Controllers.Forms
         private List<MaterialForm> forms;
         private MaterialRaisedButton previusPageButton, nextPageButton;
         private MaterialLabel pageNumberLabel;
+        private MaterialLabel infoLabel;
         private int pageNumber = 0;
 
         public ListFormService()
@@ -95,6 +97,17 @@ namespace DesktopApp.Backend.Controllers.Forms
         public void SetForms(List<MaterialForm> forms)
         {
             this.forms = forms;
+            if (infoLabel != null)
+            {
+                if (forms == null || forms.Count >= 0)
+                {
+                    infoLabel.Visible = true;
+                }
+                else
+                {
+                    infoLabel.Visible = false;
+                }
+            }
         }
 
         public void SetControlButtonsAndLabel(MaterialRaisedButton previusButton, MaterialRaisedButton nextButton, MaterialLabel pageNumberLabel)
@@ -102,6 +115,11 @@ namespace DesktopApp.Backend.Controllers.Forms
             this.previusPageButton = previusButton;
             this.nextPageButton = nextButton;
             this.pageNumberLabel = pageNumberLabel;
+        }
+
+        public void SetInfoPanel(MaterialLabel info)
+        {
+            infoLabel = info;
         }
 
     }
