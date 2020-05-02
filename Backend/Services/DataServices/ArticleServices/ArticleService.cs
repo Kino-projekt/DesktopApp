@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Data;
 
-namespace DesktopApp.Backend.Services.ArticleServices
+namespace DesktopApp.Backend.Services.DataServices.ArticleServices
 {
     public interface ArticleService
     {

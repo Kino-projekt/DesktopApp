@@ -89,6 +89,20 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             }
         }
 
+        public List<User> GetUsersListFromServer()
+        {
+            List<User> users;
+            HttpResponseMessage response = client.GetAsync("/api/users").Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                users = UsersListCreator.CreateUsers(response);
+                return users;
+            }
+
+            DialogMessage.ShowInfo("Błąd pobierania artykułów!");
+            return null;
+        }
+
         private void SetAuthorization()
         {
             client.DefaultRequestHeaders.Authorization =

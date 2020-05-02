@@ -11,27 +11,27 @@ using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
-namespace DesktopApp.Forms.MenuForms.News
+namespace DesktopApp.Forms.MenuForms.Movies
 {
-    public partial class NewsInfoForm : MaterialForm
+    public partial class MovieInfoForm : MaterialForm
     {
         private DesingerService desingerService;
-        private Article article;
-        public NewsInfoForm(Article article)
+        private Movie movie;
+        public MovieInfoForm(Movie movie)
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(contentPanel);
 
-            this.article = article;
+            this.movie = movie;
             SetLabels();
         }
 
         private void SetLabels()
         {
-            titleLabel.Text = article.GetTitle();
-            descriptionLabel.Text = article.GetDescription();
+            titleLabel.Text = movie.GetTitle();
+            descriptionLabel.Text = movie.GetDescription();
         }
     }
 }

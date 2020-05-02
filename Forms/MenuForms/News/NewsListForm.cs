@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Data;
-using DesktopApp.Backend.Services.ArticleServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Forms.MenuForms.Admin.News;
 using MaterialSkin.Controls;
+using DesktopApp.Backend.Services.DataServices.ArticleServices;
+using DesktopApp.Forms.MenuForms.Movies;
 
 namespace DesktopApp.Forms.MenuForms.News
 {
@@ -68,6 +69,12 @@ namespace DesktopApp.Forms.MenuForms.News
         private void DownloadArticlesList()
         {
             articles = articleService.GetArticleList();
+            if (articles == null)
+                infoLabel.Visible = true;
+            else
+                infoLabel.Visible = false;
+
+
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

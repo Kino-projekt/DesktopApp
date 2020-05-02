@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.DataServices.ArticleServices;
 
-namespace DesktopApp.Backend.Services.ArticleServices
+namespace DesktopApp.Backend.Services.DataServices.ArticleServices
 {
     public class ArticleServiceImpl : ArticleService
     {
@@ -28,4 +29,5 @@ namespace DesktopApp.Backend.Services.ArticleServices
 
 
     }
+
 }

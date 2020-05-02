@@ -68,5 +68,9 @@ namespace DesktopApp.Backend.Controllers.Connection
             return null;
         }
 
+        public List<Movie> GetMoviesFromServer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

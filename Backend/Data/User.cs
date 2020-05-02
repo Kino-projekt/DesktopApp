@@ -2,13 +2,23 @@
 {
     public class User
     {
-
+        private int id;
 
         private string email;
 
         private Role role;
 
         private string token;
+
+        public void SetId(int i)
+        {
+            id = i;
+        }
+
+        public int GetId()
+        {
+            return id;
+        }
 
         public string GetEmail()
         {
