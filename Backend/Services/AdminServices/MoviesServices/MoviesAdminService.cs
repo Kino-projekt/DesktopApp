@@ -9,6 +9,8 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
 
         void SendMovieToServer(Movie movie);
 
+        void DeleteMovie(Movie movie);
+
         void DownloadMoviesList();
     }
 }

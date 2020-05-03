@@ -10,7 +10,6 @@ namespace DesktopApp.Backend.Controllers.Connection
         bool Singin(AuthData user);
 
         List<Article> GetArticlesFromServer();
-
         List<Movie> GetMoviesFromServer();
 
     }

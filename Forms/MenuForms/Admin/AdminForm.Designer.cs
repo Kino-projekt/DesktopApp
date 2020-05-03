@@ -294,6 +294,7 @@
             this.refreshMoviesListButton.TabIndex = 5;
             this.refreshMoviesListButton.Text = "Odświerz liste";
             this.refreshMoviesListButton.UseVisualStyleBackColor = true;
+            this.refreshMoviesListButton.Click += new System.EventHandler(this.refreshMoviesListButton_Click);
             // 
             // moviesListbutton
             // 

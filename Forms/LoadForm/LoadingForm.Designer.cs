@@ -77,6 +77,7 @@
             this.materialRaisedButton1.TabIndex = 0;
             this.materialRaisedButton1.Text = "Zamknij program";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // LoadingForm
             // 

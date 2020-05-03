@@ -30,8 +30,9 @@ namespace DesktopApp.Forms.MenuForms.Movies
 
         private void SetLabels()
         {
-            titleLabel.Text = movie.GetTitle();
-            descriptionLabel.Text = movie.GetDescription();
+            titleLabel.Text ="Tytuł: "+ movie.GetTitle();
+            descriptionLabel.Text = "Opis: " + movie.GetDescription();
+            directLabel.Text ="Reżyser: " + movie.GetDirector();
         }
     }
 }

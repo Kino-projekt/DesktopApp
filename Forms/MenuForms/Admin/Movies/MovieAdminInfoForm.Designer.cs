@@ -33,12 +33,14 @@
             this.directLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.deleteButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.deleteButton);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.directLabel);
             this.contentPanel.Controls.Add(this.descriptionLabel);
@@ -101,6 +103,20 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "title";
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.Depth = 0;
+            this.deleteButton.Location = new System.Drawing.Point(616, 31);
+            this.deleteButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Primary = true;
+            this.deleteButton.Size = new System.Drawing.Size(132, 23);
+            this.deleteButton.TabIndex = 6;
+            this.deleteButton.Text = "Usuń";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // MovieAdminInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +138,6 @@
         private MaterialSkin.Controls.MaterialLabel directLabel;
         private MaterialSkin.Controls.MaterialLabel descriptionLabel;
         private MaterialSkin.Controls.MaterialLabel titleLabel;
+        private MaterialSkin.Controls.MaterialRaisedButton deleteButton;
     }
 }

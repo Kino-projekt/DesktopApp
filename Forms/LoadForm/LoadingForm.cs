@@ -12,6 +12,7 @@ using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DataServices.ArticleServices;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
@@ -84,7 +85,10 @@ namespace DesktopApp.Forms.LoadForm
             SetText("Pobieranie listy ogłoszeń dla adminstratora");
             ArticleAdminService articleAdmin = ArticleAdminServiceImpl.GetService();
 
-            SetText("Pobieranie listy uzytkowników dla administratora");
+            SetText("Pobieranie listy filmów dla administratora");
+            MoviesAdminService moviesAdmin = MoviesAdminServiceImpl.GetService();
+
+            SetText("Pobieranie listy użytkowników dla administratora");
             UsersService usersService = UsersServiceImpl.GetService();
         }
 
@@ -108,6 +112,11 @@ namespace DesktopApp.Forms.LoadForm
                 ConnectionController connection = ConnectionControllerImpl.GetController();
                 connection.Singin(SaveService.GetUser());
             }
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

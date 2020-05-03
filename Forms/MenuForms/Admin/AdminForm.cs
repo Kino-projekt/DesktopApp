@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.Movies;
@@ -77,6 +78,12 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
         private void moviesListbutton_Click(object sender, EventArgs e)
         {
+            moviesContent.Open(new MoviesAdminListForm());
+        }
+
+        private void refreshMoviesListButton_Click(object sender, EventArgs e)
+        {
+            MoviesAdminServiceImpl.GetService().DownloadMoviesList();
             moviesContent.Open(new MoviesAdminListForm());
         }
     }

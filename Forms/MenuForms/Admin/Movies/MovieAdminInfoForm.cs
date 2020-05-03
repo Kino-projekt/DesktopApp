@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
@@ -32,9 +33,14 @@ namespace DesktopApp.Forms.MenuForms.Admin.Movies
         private void SetLabels()
         {
             idLabel.Text = "Numer: " + movie.GetId();
-            titleLabel.Text = movie.GetTitle();
-            descriptionLabel.Text = movie.GetDescription();
-            directLabel.Text = movie.GetDirector();
+            titleLabel.Text = "Tytuł: " + movie.GetTitle();
+            descriptionLabel.Text = "Opis: " + movie.GetDescription();
+            directLabel.Text = "Reżyser: " + movie.GetDirector();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            MoviesAdminServiceImpl.GetService().DeleteMovie(movie);
         }
     }
 }

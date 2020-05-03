@@ -15,7 +15,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
 
         void SendMovie(Movie movie);
-
         List<Movie> GetMoviesListFromServer();
+        void DeleteMovie(Movie movie);
     }
 }

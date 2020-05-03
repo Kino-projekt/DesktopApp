@@ -35,6 +35,11 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
             connectionController.SendMovie(movie);
         }
 
+        public void DeleteMovie(Movie movie)
+        {
+            connectionController.DeleteMovie(movie);
+        }
+
         public void DownloadMoviesList()
         {
             movies = connectionController.GetMoviesListFromServer();

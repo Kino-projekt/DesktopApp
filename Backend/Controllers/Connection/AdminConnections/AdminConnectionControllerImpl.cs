@@ -123,6 +123,17 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             return null;
         }
 
+        public void DeleteMovie(Movie movie)
+        {
+            SetAuthorization();
+            string patchUrl = "/api/admin/movies/" + movie.GetId();
+            HttpResponseMessage response = client.DeleteAsync(patchUrl).Result;
+            if (response.StatusCode != HttpStatusCode.NoContent)
+            {
+                DialogMessage.ShowInfo("Błąd usuwania filmu!");
+            }
+        }
+
         private void SetAuthorization()
         {
             client.DefaultRequestHeaders.Authorization =

@@ -71,7 +71,16 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Movie> GetMoviesFromServer()
         {
-            return new List<Movie>();
+            List<Movie> movies;
+            HttpResponseMessage response = client.GetAsync("/api/movies").Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                movies = MoviesListCreator.CreateMovies(response);
+                return movies;
+            }
+
+            DialogMessage.ShowInfo("Błąd pobierania filmów!");
+            return null;
         }
     }
 }
