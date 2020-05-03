@@ -14,6 +14,7 @@ using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.Movies;
 using DesktopApp.Forms.MenuForms.Admin.News;
 using DesktopApp.Forms.MenuForms.Admin.Users;
+using DesktopApp.Forms.MenuForms.Movies;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Admin
@@ -36,7 +37,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
             newsContent.Open(new NewsAdminListForm());
 
             moviesContent = new PanelCreator(moviesPanel);
-
+            moviesContent.Open(new MoviesAdminListForm());
 
             usersContent = new PanelCreator(usersPanel);
             usersContent.Open(new UsersListForm());
@@ -72,6 +73,11 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private void addMoviesButton_Click(object sender, EventArgs e)
         {
             moviesContent.Open(new AddMovieForm());
+        }
+
+        private void moviesListbutton_Click(object sender, EventArgs e)
+        {
+            moviesContent.Open(new MoviesAdminListForm());
         }
     }
 }

@@ -1,28 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
-namespace DesktopApp.Forms.MenuForms.Admin.News
+namespace DesktopApp.Forms.MenuForms.Admin.Movies
 {
-    public partial class NewsAdminListForm : MaterialForm
+    public partial class MoviesAdminListForm : MaterialForm
     {
         private DesingerService desingerService;
-        private ArticleAdminService articleService;
+        private MoviesAdminService moviesService;
         private ListFormService listFormService;
-        private List<Article> articles;
-
-        public NewsAdminListForm()
+        private List<Movie> movies;
+        public MoviesAdminListForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
 
-            articleService = ArticleAdminServiceImpl.GetService();
+            moviesService = MoviesAdminServiceImpl.GetService();
             listFormService = new ListFormService();
 
             DownloadList();
@@ -38,9 +44,9 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
         private void ConnectForms()
         {
             List<MaterialForm> forms = new List<MaterialForm>();
-            foreach (Article article in articles)
+            foreach (Movie movie in movies)
             {
-                forms.Add(new NewsAdminInfoForm(article));
+                forms.Add(new MovieAdminInfoForm(movie));
             }
             listFormService.SetForms(forms);
         }
@@ -59,7 +65,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
 
         private void DownloadList()
         {
-            articles = articleService.GetArticleListForAdmin();
+            movies = moviesService.GetMoviesListForAdmin();
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

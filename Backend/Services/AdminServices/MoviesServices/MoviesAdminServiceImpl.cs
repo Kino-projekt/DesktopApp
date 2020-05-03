@@ -37,7 +37,7 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
 
         public void DownloadMoviesList()
         {
-            
+            movies = connectionController.GetMoviesListFromServer();
         }
     }
 }

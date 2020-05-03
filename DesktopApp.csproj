@@ -119,6 +119,7 @@
     <Compile Include="Backend\Controllers\Connection\ConnectionControllerImpl.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\ArticleListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\ContentCreator.cs" />
+    <Compile Include="Backend\Controllers\Connection\Methods\Creators\MoviesListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\UserCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\UsersListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\DialogInfo\DialogMessage.cs" />
@@ -184,6 +185,18 @@
     </Compile>
     <Compile Include="Forms\MenuForms\Admin\Movies\AddMovieForm.Designer.cs">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\MovieAdminInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\MovieAdminInfoForm.Designer.cs">
+      <DependentUpon>MovieAdminInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\MoviesAdminListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\MoviesAdminListForm.Designer.cs">
+      <DependentUpon>MoviesAdminListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\Admin\News\AddNewsForm.cs">
       <SubType>Form</SubType>
@@ -291,6 +304,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\Movies\AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Movies\MovieAdminInfoForm.resx">
+      <DependentUpon>MovieAdminInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Movies\MoviesAdminListForm.resx">
+      <DependentUpon>MoviesAdminListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\News\AddNewsForm.resx">
       <DependentUpon>AddNewsForm.cs</DependentUpon>
