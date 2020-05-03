@@ -12,5 +12,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
 
         List<User> GetUsersListFromServer();
+
+
+        void SendMovie(Movie movie);
     }
 }

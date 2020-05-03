@@ -51,12 +51,17 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.addMoviesButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.moviesPanel = new System.Windows.Forms.Panel();
+            this.refreshMoviesListButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.moviesListbutton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.seanceTab.SuspendLayout();
             this.checkTicketPanel.SuspendLayout();
             this.newsTab.SuspendLayout();
+            this.moviesTab.SuspendLayout();
             this.usersTab.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -241,6 +246,10 @@
             // 
             // moviesTab
             // 
+            this.moviesTab.Controls.Add(this.addMoviesButton);
+            this.moviesTab.Controls.Add(this.moviesPanel);
+            this.moviesTab.Controls.Add(this.refreshMoviesListButton);
+            this.moviesTab.Controls.Add(this.moviesListbutton);
             this.moviesTab.Location = new System.Drawing.Point(4, 22);
             this.moviesTab.Name = "moviesTab";
             this.moviesTab.Padding = new System.Windows.Forms.Padding(3);
@@ -344,6 +353,57 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
             // 
+            // addMoviesButton
+            // 
+            this.addMoviesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addMoviesButton.Depth = 0;
+            this.addMoviesButton.Location = new System.Drawing.Point(203, 8);
+            this.addMoviesButton.Margin = new System.Windows.Forms.Padding(10);
+            this.addMoviesButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addMoviesButton.Name = "addMoviesButton";
+            this.addMoviesButton.Primary = true;
+            this.addMoviesButton.Size = new System.Drawing.Size(160, 44);
+            this.addMoviesButton.TabIndex = 6;
+            this.addMoviesButton.Text = "Dodaj film";
+            this.addMoviesButton.UseVisualStyleBackColor = true;
+            this.addMoviesButton.Click += new System.EventHandler(this.addMoviesButton_Click);
+            // 
+            // moviesPanel
+            // 
+            this.moviesPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.moviesPanel.Location = new System.Drawing.Point(3, 56);
+            this.moviesPanel.Name = "moviesPanel";
+            this.moviesPanel.Size = new System.Drawing.Size(786, 455);
+            this.moviesPanel.TabIndex = 7;
+            // 
+            // refreshMoviesListButton
+            // 
+            this.refreshMoviesListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshMoviesListButton.Depth = 0;
+            this.refreshMoviesListButton.Location = new System.Drawing.Point(617, 8);
+            this.refreshMoviesListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshMoviesListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshMoviesListButton.Name = "refreshMoviesListButton";
+            this.refreshMoviesListButton.Primary = true;
+            this.refreshMoviesListButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshMoviesListButton.TabIndex = 5;
+            this.refreshMoviesListButton.Text = "Odświerz liste";
+            this.refreshMoviesListButton.UseVisualStyleBackColor = true;
+            // 
+            // moviesListbutton
+            // 
+            this.moviesListbutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moviesListbutton.Depth = 0;
+            this.moviesListbutton.Location = new System.Drawing.Point(15, 8);
+            this.moviesListbutton.Margin = new System.Windows.Forms.Padding(10);
+            this.moviesListbutton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.moviesListbutton.Name = "moviesListbutton";
+            this.moviesListbutton.Primary = true;
+            this.moviesListbutton.Size = new System.Drawing.Size(170, 44);
+            this.moviesListbutton.TabIndex = 4;
+            this.moviesListbutton.Text = "Lista filmów";
+            this.moviesListbutton.UseVisualStyleBackColor = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +420,7 @@
             this.checkTicketPanel.ResumeLayout(false);
             this.checkTicketPanel.PerformLayout();
             this.newsTab.ResumeLayout(false);
+            this.moviesTab.ResumeLayout(false);
             this.usersTab.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -391,5 +452,9 @@
         private System.Windows.Forms.Panel usersPanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshUsersListButton;
         private MaterialSkin.Controls.MaterialRaisedButton usersListButton;
+        private MaterialSkin.Controls.MaterialRaisedButton addMoviesButton;
+        private System.Windows.Forms.Panel moviesPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshMoviesListButton;
+        private MaterialSkin.Controls.MaterialRaisedButton moviesListbutton;
     }
 }

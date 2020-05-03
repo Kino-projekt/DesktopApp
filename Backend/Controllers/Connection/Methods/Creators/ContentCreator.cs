@@ -22,6 +22,11 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(status));
         }
 
+        public static FormUrlEncodedContent CreateContent(Movie movie)
+        {
+            return new FormUrlEncodedContent(CreatePairs(movie));
+        }
+
         private static List<KeyValuePair<string, string>> CreatePairs(AuthData user)
         {
             var pairs = new List<KeyValuePair<string, string>>
@@ -60,6 +65,17 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 };
             }
 
+        }
+
+        private static List<KeyValuePair<string, string>> CreatePairs(Movie movie)
+        {
+            var pairs = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("title", movie.GetTitle()),
+                new KeyValuePair<string, string>("description", movie.GetDescription()),
+                new KeyValuePair<string, string>("director", movie.GetDirector()),
+            };
+            return pairs;
         }
     }
 }

@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-
 using System.Net;
 using System.Net.Http;
-using Microsoft.AspNetCore.JsonPatch;
 using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
@@ -39,6 +33,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public void SendArticle(Article article)
         {
+
             var content = ContentCreator.CreateContent(article);
             SetAuthorization();
             HttpResponseMessage response = client.PostAsync("/api/admin/articles", content).Result;
@@ -50,8 +45,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public List<Article> GetAdminArticlesFromServer()
         {
-            List<Article> articles;
             SetAuthorization();
+            List<Article> articles;
             HttpResponseMessage response = client.GetAsync("/api/admin/articles").Result;
             if (response.StatusCode == HttpStatusCode.OK)
             {
@@ -101,6 +96,17 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
             DialogMessage.ShowInfo("Błąd pobierania artykułów!");
             return null;
+        }
+
+        public void SendMovie(Movie movie)
+        {
+            var content = ContentCreator.CreateContent(movie);
+            SetAuthorization();
+            HttpResponseMessage response = client.PostAsync("/api/admin/movies", content).Result;
+            if (response.StatusCode != HttpStatusCode.Created)
+            {
+                DialogMessage.ShowInfo("Błąd wysyłania!");
+            }
         }
 
         private void SetAuthorization()

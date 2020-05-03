@@ -139,6 +139,8 @@
     <Compile Include="Backend\Services\AccessServices\RegistrationServices\RegistrationServiceImpl.cs" />
     <Compile Include="Backend\Services\AdminServices\ArticleServices\ArticleAdminService.cs" />
     <Compile Include="Backend\Services\AdminServices\ArticleServices\ArticleAdminServiceImpl.cs" />
+    <Compile Include="Backend\Services\AdminServices\MoviesServices\MoviesAdminService.cs" />
+    <Compile Include="Backend\Services\AdminServices\MoviesServices\MoviesAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesService.cs" />
@@ -176,6 +178,12 @@
     </Compile>
     <Compile Include="Forms\MenuForms\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\AddMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Movies\AddMovieForm.Designer.cs">
+      <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\Admin\News\AddNewsForm.cs">
       <SubType>Form</SubType>
@@ -280,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Movies\AddMovieForm.resx">
+      <DependentUpon>AddMovieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\News\AddNewsForm.resx">
       <DependentUpon>AddNewsForm.cs</DependentUpon>

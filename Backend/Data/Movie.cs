@@ -5,6 +5,7 @@
         private int id;
         private string title;
         private string description;
+        private string director;
 
         public void SetId(int id)
         {
@@ -33,6 +34,16 @@
         public string GetDescription()
         {
             return description;
+        }
+
+        public void SetDirector(string director)
+        {
+            this.director = director;
+        }
+
+        public string GetDirector()
+        {
+            return director;
         }
     }
 }
