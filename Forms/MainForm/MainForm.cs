@@ -9,6 +9,7 @@ using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
 using DesktopApp.Forms.LoadForm;
 using DesktopApp.Forms.MenuForms.Admin.Users;
+using DesktopApp.Forms.Notification;
 using DesktopApp.Properties;
 using MaterialSkin.Controls;
 
@@ -28,7 +29,6 @@ namespace DesktopApp.MainForm
 
             contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
             contentPanelController.OpenNewsForm();
-            
         }
 
         private void loginButton_Click(object sender, EventArgs e)

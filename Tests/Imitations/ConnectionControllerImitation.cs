@@ -1,11 +1,11 @@
-﻿using DesktopApp.Backend.Controllers.Connection;
+﻿using System.Collections.Generic;
+using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Data;
 
 namespace Tests.Imitations
 {
     public class ConnectionControllerImitation : ConnectionController
     {
-        // imitation server connect for test, every method always return true
 
         public bool Singup(AuthData user)
         {
@@ -15,6 +15,16 @@ namespace Tests.Imitations
         public bool Singin(AuthData user)
         {
             return true;
+        }
+
+        public List<Article> GetArticlesFromServer()
+        {
+            return new List<Article>();
+        }
+
+        public List<Movie> GetMoviesFromServer()
+        {
+            return new List<Movie>();
         }
 
         public void SendArticle(User userData, Article article)

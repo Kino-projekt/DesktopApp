@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.UserServices;
+using DesktopApp.Forms.Notification;
 
 namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 {
@@ -16,6 +18,11 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         private HttpClient client;
         private string serverAdress = BasicConfiguration.GetServerAdress();
         private UserService userService;
+
+        private string articlesAdminAdress = "/api/admin/articles";
+        private string moviesAdminAdress = "/api/admin/movies";
+        private string moviesAdress = "/api/movies";
+        private string usersAdress = "/api/users";
 
         public static AdminConnectionController GetController()
         {
@@ -31,32 +38,115 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             userService = UserServiceImpl.GetInstance();
         }
 
-        public void SendArticle(Article article)
+        private void SetAuthorization()
         {
-
-            var content = ContentCreator.CreateContent(article);
-            SetAuthorization();
-            HttpResponseMessage response = client.PostAsync("/api/admin/articles", content).Result;
-            if (response.StatusCode != HttpStatusCode.Created)
-            {
-                DialogMessage.ShowInfo("Błąd wysyłania!");
-            }
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
         }
 
-        public List<Article> GetAdminArticlesFromServer()
+
+
+
+
+        private bool PostMethod(string patch, dynamic content)
         {
             SetAuthorization();
-            List<Article> articles;
-            HttpResponseMessage response = client.GetAsync("/api/admin/articles").Result;
+            HttpResponseMessage response = client.PostAsync(patch, content).Result;
+            if (response.StatusCode == HttpStatusCode.Created)
+                return true;
+            return false;
+        }
+
+        public void SendArticle(Article article)
+        {
+            var content = ContentCreator.CreateContent(article);
+            if (PostMethod(articlesAdminAdress, content))
+                NotifitactionForm.ShowMessage("Ogłoszenie wysłane!");
+            else
+                DialogMessage.ShowInfo("Błąd wysyłania!");
+        }
+
+        public void SendMovie(Movie movie)
+        {
+            var content = ContentCreator.CreateContent(movie);
+            if (PostMethod(moviesAdminAdress, content))
+                NotifitactionForm.ShowMessage("Film wysłany!");
+            else
+                DialogMessage.ShowInfo("Błąd wysyłania!");
+        }
+
+
+
+
+
+        private HttpResponseMessage GetMethod(string patch)
+        {
+            SetAuthorization();
+            return client.GetAsync(patch).Result;
+        }
+
+        public List<User> GetUsersListFromServer()
+        {
+            HttpResponseMessage response = GetMethod(usersAdress);
             if (response.StatusCode == HttpStatusCode.OK)
-            {
-                articles = ArticleListCreator.CreateArticles(response);
-                return articles;
-            }
+                return UsersListCreator.CreateUsers(response);
 
             DialogMessage.ShowInfo("Błąd pobierania artykułów!");
             return null;
         }
+
+        public List<Article> GetAdminArticlesFromServer()
+        {
+            HttpResponseMessage response = GetMethod(articlesAdminAdress);
+            if (response.StatusCode == HttpStatusCode.OK)
+                return ArticleListCreator.CreateArticles(response);
+
+            DialogMessage.ShowInfo("Błąd pobierania artykułów!");
+            return null;
+        }
+
+        public List<Movie> GetMoviesListFromServer()
+        {
+            HttpResponseMessage response = GetMethod(moviesAdress);
+            if (response.StatusCode == HttpStatusCode.OK)
+                return MoviesListCreator.CreateMovies(response);
+
+            DialogMessage.ShowInfo("Błąd pobierania filmów!");
+            return null;
+        }
+
+
+
+
+
+        private bool DeleteMethod(string patch, int id)
+        {
+            SetAuthorization();
+            string url = articlesAdminAdress + "/"+ id;
+            HttpResponseMessage response = client.DeleteAsync(url).Result;
+            if (response.StatusCode == HttpStatusCode.NoContent)
+                return true;
+            return false;
+        }
+
+        public void DeleteArticle(Article article)
+        {
+            if (DeleteMethod(articlesAdminAdress, article.GetId()))
+                NotifitactionForm.ShowMessage("Ogłoszenie usunięte!");
+            else
+                DialogMessage.ShowInfo("Błąd usuwania artykułu!");
+        }
+
+        public void DeleteMovie(Movie movie)
+        {
+            if (DeleteMethod(moviesAdminAdress, movie.GetId()))
+                NotifitactionForm.ShowMessage("Film usunięty!");
+            else
+                DialogMessage.ShowInfo("Błąd usuwania filmu!");
+        }
+
+
+
 
         public void ChangeArticleStatus(Article article)
         {
@@ -67,78 +157,11 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             {
                 Content = content
             }).Result;
+
             if (response.StatusCode != HttpStatusCode.OK)
-            {
                 DialogMessage.ShowInfo("Błąd zmiany statusu!");
-            }
+            else
+                NotifitactionForm.ShowMessage("Status zmieniony!");
         }
-
-        public void DeleteArticle(Article article)
-        {
-            SetAuthorization();
-            string patchUrl = "/api/admin/articles/" + article.GetId();
-            HttpResponseMessage response = client.DeleteAsync(patchUrl).Result;
-            if (response.StatusCode != HttpStatusCode.NoContent)
-            {
-                DialogMessage.ShowInfo("Błąd usuwania artykułu!");
-            }
-        }
-
-        public List<User> GetUsersListFromServer()
-        {
-            List<User> users;
-            HttpResponseMessage response = client.GetAsync("/api/users").Result;
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                users = UsersListCreator.CreateUsers(response);
-                return users;
-            }
-
-            DialogMessage.ShowInfo("Błąd pobierania artykułów!");
-            return null;
-        }
-
-        public void SendMovie(Movie movie)
-        {
-            var content = ContentCreator.CreateContent(movie);
-            SetAuthorization();
-            HttpResponseMessage response = client.PostAsync("/api/admin/movies", content).Result;
-            if (response.StatusCode != HttpStatusCode.Created)
-            {
-                DialogMessage.ShowInfo("Błąd wysyłania!");
-            }
-        }
-
-        public List<Movie> GetMoviesListFromServer()
-        {
-            List<Movie> movies;
-            HttpResponseMessage response = client.GetAsync("/api/movies").Result;
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                movies = MoviesListCreator.CreateMovies(response);
-                return movies;
-            }
-
-            DialogMessage.ShowInfo("Błąd pobierania filmów!");
-            return null;
-        }
-
-        public void DeleteMovie(Movie movie)
-        {
-            SetAuthorization();
-            string patchUrl = "/api/admin/movies/" + movie.GetId();
-            HttpResponseMessage response = client.DeleteAsync(patchUrl).Result;
-            if (response.StatusCode != HttpStatusCode.NoContent)
-            {
-                DialogMessage.ShowInfo("Błąd usuwania filmu!");
-            }
-        }
-
-        private void SetAuthorization()
-        {
-            client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", userService.GetUserToken());
-        }
-
     }
 }
