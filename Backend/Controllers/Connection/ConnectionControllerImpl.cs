@@ -19,6 +19,10 @@ namespace DesktopApp.Backend.Controllers.Connection
     {
         private HttpClient client;
         private string serverAdress = BasicConfiguration.GetServerAdress();
+        private string singUpAdress = "/api/auth/signup";
+        private string singInAdress = "/api/auth/signin";
+        private string moviesAdress = "/api/movies";
+        private string articlesAdress = "/api/articles";
 
         public static ConnectionController GetController()
         {
@@ -36,11 +40,10 @@ namespace DesktopApp.Backend.Controllers.Connection
         public bool Singup(AuthData user)
         {
             var content = ContentCreator.CreateContent(user);
-            HttpResponseMessage response = client.PostAsync("/api/auth/signup", content).Result;
+            HttpResponseMessage response = client.PostAsync(singUpAdress, content).Result;
             if (response.StatusCode == HttpStatusCode.Created)
-            {
                 return true;
-            }
+
             DialogMessage.ShowInfo("Rejestracja nieudana!");
             return false;
         }
@@ -48,7 +51,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         public bool Singin(AuthData user)
         {
             var content = ContentCreator.CreateContent(user);
-            HttpResponseMessage response = client.PostAsync("/api/auth/signin", content).Result;
+            HttpResponseMessage response = client.PostAsync(singInAdress, content).Result;
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 UserCreator.PutUserToSystem(response);
@@ -61,23 +64,19 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Article> GetArticlesFromServer()
         {
-            HttpResponseMessage response = client.GetAsync("/api/articles").Result;
+            HttpResponseMessage response = client.GetAsync(articlesAdress).Result;
             if (response.StatusCode == HttpStatusCode.OK)
-            {
                 return ArticleListCreator.CreateArticles(response);
-            }
+
+            DialogMessage.ShowInfo("Błąd pobierania artykułów!");
             return null;
         }
 
         public List<Movie> GetMoviesFromServer()
         {
-            List<Movie> movies;
-            HttpResponseMessage response = client.GetAsync("/api/movies").Result;
+            HttpResponseMessage response = client.GetAsync(moviesAdress).Result;
             if (response.StatusCode == HttpStatusCode.OK)
-            {
-                movies = MoviesListCreator.CreateMovies(response);
-                return movies;
-            }
+                return MoviesListCreator.CreateMovies(response);
 
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
             return null;
