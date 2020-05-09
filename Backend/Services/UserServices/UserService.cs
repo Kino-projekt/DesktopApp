@@ -4,10 +4,10 @@ namespace DesktopApp.Backend.Services.UserServices
 {
     public interface UserService
     {
-        Role GetUserRole();
         void PutNewUser(User userData);
-        void RemoveUser();
+        Role GetUserRole();
         string GetUserEmail();
         string GetUserToken();
+        void RemoveUser();
     }
 }

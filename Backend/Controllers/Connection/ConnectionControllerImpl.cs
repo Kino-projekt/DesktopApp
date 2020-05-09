@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Windows.Forms;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.SaveServices;
-using DesktopApp.Backend.Services.UserServices;
-using DesktopApp.Forms.LoadForm;
-using DesktopApp.Properties;
+using DesktopApp.Forms.Notification;
 
 namespace DesktopApp.Backend.Controllers.Connection
 {
@@ -42,7 +38,10 @@ namespace DesktopApp.Backend.Controllers.Connection
             var content = ContentCreator.CreateContent(user);
             HttpResponseMessage response = client.PostAsync(singUpAdress, content).Result;
             if (response.StatusCode == HttpStatusCode.Created)
+            {
+                NotifitactionForm.ShowMessage("Konto zarejestrowane!");
                 return true;
+            }
 
             DialogMessage.ShowInfo("Rejestracja nieudana!");
             return false;

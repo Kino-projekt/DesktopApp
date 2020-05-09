@@ -32,16 +32,6 @@ namespace DesktopApp.Backend.Services.DesingerServices
             manager.AddFormToManage(materialForm);
         }
 
-        public void SetDarkTheme()
-        {
-            manager.Theme = MaterialSkinManager.Themes.DARK;
-        }
-
-        public void SetLightTheme()
-        {
-            manager.Theme = MaterialSkinManager.Themes.LIGHT;
-        }
-
         public void AddPanelToChangeColor(Panel panel)
         {
             panels.Add(panel);
@@ -57,6 +47,16 @@ namespace DesktopApp.Backend.Services.DesingerServices
             {
                 SetColorForPanel(panel);
             }
+        }
+
+        private void SetDarkTheme()
+        {
+            manager.Theme = MaterialSkinManager.Themes.DARK;
+        }
+
+        private void SetLightTheme()
+        {
+            manager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private void SetColorForPanel(Panel panel)

@@ -134,6 +134,7 @@
     <Compile Include="Backend\Data\Status.cs" />
     <Compile Include="Backend\Data\User.cs" />
     <Compile Include="Backend\Data\Role.cs" />
+    <Compile Include="Backend\Services\AccessServices\BasicAccessMethods.cs" />
     <Compile Include="Backend\Services\AccessServices\LoginServices\LoginService.cs" />
     <Compile Include="Backend\Services\AccessServices\LoginServices\LoginServiceImpl.cs" />
     <Compile Include="Backend\Services\AccessServices\RegistrationServices\RegistrationService.cs" />
@@ -153,7 +154,7 @@
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />
     <Compile Include="Backend\Controllers\Forms\ListFormController.cs" />
     <Compile Include="Backend\Services\SaveServices\SaveService.cs" />
-    <Compile Include="Backend\Services\UserServices\Cipher.cs" />
+    <Compile Include="Backend\Services\SaveServices\Cipher.cs" />
     <Compile Include="Backend\Services\UserServices\UserService.cs" />
     <Compile Include="Backend\Services\UserServices\UserServiceImpl.cs" />
     <Compile Include="Forms\AccessForms\LoginForm\LoginForm.cs">

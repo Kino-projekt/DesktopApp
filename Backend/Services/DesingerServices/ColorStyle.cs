@@ -2,6 +2,6 @@
 {
     public enum ColorStyle
     {
-        Blue, Gold, Green, Red, Purple, Grey, Orange, Pink, LightGreen, LightBlue
+        Blue, Green, Red, Purple, Orange, Pink, LightGreen, LightBlue
     }
 }

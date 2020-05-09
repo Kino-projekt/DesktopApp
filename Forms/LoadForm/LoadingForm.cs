@@ -29,7 +29,7 @@ namespace DesktopApp.Forms.LoadForm
         private DesingerService desingerService;
         private MainForm.MainForm mainForm;
 
-        //private int MAX_PROGRESSBAR = 400;
+        private int MAX_PROGRESSBAR = 400;
 
         public LoadingForm()
         {
@@ -54,15 +54,20 @@ namespace DesktopApp.Forms.LoadForm
 
         private void DownloadDataFromServer(bool programStart)
         {
+            SetProgressBar(10);
+
             SetText("Pobieranie ogłoszeń");
             ArticleService articleService = ArticleServiceImpl.GetService();
+            SetProgressBar(40);
 
             SetText("Pobieranie listy filmów");
             MoviesService moviesService = MoviesServiceImpl.GetService();
+            SetProgressBar(70);
 
             SetText("Sprawdzanie konta użytkownika");
             if(programStart==true)
                 LoginUserFromData();
+            SetProgressBar(100);
 
             UserService userService = UserServiceImpl.GetInstance();
             Role role = userService.GetUserRole();
@@ -82,20 +87,33 @@ namespace DesktopApp.Forms.LoadForm
 
         private void DownloadDataForAdmin()
         {
+            SetProgressBar(10);
+
             SetText("Pobieranie listy ogłoszeń dla adminstratora");
             ArticleAdminService articleAdmin = ArticleAdminServiceImpl.GetService();
+            SetProgressBar(40);
 
             SetText("Pobieranie listy filmów dla administratora");
             MoviesAdminService moviesAdmin = MoviesAdminServiceImpl.GetService();
+            SetProgressBar(70);
 
             SetText("Pobieranie listy użytkowników dla administratora");
             UsersService usersService = UsersServiceImpl.GetService();
+            SetProgressBar(100);
         }
 
-        private void SetProgressBar(int i)
+        private void SetProgressBar(int percent)
         {
-            
-            
+            int width;
+            if (percent > 0 && percent <= 100)
+            {
+                if (percent == 100)
+                    width = MAX_PROGRESSBAR;
+                else
+                    width = percent*4;
+
+                progressPanel.Size = new Size(width, progressPanel.Size.Height);
+            }
         }
 
         private void SetText(string text)

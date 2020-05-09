@@ -1,21 +1,19 @@
-﻿using DesktopApp.Backend.Controllers;
-using DesktopApp.Backend.Controllers.Connection;
-using DesktopApp.Backend.Controllers.Forms;
+﻿using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.SaveServices;
-using DesktopApp.Forms.LoadForm;
-using DesktopApp.Properties;
 using FormsController = DesktopApp.Backend.Controllers.Forms.FormsController;
 
 namespace DesktopApp.Backend.Services.UserServices
 {
     public class UserServiceImpl : UserService
     {
-        private static UserService userService = new UserServiceImpl();
-        private User userData;
+        private static UserService userService;
+        private User user;
 
         public static UserService GetInstance()
         {
+            if(userService==null)
+                userService = new UserServiceImpl();
             return userService;
         }
 
@@ -23,22 +21,21 @@ namespace DesktopApp.Backend.Services.UserServices
 
         public Role GetUserRole()
         {
-            if (userData == null)
-            {
+            if (user == null)
                 return Role.DEFAULT;
-            }
-            return userData.GetRole();
+
+            return user.GetRole();
         }
 
-        public void PutNewUser(User newUserData)
+        public void PutNewUser(User user)
         {
-            this.userData = newUserData;
+            this.user = user;
             SendUserStatusToMainForm();
         }
 
         public void RemoveUser()
         {
-            userData = null;
+            user = null;
             SaveService.RemoveUser();
             SendUserStatusToMainForm();
         }
@@ -52,12 +49,12 @@ namespace DesktopApp.Backend.Services.UserServices
 
         public string GetUserEmail()
         {
-            return userData.GetEmail();
+            return user.GetEmail();
         }
 
         public string GetUserToken()
         {
-            return userData.GetToken();
+            return user.GetToken();
         }
     }
 }

@@ -7,10 +7,6 @@ namespace DesktopApp.Backend.Services.DesingerServices
     {
         void AddFormToDesinger(MaterialForm materialForm);
 
-        void SetDarkTheme();
-
-        void SetLightTheme();
-
         void AddPanelToChangeColor(Panel panel);
 
         void SetColorStyle(ColorStyle color);

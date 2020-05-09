@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesktopApp.Backend.Services.UserServices
+namespace DesktopApp.Backend.Services.SaveServices
 {
     public class Cipher
     {

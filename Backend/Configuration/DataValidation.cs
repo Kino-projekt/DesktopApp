@@ -15,9 +15,7 @@ namespace DesktopApp.Backend.Configuration
         {
             {
                 if (String.IsNullOrEmpty(password) || password.Length < MIN_PASSWORD_SIZE  || password.Length > MAX_PASSWORD_SIZE)
-                {
                     return false;
-                }
 
                 var hasLowerChar = new Regex(@"[a-z]+");
                 if (!hasLowerChar.IsMatch(password))
