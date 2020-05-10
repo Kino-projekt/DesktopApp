@@ -22,6 +22,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         private string articlesAdminAdress = "/api/admin/articles";
         private string moviesAdminAdress = "/api/admin/movies";
         private string moviesAdress = "/api/movies";
+        private string hallsAdminAdress = "/api/admin/halls";
+        private string hallsAdress = "/api/halls";
         private string usersAdress = "/api/users";
 
         public static AdminConnectionController GetController()
@@ -75,7 +77,14 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 DialogMessage.ShowInfo("Błąd wysyłania!");
         }
 
-
+        public void SendHall(Hall hall)
+        {
+            var content = ContentCreator.CreateContent(hall);
+            if(PostMethod(hallsAdminAdress, content))
+                NotifitactionForm.ShowMessage("Sala wysłana!");
+            else
+                DialogMessage.ShowInfo("Błąd wysyłania!");
+        }
 
 
 
@@ -114,7 +123,15 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
             return null;
         }
+        public List<Hall> GetHallsListFromServer()
+        {
+            HttpResponseMessage response = GetMethod(hallsAdress);
+            if (response.StatusCode == HttpStatusCode.OK)
+                return HallsListCreator.CreateHalls(response);
 
+            DialogMessage.ShowInfo("Błąd pobierania filmów!");
+            return null;
+        }
 
 
 
@@ -144,6 +161,16 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             else
                 DialogMessage.ShowInfo("Błąd usuwania filmu!");
         }
+        public void DeleteHall(Hall hall)
+        {
+            if (DeleteMethod(hallsAdminAdress, hall.GetId()))
+                NotifitactionForm.ShowMessage("Sala usunięta!");
+            else
+                DialogMessage.ShowInfo("Błąd usuwania sali!");
+        }
+
+
+
 
 
 

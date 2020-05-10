@@ -10,6 +10,10 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         void ChangeArticleStatus(Article article);
         void DeleteArticle(Article article);
 
+        void SendHall(Hall hall);
+        List<Hall> GetHallsListFromServer();
+        void DeleteHall(Hall hall);
+
 
         List<User> GetUsersListFromServer();
 
