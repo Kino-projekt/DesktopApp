@@ -48,6 +48,10 @@
             this.refreshMoviesListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesListbutton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.roomsTab = new System.Windows.Forms.TabPage();
+            this.addHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.hallsPanel = new System.Windows.Forms.Panel();
+            this.refreshHallsButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.hallsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.usersTab = new System.Windows.Forms.TabPage();
             this.usersPanel = new System.Windows.Forms.Panel();
             this.refreshUsersListButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -62,6 +66,7 @@
             this.checkTicketPanel.SuspendLayout();
             this.newsTab.SuspendLayout();
             this.moviesTab.SuspendLayout();
+            this.roomsTab.SuspendLayout();
             this.usersTab.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -313,6 +318,10 @@
             // 
             // roomsTab
             // 
+            this.roomsTab.Controls.Add(this.addHallButton);
+            this.roomsTab.Controls.Add(this.hallsPanel);
+            this.roomsTab.Controls.Add(this.refreshHallsButton);
+            this.roomsTab.Controls.Add(this.hallsListButton);
             this.roomsTab.Location = new System.Drawing.Point(4, 22);
             this.roomsTab.Name = "roomsTab";
             this.roomsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -320,6 +329,59 @@
             this.roomsTab.TabIndex = 4;
             this.roomsTab.Text = "Sale";
             this.roomsTab.UseVisualStyleBackColor = true;
+            // 
+            // addHallButton
+            // 
+            this.addHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addHallButton.Depth = 0;
+            this.addHallButton.Location = new System.Drawing.Point(205, 13);
+            this.addHallButton.Margin = new System.Windows.Forms.Padding(10);
+            this.addHallButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addHallButton.Name = "addHallButton";
+            this.addHallButton.Primary = true;
+            this.addHallButton.Size = new System.Drawing.Size(160, 44);
+            this.addHallButton.TabIndex = 6;
+            this.addHallButton.Text = "Dodaj sale";
+            this.addHallButton.UseVisualStyleBackColor = true;
+            this.addHallButton.Click += new System.EventHandler(this.addHallButton_Click);
+            // 
+            // hallsPanel
+            // 
+            this.hallsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.hallsPanel.Location = new System.Drawing.Point(3, 56);
+            this.hallsPanel.Name = "hallsPanel";
+            this.hallsPanel.Size = new System.Drawing.Size(786, 455);
+            this.hallsPanel.TabIndex = 7;
+            // 
+            // refreshHallsButton
+            // 
+            this.refreshHallsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshHallsButton.Depth = 0;
+            this.refreshHallsButton.Location = new System.Drawing.Point(617, 13);
+            this.refreshHallsButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshHallsButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshHallsButton.Name = "refreshHallsButton";
+            this.refreshHallsButton.Primary = true;
+            this.refreshHallsButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshHallsButton.TabIndex = 5;
+            this.refreshHallsButton.Text = "Odświerz liste";
+            this.refreshHallsButton.UseVisualStyleBackColor = true;
+            this.refreshHallsButton.Click += new System.EventHandler(this.refreshHallsButton_Click);
+            // 
+            // hallsListButton
+            // 
+            this.hallsListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hallsListButton.Depth = 0;
+            this.hallsListButton.Location = new System.Drawing.Point(15, 13);
+            this.hallsListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.hallsListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.hallsListButton.Name = "hallsListButton";
+            this.hallsListButton.Primary = true;
+            this.hallsListButton.Size = new System.Drawing.Size(170, 44);
+            this.hallsListButton.TabIndex = 4;
+            this.hallsListButton.Text = "Lista sal";
+            this.hallsListButton.UseVisualStyleBackColor = true;
+            this.hallsListButton.Click += new System.EventHandler(this.hallsListButton_Click);
             // 
             // usersTab
             // 
@@ -423,6 +485,7 @@
             this.checkTicketPanel.PerformLayout();
             this.newsTab.ResumeLayout(false);
             this.moviesTab.ResumeLayout(false);
+            this.roomsTab.ResumeLayout(false);
             this.usersTab.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -458,5 +521,9 @@
         private System.Windows.Forms.Panel moviesPanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshMoviesListButton;
         private MaterialSkin.Controls.MaterialRaisedButton moviesListbutton;
+        private MaterialSkin.Controls.MaterialRaisedButton addHallButton;
+        private System.Windows.Forms.Panel hallsPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshHallsButton;
+        private MaterialSkin.Controls.MaterialRaisedButton hallsListButton;
     }
 }

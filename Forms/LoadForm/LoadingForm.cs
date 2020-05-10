@@ -12,6 +12,7 @@ using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DataServices.ArticleServices;
@@ -90,15 +91,19 @@ namespace DesktopApp.Forms.LoadForm
             SetProgressBar(10);
 
             SetText("Pobieranie listy ogłoszeń dla adminstratora");
-            ArticleAdminService articleAdmin = ArticleAdminServiceImpl.GetService();
-            SetProgressBar(40);
+            ArticleAdminServiceImpl.GetService();
+            SetProgressBar(30);
 
             SetText("Pobieranie listy filmów dla administratora");
-            MoviesAdminService moviesAdmin = MoviesAdminServiceImpl.GetService();
-            SetProgressBar(70);
+            MoviesAdminServiceImpl.GetService();
+            SetProgressBar(60);
+
+            SetText("Pobieranie listy sal dla administratora");
+            HallsAdminServiceImpl.GetService();
+            SetProgressBar(80);
 
             SetText("Pobieranie listy użytkowników dla administratora");
-            UsersService usersService = UsersServiceImpl.GetService();
+            UsersServiceImpl.GetService();
             SetProgressBar(100);
         }
 

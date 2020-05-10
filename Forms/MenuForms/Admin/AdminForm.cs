@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Forms.MenuForms.Admin.Halls;
 using DesktopApp.Forms.MenuForms.Admin.Movies;
 using DesktopApp.Forms.MenuForms.Admin.News;
 using DesktopApp.Forms.MenuForms.Admin.Users;
@@ -23,9 +25,11 @@ namespace DesktopApp.Forms.MenuForms.Admin
     public partial class AdminForm : MaterialForm
     {
         private DesingerService desingerService;
+
         private PanelCreator newsContent;
         private PanelCreator moviesContent;
         private PanelCreator usersContent;
+        private PanelCreator hallsContent;
 
         public AdminForm()
         {
@@ -42,6 +46,9 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
             usersContent = new PanelCreator(usersPanel);
             usersContent.Open(new UsersListForm());
+
+            hallsContent = new PanelCreator(hallsPanel);
+            hallsContent.Open(new HallsAdminListForm());
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -85,6 +92,22 @@ namespace DesktopApp.Forms.MenuForms.Admin
         {
             MoviesAdminServiceImpl.GetService().DownloadMoviesList();
             moviesContent.Open(new MoviesAdminListForm());
+        }
+
+        private void hallsListButton_Click(object sender, EventArgs e)
+        {
+            hallsContent.Open(new HallsAdminListForm());
+        }
+
+        private void refreshHallsButton_Click(object sender, EventArgs e)
+        {
+            HallsAdminServiceImpl.GetService().DownloadHallsList();
+            hallsContent.Open(new HallsAdminListForm());
+        }
+
+        private void addHallButton_Click(object sender, EventArgs e)
+        {
+            hallsContent.Open(new AddHallsForm());
         }
     }
 }
