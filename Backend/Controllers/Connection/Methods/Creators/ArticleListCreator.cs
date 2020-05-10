@@ -12,7 +12,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             string body = response.Content.ReadAsStringAsync().Result;
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(body);
-            if (objects.Count == 0)
+            if (objects.Count <= 0)
             {
                 return null;
             }
