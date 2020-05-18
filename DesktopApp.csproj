@@ -133,6 +133,7 @@
     <Compile Include="Backend\Data\AuthData.cs" />
     <Compile Include="Backend\Data\Hall.cs" />
     <Compile Include="Backend\Data\Movie.cs" />
+    <Compile Include="Backend\Data\Seance.cs" />
     <Compile Include="Backend\Data\Status.cs" />
     <Compile Include="Backend\Data\User.cs" />
     <Compile Include="Backend\Data\Role.cs" />

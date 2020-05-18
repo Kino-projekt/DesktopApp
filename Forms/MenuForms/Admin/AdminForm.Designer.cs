@@ -220,7 +220,7 @@
             this.refreshNewsListButton.Primary = true;
             this.refreshNewsListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshNewsListButton.TabIndex = 1;
-            this.refreshNewsListButton.Text = "Odświerz liste";
+            this.refreshNewsListButton.Text = "Odśwież liste";
             this.refreshNewsListButton.UseVisualStyleBackColor = true;
             this.refreshNewsListButton.Click += new System.EventHandler(this.refreshNewsListButton_Click);
             // 
@@ -267,7 +267,7 @@
             // 
             this.addMoviesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addMoviesButton.Depth = 0;
-            this.addMoviesButton.Location = new System.Drawing.Point(203, 8);
+            this.addMoviesButton.Location = new System.Drawing.Point(203, 13);
             this.addMoviesButton.Margin = new System.Windows.Forms.Padding(10);
             this.addMoviesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addMoviesButton.Name = "addMoviesButton";
@@ -290,14 +290,14 @@
             // 
             this.refreshMoviesListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshMoviesListButton.Depth = 0;
-            this.refreshMoviesListButton.Location = new System.Drawing.Point(617, 8);
+            this.refreshMoviesListButton.Location = new System.Drawing.Point(617, 13);
             this.refreshMoviesListButton.Margin = new System.Windows.Forms.Padding(10);
             this.refreshMoviesListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshMoviesListButton.Name = "refreshMoviesListButton";
             this.refreshMoviesListButton.Primary = true;
             this.refreshMoviesListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshMoviesListButton.TabIndex = 5;
-            this.refreshMoviesListButton.Text = "Odświerz liste";
+            this.refreshMoviesListButton.Text = "Odśwież liste";
             this.refreshMoviesListButton.UseVisualStyleBackColor = true;
             this.refreshMoviesListButton.Click += new System.EventHandler(this.refreshMoviesListButton_Click);
             // 
@@ -305,7 +305,7 @@
             // 
             this.moviesListbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviesListbutton.Depth = 0;
-            this.moviesListbutton.Location = new System.Drawing.Point(15, 8);
+            this.moviesListbutton.Location = new System.Drawing.Point(13, 13);
             this.moviesListbutton.Margin = new System.Windows.Forms.Padding(10);
             this.moviesListbutton.MouseState = MaterialSkin.MouseState.HOVER;
             this.moviesListbutton.Name = "moviesListbutton";
@@ -364,7 +364,7 @@
             this.refreshHallsButton.Primary = true;
             this.refreshHallsButton.Size = new System.Drawing.Size(160, 44);
             this.refreshHallsButton.TabIndex = 5;
-            this.refreshHallsButton.Text = "Odświerz liste";
+            this.refreshHallsButton.Text = "Odśwież liste";
             this.refreshHallsButton.UseVisualStyleBackColor = true;
             this.refreshHallsButton.Click += new System.EventHandler(this.refreshHallsButton_Click);
             // 
@@ -415,7 +415,7 @@
             this.refreshUsersListButton.Primary = true;
             this.refreshUsersListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshUsersListButton.TabIndex = 5;
-            this.refreshUsersListButton.Text = "Odświerz liste";
+            this.refreshUsersListButton.Text = "Odśwież liste";
             this.refreshUsersListButton.UseVisualStyleBackColor = true;
             this.refreshUsersListButton.Click += new System.EventHandler(this.refreshUsersListButton_Click);
             // 
