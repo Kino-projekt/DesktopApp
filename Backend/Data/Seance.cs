@@ -7,6 +7,7 @@ namespace DesktopApp.Backend.Data
         private int id;
         private int movieId;
         private int hallId;
+        private string date;
 
         public void SetId(int id)
         {
@@ -36,6 +37,16 @@ namespace DesktopApp.Backend.Data
         public int GetHallId()
         {
             return hallId;
+        }
+
+        public void SetDate(string date)
+        {
+            this.date = date;
+        }
+
+        public string GetDate()
+        {
+            return date;
         }
     }
 }

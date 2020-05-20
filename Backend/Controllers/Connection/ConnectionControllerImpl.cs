@@ -19,6 +19,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         private string singInAdress = "/api/auth/signin";
         private string moviesAdress = "/api/movies";
         private string articlesAdress = "/api/articles";
+        private string seancesAdress = "/api/seances";
 
         public static ConnectionController GetController()
         {
@@ -68,7 +69,7 @@ namespace DesktopApp.Backend.Controllers.Connection
                 return ArticleListCreator.CreateArticles(response);
 
             DialogMessage.ShowInfo("Błąd pobierania artykułów!");
-            return null;
+            return new List<Article>();
         }
 
         public List<Movie> GetMoviesFromServer()
@@ -78,7 +79,17 @@ namespace DesktopApp.Backend.Controllers.Connection
                 return MoviesListCreator.CreateMovies(response);
 
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
-            return null;
+            return new List<Movie>();
+        }
+
+        public List<Seance> GetSeansecFromServer()
+        {
+            HttpResponseMessage response = client.GetAsync(seancesAdress).Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+                return SeanceListCreator.CreateSeances(response);
+
+            DialogMessage.ShowInfo("Błąd pobierania filmów!");
+            return new List<Seance>();
         }
     }
 }

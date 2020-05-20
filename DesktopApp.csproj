@@ -121,6 +121,7 @@
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\ContentCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\HallsListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\MoviesListCreator.cs" />
+    <Compile Include="Backend\Controllers\Connection\Methods\Creators\SeanceListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\UserCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\Creators\UsersListCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\Methods\DialogInfo\DialogMessage.cs" />
@@ -154,6 +155,8 @@
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesServiceImpl.cs" />
     <Compile Include="Backend\Services\AdminServices\UsersServices\UsersService.cs" />
     <Compile Include="Backend\Services\AdminServices\UsersServices\UsersServiceImpl.cs" />
+    <Compile Include="Backend\Services\DataServices\SeanceServices\SeanceService.cs" />
+    <Compile Include="Backend\Services\DataServices\SeanceServices\SeanceServiceImpl.cs" />
     <Compile Include="Backend\Services\DesingerServices\ColorStyle.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerService.cs" />
     <Compile Include="Backend\Services\DesingerServices\DesingerServiceImpl.cs" />

@@ -12,22 +12,14 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             string body = response.Content.ReadAsStringAsync().Result;
             List<Object> objects = JsonConvert.DeserializeObject<List<Object>>(body);
-            if (objects.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
-                return DecodeList(objects);
-            }
+            return DecodeList(objects);
         }
 
         private static List<User> DecodeList(List<Object> objects)
         {
             List<User> users = new List<User>();
-            int size = objects.Count;
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < objects.Count; i++)
             {
                 User user = new User();
                 dynamic userObject = objects[i];
