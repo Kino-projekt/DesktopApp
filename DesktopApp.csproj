@@ -149,6 +149,8 @@
     <Compile Include="Backend\Services\AdminServices\HallsServices\HallsAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\AdminServices\MoviesServices\MoviesAdminService.cs" />
     <Compile Include="Backend\Services\AdminServices\MoviesServices\MoviesAdminServiceImpl.cs" />
+    <Compile Include="Backend\Services\AdminServices\SeanceServices\SeanceAdminService.cs" />
+    <Compile Include="Backend\Services\AdminServices\SeanceServices\SeanceAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesService.cs" />

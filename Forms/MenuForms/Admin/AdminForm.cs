@@ -69,7 +69,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private void refreshNewsListButton_Click(object sender, EventArgs e)
         {
             ArticleAdminServiceImpl.GetService().DownloadArticleList();
-            usersContent.Open(new UsersListForm());
+            newsContent.Open(new NewsAdminListForm());
         }
 
         private void refreshUsersListButton_Click(object sender, EventArgs e)

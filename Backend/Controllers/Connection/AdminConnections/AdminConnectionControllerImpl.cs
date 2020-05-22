@@ -25,6 +25,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         private string hallsAdminAdress = "/api/admin/halls";
         private string hallsAdress = "/api/halls";
         private string usersAdress = "/api/users";
+        private string seancesAdress = "/api/seances";
+        private string seancesAdminAdress = "/api/admin/seances";
 
         public static AdminConnectionController GetController()
         {
@@ -88,6 +90,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
 
 
+
+
         private HttpResponseMessage GetMethod(string patch)
         {
             SetAuthorization();
@@ -136,6 +140,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
 
 
+
         private bool DeleteMethod(string patch, int id)
         {
             SetAuthorization();
@@ -161,6 +166,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
             else
                 DialogMessage.ShowInfo("Błąd usuwania filmu!");
         }
+
         public void DeleteHall(Hall hall)
         {
             if (DeleteMethod(hallsAdminAdress, hall.GetId()))
@@ -169,6 +175,13 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 DialogMessage.ShowInfo("Błąd usuwania sali!");
         }
 
+        public void DeleteSeance(Seance seance)
+        {
+            if (DeleteMethod(seancesAdminAdress, seance.GetId()))
+                NotifitactionForm.ShowMessage("Seanse usunięty!");
+            else
+                DialogMessage.ShowInfo("Błąd usuwania seansu!");
+        }
 
 
 
