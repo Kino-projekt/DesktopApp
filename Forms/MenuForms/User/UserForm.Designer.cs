@@ -31,12 +31,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.tabMenu = new MaterialSkin.Controls.MaterialTabControl();
-            this.reservationTab = new System.Windows.Forms.TabPage();
             this.statisticTab = new System.Windows.Forms.TabPage();
-            this.userStatsPanel = new System.Windows.Forms.Panel();
-            this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.settingsTab = new System.Windows.Forms.TabPage();
             this.accoutnDeletePanel = new System.Windows.Forms.Panel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -52,11 +47,10 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.tabSelector = new MaterialSkin.Controls.MaterialTabSelector();
+            this.reservationTab = new System.Windows.Forms.TabPage();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.tabMenu.SuspendLayout();
-            this.statisticTab.SuspendLayout();
-            this.userStatsPanel.SuspendLayout();
             this.settingsTab.SuspendLayout();
             this.accoutnDeletePanel.SuspendLayout();
             this.passwordPanel.SuspendLayout();
@@ -96,19 +90,8 @@
             this.tabMenu.Size = new System.Drawing.Size(800, 540);
             this.tabMenu.TabIndex = 0;
             // 
-            // reservationTab
-            // 
-            this.reservationTab.Location = new System.Drawing.Point(4, 22);
-            this.reservationTab.Name = "reservationTab";
-            this.reservationTab.Padding = new System.Windows.Forms.Padding(3);
-            this.reservationTab.Size = new System.Drawing.Size(792, 514);
-            this.reservationTab.TabIndex = 0;
-            this.reservationTab.Text = "Moje rezerwacje";
-            this.reservationTab.UseVisualStyleBackColor = true;
-            // 
             // statisticTab
             // 
-            this.statisticTab.Controls.Add(this.userStatsPanel);
             this.statisticTab.Location = new System.Drawing.Point(4, 22);
             this.statisticTab.Name = "statisticTab";
             this.statisticTab.Padding = new System.Windows.Forms.Padding(3);
@@ -116,62 +99,6 @@
             this.statisticTab.TabIndex = 1;
             this.statisticTab.Text = "Statystyki użytkownika";
             this.statisticTab.UseVisualStyleBackColor = true;
-            // 
-            // userStatsPanel
-            // 
-            this.userStatsPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.userStatsPanel.Controls.Add(this.emailField);
-            this.userStatsPanel.Controls.Add(this.tokenField);
-            this.userStatsPanel.Controls.Add(this.materialLabel4);
-            this.userStatsPanel.Location = new System.Drawing.Point(35, 113);
-            this.userStatsPanel.Name = "userStatsPanel";
-            this.userStatsPanel.Size = new System.Drawing.Size(668, 211);
-            this.userStatsPanel.TabIndex = 1;
-            // 
-            // emailField
-            // 
-            this.emailField.Depth = 0;
-            this.emailField.Hint = "";
-            this.emailField.Location = new System.Drawing.Point(18, 76);
-            this.emailField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.emailField.Name = "emailField";
-            this.emailField.PasswordChar = '\0';
-            this.emailField.SelectedText = "";
-            this.emailField.SelectionLength = 0;
-            this.emailField.SelectionStart = 0;
-            this.emailField.Size = new System.Drawing.Size(633, 23);
-            this.emailField.TabIndex = 2;
-            this.emailField.Text = "email";
-            this.emailField.UseSystemPasswordChar = false;
-            // 
-            // tokenField
-            // 
-            this.tokenField.Depth = 0;
-            this.tokenField.Hint = "";
-            this.tokenField.Location = new System.Drawing.Point(18, 138);
-            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tokenField.Name = "tokenField";
-            this.tokenField.PasswordChar = '\0';
-            this.tokenField.SelectedText = "";
-            this.tokenField.SelectionLength = 0;
-            this.tokenField.SelectionStart = 0;
-            this.tokenField.Size = new System.Drawing.Size(633, 23);
-            this.tokenField.TabIndex = 1;
-            this.tokenField.Text = "token";
-            this.tokenField.UseSystemPasswordChar = false;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(200, 22);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(275, 19);
-            this.materialLabel4.TabIndex = 0;
-            this.materialLabel4.Text = "Chwilowe info o użytkowniku do testów";
             // 
             // settingsTab
             // 
@@ -375,6 +302,16 @@
             this.tabSelector.TabIndex = 0;
             this.tabSelector.Text = "materialTabSelector1";
             // 
+            // reservationTab
+            // 
+            this.reservationTab.Location = new System.Drawing.Point(4, 22);
+            this.reservationTab.Name = "reservationTab";
+            this.reservationTab.Padding = new System.Windows.Forms.Padding(3);
+            this.reservationTab.Size = new System.Drawing.Size(792, 514);
+            this.reservationTab.TabIndex = 0;
+            this.reservationTab.Text = "Moje rezerwacje";
+            this.reservationTab.UseVisualStyleBackColor = true;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,9 +323,6 @@
             this.mainPanel.ResumeLayout(false);
             this.contentPanel.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
-            this.statisticTab.ResumeLayout(false);
-            this.userStatsPanel.ResumeLayout(false);
-            this.userStatsPanel.PerformLayout();
             this.settingsTab.ResumeLayout(false);
             this.accoutnDeletePanel.ResumeLayout(false);
             this.accoutnDeletePanel.PerformLayout();
@@ -404,7 +338,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel contentPanel;
         private MaterialSkin.Controls.MaterialTabControl tabMenu;
-        private System.Windows.Forms.TabPage reservationTab;
         private System.Windows.Forms.TabPage statisticTab;
         private System.Windows.Forms.TabPage settingsTab;
         private System.Windows.Forms.Panel menuPanel;
@@ -421,9 +354,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private System.Windows.Forms.Panel userStatsPanel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField emailField;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tokenField;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TabPage reservationTab;
     }
 }

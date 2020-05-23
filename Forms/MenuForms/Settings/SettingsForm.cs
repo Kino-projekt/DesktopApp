@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Backend.Services.SaveServices;
+using DesktopApp.Forms.Notification;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Settings
@@ -22,6 +24,8 @@ namespace DesktopApp.Forms.MenuForms.Settings
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(themePanel);
+            desingerService.AddPanelToChangeColor(deleteDataPanel);
+            desingerService.AddPanelToChangeColor(authorPanel);
         }
 
 
@@ -63,6 +67,12 @@ namespace DesktopApp.Forms.MenuForms.Settings
         private void springButton_Click(object sender, EventArgs e)
         {
             desingerService.SetColorStyle(ColorStyle.LightGreen);
+        }
+
+        private void deleteDataButton_Click(object sender, EventArgs e)
+        {
+            SaveService.RemoveUser();
+            NotifitactionForm.ShowMessage("Usunięto lokalne dane użytkownika!");
         }
     }
 }

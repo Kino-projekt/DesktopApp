@@ -25,7 +25,9 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public List<Seance> GetSeanceListForAdmin()
         {
-            throw new System.NotImplementedException();
+            if (seances == null)
+                DownloadSeanceList();
+            return seances;
         }
 
         public void SendSeanceToServer(Seance seance)
@@ -35,7 +37,7 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public void DeleteSeance(Seance seance)
         {
-            throw new System.NotImplementedException();
+            connectionController.DeleteSeance(seance);
         }
 
         public void DownloadSeanceList()

@@ -26,6 +26,7 @@ namespace DesktopApp.MainForm
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(menuPanel);
+            desingerService.AddPanelToChangeColor(logoPanel);
 
             contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
             contentPanelController.OpenNewsForm();

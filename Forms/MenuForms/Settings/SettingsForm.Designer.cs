@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.deleteDataPanel = new System.Windows.Forms.Panel();
+            this.deleteDataButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.themePanel = new System.Windows.Forms.Panel();
             this.springButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pinkButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -39,18 +41,51 @@
             this.greenButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.redButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.blueButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.authorPanel = new System.Windows.Forms.Panel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
+            this.deleteDataPanel.SuspendLayout();
             this.themePanel.SuspendLayout();
+            this.authorPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.authorPanel);
+            this.contentPanel.Controls.Add(this.deleteDataPanel);
             this.contentPanel.Controls.Add(this.themePanel);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(800, 600);
             this.contentPanel.TabIndex = 0;
+            // 
+            // deleteDataPanel
+            // 
+            this.deleteDataPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.deleteDataPanel.Controls.Add(this.deleteDataButton);
+            this.deleteDataPanel.Location = new System.Drawing.Point(19, 159);
+            this.deleteDataPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.deleteDataPanel.Name = "deleteDataPanel";
+            this.deleteDataPanel.Size = new System.Drawing.Size(762, 85);
+            this.deleteDataPanel.TabIndex = 4;
+            // 
+            // deleteDataButton
+            // 
+            this.deleteDataButton.AutoSize = true;
+            this.deleteDataButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.deleteDataButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteDataButton.Depth = 0;
+            this.deleteDataButton.Location = new System.Drawing.Point(253, 24);
+            this.deleteDataButton.Margin = new System.Windows.Forms.Padding(10);
+            this.deleteDataButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteDataButton.Name = "deleteDataButton";
+            this.deleteDataButton.Primary = false;
+            this.deleteDataButton.Size = new System.Drawing.Size(249, 36);
+            this.deleteDataButton.TabIndex = 4;
+            this.deleteDataButton.Text = "Usuń lokalne dane użytkownika";
+            this.deleteDataButton.UseVisualStyleBackColor = true;
+            this.deleteDataButton.Click += new System.EventHandler(this.deleteDataButton_Click);
             // 
             // themePanel
             // 
@@ -195,6 +230,29 @@
             this.blueButton.UseVisualStyleBackColor = true;
             this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
             // 
+            // authorPanel
+            // 
+            this.authorPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.authorPanel.Controls.Add(this.materialLabel2);
+            this.authorPanel.Location = new System.Drawing.Point(19, 515);
+            this.authorPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.authorPanel.Name = "authorPanel";
+            this.authorPanel.Size = new System.Drawing.Size(762, 75);
+            this.authorPanel.TabIndex = 5;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(269, 29);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(207, 19);
+            this.materialLabel2.TabIndex = 4;
+            this.materialLabel2.Text = "Autor programu: Karol Jaskot";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,8 +262,12 @@
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.contentPanel.ResumeLayout(false);
+            this.deleteDataPanel.ResumeLayout(false);
+            this.deleteDataPanel.PerformLayout();
             this.themePanel.ResumeLayout(false);
             this.themePanel.PerformLayout();
+            this.authorPanel.ResumeLayout(false);
+            this.authorPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +285,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton orangeButton;
         private MaterialSkin.Controls.MaterialRaisedButton pinkButton;
         private MaterialSkin.Controls.MaterialRaisedButton springButton;
+        private System.Windows.Forms.Panel deleteDataPanel;
+        private MaterialSkin.Controls.MaterialFlatButton deleteDataButton;
+        private System.Windows.Forms.Panel authorPanel;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }
