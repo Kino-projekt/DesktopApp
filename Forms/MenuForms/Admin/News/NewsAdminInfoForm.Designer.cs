@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.deleteButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idLabel = new MaterialSkin.Controls.MaterialLabel();
             this.statusButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.statusLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.deleteButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.dateLabel);
             this.contentPanel.Controls.Add(this.deleteButton);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.statusButton);
@@ -52,6 +54,20 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(760, 60);
             this.contentPanel.TabIndex = 0;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.Depth = 0;
+            this.deleteButton.Location = new System.Drawing.Point(616, 32);
+            this.deleteButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Primary = true;
+            this.deleteButton.Size = new System.Drawing.Size(132, 23);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Usuń";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // idLabel
             // 
@@ -86,7 +102,7 @@
             this.statusLabel.Depth = 0;
             this.statusLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.statusLabel.Location = new System.Drawing.Point(476, 9);
+            this.statusLabel.Location = new System.Drawing.Point(512, 9);
             this.statusLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(51, 19);
@@ -119,27 +135,26 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "title";
             // 
-            // deleteButton
+            // dateLabel
             // 
-            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteButton.Depth = 0;
-            this.deleteButton.Location = new System.Drawing.Point(616, 32);
-            this.deleteButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Primary = true;
-            this.deleteButton.Size = new System.Drawing.Size(132, 23);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Usuń";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Depth = 0;
+            this.dateLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dateLabel.Location = new System.Drawing.Point(388, 9);
+            this.dateLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(38, 19);
+            this.dateLabel.TabIndex = 6;
+            this.dateLabel.Text = "date";
             // 
-            // NewsInfoForm
+            // NewsAdminInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 60);
             this.Controls.Add(this.contentPanel);
-            this.Name = "NewsInfoForm";
+            this.Name = "NewsAdminInfoForm";
             this.Text = "NewsForm";
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
@@ -156,5 +171,6 @@
         private MaterialSkin.Controls.MaterialLabel descriptionLabel;
         private MaterialSkin.Controls.MaterialLabel titleLabel;
         private MaterialSkin.Controls.MaterialRaisedButton deleteButton;
+        private MaterialSkin.Controls.MaterialLabel dateLabel;
     }
 }
