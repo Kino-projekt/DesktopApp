@@ -61,7 +61,7 @@
             this.dateLabel.Depth = 0;
             this.dateLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dateLabel.Location = new System.Drawing.Point(372, 9);
+            this.dateLabel.Location = new System.Drawing.Point(333, 9);
             this.dateLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(38, 19);

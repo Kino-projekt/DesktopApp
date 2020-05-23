@@ -23,12 +23,7 @@ namespace DesktopApp.Forms.MenuForms.User
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(passwordPanel);
             desingerService.AddPanelToChangeColor(accoutnDeletePanel);
-            desingerService.AddPanelToChangeColor(userStatsPanel);
 
-            UserService userService = UserServiceImpl.GetInstance();
-
-            emailField.Text = userService.GetUserEmail();
-            tokenField.Text = userService.GetUserToken();
         }
     }
 }
