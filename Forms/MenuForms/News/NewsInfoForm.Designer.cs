@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.dateLabel);
             this.contentPanel.Controls.Add(this.descriptionLabel);
             this.contentPanel.Controls.Add(this.titleLabel);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -43,6 +45,19 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(776, 60);
             this.contentPanel.TabIndex = 0;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Depth = 0;
+            this.descriptionLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.descriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.descriptionLabel.Location = new System.Drawing.Point(12, 32);
+            this.descriptionLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(34, 19);
+            this.descriptionLabel.TabIndex = 2;
+            this.descriptionLabel.Text = "text";
             // 
             // titleLabel
             // 
@@ -57,18 +72,18 @@
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "title";
             // 
-            // descriptionLabel
+            // dateLabel
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Depth = 0;
-            this.descriptionLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.descriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.descriptionLabel.Location = new System.Drawing.Point(12, 32);
-            this.descriptionLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(34, 19);
-            this.descriptionLabel.TabIndex = 2;
-            this.descriptionLabel.Text = "text";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Depth = 0;
+            this.dateLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dateLabel.Location = new System.Drawing.Point(567, 9);
+            this.dateLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(38, 19);
+            this.dateLabel.TabIndex = 3;
+            this.dateLabel.Text = "date";
             // 
             // NewsInfoForm
             // 
@@ -89,5 +104,6 @@
         private System.Windows.Forms.Panel contentPanel;
         private MaterialSkin.Controls.MaterialLabel titleLabel;
         private MaterialSkin.Controls.MaterialLabel descriptionLabel;
+        private MaterialSkin.Controls.MaterialLabel dateLabel;
     }
 }

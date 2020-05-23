@@ -32,6 +32,7 @@ namespace DesktopApp.Forms.MenuForms.News
         {
             titleLabel.Text = article.GetTitle();
             descriptionLabel.Text = article.GetDescription();
+            dateLabel.Text = article.GetDate();
         }
     }
 }

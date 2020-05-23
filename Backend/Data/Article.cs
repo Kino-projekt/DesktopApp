@@ -1,4 +1,6 @@
-﻿namespace DesktopApp.Backend.Data
+﻿using System;
+
+namespace DesktopApp.Backend.Data
 {
     public class Article
     {
@@ -6,6 +8,7 @@
         private string title;
         private string description;
         private Status status;
+        private string date;
 
         public void SetId(int id)
         {
@@ -44,6 +47,16 @@
         public Status GetStatus()
         {
             return status;
+        }
+
+        public void SetDate(string date)
+        {
+            this.date = date;
+        }
+
+        public string GetDate()
+        {
+            return date;
         }
     }
 }
