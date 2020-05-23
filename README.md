@@ -10,10 +10,11 @@ Open file:
 bin/Debug/DesktopApp.exe
 ```
 
+<img src="images/Main.png" alt="drawing" width="200"/>
+
 ## Technologies
 
 .Net and WinForms
-
 
 ## Project
 The project was created for the needs of the State University of Applied Sciences in Legnica.
