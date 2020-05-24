@@ -191,7 +191,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void ChangeArticleStatus(Article article)
         {
             SetAuthorization();
-            string patchUrl = "/api/admin/articles/" + article.GetId() + "/status";
+            string patchUrl = articlesAdminAdress + article.GetId() + "/status";
             var content = ContentCreator.CreateContent(article.GetStatus());
             HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)
             {
@@ -202,6 +202,20 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 DialogMessage.ShowInfo("Błąd zmiany statusu!");
             else
                 NotifitactionForm.ShowMessage("Status zmieniony!");
+        }
+
+        public void BanUser(User user)
+        {
+            SetAuthorization();
+            string patchUrl = "/api/admin/users/" + user.GetId()+ "/ban";
+            HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)).Result;
+
+            if (response.StatusCode != HttpStatusCode.NoContent)
+                DialogMessage.ShowInfo("Problem z banowaniem!");
+            else if (response.StatusCode == HttpStatusCode.Forbidden)
+                DialogMessage.ShowInfo("Nie można banować administratorów!");
+            else
+                NotifitactionForm.ShowMessage("Użytkownik zbanowany!");
         }
     }
 }

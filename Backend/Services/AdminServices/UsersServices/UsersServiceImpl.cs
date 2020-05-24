@@ -30,6 +30,11 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
             return users;
         }
 
+        public void BanUser(User user)
+        {
+            connectionController.BanUser(user);
+        }
+
         public void DownloadUserList()
         {
             users = connectionController.GetUsersListFromServer();

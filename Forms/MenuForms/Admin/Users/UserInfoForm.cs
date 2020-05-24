@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Admin.Users
@@ -34,11 +36,19 @@ namespace DesktopApp.Forms.MenuForms.Admin.Users
         {
             idLabel.Text = "Numer: " + user.GetId();
             emailLabel.Text = user.GetEmail();
-            
+
             if (user.GetRole() == Role.ADMIN)
+            {
                 roleLabel.Text = "Administrator";
+                banButton.Visible = false;
+            }
             else
                 roleLabel.Text = "Użytkownik";
+        }
+
+        private void banButton_Click(object sender, EventArgs e)
+        {
+            UsersServiceImpl.GetService().BanUser(user);
         }
     }
 }

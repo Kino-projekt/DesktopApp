@@ -7,6 +7,8 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
     {
         List<User> GetUsersList();
 
+        void BanUser(User user);
+
         void DownloadUserList();
     }
 }

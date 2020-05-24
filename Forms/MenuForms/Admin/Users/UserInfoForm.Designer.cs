@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.banButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idLabel = new MaterialSkin.Controls.MaterialLabel();
             this.roleLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.banButton);
             this.contentPanel.Controls.Add(this.materialRaisedButton1);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.roleLabel);
@@ -48,6 +50,33 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(760, 60);
             this.contentPanel.TabIndex = 1;
+            // 
+            // banButton
+            // 
+            this.banButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.banButton.Depth = 0;
+            this.banButton.Location = new System.Drawing.Point(655, 28);
+            this.banButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.banButton.Name = "banButton";
+            this.banButton.Primary = true;
+            this.banButton.Size = new System.Drawing.Size(102, 29);
+            this.banButton.TabIndex = 6;
+            this.banButton.Text = "Banuj!";
+            this.banButton.UseVisualStyleBackColor = true;
+            this.banButton.Click += new System.EventHandler(this.banButton_Click);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(331, 6);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(167, 26);
+            this.materialRaisedButton1.TabIndex = 5;
+            this.materialRaisedButton1.Text = "Zmień uprawnienia";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // idLabel
             // 
@@ -68,7 +97,7 @@
             this.roleLabel.Depth = 0;
             this.roleLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.roleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.roleLabel.Location = new System.Drawing.Point(514, 9);
+            this.roleLabel.Location = new System.Drawing.Point(219, 9);
             this.roleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(34, 19);
@@ -87,19 +116,6 @@
             this.emailLabel.Size = new System.Drawing.Size(35, 19);
             this.emailLabel.TabIndex = 0;
             this.emailLabel.Text = "title";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(646, 9);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(102, 45);
-            this.materialRaisedButton1.TabIndex = 5;
-            this.materialRaisedButton1.Text = "Zmień uprawnienia";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
             // UserInfoForm
             // 
@@ -122,5 +138,6 @@
         private MaterialSkin.Controls.MaterialLabel roleLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton banButton;
     }
 }
