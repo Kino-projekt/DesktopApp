@@ -16,8 +16,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
 
         List<User> GetUsersListFromServer();
-
         void BanUser(User user);
+        void ChangeUserRole(User user);
 
 
         void SendMovie(Movie movie);

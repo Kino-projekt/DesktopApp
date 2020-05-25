@@ -25,6 +25,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         private string hallsAdminAdress = "/api/admin/halls";
         private string hallsAdress = "/api/halls";
         private string usersAdress = "/api/users";
+        private string usersAdminAdress = "/api/admin/users/";
         private string seancesAdress = "/api/seances";
         private string seancesAdminAdress = "/api/admin/seances";
 
@@ -207,7 +208,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void BanUser(User user)
         {
             SetAuthorization();
-            string patchUrl = "/api/admin/users/" + user.GetId()+ "/ban";
+            string patchUrl = usersAdminAdress + user.GetId()+ "/ban";
             HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)).Result;
 
             if (response.StatusCode != HttpStatusCode.NoContent)
@@ -216,6 +217,22 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 DialogMessage.ShowInfo("Nie można banować administratorów!");
             else
                 NotifitactionForm.ShowMessage("Użytkownik zbanowany!");
+        }
+
+        public void ChangeUserRole(User user)
+        {
+            SetAuthorization();
+            string patchUrl = usersAdminAdress + user.GetId() + "/update-role";
+            var content = ContentCreator.CreateContent(user.GetRole());
+            HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)
+            {
+                Content = content
+            }).Result;
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                DialogMessage.ShowInfo("Problem ze zmianą statusu!");
+            else
+                NotifitactionForm.ShowMessage("Status zmieniony!");
         }
     }
 }

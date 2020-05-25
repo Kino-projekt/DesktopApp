@@ -30,7 +30,7 @@
         {
             this.contentPanel = new System.Windows.Forms.Panel();
             this.banButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.changeRoleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idLabel = new MaterialSkin.Controls.MaterialLabel();
             this.roleLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -41,7 +41,7 @@
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.contentPanel.Controls.Add(this.banButton);
-            this.contentPanel.Controls.Add(this.materialRaisedButton1);
+            this.contentPanel.Controls.Add(this.changeRoleButton);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.roleLabel);
             this.contentPanel.Controls.Add(this.emailLabel);
@@ -65,18 +65,19 @@
             this.banButton.UseVisualStyleBackColor = true;
             this.banButton.Click += new System.EventHandler(this.banButton_Click);
             // 
-            // materialRaisedButton1
+            // changeRoleButton
             // 
-            this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(331, 6);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(167, 26);
-            this.materialRaisedButton1.TabIndex = 5;
-            this.materialRaisedButton1.Text = "Zmień uprawnienia";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.changeRoleButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changeRoleButton.Depth = 0;
+            this.changeRoleButton.Location = new System.Drawing.Point(331, 6);
+            this.changeRoleButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.changeRoleButton.Name = "changeRoleButton";
+            this.changeRoleButton.Primary = true;
+            this.changeRoleButton.Size = new System.Drawing.Size(167, 26);
+            this.changeRoleButton.TabIndex = 5;
+            this.changeRoleButton.Text = "Zmień uprawnienia";
+            this.changeRoleButton.UseVisualStyleBackColor = true;
+            this.changeRoleButton.Click += new System.EventHandler(this.changeRoleButton_Click);
             // 
             // idLabel
             // 
@@ -137,7 +138,7 @@
         private MaterialSkin.Controls.MaterialLabel idLabel;
         private MaterialSkin.Controls.MaterialLabel roleLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton changeRoleButton;
         private MaterialSkin.Controls.MaterialRaisedButton banButton;
     }
 }

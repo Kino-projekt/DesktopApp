@@ -44,11 +44,21 @@ namespace DesktopApp.Forms.MenuForms.Admin.Users
             }
             else
                 roleLabel.Text = "Użytkownik";
+
+            if (user.GetEmail().Equals(UserServiceImpl.GetInstance().GetUserEmail()))
+            {
+                changeRoleButton.Visible = false;
+            }
         }
 
         private void banButton_Click(object sender, EventArgs e)
         {
             UsersServiceImpl.GetService().BanUser(user);
+        }
+
+        private void changeRoleButton_Click(object sender, EventArgs e)
+        {
+            UsersServiceImpl.GetService().ChangeRole(user);
         }
     }
 }

@@ -12,6 +12,11 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(user));
         }
 
+        public static FormUrlEncodedContent CreateContent(Role role)
+        {
+            return new FormUrlEncodedContent(CreatePairs(role));
+        }
+
         public static FormUrlEncodedContent CreateContent(Article article)
         {
             return new FormUrlEncodedContent(CreatePairs(article));
@@ -42,6 +47,26 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return pairs;
         }
 
+        private static List<KeyValuePair<string, string>> CreatePairs(Role role)
+        {
+            List<KeyValuePair<string, string>> pairs;
+            if (role == Role.ADMIN)
+            {
+                return pairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("role", "CUSTOMER"),
+                };
+            }
+            else
+            {
+                return pairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("role", "ADMIN"),
+                };
+            }
+
+        }
+
         private static List<KeyValuePair<string, string>> CreatePairs(Article article)
         {
             var pairs = new List<KeyValuePair<string, string>>
@@ -69,7 +94,6 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                     new KeyValuePair<string, string>("status", "ACTIVE"),
                 };
             }
-
         }
 
         private static List<KeyValuePair<string, string>> CreatePairs(Movie movie)

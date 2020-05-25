@@ -56,5 +56,10 @@ namespace DesktopApp.Backend.Services.UserServices
         {
             return user.GetToken();
         }
+
+        public int GetUserId()
+        {
+            return user.GetId();
+        }
     }
 }

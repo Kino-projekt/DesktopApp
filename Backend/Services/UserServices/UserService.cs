@@ -8,6 +8,7 @@ namespace DesktopApp.Backend.Services.UserServices
         Role GetUserRole();
         string GetUserEmail();
         string GetUserToken();
+        int GetUserId();
         void RemoveUser();
     }
 }

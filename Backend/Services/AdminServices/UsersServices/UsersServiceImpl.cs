@@ -35,6 +35,11 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
             connectionController.BanUser(user);
         }
 
+        public void ChangeRole(User user)
+        {
+            connectionController.ChangeUserRole(user);
+        }
+
         public void DownloadUserList()
         {
             users = connectionController.GetUsersListFromServer();
