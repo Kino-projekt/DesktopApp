@@ -41,14 +41,11 @@ namespace DesktopApp.Forms.MenuForms.Admin.Users
             {
                 roleLabel.Text = "Administrator";
                 banButton.Visible = false;
+                changeRoleButton.Visible = false;
             }
             else
                 roleLabel.Text = "Użytkownik";
 
-            if (user.GetEmail().Equals(UserServiceImpl.GetInstance().GetUserEmail()))
-            {
-                changeRoleButton.Visible = false;
-            }
         }
 
         private void banButton_Click(object sender, EventArgs e)

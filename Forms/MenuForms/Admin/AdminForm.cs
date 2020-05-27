@@ -16,6 +16,7 @@ using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.Halls;
 using DesktopApp.Forms.MenuForms.Admin.Movies;
 using DesktopApp.Forms.MenuForms.Admin.News;
+using DesktopApp.Forms.MenuForms.Admin.Seance;
 using DesktopApp.Forms.MenuForms.Admin.Users;
 using DesktopApp.Forms.MenuForms.Movies;
 using MaterialSkin.Controls;
@@ -30,6 +31,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private PanelCreator moviesContent;
         private PanelCreator usersContent;
         private PanelCreator hallsContent;
+        private PanelCreator seanceContent;
 
         public AdminForm()
         {
@@ -49,6 +51,8 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
             hallsContent = new PanelCreator(hallsPanel);
             hallsContent.Open(new HallsAdminListForm());
+
+            seanceContent = new PanelCreator(seancePanel);
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -108,6 +112,11 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private void addHallButton_Click(object sender, EventArgs e)
         {
             hallsContent.Open(new AddHallsForm());
+        }
+
+        private void addSeanceButton_Click(object sender, EventArgs e)
+        {
+            seanceContent.Open(new AddSeanceForm());
         }
     }
 }

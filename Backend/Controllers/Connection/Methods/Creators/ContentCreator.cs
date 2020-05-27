@@ -37,6 +37,11 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(hall));
         }
 
+        public static FormUrlEncodedContent CreateContent(Seance seance)
+        {
+            return new FormUrlEncodedContent(CreatePairs(seance));
+        }
+
         private static List<KeyValuePair<string, string>> CreatePairs(AuthData user)
         {
             var pairs = new List<KeyValuePair<string, string>>
@@ -112,6 +117,17 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             var pairs = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("name", hall.GetName())
+            };
+            return pairs;
+        }
+
+        private static List<KeyValuePair<string, string>> CreatePairs(Seance seance)
+        {
+            var pairs = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("movieId", seance.GetMovieId().ToString()),
+                new KeyValuePair<string, string>("hallId", seance.GetHallId().ToString()),
+                new KeyValuePair<string, string>("date", seance.GetDate())
             };
             return pairs;
         }

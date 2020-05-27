@@ -89,6 +89,15 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 DialogMessage.ShowInfo("Błąd wysyłania!");
         }
 
+        public void SendSeance(Seance seance)
+        {
+            var content = ContentCreator.CreateContent(seance);
+            if (PostMethod(seancesAdminAdress, content))
+                NotifitactionForm.ShowMessage("Seans wysłany!");
+            else
+                DialogMessage.ShowInfo("Błąd wysyłania!");
+        }
+
 
 
 

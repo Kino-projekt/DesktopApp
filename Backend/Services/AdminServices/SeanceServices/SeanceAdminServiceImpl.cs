@@ -32,7 +32,7 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public void SendSeanceToServer(Seance seance)
         {
-            throw new System.NotImplementedException();
+            connectionController.SendSeance(seance);
         }
 
         public void DeleteSeance(Seance seance)
@@ -42,7 +42,7 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public void DownloadSeanceList()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

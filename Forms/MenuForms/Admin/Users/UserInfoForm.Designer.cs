@@ -73,9 +73,9 @@
             this.changeRoleButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.changeRoleButton.Name = "changeRoleButton";
             this.changeRoleButton.Primary = true;
-            this.changeRoleButton.Size = new System.Drawing.Size(167, 26);
+            this.changeRoleButton.Size = new System.Drawing.Size(137, 26);
             this.changeRoleButton.TabIndex = 5;
-            this.changeRoleButton.Text = "Zmień uprawnienia";
+            this.changeRoleButton.Text = "Nadaj admina";
             this.changeRoleButton.UseVisualStyleBackColor = true;
             this.changeRoleButton.Click += new System.EventHandler(this.changeRoleButton_Click);
             // 
