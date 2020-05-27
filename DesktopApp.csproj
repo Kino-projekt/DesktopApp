@@ -153,6 +153,8 @@
     <Compile Include="Backend\Services\AdminServices\SeanceServices\SeanceAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
+    <Compile Include="Backend\Services\DataServices\HallsServices\HallsService.cs" />
+    <Compile Include="Backend\Services\DataServices\HallsServices\HallsServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesService.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesServiceImpl.cs" />
     <Compile Include="Backend\Services\AdminServices\UsersServices\UsersService.cs" />
@@ -293,11 +295,17 @@
     <Compile Include="Forms\MenuForms\Price\PriceForm.Designer.cs">
       <DependentUpon>PriceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuForms\Seance\SeanceForm.cs">
+    <Compile Include="Forms\MenuForms\Seance\SeanceListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MenuForms\Seance\SeanceForm.Designer.cs">
-      <DependentUpon>SeanceForm.cs</DependentUpon>
+    <Compile Include="Forms\MenuForms\Seance\SeanceListForm.Designer.cs">
+      <DependentUpon>SeanceListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Seance\SeanceInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Seance\SeanceInfoForm.Designer.cs">
+      <DependentUpon>SeanceInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForms\Settings\SettingsForm.cs">
       <SubType>Form</SubType>
@@ -388,8 +396,11 @@
     <EmbeddedResource Include="Forms\MenuForms\Price\PriceForm.resx">
       <DependentUpon>PriceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuForms\Seance\SeanceForm.resx">
-      <DependentUpon>SeanceForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForms\Seance\SeanceListForm.resx">
+      <DependentUpon>SeanceListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Seance\SeanceInfoForm.resx">
+      <DependentUpon>SeanceInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Settings\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>

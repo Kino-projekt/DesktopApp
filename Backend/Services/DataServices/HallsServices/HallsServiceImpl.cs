@@ -1,0 +1,39 @@
+﻿using System.Collections.Generic;
+using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Data;
+using DesktopApp.Backend.Services.DataServices.MoviesServices;
+
+namespace DesktopApp.Backend.Services.DataServices.HallsServices
+{
+    public class HallsServiceImpl : HallsService
+    {
+        private static HallsService hallsService;
+        private List<Hall> halls;
+        private ConnectionController connectionController;
+
+        private HallsServiceImpl()
+        {
+            connectionController = ConnectionControllerImpl.GetController();
+            DownloadHallsList();
+        }
+
+        public static HallsService GetService()
+        {
+            if (hallsService == null)
+                hallsService = new HallsServiceImpl();
+            return hallsService;
+        }
+
+        public List<Hall> GetHallsList()
+        {
+            if (halls == null)
+                DownloadHallsList();
+            return halls;
+        }
+
+        public void DownloadHallsList()
+        {
+            halls=connectionController.GetHallsFromServer();
+        }
+    }
+}

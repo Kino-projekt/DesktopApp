@@ -20,6 +20,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         private string moviesAdress = "/api/movies";
         private string articlesAdress = "/api/articles";
         private string seancesAdress = "/api/seances";
+        private string hallsAdress = "/api/halls";
 
         public static ConnectionController GetController()
         {
@@ -80,6 +81,16 @@ namespace DesktopApp.Backend.Controllers.Connection
 
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
             return new List<Movie>();
+        }
+
+        public List<Hall> GetHallsFromServer()
+        {
+            HttpResponseMessage response = client.GetAsync(hallsAdress).Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+                return HallsListCreator.CreateHalls(response);
+
+            DialogMessage.ShowInfo("Błąd pobierania sali!");
+            return new List<Hall>();
         }
 
         public List<Seance> GetSeansecFromServer()

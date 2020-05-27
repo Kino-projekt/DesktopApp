@@ -10,30 +10,31 @@ using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
+using DesktopApp.Backend.Services.DataServices.SeanceServices;
 using DesktopApp.Backend.Services.DesingerServices;
-using DesktopApp.Forms.MenuForms.News;
+using DesktopApp.Forms.MenuForms.Movies;
 using MaterialSkin.Controls;
 
-namespace DesktopApp.Forms.MenuForms.Movies
+namespace DesktopApp.Forms.MenuForms.Seance
 {
-    public partial class MoviesListForm : MaterialForm
+    public partial class SeanceListForm : MaterialForm
     {
         private DesingerService desingerService;
-        private MoviesService moviesService;
+        private SeanceService seanceService;
         private ListFormService listFormService;
-        private List<Movie> movies;
+        private List<Backend.Data.Seance> seances;
 
-        public MoviesListForm()
+        public SeanceListForm()
         {
             InitializeComponent();
             desingerService = DesingerServiceImpl.GetInstance();
             desingerService.AddFormToDesinger(this);
+            
 
-
-            moviesService = MoviesServiceImpl.GetService();
+            seanceService = SeanceServiceImpl.GetService();
             listFormService = new ListFormService();
 
-            DownloadMoviesList();
+            DownloadSeanceList();
             listFormService.SetControlButtonsAndLabel(previusPageButton, nextPageButton, pageNumberLabel);
             listFormService.SetInfoPanel(infoLabel);
 
@@ -46,9 +47,9 @@ namespace DesktopApp.Forms.MenuForms.Movies
         private void ConnectForms()
         {
             List<MaterialForm> forms = new List<MaterialForm>();
-            foreach (Movie movie in movies)
+            foreach (Backend.Data.Seance seance in seances)
             {
-                forms.Add(new MovieInfoForm(movie));
+                forms.Add(new SeanceInfoForm(seance));
             }
             listFormService.SetForms(forms);
         }
@@ -67,19 +68,21 @@ namespace DesktopApp.Forms.MenuForms.Movies
         }
 
 
-        private void DownloadMoviesList()
+        private void DownloadSeanceList()
         {
-            movies = moviesService.GetMoviesList();
+            seances = seanceService.GetSeanceList();
         }
 
-        private void previusPageButton_Click_1(object sender, EventArgs e)
+        private void previusPageButton_Click(object sender, EventArgs e)
         {
             listFormService.PreviusePage();
         }
 
-        private void nextPageButton_Click_1(object sender, EventArgs e)
+        private void nextPageButton_Click(object sender, EventArgs e)
         {
             listFormService.NextPage();
         }
     }
+
+
 }

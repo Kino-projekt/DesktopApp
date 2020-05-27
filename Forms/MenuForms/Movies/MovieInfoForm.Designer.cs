@@ -44,7 +44,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(776, 60);
+            this.contentPanel.Size = new System.Drawing.Size(762, 60);
             this.contentPanel.TabIndex = 2;
             // 
             // directLabel
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 60);
+            this.ClientSize = new System.Drawing.Size(762, 60);
             this.Controls.Add(this.contentPanel);
             this.Name = "MovieInfoForm";
             this.Text = "MovieInfoForm";

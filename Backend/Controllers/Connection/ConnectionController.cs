@@ -11,7 +11,7 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         List<Article> GetArticlesFromServer();
         List<Movie> GetMoviesFromServer();
-
+        List<Hall> GetHallsFromServer();
         List<Seance> GetSeansecFromServer();
     }
 }

@@ -41,7 +41,7 @@ namespace DesktopApp.Backend.Controllers.ContentPanel
 
         public void OpenSeanceForm()
         {
-            content.Open(new SeanceForm());
+            content.Open(new SeanceListForm());
         }
 
         public void OpenAdminForms()

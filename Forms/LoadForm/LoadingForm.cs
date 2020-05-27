@@ -14,9 +14,12 @@ using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
 using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
+using DesktopApp.Backend.Services.AdminServices.SeanceServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DataServices.ArticleServices;
+using DesktopApp.Backend.Services.DataServices.HallsServices;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
+using DesktopApp.Backend.Services.DataServices.SeanceServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Backend.Services.UserServices;
@@ -57,15 +60,23 @@ namespace DesktopApp.Forms.LoadForm
         {
             SetProgressBar(10);
 
-            SetText("Pobieranie ogłoszeń");
-            ArticleService articleService = ArticleServiceImpl.GetService();
+            SetText("Pobieranie ogłoszeń...");
+            ArticleServiceImpl.GetService();
+            SetProgressBar(20);
+
+            SetText("Pobieranie listy filmów...");
+            MoviesServiceImpl.GetService();
             SetProgressBar(40);
 
-            SetText("Pobieranie listy filmów");
-            MoviesService moviesService = MoviesServiceImpl.GetService();
-            SetProgressBar(70);
+            SetText("Pobieranie listy sal kinowych...");
+            HallsServiceImpl.GetService();
+            SetProgressBar(60);
 
-            SetText("Sprawdzanie konta użytkownika");
+            SetText("Pobieranie listy seansów...");
+            SeanceServiceImpl.GetService();
+            SetProgressBar(80);
+
+            SetText("Sprawdzanie konta użytkownika...");
             if(programStart==true)
                 LoginUserFromData();
             SetProgressBar(100);
@@ -90,19 +101,23 @@ namespace DesktopApp.Forms.LoadForm
         {
             SetProgressBar(10);
 
-            SetText("Pobieranie listy ogłoszeń dla adminstratora");
+            SetText("Pobieranie listy ogłoszeń dla adminstratora...");
             ArticleAdminServiceImpl.GetService();
-            SetProgressBar(30);
+            SetProgressBar(20);
 
-            SetText("Pobieranie listy filmów dla administratora");
+            SetText("Pobieranie listy filmów dla administratora...");
             MoviesAdminServiceImpl.GetService();
+            SetProgressBar(40);
+
+            SetText("Pobieranie listy seansów dla administratora...");
+            SeanceAdminServiceImpl.GetService();
             SetProgressBar(60);
 
-            SetText("Pobieranie listy sal dla administratora");
+            SetText("Pobieranie listy sal dla administratora...");
             HallsAdminServiceImpl.GetService();
             SetProgressBar(80);
 
-            SetText("Pobieranie listy użytkowników dla administratora");
+            SetText("Pobieranie listy użytkowników dla administratora...");
             UsersServiceImpl.GetService();
             SetProgressBar(100);
         }
