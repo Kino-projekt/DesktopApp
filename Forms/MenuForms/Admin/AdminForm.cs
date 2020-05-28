@@ -11,6 +11,7 @@ using DesktopApp.Backend.Controllers.ContentPanel.Methods;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
 using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
+using DesktopApp.Backend.Services.AdminServices.SeanceServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Forms.MenuForms.Admin.Halls;
@@ -53,6 +54,7 @@ namespace DesktopApp.Forms.MenuForms.Admin
             hallsContent.Open(new HallsAdminListForm());
 
             seanceContent = new PanelCreator(seancePanel);
+            seanceContent.Open(new SeanceAdminListForm());
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -117,6 +119,17 @@ namespace DesktopApp.Forms.MenuForms.Admin
         private void addSeanceButton_Click(object sender, EventArgs e)
         {
             seanceContent.Open(new AddSeanceForm());
+        }
+
+        private void seanceListButton_Click(object sender, EventArgs e)
+        {
+            seanceContent.Open(new SeanceAdminListForm());
+        }
+
+        private void refreshSeanseListButton_Click(object sender, EventArgs e)
+        {
+            SeanceAdminServiceImpl.GetService().DownloadSeanceList();
+            seanceContent.Open(new SeanceAdminListForm());
         }
     }
 }

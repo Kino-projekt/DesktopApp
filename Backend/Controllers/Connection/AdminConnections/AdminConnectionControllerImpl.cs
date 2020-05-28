@@ -115,7 +115,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 return UsersListCreator.CreateUsers(response);
 
             DialogMessage.ShowInfo("Błąd pobierania artykułów!");
-            return null;
+            return new List<User>();
         }
 
         public List<Article> GetAdminArticlesFromServer()
@@ -125,7 +125,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 return ArticleListCreator.CreateArticles(response);
 
             DialogMessage.ShowInfo("Błąd pobierania artykułów!");
-            return null;
+            return new List<Article>();
         }
 
         public List<Movie> GetMoviesListFromServer()
@@ -135,7 +135,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 return MoviesListCreator.CreateMovies(response);
 
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
-            return null;
+            return new List<Movie>();
         }
         public List<Hall> GetHallsListFromServer()
         {
@@ -144,7 +144,17 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
                 return HallsListCreator.CreateHalls(response);
 
             DialogMessage.ShowInfo("Błąd pobierania filmów!");
-            return null;
+            return new List<Hall>();
+        }
+
+        public List<Seance> GetSeancesListFromServer()
+        {
+            HttpResponseMessage response = client.GetAsync(seancesAdress).Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+                return SeanceListCreator.CreateSeances(response);
+
+            DialogMessage.ShowInfo("Błąd pobierania seansów!");
+            return new List<Seance>();
         }
 
 

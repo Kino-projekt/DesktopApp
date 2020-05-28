@@ -26,6 +26,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         void SendSeance(Seance seance);
 
+        List<Seance> GetSeancesListFromServer();
+
         void DeleteSeance(Seance seance);
     }
 }

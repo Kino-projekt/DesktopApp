@@ -42,6 +42,10 @@
             this.refreshNewsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.newsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.seancesTab = new System.Windows.Forms.TabPage();
+            this.addSeanceButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.seancePanel = new System.Windows.Forms.Panel();
+            this.refreshSeanseListButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.seanceListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesTab = new System.Windows.Forms.TabPage();
             this.addMoviesButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesPanel = new System.Windows.Forms.Panel();
@@ -59,10 +63,6 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.addSeanceButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.seancePanel = new System.Windows.Forms.Panel();
-            this.refreshSeanseListButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.seanceListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.mainMenu.SuspendLayout();
@@ -257,6 +257,59 @@
             this.seancesTab.TabIndex = 2;
             this.seancesTab.Text = "Seanse";
             this.seancesTab.UseVisualStyleBackColor = true;
+            // 
+            // addSeanceButton
+            // 
+            this.addSeanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addSeanceButton.Depth = 0;
+            this.addSeanceButton.Location = new System.Drawing.Point(203, 8);
+            this.addSeanceButton.Margin = new System.Windows.Forms.Padding(10);
+            this.addSeanceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addSeanceButton.Name = "addSeanceButton";
+            this.addSeanceButton.Primary = true;
+            this.addSeanceButton.Size = new System.Drawing.Size(160, 44);
+            this.addSeanceButton.TabIndex = 6;
+            this.addSeanceButton.Text = "Dodaj seans";
+            this.addSeanceButton.UseVisualStyleBackColor = true;
+            this.addSeanceButton.Click += new System.EventHandler(this.addSeanceButton_Click);
+            // 
+            // seancePanel
+            // 
+            this.seancePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.seancePanel.Location = new System.Drawing.Point(3, 56);
+            this.seancePanel.Name = "seancePanel";
+            this.seancePanel.Size = new System.Drawing.Size(786, 455);
+            this.seancePanel.TabIndex = 7;
+            // 
+            // refreshSeanseListButton
+            // 
+            this.refreshSeanseListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshSeanseListButton.Depth = 0;
+            this.refreshSeanseListButton.Location = new System.Drawing.Point(617, 8);
+            this.refreshSeanseListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshSeanseListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshSeanseListButton.Name = "refreshSeanseListButton";
+            this.refreshSeanseListButton.Primary = true;
+            this.refreshSeanseListButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshSeanseListButton.TabIndex = 5;
+            this.refreshSeanseListButton.Text = "Odśwież liste";
+            this.refreshSeanseListButton.UseVisualStyleBackColor = true;
+            this.refreshSeanseListButton.Click += new System.EventHandler(this.refreshSeanseListButton_Click);
+            // 
+            // seanceListButton
+            // 
+            this.seanceListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.seanceListButton.Depth = 0;
+            this.seanceListButton.Location = new System.Drawing.Point(15, 8);
+            this.seanceListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.seanceListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.seanceListButton.Name = "seanceListButton";
+            this.seanceListButton.Primary = true;
+            this.seanceListButton.Size = new System.Drawing.Size(170, 44);
+            this.seanceListButton.TabIndex = 4;
+            this.seanceListButton.Text = "Lista seansów";
+            this.seanceListButton.UseVisualStyleBackColor = true;
+            this.seanceListButton.Click += new System.EventHandler(this.seanceListButton_Click);
             // 
             // moviesTab
             // 
@@ -476,57 +529,6 @@
             this.materialLabel1.Size = new System.Drawing.Size(99, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
-            // 
-            // addSeanceButton
-            // 
-            this.addSeanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addSeanceButton.Depth = 0;
-            this.addSeanceButton.Location = new System.Drawing.Point(203, 8);
-            this.addSeanceButton.Margin = new System.Windows.Forms.Padding(10);
-            this.addSeanceButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.addSeanceButton.Name = "addSeanceButton";
-            this.addSeanceButton.Primary = true;
-            this.addSeanceButton.Size = new System.Drawing.Size(160, 44);
-            this.addSeanceButton.TabIndex = 6;
-            this.addSeanceButton.Text = "Dodaj seans";
-            this.addSeanceButton.UseVisualStyleBackColor = true;
-            this.addSeanceButton.Click += new System.EventHandler(this.addSeanceButton_Click);
-            // 
-            // seancePanel
-            // 
-            this.seancePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.seancePanel.Location = new System.Drawing.Point(3, 56);
-            this.seancePanel.Name = "seancePanel";
-            this.seancePanel.Size = new System.Drawing.Size(786, 455);
-            this.seancePanel.TabIndex = 7;
-            // 
-            // refreshSeanseListButton
-            // 
-            this.refreshSeanseListButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshSeanseListButton.Depth = 0;
-            this.refreshSeanseListButton.Location = new System.Drawing.Point(617, 8);
-            this.refreshSeanseListButton.Margin = new System.Windows.Forms.Padding(10);
-            this.refreshSeanseListButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.refreshSeanseListButton.Name = "refreshSeanseListButton";
-            this.refreshSeanseListButton.Primary = true;
-            this.refreshSeanseListButton.Size = new System.Drawing.Size(160, 44);
-            this.refreshSeanseListButton.TabIndex = 5;
-            this.refreshSeanseListButton.Text = "Odśwież liste";
-            this.refreshSeanseListButton.UseVisualStyleBackColor = true;
-            // 
-            // seanceListButton
-            // 
-            this.seanceListButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.seanceListButton.Depth = 0;
-            this.seanceListButton.Location = new System.Drawing.Point(15, 8);
-            this.seanceListButton.Margin = new System.Windows.Forms.Padding(10);
-            this.seanceListButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.seanceListButton.Name = "seanceListButton";
-            this.seanceListButton.Primary = true;
-            this.seanceListButton.Size = new System.Drawing.Size(170, 44);
-            this.seanceListButton.TabIndex = 4;
-            this.seanceListButton.Text = "Lista seansów";
-            this.seanceListButton.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 

@@ -99,7 +99,7 @@ namespace DesktopApp.Backend.Controllers.Connection
             if (response.StatusCode == HttpStatusCode.OK)
                 return SeanceListCreator.CreateSeances(response);
 
-            DialogMessage.ShowInfo("Błąd pobierania filmów!");
+            DialogMessage.ShowInfo("Błąd pobierania seansów!");
             return new List<Seance>();
         }
     }

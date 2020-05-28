@@ -253,6 +253,18 @@
     <Compile Include="Forms\MenuForms\Admin\Seance\AddSeanceForm.Designer.cs">
       <DependentUpon>AddSeanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Seance\SeanceAdminInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Seance\SeanceAdminInfoForm.Designer.cs">
+      <DependentUpon>SeanceAdminInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Seance\SeanceAdminListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Admin\Seance\SeanceAdminListForm.Designer.cs">
+      <DependentUpon>SeanceAdminListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuForms\Admin\Users\UserInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +386,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\Seance\AddSeanceForm.resx">
       <DependentUpon>AddSeanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Seance\SeanceAdminInfoForm.resx">
+      <DependentUpon>SeanceAdminInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Admin\Seance\SeanceAdminListForm.resx">
+      <DependentUpon>SeanceAdminListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\Users\UserInfoForm.resx">
       <DependentUpon>UserInfoForm.cs</DependentUpon>

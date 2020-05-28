@@ -42,7 +42,7 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public void DownloadSeanceList()
         {
-            
+            seances = connectionController.GetSeancesListFromServer();
         }
     }
 }
