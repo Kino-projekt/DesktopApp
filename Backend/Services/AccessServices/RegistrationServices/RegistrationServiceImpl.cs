@@ -1,6 +1,7 @@
 ﻿using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
@@ -21,7 +22,7 @@ namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
         public bool RegisterNewUser()
         {
             if (CheckUserData())
-                return GetConnectionController().Singup(GetAuthData());
+                return GetConnectionController().SingUp(GetAuthData());
 
             return false;
         }

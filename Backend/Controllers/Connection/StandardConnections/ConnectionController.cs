@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using DesktopApp.Backend.Data;
 
-namespace DesktopApp.Backend.Controllers.Connection
+namespace DesktopApp.Backend.Controllers.Connection.StandardConnections
 {
     public interface ConnectionController
     {
-        bool Singup(AuthData user);
-        bool Singin(AuthData user);
+        bool SingUp(AuthData user);
+        bool SingIn(AuthData user);
 
         List<Article> GetArticlesFromServer();
         List<Movie> GetMoviesFromServer();
         List<Hall> GetHallsFromServer();
-        List<Seance> GetSeansecFromServer();
+        List<Seance> GetSeancesFromServer();
     }
 }

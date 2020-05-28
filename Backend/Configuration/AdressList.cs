@@ -1,4 +1,7 @@
-﻿namespace DesktopApp.Backend.Configuration
+﻿using System;
+using System.Net.Http;
+
+namespace DesktopApp.Backend.Configuration
 {
     public class AdressList
     {
@@ -18,5 +21,13 @@
         public static readonly string HallsAdmin = "/api/admin/halls";
         public static readonly string SeancesAdmin = "/api/admin/seances";
         public static readonly string UsersAdmin = "/api/admin/users/";
+
+        public static HttpClient GetHttpClient()
+        {
+            return new HttpClient
+            {
+                BaseAddress = new Uri(Server)
+            };
+        }
     }
 }

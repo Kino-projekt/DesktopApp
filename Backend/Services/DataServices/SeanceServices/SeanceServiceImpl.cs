@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.DataServices.SeanceServices
@@ -32,7 +33,7 @@ namespace DesktopApp.Backend.Services.DataServices.SeanceServices
 
         public void DownloadSeanceList()
         {
-            seances = connectionController.GetSeansecFromServer();
+            seances = connectionController.GetSeancesFromServer();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DataServices.ArticleServices;
 

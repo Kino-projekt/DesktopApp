@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Data;
 
 namespace Tests.Imitations
@@ -7,12 +8,12 @@ namespace Tests.Imitations
     public class ConnectionControllerImitation : ConnectionController
     {
 
-        public bool Singup(AuthData user)
+        public bool SingUp(AuthData user)
         {
             return true;
         }
 
-        public bool Singin(AuthData user)
+        public bool SingIn(AuthData user)
         {
             return true;
         }

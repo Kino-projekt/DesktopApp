@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
@@ -148,7 +149,7 @@ namespace DesktopApp.Forms.LoadForm
             if (email.Length > 3)
             {
                 ConnectionController connection = ConnectionControllerImpl.GetController();
-                connection.Singin(SaveService.GetUser());
+                connection.SingIn(SaveService.GetUser());
             }
         }
 

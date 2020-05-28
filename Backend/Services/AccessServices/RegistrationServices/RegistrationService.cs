@@ -1,4 +1,5 @@
 ﻿using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 
 namespace DesktopApp.Backend.Services.AccessServices.RegistrationServices
 {
