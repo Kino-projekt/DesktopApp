@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
@@ -41,6 +42,8 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
 
             timePickerData.Format = DateTimePickerFormat.Custom;
             timePickerData.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+
+
         }
 
         private void nextMovieButtopn_Click(object sender, EventArgs e)

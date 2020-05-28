@@ -111,7 +111,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backend\Configuration\BasicConfiguration.cs" />
+    <Compile Include="Backend\Configuration\AdressList.cs" />
     <Compile Include="Backend\Configuration\DataValidation.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\AdminConnectionController.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\AdminConnectionControllerImpl.cs" />

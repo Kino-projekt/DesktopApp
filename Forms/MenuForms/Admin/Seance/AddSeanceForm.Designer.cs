@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.previoseHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.nextHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.previoseMovieButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.nextMovieButtopn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.hallLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.movieLabel = new MaterialSkin.Controls.MaterialLabel();
             this.timePickerData = new System.Windows.Forms.DateTimePicker();
             this.directLabel = new MaterialSkin.Controls.MaterialLabel();
             this.sendButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.movieLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.hallLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.nextMovieButtopn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.previoseMovieButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.previoseHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.nextHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,88 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(786, 455);
             this.contentPanel.TabIndex = 2;
+            // 
+            // previoseHallButton
+            // 
+            this.previoseHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.previoseHallButton.Depth = 0;
+            this.previoseHallButton.Location = new System.Drawing.Point(283, 187);
+            this.previoseHallButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.previoseHallButton.Name = "previoseHallButton";
+            this.previoseHallButton.Primary = true;
+            this.previoseHallButton.Size = new System.Drawing.Size(99, 28);
+            this.previoseHallButton.TabIndex = 19;
+            this.previoseHallButton.Text = "Poprzednia";
+            this.previoseHallButton.UseVisualStyleBackColor = true;
+            this.previoseHallButton.Click += new System.EventHandler(this.previoseHallButton_Click);
+            // 
+            // nextHallButton
+            // 
+            this.nextHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextHallButton.Depth = 0;
+            this.nextHallButton.Location = new System.Drawing.Point(388, 187);
+            this.nextHallButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nextHallButton.Name = "nextHallButton";
+            this.nextHallButton.Primary = true;
+            this.nextHallButton.Size = new System.Drawing.Size(99, 28);
+            this.nextHallButton.TabIndex = 18;
+            this.nextHallButton.Text = "Następna";
+            this.nextHallButton.UseVisualStyleBackColor = true;
+            this.nextHallButton.Click += new System.EventHandler(this.nextHallButton_Click);
+            // 
+            // previoseMovieButton
+            // 
+            this.previoseMovieButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.previoseMovieButton.Depth = 0;
+            this.previoseMovieButton.Location = new System.Drawing.Point(287, 74);
+            this.previoseMovieButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.previoseMovieButton.Name = "previoseMovieButton";
+            this.previoseMovieButton.Primary = true;
+            this.previoseMovieButton.Size = new System.Drawing.Size(95, 28);
+            this.previoseMovieButton.TabIndex = 17;
+            this.previoseMovieButton.Text = "Poprzedni";
+            this.previoseMovieButton.UseVisualStyleBackColor = true;
+            this.previoseMovieButton.Click += new System.EventHandler(this.previoseMovieButton_Click);
+            // 
+            // nextMovieButtopn
+            // 
+            this.nextMovieButtopn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextMovieButtopn.Depth = 0;
+            this.nextMovieButtopn.Location = new System.Drawing.Point(392, 74);
+            this.nextMovieButtopn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nextMovieButtopn.Name = "nextMovieButtopn";
+            this.nextMovieButtopn.Primary = true;
+            this.nextMovieButtopn.Size = new System.Drawing.Size(99, 28);
+            this.nextMovieButtopn.TabIndex = 16;
+            this.nextMovieButtopn.Text = "Następny";
+            this.nextMovieButtopn.UseVisualStyleBackColor = true;
+            this.nextMovieButtopn.Click += new System.EventHandler(this.nextMovieButtopn_Click);
+            // 
+            // hallLabel
+            // 
+            this.hallLabel.AutoSize = true;
+            this.hallLabel.Depth = 0;
+            this.hallLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.hallLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hallLabel.Location = new System.Drawing.Point(345, 154);
+            this.hallLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.hallLabel.Name = "hallLabel";
+            this.hallLabel.Size = new System.Drawing.Size(33, 19);
+            this.hallLabel.TabIndex = 15;
+            this.hallLabel.Text = "hall";
+            // 
+            // movieLabel
+            // 
+            this.movieLabel.AutoSize = true;
+            this.movieLabel.Depth = 0;
+            this.movieLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.movieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.movieLabel.Location = new System.Drawing.Point(349, 42);
+            this.movieLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.movieLabel.Name = "movieLabel";
+            this.movieLabel.Size = new System.Drawing.Size(50, 19);
+            this.movieLabel.TabIndex = 14;
+            this.movieLabel.Text = "movie";
             // 
             // timePickerData
             // 
@@ -122,88 +204,6 @@
             this.materialLabel1.Size = new System.Drawing.Size(42, 19);
             this.materialLabel1.TabIndex = 2;
             this.materialLabel1.Text = "Film:";
-            // 
-            // movieLabel
-            // 
-            this.movieLabel.AutoSize = true;
-            this.movieLabel.Depth = 0;
-            this.movieLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.movieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.movieLabel.Location = new System.Drawing.Point(349, 42);
-            this.movieLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.movieLabel.Name = "movieLabel";
-            this.movieLabel.Size = new System.Drawing.Size(50, 19);
-            this.movieLabel.TabIndex = 14;
-            this.movieLabel.Text = "movie";
-            // 
-            // hallLabel
-            // 
-            this.hallLabel.AutoSize = true;
-            this.hallLabel.Depth = 0;
-            this.hallLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.hallLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hallLabel.Location = new System.Drawing.Point(345, 154);
-            this.hallLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.hallLabel.Name = "hallLabel";
-            this.hallLabel.Size = new System.Drawing.Size(33, 19);
-            this.hallLabel.TabIndex = 15;
-            this.hallLabel.Text = "hall";
-            // 
-            // nextMovieButtopn
-            // 
-            this.nextMovieButtopn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nextMovieButtopn.Depth = 0;
-            this.nextMovieButtopn.Location = new System.Drawing.Point(392, 74);
-            this.nextMovieButtopn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nextMovieButtopn.Name = "nextMovieButtopn";
-            this.nextMovieButtopn.Primary = true;
-            this.nextMovieButtopn.Size = new System.Drawing.Size(99, 28);
-            this.nextMovieButtopn.TabIndex = 16;
-            this.nextMovieButtopn.Text = "Następny";
-            this.nextMovieButtopn.UseVisualStyleBackColor = true;
-            this.nextMovieButtopn.Click += new System.EventHandler(this.nextMovieButtopn_Click);
-            // 
-            // previoseMovieButton
-            // 
-            this.previoseMovieButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.previoseMovieButton.Depth = 0;
-            this.previoseMovieButton.Location = new System.Drawing.Point(287, 74);
-            this.previoseMovieButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.previoseMovieButton.Name = "previoseMovieButton";
-            this.previoseMovieButton.Primary = true;
-            this.previoseMovieButton.Size = new System.Drawing.Size(95, 28);
-            this.previoseMovieButton.TabIndex = 17;
-            this.previoseMovieButton.Text = "Poprzedni";
-            this.previoseMovieButton.UseVisualStyleBackColor = true;
-            this.previoseMovieButton.Click += new System.EventHandler(this.previoseMovieButton_Click);
-            // 
-            // previoseHallButton
-            // 
-            this.previoseHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.previoseHallButton.Depth = 0;
-            this.previoseHallButton.Location = new System.Drawing.Point(283, 187);
-            this.previoseHallButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.previoseHallButton.Name = "previoseHallButton";
-            this.previoseHallButton.Primary = true;
-            this.previoseHallButton.Size = new System.Drawing.Size(99, 28);
-            this.previoseHallButton.TabIndex = 19;
-            this.previoseHallButton.Text = "Poprzednia";
-            this.previoseHallButton.UseVisualStyleBackColor = true;
-            this.previoseHallButton.Click += new System.EventHandler(this.previoseHallButton_Click);
-            // 
-            // nextHallButton
-            // 
-            this.nextHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nextHallButton.Depth = 0;
-            this.nextHallButton.Location = new System.Drawing.Point(388, 187);
-            this.nextHallButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nextHallButton.Name = "nextHallButton";
-            this.nextHallButton.Primary = true;
-            this.nextHallButton.Size = new System.Drawing.Size(99, 28);
-            this.nextHallButton.TabIndex = 18;
-            this.nextHallButton.Text = "Następna";
-            this.nextHallButton.UseVisualStyleBackColor = true;
-            this.nextHallButton.Click += new System.EventHandler(this.nextHallButton_Click);
             // 
             // AddSeanceForm
             // 

@@ -14,13 +14,6 @@ namespace DesktopApp.Backend.Controllers.Connection
     public class ConnectionControllerImpl : ConnectionController
     {
         private HttpClient client;
-        private string serverAdress = BasicConfiguration.GetServerAdress();
-        private string singUpAdress = "/api/auth/signup";
-        private string singInAdress = "/api/auth/signin";
-        private string moviesAdress = "/api/movies";
-        private string articlesAdress = "/api/articles";
-        private string seancesAdress = "/api/seances";
-        private string hallsAdress = "/api/halls";
 
         public static ConnectionController GetController()
         {
@@ -31,14 +24,14 @@ namespace DesktopApp.Backend.Controllers.Connection
         {
             client = new HttpClient
             {
-                BaseAddress = new Uri(serverAdress)
+                BaseAddress = new Uri(AdressList.Server)
             };
         }
 
         public bool Singup(AuthData user)
         {
             var content = ContentCreator.CreateContent(user);
-            HttpResponseMessage response = client.PostAsync(singUpAdress, content).Result;
+            HttpResponseMessage response = client.PostAsync(AdressList.SingUp, content).Result;
             if (response.StatusCode == HttpStatusCode.Created)
             {
                 NotifitactionForm.ShowMessage("Konto zarejestrowane!");
@@ -52,7 +45,7 @@ namespace DesktopApp.Backend.Controllers.Connection
         public bool Singin(AuthData user)
         {
             var content = ContentCreator.CreateContent(user);
-            HttpResponseMessage response = client.PostAsync(singInAdress, content).Result;
+            HttpResponseMessage response = client.PostAsync(AdressList.SingIn, content).Result;
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 UserCreator.PutUserToSystem(response);
@@ -65,7 +58,7 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Article> GetArticlesFromServer()
         {
-            HttpResponseMessage response = client.GetAsync(articlesAdress).Result;
+            HttpResponseMessage response = client.GetAsync(AdressList.Articles).Result;
             if (response.StatusCode == HttpStatusCode.OK)
                 return ArticleListCreator.CreateArticles(response);
 
@@ -75,7 +68,7 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Movie> GetMoviesFromServer()
         {
-            HttpResponseMessage response = client.GetAsync(moviesAdress).Result;
+            HttpResponseMessage response = client.GetAsync(AdressList.Movies).Result;
             if (response.StatusCode == HttpStatusCode.OK)
                 return MoviesListCreator.CreateMovies(response);
 
@@ -85,7 +78,7 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Hall> GetHallsFromServer()
         {
-            HttpResponseMessage response = client.GetAsync(hallsAdress).Result;
+            HttpResponseMessage response = client.GetAsync(AdressList.Halls).Result;
             if (response.StatusCode == HttpStatusCode.OK)
                 return HallsListCreator.CreateHalls(response);
 
@@ -95,7 +88,7 @@ namespace DesktopApp.Backend.Controllers.Connection
 
         public List<Seance> GetSeansecFromServer()
         {
-            HttpResponseMessage response = client.GetAsync(seancesAdress).Result;
+            HttpResponseMessage response = client.GetAsync(AdressList.Seances).Result;
             if (response.StatusCode == HttpStatusCode.OK)
                 return SeanceListCreator.CreateSeances(response);
 

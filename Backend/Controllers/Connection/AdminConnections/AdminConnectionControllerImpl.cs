@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.InteropServices;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
@@ -16,18 +15,8 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
     public class AdminConnectionControllerImpl : AdminConnectionController
     {
         private HttpClient client;
-        private string serverAdress = BasicConfiguration.GetServerAdress();
         private UserService userService;
 
-        private string articlesAdminAdress = "/api/admin/articles";
-        private string moviesAdminAdress = "/api/admin/movies";
-        private string moviesAdress = "/api/movies";
-        private string hallsAdminAdress = "/api/admin/halls";
-        private string hallsAdress = "/api/halls";
-        private string usersAdress = "/api/users";
-        private string usersAdminAdress = "/api/admin/users/";
-        private string seancesAdress = "/api/seances";
-        private string seancesAdminAdress = "/api/admin/seances";
 
         public static AdminConnectionController GetController()
         {
@@ -38,7 +27,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         {
             client = new HttpClient
             {
-                BaseAddress = new Uri(serverAdress)
+                BaseAddress = new Uri(AdressList.Server)
             };
             userService = UserServiceImpl.GetInstance();
         }
@@ -65,7 +54,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void SendArticle(Article article)
         {
             var content = ContentCreator.CreateContent(article);
-            if (PostMethod(articlesAdminAdress, content))
+            if (PostMethod(AdressList.ArticlesAdmin, content))
                 NotifitactionForm.ShowMessage("Ogłoszenie wysłane!");
             else
                 DialogMessage.ShowInfo("Błąd wysyłania!");
@@ -74,7 +63,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void SendMovie(Movie movie)
         {
             var content = ContentCreator.CreateContent(movie);
-            if (PostMethod(moviesAdminAdress, content))
+            if (PostMethod(AdressList.MoviesAdmin, content))
                 NotifitactionForm.ShowMessage("Film wysłany!");
             else
                 DialogMessage.ShowInfo("Błąd wysyłania!");
@@ -83,7 +72,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void SendHall(Hall hall)
         {
             var content = ContentCreator.CreateContent(hall);
-            if(PostMethod(hallsAdminAdress, content))
+            if(PostMethod(AdressList.HallsAdmin, content))
                 NotifitactionForm.ShowMessage("Sala wysłana!");
             else
                 DialogMessage.ShowInfo("Błąd wysyłania!");
@@ -92,7 +81,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void SendSeance(Seance seance)
         {
             var content = ContentCreator.CreateContent(seance);
-            if (PostMethod(seancesAdminAdress, content))
+            if (PostMethod(AdressList.SeancesAdmin, content))
                 NotifitactionForm.ShowMessage("Seans wysłany!");
             else
                 DialogMessage.ShowInfo("Błąd wysyłania!");
@@ -110,7 +99,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public List<User> GetUsersListFromServer()
         {
-            HttpResponseMessage response = GetMethod(usersAdress);
+            HttpResponseMessage response = GetMethod(AdressList.Users);
             if (response.StatusCode == HttpStatusCode.OK)
                 return UsersListCreator.CreateUsers(response);
 
@@ -120,7 +109,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public List<Article> GetAdminArticlesFromServer()
         {
-            HttpResponseMessage response = GetMethod(articlesAdminAdress);
+            HttpResponseMessage response = GetMethod(AdressList.ArticlesAdmin);
             if (response.StatusCode == HttpStatusCode.OK)
                 return ArticleListCreator.CreateArticles(response);
 
@@ -130,7 +119,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public List<Movie> GetMoviesListFromServer()
         {
-            HttpResponseMessage response = GetMethod(moviesAdress);
+            HttpResponseMessage response = GetMethod(AdressList.Movies);
             if (response.StatusCode == HttpStatusCode.OK)
                 return MoviesListCreator.CreateMovies(response);
 
@@ -139,7 +128,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         }
         public List<Hall> GetHallsListFromServer()
         {
-            HttpResponseMessage response = GetMethod(hallsAdress);
+            HttpResponseMessage response = GetMethod(AdressList.Halls);
             if (response.StatusCode == HttpStatusCode.OK)
                 return HallsListCreator.CreateHalls(response);
 
@@ -149,7 +138,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public List<Seance> GetSeancesListFromServer()
         {
-            HttpResponseMessage response = client.GetAsync(seancesAdress).Result;
+            HttpResponseMessage response = client.GetAsync(AdressList.Seances).Result;
             if (response.StatusCode == HttpStatusCode.OK)
                 return SeanceListCreator.CreateSeances(response);
 
@@ -164,7 +153,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         private bool DeleteMethod(string patch, int id)
         {
             SetAuthorization();
-            string url = articlesAdminAdress + "/"+ id;
+            string url = AdressList.ArticlesAdmin + "/"+ id;
             HttpResponseMessage response = client.DeleteAsync(url).Result;
             if (response.StatusCode == HttpStatusCode.NoContent)
                 return true;
@@ -173,7 +162,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public void DeleteArticle(Article article)
         {
-            if (DeleteMethod(articlesAdminAdress, article.GetId()))
+            if (DeleteMethod(AdressList.ArticlesAdmin, article.GetId()))
                 NotifitactionForm.ShowMessage("Ogłoszenie usunięte!");
             else
                 DialogMessage.ShowInfo("Błąd usuwania artykułu!");
@@ -181,7 +170,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public void DeleteMovie(Movie movie)
         {
-            if (DeleteMethod(moviesAdminAdress, movie.GetId()))
+            if (DeleteMethod(AdressList.MoviesAdmin, movie.GetId()))
                 NotifitactionForm.ShowMessage("Film usunięty!");
             else
                 DialogMessage.ShowInfo("Błąd usuwania filmu!");
@@ -189,7 +178,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public void DeleteHall(Hall hall)
         {
-            if (DeleteMethod(hallsAdminAdress, hall.GetId()))
+            if (DeleteMethod(AdressList.HallsAdmin, hall.GetId()))
                 NotifitactionForm.ShowMessage("Sala usunięta!");
             else
                 DialogMessage.ShowInfo("Błąd usuwania sali!");
@@ -197,7 +186,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
 
         public void DeleteSeance(Seance seance)
         {
-            if (DeleteMethod(seancesAdminAdress, seance.GetId()))
+            if (DeleteMethod(AdressList.SeancesAdmin, seance.GetId()))
                 NotifitactionForm.ShowMessage("Seanse usunięty!");
             else
                 DialogMessage.ShowInfo("Błąd usuwania seansu!");
@@ -211,7 +200,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void ChangeArticleStatus(Article article)
         {
             SetAuthorization();
-            string patchUrl = articlesAdminAdress + article.GetId() + "/status";
+            string patchUrl = AdressList.ArticlesAdmin + article.GetId() + "/status";
             var content = ContentCreator.CreateContent(article.GetStatus());
             HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)
             {
@@ -227,7 +216,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void BanUser(User user)
         {
             SetAuthorization();
-            string patchUrl = usersAdminAdress + user.GetId()+ "/ban";
+            string patchUrl = AdressList.UsersAdmin + user.GetId()+ "/ban";
             HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)).Result;
 
             if (response.StatusCode != HttpStatusCode.NoContent)
@@ -241,7 +230,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         public void ChangeUserRole(User user)
         {
             SetAuthorization();
-            string patchUrl = usersAdminAdress + user.GetId() + "/update-role";
+            string patchUrl = AdressList.UsersAdmin + user.GetId() + "/update-role";
             var content = ContentCreator.CreateContent(user.GetRole());
             HttpResponseMessage response = client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), patchUrl)
             {
