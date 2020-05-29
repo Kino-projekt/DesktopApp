@@ -91,6 +91,7 @@ namespace DesktopApp.MainForm
         private void AdminUserSettings()
         {
             StandardUserSetting();
+            tokenField.Text = UserServiceImpl.GetInstance().GetUserToken();
             adminButton.Visible = true;
         }
 

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using DesktopApp.Backend.Data;
+using Microsoft.AspNetCore.JsonPatch.Internal;
+using Newtonsoft.Json;
 
 namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
@@ -32,9 +35,19 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(movie));
         }
 
-        public static FormUrlEncodedContent CreateContent(Hall hall)
+        public static StringContent CreateContent(Hall hall)
         {
-            return new FormUrlEncodedContent(CreatePairs(hall));
+            var name = new KeyValuePair<string, string>("name", hall.GetName());
+            var seats = new KeyValuePair<string, int>("countOfSeats", hall.GetSeats());
+
+            string myContent =  JsonConvert.SerializeObject(new
+            {
+                name = hall.GetName(),
+                countOfSeats = hall.GetSeats(),
+            });
+            var content = new StringContent(myContent, Encoding.UTF8, "application/json");
+
+            return content;
         }
 
         public static FormUrlEncodedContent CreateContent(Seance seance)
@@ -82,19 +95,19 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return pairs;
         }
 
+
         private static List<KeyValuePair<string, string>> CreatePairs(Status status)
         {
-            List<KeyValuePair<string, string>> pairs;
             if (status == Status.Active)
             {
-                return pairs = new List<KeyValuePair<string, string>>
+                return new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("status", "INACTIVE"),
                 };
             }
             else
             {
-                return pairs = new List<KeyValuePair<string, string>>
+                return new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("status", "ACTIVE"),
                 };
@@ -116,7 +129,16 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             var pairs = new List<KeyValuePair<string, string>>
             {
-                new KeyValuePair<string, string>("name", hall.GetName())
+                new KeyValuePair<string, string>("name", hall.GetName()),
+                new KeyValuePair<string, string>("countOfSeats", hall.GetSeats().ToString())
+            };
+            return pairs;
+        }
+        private static List<KeyValuePair<string, int>> CreatePairsForSeats(Hall hall)
+        {
+            var pairs = new List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>("countOfSeats", hall.GetSeats())
             };
             return pairs;
         }

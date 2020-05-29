@@ -28,6 +28,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Halls
         {
             Hall hall = new Hall();
             hall.SetName(nameField.Text);
+            hall.SetSeats((int)numberField.Value);
             HallsAdminServiceImpl.GetService().SendHallToServer(hall);
         }
     }

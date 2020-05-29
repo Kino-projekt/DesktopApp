@@ -28,16 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.sendButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.nameField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.numberField = new System.Windows.Forms.NumericUpDown();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberField)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.materialLabel1);
+            this.contentPanel.Controls.Add(this.numberField);
             this.contentPanel.Controls.Add(this.materialLabel4);
             this.contentPanel.Controls.Add(this.sendButton);
             this.contentPanel.Controls.Add(this.materialLabel2);
@@ -54,7 +61,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(116, 192);
+            this.materialLabel4.Location = new System.Drawing.Point(123, 127);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(185, 19);
@@ -81,7 +88,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(93, 144);
+            this.materialLabel2.Location = new System.Drawing.Point(100, 79);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(58, 19);
@@ -92,7 +99,7 @@
             // 
             this.nameField.Depth = 0;
             this.nameField.Hint = "";
-            this.nameField.Location = new System.Drawing.Point(97, 166);
+            this.nameField.Location = new System.Drawing.Point(104, 101);
             this.nameField.MouseState = MaterialSkin.MouseState.HOVER;
             this.nameField.Name = "nameField";
             this.nameField.PasswordChar = '\0';
@@ -102,6 +109,31 @@
             this.nameField.Size = new System.Drawing.Size(596, 23);
             this.nameField.TabIndex = 1;
             this.nameField.UseSystemPasswordChar = false;
+            // 
+            // numberField
+            // 
+            this.numberField.Location = new System.Drawing.Point(317, 229);
+            this.numberField.Name = "numberField";
+            this.numberField.Size = new System.Drawing.Size(146, 20);
+            this.numberField.TabIndex = 7;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(213, 227);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(95, 19);
+            this.materialLabel1.TabIndex = 8;
+            this.materialLabel1.Text = "Ilość miejsc:";
             // 
             // AddHallsForm
             // 
@@ -113,6 +145,7 @@
             this.Text = "AddHallsForm";
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberField)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +157,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton sendButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField nameField;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.NumericUpDown numberField;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

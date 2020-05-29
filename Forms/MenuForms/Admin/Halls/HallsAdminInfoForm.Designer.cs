@@ -32,12 +32,14 @@
             this.deleteButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nameLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.seatsLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.seatsLabel);
             this.contentPanel.Controls.Add(this.deleteButton);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.nameLabel);
@@ -87,6 +89,19 @@
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "title";
             // 
+            // seatsLabel
+            // 
+            this.seatsLabel.AutoSize = true;
+            this.seatsLabel.Depth = 0;
+            this.seatsLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.seatsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.seatsLabel.Location = new System.Drawing.Point(426, 9);
+            this.seatsLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.seatsLabel.Name = "seatsLabel";
+            this.seatsLabel.Size = new System.Drawing.Size(46, 19);
+            this.seatsLabel.TabIndex = 6;
+            this.seatsLabel.Text = "seats";
+            // 
             // HallsAdminInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,5 +122,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton deleteButton;
         private MaterialSkin.Controls.MaterialLabel idLabel;
         private MaterialSkin.Controls.MaterialLabel nameLabel;
+        private MaterialSkin.Controls.MaterialLabel seatsLabel;
     }
 }

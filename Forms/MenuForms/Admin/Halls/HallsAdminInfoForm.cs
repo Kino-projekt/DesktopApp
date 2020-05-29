@@ -37,6 +37,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Halls
         {
             idLabel.Text = "Numer: " + hall.GetId();
             nameLabel.Text = "Sala: "+hall.GetName();
+            seatsLabel.Text = "Ilość miejsc: " + hall.GetSeats();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

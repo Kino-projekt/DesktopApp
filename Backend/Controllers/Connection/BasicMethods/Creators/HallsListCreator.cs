@@ -26,6 +26,7 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 
                 hall.SetId((int)hallObject.id);
                 hall.SetName((string)hallObject.name);
+                hall.SetSeats((int)hallObject.countOfSeats);
 
                 halls.Add(hall);
             }
