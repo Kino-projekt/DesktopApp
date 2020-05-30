@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.DataServices.HallsServices;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
@@ -27,15 +28,17 @@ namespace DesktopApp.Forms.MenuForms.Seance
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(contentPanel);
 
+            DialogMessage.ShowInfo("Budowa widoku seansu");
             this.seance = seance;
             SetLabels();
+
+            DialogMessage.ShowInfo("Koniec budowy seansu");
         }
 
         private void SetLabels()
         {
-            movieLabel.Text ="Film: "+ MoviesServiceImpl.GetService().GetMoviesList()[seance.GetMovieId()].GetTitle();
-
-            hallLabel.Text ="Sala: "+ HallsServiceImpl.GetService().GetHallsList()[seance.GetHallId()].GetName();
+            movieLabel.Text = "Film: " + seance.GetMovie().GetTitle();
+            hallLabel.Text = "Sala: " + seance.GetHall().GetId();
 
             dateLabel.Text = seance.GetDate();
         }

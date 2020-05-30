@@ -37,9 +37,6 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 
         public static StringContent CreateContent(Hall hall)
         {
-            var name = new KeyValuePair<string, string>("name", hall.GetName());
-            var seats = new KeyValuePair<string, int>("countOfSeats", hall.GetSeats());
-
             string myContent =  JsonConvert.SerializeObject(new
             {
                 name = hall.GetName(),
@@ -147,8 +144,8 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             var pairs = new List<KeyValuePair<string, string>>
             {
-                new KeyValuePair<string, string>("movieId", seance.GetMovieId().ToString()),
-                new KeyValuePair<string, string>("hallId", seance.GetHallId().ToString()),
+                new KeyValuePair<string, string>("movieId", seance.GetMovie().GetId().ToString()),
+                new KeyValuePair<string, string>("hallId", seance.GetHall().GetId().ToString()),
                 new KeyValuePair<string, string>("date", seance.GetDate())
             };
             return pairs;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
@@ -49,7 +50,9 @@ namespace DesktopApp.Forms.MenuForms.Seance
             List<MaterialForm> forms = new List<MaterialForm>();
             foreach (Backend.Data.Seance seance in seances)
             {
+                DialogMessage.ShowInfo("Trwa dodawanie elementu");
                 forms.Add(new SeanceInfoForm(seance));
+                DialogMessage.ShowInfo("Element dodany");
             }
             listFormService.SetForms(forms);
         }

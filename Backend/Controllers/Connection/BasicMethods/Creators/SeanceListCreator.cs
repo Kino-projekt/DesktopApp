@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using Newtonsoft.Json;
 
@@ -19,19 +20,40 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             List<Seance> seances = new List<Seance>();
 
+            
+
             for (int i = 0; i < objects.Count; i++)
             {
                 Seance seance = new Seance();
                 dynamic seanceObject = objects[i];
-
                 seance.SetId((int)seanceObject.id);
-                seance.SetMovieId((int)seanceObject.movieId);
-                seance.SetHallId((int)seanceObject.hallId);
                 seance.SetDate((string)seanceObject.date);
+                seance.SetHall(createHall(seanceObject));
+                seance.SetMovie(createMovie(seanceObject));
 
                 seances.Add(seance);
             }
             return seances;
+        }
+
+        private static Movie createMovie(dynamic myObiect)
+        {
+            Movie movie = new Movie();
+            movie.SetId((int)myObiect.movie.id);
+            movie.SetTitle((string)myObiect.movie.title);
+            movie.SetDescription((string) myObiect.movie.description);
+            movie.SetDescription((string)myObiect.movie.director);
+
+            return movie;
+        }
+
+        private static Hall createHall(dynamic myObiect)
+        {
+            Hall hall = new Hall();
+
+            hall.SetId((int)myObiect.hallId);
+
+            return hall;
         }
     }
 }

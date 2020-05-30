@@ -5,8 +5,8 @@ namespace DesktopApp.Backend.Data
     public class Seance
     {
         private int id;
-        private int movieId;
-        private int hallId;
+        private Movie movie;
+        private Hall hall;
         private string date;
 
         public void SetId(int id)
@@ -19,24 +19,24 @@ namespace DesktopApp.Backend.Data
             return id;
         }
 
-        public void SetMovieId(int id)
+        public void SetMovie(Movie movie)
         {
-            movieId = id;
+            this.movie = movie;
         }
 
-        public int GetMovieId()
+        public Movie GetMovie()
         {
-            return movieId;
+            return movie;
         }
 
-        public void SetHallId(int id)
+        public void SetHall(Hall hall)
         {
-            hallId = id;
+            this.hall = hall;
         }
 
-        public int GetHallId()
+        public Hall GetHall()
         {
-            return hallId;
+            return hall;
         }
 
         public void SetDate(string date)

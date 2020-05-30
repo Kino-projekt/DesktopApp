@@ -91,8 +91,8 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
         {
             Backend.Data.Seance  seance = new Backend.Data.Seance();
 
-            seance.SetMovieId(movies[checkMovie].GetId());
-            seance.SetHallId(halls[checkHall].GetId());
+            seance.SetMovie(movies[checkMovie]);
+            seance.SetHall(halls[checkHall]);
 
             seance.SetDate(timePickerData.Value.ToString("yyyy-MM-ddThh:mm:ss.311Z"));
 
