@@ -1,4 +1,6 @@
-﻿namespace DesktopApp.Backend.Data
+﻿using System.Collections.Generic;
+
+namespace DesktopApp.Backend.Data
 {
     public class Movie
     {
@@ -6,6 +8,7 @@
         private string title;
         private string description;
         private string director;
+        private List<string> comments;
 
         public void SetId(int id)
         {
@@ -44,6 +47,16 @@
         public string GetDirector()
         {
             return director;
+        }
+
+        public List<string> GetCommentsList()
+        {
+            return comments;
+        }
+
+        public void SetCommentsList(List<string> comments)
+        {
+            this.comments = comments;
         }
     }
 }

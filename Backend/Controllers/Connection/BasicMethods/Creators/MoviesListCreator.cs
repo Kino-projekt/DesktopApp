@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
+using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
@@ -28,7 +31,6 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 movie.SetTitle((string)movieObject.title);
                 movie.SetDescription((string)movieObject.description);
                 movie.SetDirector((string)movieObject.director);
-
                 movies.Add(movie);
             }
             return movies;
