@@ -50,9 +50,7 @@ namespace DesktopApp.Forms.MenuForms.Seance
             List<MaterialForm> forms = new List<MaterialForm>();
             foreach (Backend.Data.Seance seance in seances)
             {
-                DialogMessage.ShowInfo("Trwa dodawanie elementu");
                 forms.Add(new SeanceInfoForm(seance));
-                DialogMessage.ShowInfo("Element dodany");
             }
             listFormService.SetForms(forms);
         }

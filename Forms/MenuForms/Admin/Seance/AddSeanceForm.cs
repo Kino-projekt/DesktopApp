@@ -38,12 +38,10 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
 
             HallsAdminService hallsService = HallsAdminServiceImpl.GetService();
             halls = hallsService.GetHallsListForAdmin();
-            hallLabel.Text = halls[checkHall].GetName();
+            SetHallInfo(halls[checkHall]);
 
             timePickerData.Format = DateTimePickerFormat.Custom;
-            timePickerData.CustomFormat = "dd/MM/yyyy hh:mm:ss";
-
-
+            timePickerData.CustomFormat = "dd/MM/yyyy hh:mm";
         }
 
         private void nextMovieButtopn_Click(object sender, EventArgs e)
@@ -74,7 +72,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
             else
                 checkHall = 0;
 
-            hallLabel.Text = halls[checkHall].GetName();
+            SetHallInfo(halls[checkHall]);
         }
 
         private void previoseHallButton_Click(object sender, EventArgs e)
@@ -84,19 +82,21 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
             else
                 checkHall = halls.Count - 1;
 
-            hallLabel.Text = halls[checkHall].GetName();
+            SetHallInfo(halls[checkHall]);
         }
 
         private void sendButton_Click(object sender, EventArgs e)
         {
             Backend.Data.Seance  seance = new Backend.Data.Seance();
-
             seance.SetMovie(movies[checkMovie]);
             seance.SetHall(halls[checkHall]);
-
-            seance.SetDate(timePickerData.Value.ToString("yyyy-MM-ddThh:mm:ss.311Z"));
-
+            seance.SetDate(timePickerData.Value.ToString("yyyy-MM-ddThh:mm:00.311Z"));
             SeanceAdminServiceImpl.GetService().SendSeanceToServer(seance);
+        }
+
+        private void SetHallInfo(Hall hall)
+        {
+            hallLabel.Text = hall.GetName() + ",  Ilość miejsc: " + hall.GetSeats();
         }
     }
 }

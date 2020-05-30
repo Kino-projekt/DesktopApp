@@ -35,11 +35,11 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
         private void SetLabels()
         {
             movieLabel.Text = "Film: " + seance.GetMovie().GetTitle();
-            hallLabel.Text = "Sala: " + seance.GetHall().GetId();
+            hallLabel.Text = "Sala: " + seance.GetHall().GetName() +", ilość miejsc: "+seance.GetHall().GetSeats();
             dateLabel.Text = seance.GetDate();
         }
 
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        private void deleteSeanceButton_Click(object sender, EventArgs e)
         {
             SeanceAdminServiceImpl.GetService().DeleteSeance(seance);
         }

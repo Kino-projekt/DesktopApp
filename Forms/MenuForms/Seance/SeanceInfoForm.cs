@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
+using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.HallsServices;
+using DesktopApp.Backend.Services.AdminServices.UsersServices;
+using DesktopApp.Backend.Services.BookingServices;
 using DesktopApp.Backend.Services.DataServices.HallsServices;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
 using DesktopApp.Backend.Services.DesingerServices;
+using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.Forms.MenuForms.Seance
@@ -28,19 +33,26 @@ namespace DesktopApp.Forms.MenuForms.Seance
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(contentPanel);
 
-            DialogMessage.ShowInfo("Budowa widoku seansu");
             this.seance = seance;
             SetLabels();
-
-            DialogMessage.ShowInfo("Koniec budowy seansu");
         }
 
         private void SetLabels()
         {
             movieLabel.Text = "Film: " + seance.GetMovie().GetTitle();
             hallLabel.Text = "Sala: " + seance.GetHall().GetId();
-
             dateLabel.Text = seance.GetDate();
+
+            if (UserServiceImpl.GetInstance().GetUserRole() == Role.DEFAULT)
+                reservationPanel.Visible = false;
+        }
+
+        private void reservationButton_Click(object sender, EventArgs e)
+        {
+            BookingService booking = BookingServiceImpl.GetService();
+            ArrayList array = new ArrayList();
+            array.Add((int)seatsNumerField.Value);
+            booking.BookingSeats(seance, array);
         }
     }
 }

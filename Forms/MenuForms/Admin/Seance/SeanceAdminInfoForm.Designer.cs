@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.deleteSeanceButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.hallLabel = new MaterialSkin.Controls.MaterialLabel();
             this.movieLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.contentPanel.Controls.Add(this.materialRaisedButton1);
+            this.contentPanel.Controls.Add(this.deleteSeanceButton);
             this.contentPanel.Controls.Add(this.hallLabel);
             this.contentPanel.Controls.Add(this.movieLabel);
             this.contentPanel.Controls.Add(this.dateLabel);
@@ -48,6 +48,19 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(760, 60);
             this.contentPanel.TabIndex = 4;
+            // 
+            // deleteSeanceButton
+            // 
+            this.deleteSeanceButton.Depth = 0;
+            this.deleteSeanceButton.Location = new System.Drawing.Point(653, 30);
+            this.deleteSeanceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteSeanceButton.Name = "deleteSeanceButton";
+            this.deleteSeanceButton.Primary = true;
+            this.deleteSeanceButton.Size = new System.Drawing.Size(95, 25);
+            this.deleteSeanceButton.TabIndex = 3;
+            this.deleteSeanceButton.Text = "Usuń";
+            this.deleteSeanceButton.UseVisualStyleBackColor = true;
+            this.deleteSeanceButton.Click += new System.EventHandler(this.deleteSeanceButton_Click);
             // 
             // hallLabel
             // 
@@ -88,19 +101,6 @@
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "date";
             // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(653, 30);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(95, 25);
-            this.materialRaisedButton1.TabIndex = 3;
-            this.materialRaisedButton1.Text = "Usuń";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
             // SeanceAdminInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +121,6 @@
         private MaterialSkin.Controls.MaterialLabel hallLabel;
         private MaterialSkin.Controls.MaterialLabel movieLabel;
         private MaterialSkin.Controls.MaterialLabel dateLabel;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton deleteSeanceButton;
     }
 }

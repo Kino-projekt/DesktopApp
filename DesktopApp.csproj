@@ -132,6 +132,8 @@
     <Compile Include="Backend\Controllers\Connection\BasicMethods\DialogInfo\DialogMessage.cs" />
     <Compile Include="Backend\Controllers\Connection\StandardConnections\Methods\GetMethods.cs" />
     <Compile Include="Backend\Controllers\Connection\StandardConnections\Methods\MyAuthorization.cs" />
+    <Compile Include="Backend\Controllers\Connection\UsersConnections\UserConnectionController.cs" />
+    <Compile Include="Backend\Controllers\Connection\UsersConnections\UserConnectionControllerImpl.cs" />
     <Compile Include="Backend\Controllers\ContentPanel\ContentPanelController.cs" />
     <Compile Include="Backend\Controllers\ContentPanel\ContentPanelControllerImpl.cs" />
     <Compile Include="Backend\Controllers\ContentPanel\Methods\PanelCreator.cs" />
@@ -158,6 +160,8 @@
     <Compile Include="Backend\Services\AdminServices\MoviesServices\MoviesAdminServiceImpl.cs" />
     <Compile Include="Backend\Services\AdminServices\SeanceServices\SeanceAdminService.cs" />
     <Compile Include="Backend\Services\AdminServices\SeanceServices\SeanceAdminServiceImpl.cs" />
+    <Compile Include="Backend\Services\BookingServices\BookingService.cs" />
+    <Compile Include="Backend\Services\BookingServices\BookingServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\HallsServices\HallsService.cs" />

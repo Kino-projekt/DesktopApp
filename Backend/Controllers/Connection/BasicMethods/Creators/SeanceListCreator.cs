@@ -51,7 +51,9 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
         {
             Hall hall = new Hall();
 
-            hall.SetId((int)myObiect.hallId);
+            hall.SetId((int)myObiect.hall.id);
+            hall.SetName((string)myObiect.hall.name);
+            hall.SetSeats((int)myObiect.hall.countOfSeats);
 
             return hall;
         }

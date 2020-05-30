@@ -124,7 +124,7 @@
             this.hallLabel.Depth = 0;
             this.hallLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.hallLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hallLabel.Location = new System.Drawing.Point(345, 154);
+            this.hallLabel.Location = new System.Drawing.Point(300, 155);
             this.hallLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.hallLabel.Name = "hallLabel";
             this.hallLabel.Size = new System.Drawing.Size(33, 19);
@@ -158,7 +158,7 @@
             this.directLabel.Depth = 0;
             this.directLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.directLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.directLabel.Location = new System.Drawing.Point(279, 154);
+            this.directLabel.Location = new System.Drawing.Point(234, 155);
             this.directLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.directLabel.Name = "directLabel";
             this.directLabel.Size = new System.Drawing.Size(42, 19);
