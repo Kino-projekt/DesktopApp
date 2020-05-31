@@ -23,8 +23,8 @@ namespace DesktopApp.Backend.Configuration
         public static readonly string UsersAdmin = "/api/admin/users/";
 
         public static readonly string Booking = "/api/bookings";
+        public static readonly string Comments = "/api/comments";   
             
-
         public static HttpClient GetHttpClient()
         {
             return new HttpClient

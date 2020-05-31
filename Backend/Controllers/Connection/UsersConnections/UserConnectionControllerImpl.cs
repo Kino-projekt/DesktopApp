@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using DesktopApp.Backend.Configuration;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections.Methods;
+using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
 using DesktopApp.Forms.Notification;
@@ -32,6 +33,18 @@ namespace DesktopApp.Backend.Controllers.Connection.UsersConnections
                 NotifitactionForm.ShowMessage("Wysłany element: " + "Rezerwacja");
             else
                 DialogMessage.ShowInfo("Błąd wysyłania elementu: " + "Rezerwacja");
+        }
+
+        public void SendComment(Comment comment)
+        {
+            HttpClient client = AdressList.GetHttpClient();
+            AdminAuthorization.SetAuthorization(client);
+            var content = ContentCreator.CreateContent(comment);
+            HttpResponseMessage response = client.PostAsync(AdressList.Comments, content).Result;
+            if (response.StatusCode == HttpStatusCode.Created)
+                NotifitactionForm.ShowMessage("Wysłany element: " + "Komentarz");
+            else
+                DialogMessage.ShowInfo("Błąd wysyłania elementu: " + "Komentarz");
         }
     }
 }

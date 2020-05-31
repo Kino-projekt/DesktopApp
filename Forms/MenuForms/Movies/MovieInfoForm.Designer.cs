@@ -32,12 +32,14 @@
             this.directLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.commentButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.commentButton);
             this.contentPanel.Controls.Add(this.directLabel);
             this.contentPanel.Controls.Add(this.descriptionLabel);
             this.contentPanel.Controls.Add(this.titleLabel);
@@ -86,6 +88,22 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "title";
             // 
+            // commentButton
+            // 
+            this.commentButton.AutoSize = true;
+            this.commentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.commentButton.Depth = 0;
+            this.commentButton.Location = new System.Drawing.Point(647, 15);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.commentButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Primary = false;
+            this.commentButton.Size = new System.Drawing.Size(102, 36);
+            this.commentButton.TabIndex = 3;
+            this.commentButton.Text = "Komentarze";
+            this.commentButton.UseVisualStyleBackColor = true;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
+            // 
             // MovieInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,5 +124,6 @@
         private MaterialSkin.Controls.MaterialLabel directLabel;
         private MaterialSkin.Controls.MaterialLabel descriptionLabel;
         private MaterialSkin.Controls.MaterialLabel titleLabel;
+        private MaterialSkin.Controls.MaterialFlatButton commentButton;
     }
 }

@@ -141,6 +141,7 @@
     <Compile Include="Backend\Controllers\Forms\FormsControllerImpl.cs" />
     <Compile Include="Backend\Data\Article.cs" />
     <Compile Include="Backend\Data\AuthData.cs" />
+    <Compile Include="Backend\Data\Comment.cs" />
     <Compile Include="Backend\Data\Hall.cs" />
     <Compile Include="Backend\Data\Movie.cs" />
     <Compile Include="Backend\Data\Seance.cs" />
@@ -164,6 +165,8 @@
     <Compile Include="Backend\Services\BookingServices\BookingServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleService.cs" />
     <Compile Include="Backend\Services\DataServices\ArticleServices\ArticleServiceImpl.cs" />
+    <Compile Include="Backend\Services\DataServices\CommentsServices\CommentsService.cs" />
+    <Compile Include="Backend\Services\DataServices\CommentsServices\CommentsServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\HallsServices\HallsService.cs" />
     <Compile Include="Backend\Services\DataServices\HallsServices\HallsServiceImpl.cs" />
     <Compile Include="Backend\Services\DataServices\MoviesServices\MoviesService.cs" />
@@ -288,6 +291,12 @@
     <Compile Include="Forms\MenuForms\Admin\Users\UsersListForm.Designer.cs">
       <DependentUpon>UsersListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MenuForms\Movies\Comments\CommentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms\Movies\Comments\CommentsForm.Designer.cs">
+      <DependentUpon>CommentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuForms\Movies\MovieInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Admin\Users\UsersListForm.resx">
       <DependentUpon>UsersListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms\Movies\Comments\CommentsForm.resx">
+      <DependentUpon>CommentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForms\Movies\MovieInfoForm.resx">
       <DependentUpon>MovieInfoForm.cs</DependentUpon>

@@ -18,7 +18,7 @@ namespace DesktopApp.Backend.Controllers.Forms
         public void OpenLoginForm()
         {
             LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            loginForm.ShowDialog();
         }
 
         public void OpenRegitrationForm()

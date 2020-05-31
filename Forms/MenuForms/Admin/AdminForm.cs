@@ -55,6 +55,8 @@ namespace DesktopApp.Forms.MenuForms.Admin
 
             seanceContent = new PanelCreator(seancePanel);
             seanceContent.Open(new SeanceAdminListForm());
+
+            
         }
 
         private void addNewsButton_Click(object sender, EventArgs e)
@@ -130,6 +132,11 @@ namespace DesktopApp.Forms.MenuForms.Admin
         {
             SeanceAdminServiceImpl.GetService().DownloadSeanceList();
             seanceContent.Open(new SeanceAdminListForm());
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

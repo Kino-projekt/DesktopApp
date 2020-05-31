@@ -31,9 +31,29 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 movie.SetTitle((string)movieObject.title);
                 movie.SetDescription((string)movieObject.description);
                 movie.SetDirector((string)movieObject.director);
+
+                string body = movieObject.comments.ToString();
+                List<Object> commList = JsonConvert.DeserializeObject<List<Object>>(body);
+                movie.SetCommentsList(CreateCommentsList(commList));
+
                 movies.Add(movie);
             }
             return movies;
+        }
+
+        private static List<Comment> CreateCommentsList(List<object> objects)
+        {
+            List<Comment> comments = new List<Comment>();
+            for (int i = 0; i < objects.Count; i++)
+            {
+                Comment comment = new Comment();
+                dynamic commentObject = objects[i];
+                comment.SetID((int)commentObject.id);
+                comment.SetContent((string)commentObject.content);
+
+                comments.Add(comment);
+            }
+            return comments;
         }
     }
 }

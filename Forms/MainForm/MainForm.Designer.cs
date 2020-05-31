@@ -40,14 +40,14 @@ namespace DesktopApp.MainForm
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.logoPanel = new System.Windows.Forms.Panel();
+            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.exitButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -211,6 +211,37 @@ namespace DesktopApp.MainForm
             this.logoPanel.Size = new System.Drawing.Size(200, 120);
             this.logoPanel.TabIndex = 3;
             // 
+            // tokenField
+            // 
+            this.tokenField.Depth = 0;
+            this.tokenField.Hint = "";
+            this.tokenField.Location = new System.Drawing.Point(0, 22);
+            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tokenField.Name = "tokenField";
+            this.tokenField.PasswordChar = '\0';
+            this.tokenField.SelectedText = "";
+            this.tokenField.SelectionLength = 0;
+            this.tokenField.SelectionStart = 0;
+            this.tokenField.Size = new System.Drawing.Size(194, 23);
+            this.tokenField.TabIndex = 2;
+            this.tokenField.Text = "token";
+            this.tokenField.UseSystemPasswordChar = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(0, 0);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(47, 19);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Email";
+            this.materialLabel1.Visible = false;
+            // 
             // userEmailLabel
             // 
             this.userEmailLabel.AutoSize = true;
@@ -293,37 +324,6 @@ namespace DesktopApp.MainForm
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(0, 0);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(47, 19);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Email";
-            this.materialLabel1.Visible = false;
-            // 
-            // tokenField
-            // 
-            this.tokenField.Depth = 0;
-            this.tokenField.Hint = "";
-            this.tokenField.Location = new System.Drawing.Point(0, 22);
-            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tokenField.Name = "tokenField";
-            this.tokenField.PasswordChar = '\0';
-            this.tokenField.SelectedText = "";
-            this.tokenField.SelectionLength = 0;
-            this.tokenField.SelectionStart = 0;
-            this.tokenField.Size = new System.Drawing.Size(194, 23);
-            this.tokenField.TabIndex = 2;
-            this.tokenField.Text = "token";
-            this.tokenField.UseSystemPasswordChar = false;
             // 
             // MainForm
             // 

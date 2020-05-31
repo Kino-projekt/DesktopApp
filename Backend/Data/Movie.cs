@@ -8,7 +8,7 @@ namespace DesktopApp.Backend.Data
         private string title;
         private string description;
         private string director;
-        private List<string> comments;
+        private List<Comment> comments;
 
         public void SetId(int id)
         {
@@ -49,12 +49,12 @@ namespace DesktopApp.Backend.Data
             return director;
         }
 
-        public List<string> GetCommentsList()
+        public List<Comment> GetCommentsList()
         {
             return comments;
         }
 
-        public void SetCommentsList(List<string> comments)
+        public void SetCommentsList(List<Comment> comments)
         {
             this.comments = comments;
         }

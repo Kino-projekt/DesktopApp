@@ -35,6 +35,11 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             return new FormUrlEncodedContent(CreatePairs(movie));
         }
 
+        public static FormUrlEncodedContent CreateContent(Comment comment)
+        {
+            return new FormUrlEncodedContent(CreatePairs(comment));
+        }
+
         public static StringContent CreateContent(Hall hall)
         {
             string myContent =  JsonConvert.SerializeObject(new
@@ -88,6 +93,16 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             {
                 new KeyValuePair<string, string>("title", article.GetTitle()),
                 new KeyValuePair<string, string>("description", article.GetDescription())
+            };
+            return pairs;
+        }
+
+        private static List<KeyValuePair<string, string>> CreatePairs(Comment comment)
+        {
+            var pairs = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("content", comment.GetContent()),
+                new KeyValuePair<string, string>("movieId", comment.GetMovieId().ToString())
             };
             return pairs;
         }

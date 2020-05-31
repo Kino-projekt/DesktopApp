@@ -63,6 +63,7 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.mainMenu.SuspendLayout();
@@ -127,6 +128,7 @@
             // checkTicketPanel
             // 
             this.checkTicketPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.checkTicketPanel.Controls.Add(this.materialLabel3);
             this.checkTicketPanel.Controls.Add(this.chceckTicketButton);
             this.checkTicketPanel.Controls.Add(this.ticketNumberField);
             this.checkTicketPanel.Controls.Add(this.materialLabel2);
@@ -153,7 +155,7 @@
             // 
             this.ticketNumberField.Depth = 0;
             this.ticketNumberField.Hint = "";
-            this.ticketNumberField.Location = new System.Drawing.Point(182, 49);
+            this.ticketNumberField.Location = new System.Drawing.Point(127, 53);
             this.ticketNumberField.MouseState = MaterialSkin.MouseState.HOVER;
             this.ticketNumberField.Name = "ticketNumberField";
             this.ticketNumberField.PasswordChar = '\0';
@@ -173,9 +175,8 @@
             this.materialLabel2.Location = new System.Drawing.Point(60, 53);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(0, 19);
             this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "Numer biletu:";
             // 
             // newsTab
             // 
@@ -262,7 +263,7 @@
             // 
             this.addSeanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addSeanceButton.Depth = 0;
-            this.addSeanceButton.Location = new System.Drawing.Point(203, 8);
+            this.addSeanceButton.Location = new System.Drawing.Point(203, 13);
             this.addSeanceButton.Margin = new System.Windows.Forms.Padding(10);
             this.addSeanceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addSeanceButton.Name = "addSeanceButton";
@@ -285,7 +286,7 @@
             // 
             this.refreshSeanseListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshSeanseListButton.Depth = 0;
-            this.refreshSeanseListButton.Location = new System.Drawing.Point(617, 8);
+            this.refreshSeanseListButton.Location = new System.Drawing.Point(617, 13);
             this.refreshSeanseListButton.Margin = new System.Windows.Forms.Padding(10);
             this.refreshSeanseListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshSeanseListButton.Name = "refreshSeanseListButton";
@@ -300,7 +301,7 @@
             // 
             this.seanceListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.seanceListButton.Depth = 0;
-            this.seanceListButton.Location = new System.Drawing.Point(15, 8);
+            this.seanceListButton.Location = new System.Drawing.Point(15, 13);
             this.seanceListButton.Margin = new System.Windows.Forms.Padding(10);
             this.seanceListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.seanceListButton.Name = "seanceListButton";
@@ -530,6 +531,19 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(263, 31);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(218, 19);
+            this.materialLabel3.TabIndex = 2;
+            this.materialLabel3.Text = "Element w fazie projektowania!";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,11 +575,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel menuPanel;
-        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl mainMenu;
         private System.Windows.Forms.TabPage newsTab;
         private System.Windows.Forms.TabPage seancesTab;
-        private System.Windows.Forms.TabPage seanceTab;
         private System.Windows.Forms.TabPage moviesTab;
         private System.Windows.Forms.TabPage roomsTab;
         private System.Windows.Forms.TabPage usersTab;
@@ -573,10 +585,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton addNewsButton;
         private MaterialSkin.Controls.MaterialRaisedButton refreshNewsListButton;
         private MaterialSkin.Controls.MaterialRaisedButton newsListButton;
-        private System.Windows.Forms.Panel checkTicketPanel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
         private System.Windows.Forms.Panel usersPanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshUsersListButton;
         private MaterialSkin.Controls.MaterialRaisedButton usersListButton;
@@ -592,5 +600,12 @@
         private System.Windows.Forms.Panel seancePanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshSeanseListButton;
         private MaterialSkin.Controls.MaterialRaisedButton seanceListButton;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private System.Windows.Forms.Panel checkTicketPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
+        private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.TabPage seanceTab;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }
