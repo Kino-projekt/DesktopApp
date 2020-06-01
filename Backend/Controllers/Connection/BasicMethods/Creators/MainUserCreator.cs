@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
 {
-    public class UserCreator
+    public class MainUserCreator
     {
         public static void PutUserToSystem(HttpResponseMessage response)
         {
@@ -26,7 +26,6 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
             User user = new User();
 
             user.SetEmail((string) userObject.email);
-
             dynamic role = userObject.role;
             string userRole = role;
             if (userRole == "ADMIN")
@@ -38,15 +37,13 @@ namespace DesktopApp.Backend.Controllers.Connection.Methods.Creators
                 user.SetRole(Role.CUSTOMER);
 
             }
-
             user.SetToken((string)tokenObject.accessToken);
-
             return user;
         }
         private static void SendUserToSystem(User user)
         {
-            UserService userService = UserServiceImpl.GetInstance();
-            userService.PutNewUser(user);
+            MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+            mainUserService.PutNewUser(user);
         }
     }
 }

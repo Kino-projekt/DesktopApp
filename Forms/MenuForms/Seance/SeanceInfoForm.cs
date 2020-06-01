@@ -43,7 +43,7 @@ namespace DesktopApp.Forms.MenuForms.Seance
             hallLabel.Text = "Sala: " + seance.GetHall().GetId();
             dateLabel.Text = seance.GetDate();
 
-            if (UserServiceImpl.GetInstance().GetUserRole() == Role.DEFAULT)
+            if (MainUserServiceImpl.GetInstance().GetUserRole() == Role.DEFAULT)
                 reservationPanel.Visible = false;
         }
 

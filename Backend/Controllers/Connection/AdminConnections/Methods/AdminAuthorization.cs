@@ -9,7 +9,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections.Methods
         public static void SetAuthorization(HttpClient client)
         {
              client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", UserServiceImpl.GetInstance().GetUserToken());
+                new AuthenticationHeaderValue("Bearer", MainUserServiceImpl.GetInstance().GetUserToken());
         }
     }
 }

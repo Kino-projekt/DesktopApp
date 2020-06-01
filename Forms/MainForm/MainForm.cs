@@ -43,8 +43,8 @@ namespace DesktopApp.MainForm
             DialogResult dialog = LogoutDialog();
             if (dialog == DialogResult.Yes)
             {
-                UserService userService = UserServiceImpl.GetInstance();
-                userService.RemoveUser();
+                MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+                mainUserService.RemoveUser();
             }
         }
 
@@ -91,14 +91,14 @@ namespace DesktopApp.MainForm
         private void AdminUserSettings()
         {
             StandardUserSetting();
-            tokenField.Text = UserServiceImpl.GetInstance().GetUserToken();
+            tokenField.Text = MainUserServiceImpl.GetInstance().GetUserToken();
             adminButton.Visible = true;
         }
 
         private string GetUserEmailFromService()
         {
-            UserService userService = UserServiceImpl.GetInstance();
-            return userService.GetUserEmail();
+            MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+            return mainUserService.GetUserEmail();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

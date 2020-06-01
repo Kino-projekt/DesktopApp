@@ -24,10 +24,9 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections
         List<Movie> GetMoviesListFromServer();
         void DeleteMovie(Movie movie);
 
+
         void SendSeance(Seance seance);
-
         List<Seance> GetSeancesListFromServer();
-
         void DeleteSeance(Seance seance);
     }
 }

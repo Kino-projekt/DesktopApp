@@ -5,19 +5,19 @@ using FormsController = DesktopApp.Backend.Controllers.Forms.FormsController;
 
 namespace DesktopApp.Backend.Services.UserServices
 {
-    public class UserServiceImpl : UserService
+    public class MainUserServiceImpl : MainUserService
     {
-        private static UserService userService;
+        private static MainUserService _mainUserService;
         private User user;
 
-        public static UserService GetInstance()
+        public static MainUserService GetInstance()
         {
-            if(userService==null)
-                userService = new UserServiceImpl();
-            return userService;
+            if(_mainUserService==null)
+                _mainUserService = new MainUserServiceImpl();
+            return _mainUserService;
         }
 
-        private UserServiceImpl() { }
+        private MainUserServiceImpl() { }
 
         public Role GetUserRole()
         {

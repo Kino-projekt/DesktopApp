@@ -2,7 +2,7 @@
 
 namespace DesktopApp.Backend.Services.UserServices
 {
-    public interface UserService
+    public interface MainUserService
     {
         void PutNewUser(User userData);
         Role GetUserRole();

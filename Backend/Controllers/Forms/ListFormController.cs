@@ -16,10 +16,6 @@ namespace DesktopApp.Backend.Controllers.Forms
         private MaterialLabel infoLabel;
         private int pageNumber = 0;
 
-        public ListFormService()
-        {
-        }
-
         public void ShowForms()
         {
             CleanContentPanel();

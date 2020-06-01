@@ -82,8 +82,8 @@ namespace DesktopApp.Forms.LoadForm
                 LoginUserFromData();
             SetProgressBar(100);
 
-            UserService userService = UserServiceImpl.GetInstance();
-            Role role = userService.GetUserRole();
+            MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+            Role role = mainUserService.GetUserRole();
             if (role == Role.CUSTOMER)
                 DownloadDataForCustomer();
             else if (role== Role.ADMIN)

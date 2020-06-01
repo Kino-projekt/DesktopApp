@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http;
 using DesktopApp.Backend.Configuration;
+using DesktopApp.Backend.Controllers.Connection.BasicMethods.Creators.ContentCreators;
 using DesktopApp.Backend.Controllers.Connection.Methods.Creators;
 using DesktopApp.Backend.Controllers.Connection.Methods.DialogInfo;
 using DesktopApp.Backend.Data;
@@ -31,7 +32,7 @@ namespace DesktopApp.Backend.Controllers.Connection.StandardConnections.Methods
             HttpResponseMessage response = AdressList.GetHttpClient().PostAsync(AdressList.SingIn, content).Result;
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                UserCreator.PutUserToSystem(response);
+                MainUserCreator.PutUserToSystem(response);
                 SaveService.SaveUser(user);
                 return true;
             }
