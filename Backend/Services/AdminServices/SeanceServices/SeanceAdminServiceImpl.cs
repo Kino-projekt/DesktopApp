@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections;
+using DesktopApp.Backend.Controllers.Connection.AdminConnections.Implementations;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
@@ -8,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
     {
         private static SeanceAdminService adminService;
         private List<Seance> seances;
-        private AdminConnectionController connectionController;
+        private SeanceAdminConnection connectionController;
 
         private SeanceAdminServiceImpl()
         {
-            connectionController = AdminConnectionControllerImpl.GetController();
+            connectionController = new SeanceAdminConnectionImpl();
             DownloadSeanceList();
         }
 
@@ -42,7 +43,7 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 
         public void DownloadSeanceList()
         {
-            seances = connectionController.GetSeancesListFromServer();
+            seances = connectionController.DownloadSeances();
         }
     }
 }

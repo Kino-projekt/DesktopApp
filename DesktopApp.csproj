@@ -113,13 +113,21 @@
   <ItemGroup>
     <Compile Include="Backend\Configuration\AdressList.cs" />
     <Compile Include="Backend\Configuration\DataValidation.cs" />
-    <Compile Include="Backend\Controllers\Connection\AdminConnections\AdminConnectionController.cs" />
-    <Compile Include="Backend\Controllers\Connection\AdminConnections\AdminConnectionControllerImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\ArticleAdminConnection.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\HallAdminConnection.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\Implementations\ArticleAdminConnectionImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\Implementations\HallAdminConnectionImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\Implementations\MovieAdminConnectionImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\Implementations\SeanceAdminConnectionImpl.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\Implementations\UsersAdminConnectionImpl.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\Methods\AdminAuthorization.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\Methods\AdminDeleteMethods.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\Methods\AdminGetMethods.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\Methods\AdminPostMethods.cs" />
     <Compile Include="Backend\Controllers\Connection\AdminConnections\Methods\AdminSpecificMethods.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\MovieAdminConnection.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\SeanceAdminConnection.cs" />
+    <Compile Include="Backend\Controllers\Connection\AdminConnections\UsersAdminConnection.cs" />
     <Compile Include="Backend\Controllers\Connection\BasicMethods\Creators\ContentCreators\Methods\ArticleCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\BasicMethods\Creators\ContentCreators\Methods\AuthDataCreator.cs" />
     <Compile Include="Backend\Controllers\Connection\BasicMethods\Creators\ContentCreators\Methods\CommentCreator.cs" />

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections;
+using DesktopApp.Backend.Controllers.Connection.AdminConnections.Implementations;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
@@ -8,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
     {
         private static MoviesAdminService adminService;
         private List<Movie> movies;
-        private AdminConnectionController connectionController;
+        private MovieAdminConnection connectionController;
 
         private MoviesAdminServiceImpl()
         {
-            connectionController = AdminConnectionControllerImpl.GetController();
+            connectionController = new MovieAdminConnectionImpl();
             DownloadMoviesList();
         }
 
@@ -42,7 +43,7 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
 
         public void DownloadMoviesList()
         {
-            movies = connectionController.GetMoviesListFromServer();
+            movies = connectionController.DownloadMovies();
         }
     }
 }

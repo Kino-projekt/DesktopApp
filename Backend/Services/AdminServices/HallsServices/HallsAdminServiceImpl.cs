@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections;
+using DesktopApp.Backend.Controllers.Connection.AdminConnections.Implementations;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AdminServices.HallsServices
@@ -8,10 +9,10 @@ namespace DesktopApp.Backend.Services.AdminServices.HallsServices
     {
         private static HallsAdminService adminService;
         private List<Hall> halls;
-        private AdminConnectionController connectionController;
+        private HallAdminConnection connectionController;
         private HallsAdminServiceImpl()
         {
-            connectionController = AdminConnectionControllerImpl.GetController();
+            connectionController = new HallAdminConnectionImpl();
             DownloadHallsList();
         }
         public static HallsAdminService GetService()
@@ -39,7 +40,7 @@ namespace DesktopApp.Backend.Services.AdminServices.HallsServices
 
         public void DownloadHallsList()
         {
-            halls = connectionController.GetHallsListFromServer();
+            halls = connectionController.DownloadHalls();
         }
     }
 }

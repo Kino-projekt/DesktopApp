@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections;
+using DesktopApp.Backend.Controllers.Connection.AdminConnections.Implementations;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AdminServices.UsersServices
@@ -8,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
     {
         private static UsersService usersService;
         private List<User> users;
-        private AdminConnectionController connectionController;
+        private UsersAdminConnection connectionController;
 
         private UsersServiceImpl()
         {
-            connectionController = AdminConnectionControllerImpl.GetController();
+            connectionController = new UsersAdminConnectionImpl();
             DownloadUserList();
         }
 
@@ -42,7 +43,7 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
 
         public void DownloadUserList()
         {
-            users = connectionController.GetUsersListFromServer();
+            users = connectionController.DownloadUsers();
         }
     }
 }

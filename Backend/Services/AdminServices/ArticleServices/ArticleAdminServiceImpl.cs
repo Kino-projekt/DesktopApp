@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesktopApp.Backend.Controllers.Connection.AdminConnections;
+using DesktopApp.Backend.Controllers.Connection.AdminConnections.Implementations;
 using DesktopApp.Backend.Data;
 
 namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
@@ -8,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
     {
         private static ArticleAdminService adminService;
         private List<Article> articles;
-        private AdminConnectionController connectionController;
+        private ArticleAdminConnection connectionController;
 
         private ArticleAdminServiceImpl()
         {
-            connectionController = AdminConnectionControllerImpl.GetController();
+            connectionController = new ArticleAdminConnectionImpl();
             DownloadArticleList();
         }
         public static ArticleAdminService GetService()
@@ -39,7 +40,7 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
 
         public void DownloadArticleList()
         {
-            articles = connectionController.GetAdminArticlesFromServer();
+            articles = connectionController.DownloadArticles();
         }
 
         public List<Article> GetArticleListForAdmin()
