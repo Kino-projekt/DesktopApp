@@ -10,11 +10,11 @@ namespace DesktopApp.Backend.Services.DataServices.ArticleServices
     {
         private static ArticleService articleService;
         private List<Article> articles;
-        private ConnectionController connectionController;
+        private ConnectionController connection;
 
         private ArticleServiceImpl()
         {
-            connectionController = ConnectionControllerImpl.GetController();
+            connection = ConnectionControllerImpl.GetController();
             DownloadArticleList();
         }
 
@@ -34,7 +34,7 @@ namespace DesktopApp.Backend.Services.DataServices.ArticleServices
 
         public void DownloadArticleList()
         {
-            articles = connectionController.GetArticlesFromServer();
+            articles = connection.GetArticlesFromServer();
         }
     }
 

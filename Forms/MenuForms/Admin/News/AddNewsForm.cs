@@ -32,7 +32,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             article.SetDescription(descriptionField.Text);
 
             ArticleAdminService articleService = ArticleAdminServiceImpl.GetService();
-            articleService.SendArticleToServer(article);
+            articleService.SendArticle(article);
         }
     }
 }

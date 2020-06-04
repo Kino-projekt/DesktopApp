@@ -66,7 +66,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
 
         private void DownloadList()
         {
-            seances = seanceService.GetSeanceListForAdmin();
+            seances = seanceService.GetSeanceList();
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

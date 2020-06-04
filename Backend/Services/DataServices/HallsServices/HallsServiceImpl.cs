@@ -10,11 +10,11 @@ namespace DesktopApp.Backend.Services.DataServices.HallsServices
     {
         private static HallsService hallsService;
         private List<Hall> halls;
-        private ConnectionController connectionController;
+        private ConnectionController connection;
 
         private HallsServiceImpl()
         {
-            connectionController = ConnectionControllerImpl.GetController();
+            connection = ConnectionControllerImpl.GetController();
             DownloadHallsList();
         }
 
@@ -34,7 +34,7 @@ namespace DesktopApp.Backend.Services.DataServices.HallsServices
 
         public void DownloadHallsList()
         {
-            halls=connectionController.GetHallsFromServer();
+            halls=connection.GetHallsFromServer();
         }
     }
 }

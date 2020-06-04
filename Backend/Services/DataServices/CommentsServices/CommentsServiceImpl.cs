@@ -6,11 +6,11 @@ namespace DesktopApp.Backend.Services.DataServices.CommentsServices
 {
     public class CommentsServiceImpl : CommentsService
     {
-        private UserConnectionController userConnection;
+        private UserConnectionController connection;
 
         private CommentsServiceImpl()
         {
-            userConnection = new UserConnectionControllerImpl();
+            connection = new UserConnectionControllerImpl();
         }
 
         public static CommentsService GetService()
@@ -20,7 +20,7 @@ namespace DesktopApp.Backend.Services.DataServices.CommentsServices
 
         public void SendComment(Comment comment)
         {
-            userConnection.SendComment(comment);
+            connection.SendComment(comment);
         }
     }
 }

@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
     {
         private static MoviesAdminService adminService;
         private List<Movie> movies;
-        private MovieAdminConnection connectionController;
+        private MovieAdminConnection connection;
 
         private MoviesAdminServiceImpl()
         {
-            connectionController = new MovieAdminConnectionImpl();
+            connection = new MovieAdminConnectionImpl();
             DownloadMoviesList();
         }
 
@@ -24,26 +24,26 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
             return adminService;
         }
 
-        public List<Movie> GetMoviesListForAdmin()
+        public List<Movie> GetMoviesList()
         {
             if(movies==null)
                 DownloadMoviesList();
             return movies;
         }
 
-        public void SendMovieToServer(Movie movie)
+        public void SendMovie(Movie movie)
         {
-            connectionController.SendMovie(movie);
+            connection.SendMovie(movie);
         }
 
         public void DeleteMovie(Movie movie)
         {
-            connectionController.DeleteMovie(movie);
+            connection.DeleteMovie(movie);
         }
 
         public void DownloadMoviesList()
         {
-            movies = connectionController.DownloadMovies();
+            movies = connection.DownloadMovies();
         }
     }
 }

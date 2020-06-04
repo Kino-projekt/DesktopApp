@@ -5,9 +5,9 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
 {
     public interface ArticleAdminService
     {
-        List<Article> GetArticleListForAdmin();
+        List<Article> GetArticleList();
 
-        void SendArticleToServer(Article article);
+        void SendArticle(Article article);
 
         void ChangeArticleStatus(Article article);
 

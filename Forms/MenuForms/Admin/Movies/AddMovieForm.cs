@@ -32,7 +32,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Movies
             movie.SetDirector(directField.Text);
 
             MoviesAdminService service = MoviesAdminServiceImpl.GetService();
-            service.SendMovieToServer(movie);
+            service.SendMovie(movie);
         }
     }
 }

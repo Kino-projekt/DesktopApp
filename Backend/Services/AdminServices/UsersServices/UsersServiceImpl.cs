@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
     {
         private static UsersService usersService;
         private List<User> users;
-        private UsersAdminConnection connectionController;
+        private UsersAdminConnection connection;
 
         private UsersServiceImpl()
         {
-            connectionController = new UsersAdminConnectionImpl();
+            connection = new UsersAdminConnectionImpl();
             DownloadUserList();
         }
 
@@ -33,17 +33,17 @@ namespace DesktopApp.Backend.Services.AdminServices.UsersServices
 
         public void BanUser(User user)
         {
-            connectionController.BanUser(user);
+            connection.BanUser(user);
         }
 
         public void ChangeRole(User user)
         {
-            connectionController.ChangeUserRole(user);
+            connection.ChangeUserRole(user);
         }
 
         public void DownloadUserList()
         {
-            users = connectionController.DownloadUsers();
+            users = connection.DownloadUsers();
         }
     }
 }

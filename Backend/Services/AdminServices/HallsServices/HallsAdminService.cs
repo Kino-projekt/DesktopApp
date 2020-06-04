@@ -5,8 +5,8 @@ namespace DesktopApp.Backend.Services.AdminServices.HallsServices
 {
     public interface HallsAdminService
     {
-        List<Hall> GetHallsListForAdmin();
-        void SendHallToServer(Hall hall);
+        List<Hall> GetHallsList();
+        void SendHall(Hall hall);
         void DeleteHall(Hall hall);
         void DownloadHallsList();
     }

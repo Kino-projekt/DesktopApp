@@ -34,7 +34,7 @@ namespace DesktopApp.Forms.AccessForms.LoginForm
             if (CheckEmail() && CheckPassword())
             {
                 Cursor.Current = Cursors.WaitCursor;
-                SaveService.SetUserRemember(rememberMeButton.Checked);
+                SaveService.SetRememberUser(rememberMeButton.Checked);
                 if (loginService.LoginNewUser())
                 {
                     Visible = false;

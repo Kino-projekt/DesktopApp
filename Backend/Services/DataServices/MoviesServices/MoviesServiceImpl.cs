@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.DataServices.MoviesServices
     {
         private static MoviesService moviesService;
         private List<Movie> movies;
-        private ConnectionController connectionController;
+        private ConnectionController connection;
 
         private MoviesServiceImpl()
         {
-            connectionController = ConnectionControllerImpl.GetController();
+            connection = ConnectionControllerImpl.GetController();
             DownloadMoviesList();
         }
 
@@ -33,7 +33,7 @@ namespace DesktopApp.Backend.Services.DataServices.MoviesServices
 
         public void DownloadMoviesList()
         {
-            movies = connectionController.GetMoviesFromServer();
+            movies = connection.GetMoviesFromServer();
         }
     }
 }

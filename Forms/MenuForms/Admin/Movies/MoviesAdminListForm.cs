@@ -65,7 +65,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Movies
 
         private void DownloadList()
         {
-            movies = moviesService.GetMoviesListForAdmin();
+            movies = moviesService.GetMoviesList();
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

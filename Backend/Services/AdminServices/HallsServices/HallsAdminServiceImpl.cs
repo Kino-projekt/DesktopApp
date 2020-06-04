@@ -9,10 +9,10 @@ namespace DesktopApp.Backend.Services.AdminServices.HallsServices
     {
         private static HallsAdminService adminService;
         private List<Hall> halls;
-        private HallAdminConnection connectionController;
+        private HallAdminConnection connection;
         private HallsAdminServiceImpl()
         {
-            connectionController = new HallAdminConnectionImpl();
+            connection = new HallAdminConnectionImpl();
             DownloadHallsList();
         }
         public static HallsAdminService GetService()
@@ -21,26 +21,26 @@ namespace DesktopApp.Backend.Services.AdminServices.HallsServices
                 adminService = new HallsAdminServiceImpl();
             return adminService;
         }
-        public List<Hall> GetHallsListForAdmin()
+        public List<Hall> GetHallsList()
         {
             if (halls == null)
                 DownloadHallsList();
             return halls;
         }
 
-        public void SendHallToServer(Hall hall)
+        public void SendHall(Hall hall)
         {
-            connectionController.SendHall(hall);
+            connection.SendHall(hall);
         }
 
         public void DeleteHall(Hall hall)
         {
-            connectionController.DeleteHall(hall);
+            connection.DeleteHall(hall);
         }
 
         public void DownloadHallsList()
         {
-            halls = connectionController.DownloadHalls();
+            halls = connection.DownloadHalls();
         }
     }
 }

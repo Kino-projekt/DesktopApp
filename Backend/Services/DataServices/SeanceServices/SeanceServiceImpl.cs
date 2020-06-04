@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.DataServices.SeanceServices
     {
         private static SeanceService seanceService;
         private List<Seance> seances;
-        private ConnectionController connectionController;
+        private ConnectionController connection;
 
         private SeanceServiceImpl()
         {
-            connectionController = ConnectionControllerImpl.GetController();
+            connection = ConnectionControllerImpl.GetController();
             DownloadSeanceList();
         }
 
@@ -33,7 +33,7 @@ namespace DesktopApp.Backend.Services.DataServices.SeanceServices
 
         public void DownloadSeanceList()
         {
-            seances = connectionController.GetSeancesFromServer();
+            seances = connection.GetSeancesFromServer();
         }
     }
 }

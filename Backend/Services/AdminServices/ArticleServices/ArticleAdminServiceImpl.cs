@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
     {
         private static ArticleAdminService adminService;
         private List<Article> articles;
-        private ArticleAdminConnection connectionController;
+        private ArticleAdminConnection connection;
 
         private ArticleAdminServiceImpl()
         {
-            connectionController = new ArticleAdminConnectionImpl();
+            connection = new ArticleAdminConnectionImpl();
             DownloadArticleList();
         }
         public static ArticleAdminService GetService()
@@ -23,27 +23,27 @@ namespace DesktopApp.Backend.Services.AdminServices.ArticleServices
             return adminService;
         }
 
-        public void SendArticleToServer(Article article)
+        public void SendArticle(Article article)
         {
-            connectionController.SendArticle(article);
+            connection.SendArticle(article);
         }
 
         public void ChangeArticleStatus(Article article)
         {
-            connectionController.ChangeArticleStatus(article);
+            connection.ChangeArticleStatus(article);
         }
 
         public void DeleteArticle(Article article)
         {
-            connectionController.DeleteArticle(article);
+            connection.DeleteArticle(article);
         }
 
         public void DownloadArticleList()
         {
-            articles = connectionController.DownloadArticles();
+            articles = connection.DownloadArticles();
         }
 
-        public List<Article> GetArticleListForAdmin()
+        public List<Article> GetArticleList()
         {
             if (articles == null)
                 DownloadArticleList();

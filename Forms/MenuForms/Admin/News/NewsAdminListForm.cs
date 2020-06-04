@@ -59,7 +59,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
 
         private void DownloadList()
         {
-            articles = articleService.GetArticleListForAdmin();
+            articles = articleService.GetArticleList();
         }
 
         private void previusPageButton_Click(object sender, EventArgs e)

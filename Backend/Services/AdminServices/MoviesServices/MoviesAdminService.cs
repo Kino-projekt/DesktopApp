@@ -5,9 +5,9 @@ namespace DesktopApp.Backend.Services.AdminServices.MoviesServices
 {
     public interface MoviesAdminService
     {
-        List<Movie> GetMoviesListForAdmin();
+        List<Movie> GetMoviesList();
 
-        void SendMovieToServer(Movie movie);
+        void SendMovie(Movie movie);
 
         void DeleteMovie(Movie movie);
 

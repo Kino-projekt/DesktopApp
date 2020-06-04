@@ -5,9 +5,9 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
 {
     public interface SeanceAdminService
     {
-        List<Seance> GetSeanceListForAdmin();
+        List<Seance> GetSeanceList();
 
-        void SendSeanceToServer(Seance seance);
+        void SendSeance(Seance seance);
 
         void DeleteSeance(Seance seance);
 

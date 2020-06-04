@@ -59,7 +59,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Halls
 
         private void DownloadList()
         {
-            halls = hallsService.GetHallsListForAdmin();
+            halls = hallsService.GetHallsList();
         }
 
         private void nextPageButton_Click(object sender, EventArgs e)

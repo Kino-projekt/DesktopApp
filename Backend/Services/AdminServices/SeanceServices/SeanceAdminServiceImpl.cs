@@ -9,11 +9,11 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
     {
         private static SeanceAdminService adminService;
         private List<Seance> seances;
-        private SeanceAdminConnection connectionController;
+        private SeanceAdminConnection connection;
 
         private SeanceAdminServiceImpl()
         {
-            connectionController = new SeanceAdminConnectionImpl();
+            connection = new SeanceAdminConnectionImpl();
             DownloadSeanceList();
         }
 
@@ -24,26 +24,26 @@ namespace DesktopApp.Backend.Services.AdminServices.SeanceServices
             return adminService;
         }
 
-        public List<Seance> GetSeanceListForAdmin()
+        public List<Seance> GetSeanceList()
         {
             if (seances == null)
                 DownloadSeanceList();
             return seances;
         }
 
-        public void SendSeanceToServer(Seance seance)
+        public void SendSeance(Seance seance)
         {
-            connectionController.SendSeance(seance);
+            connection.SendSeance(seance);
         }
 
         public void DeleteSeance(Seance seance)
         {
-            connectionController.DeleteSeance(seance);
+            connection.DeleteSeance(seance);
         }
 
         public void DownloadSeanceList()
         {
-            seances = connectionController.DownloadSeances();
+            seances = connection.DownloadSeances();
         }
     }
 }

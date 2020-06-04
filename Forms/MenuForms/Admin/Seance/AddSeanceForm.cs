@@ -33,11 +33,11 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
             desingerService.AddFormToDesinger(this);
 
             MoviesAdminService moviesService = MoviesAdminServiceImpl.GetService();
-            movies = moviesService.GetMoviesListForAdmin();
+            movies = moviesService.GetMoviesList();
             movieLabel.Text = movies[checkMovie].GetTitle();
 
             HallsAdminService hallsService = HallsAdminServiceImpl.GetService();
-            halls = hallsService.GetHallsListForAdmin();
+            halls = hallsService.GetHallsList();
             SetHallInfo(halls[checkHall]);
 
             timePickerData.Format = DateTimePickerFormat.Custom;
@@ -91,7 +91,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.Seance
             seance.SetMovie(movies[checkMovie]);
             seance.SetHall(halls[checkHall]);
             seance.SetDate(timePickerData.Value.ToString("yyyy-MM-ddThh:mm:00.311Z"));
-            SeanceAdminServiceImpl.GetService().SendSeanceToServer(seance);
+            SeanceAdminServiceImpl.GetService().SendSeance(seance);
         }
 
         private void SetHallInfo(Hall hall)

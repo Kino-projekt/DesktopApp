@@ -5,10 +5,10 @@ namespace DesktopApp.Backend.Services.SaveServices
 {
     public class SaveService
     {
-        private static bool userRemember = false;
+        private static bool rememberUser = false;
         public static void SaveUser(AuthData user)
         {
-            if (userRemember)
+            if (rememberUser)
             {
                 Settings.Default.Email = Cipher.Encrypt(user.GetEmail());
                 Settings.Default.Password = Cipher.Encrypt(user.GetPassword());
@@ -30,9 +30,9 @@ namespace DesktopApp.Backend.Services.SaveServices
             return new AuthData(email, password);
         }
 
-        public static void SetUserRemember(bool remember)
+        public static void SetRememberUser(bool remember)
         {
-            userRemember = remember;
+            rememberUser = remember;
         }
     }
 }
