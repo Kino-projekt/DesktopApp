@@ -40,7 +40,6 @@ namespace DesktopApp.MainForm
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.logoPanel = new System.Windows.Forms.Panel();
-            this.tokenField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
@@ -202,7 +201,6 @@ namespace DesktopApp.MainForm
             // 
             // logoPanel
             // 
-            this.logoPanel.Controls.Add(this.tokenField);
             this.logoPanel.Controls.Add(this.materialLabel1);
             this.logoPanel.Controls.Add(this.userEmailLabel);
             this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -210,22 +208,6 @@ namespace DesktopApp.MainForm
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(200, 120);
             this.logoPanel.TabIndex = 3;
-            // 
-            // tokenField
-            // 
-            this.tokenField.Depth = 0;
-            this.tokenField.Hint = "";
-            this.tokenField.Location = new System.Drawing.Point(0, 22);
-            this.tokenField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tokenField.Name = "tokenField";
-            this.tokenField.PasswordChar = '\0';
-            this.tokenField.SelectedText = "";
-            this.tokenField.SelectionLength = 0;
-            this.tokenField.SelectionStart = 0;
-            this.tokenField.Size = new System.Drawing.Size(194, 23);
-            this.tokenField.TabIndex = 2;
-            this.tokenField.Text = "token";
-            this.tokenField.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -366,7 +348,6 @@ namespace DesktopApp.MainForm
         private MaterialSkin.Controls.MaterialFlatButton userButton;
         private MaterialSkin.Controls.MaterialFlatButton moviesButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tokenField;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

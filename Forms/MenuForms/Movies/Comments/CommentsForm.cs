@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DataServices.CommentsServices;
+using DesktopApp.Backend.Services.DataServices.MoviesServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using MaterialSkin.Controls;
 
@@ -31,6 +32,7 @@ namespace DesktopApp.Forms.MenuForms.Movies.Comments
 
         private void SetLabels()
         {
+            commentsList.Items.Clear();
             titleLabel.Text = movie.GetTitle();
             List<Comment> comments = movie.GetCommentsList();
 
@@ -47,6 +49,12 @@ namespace DesktopApp.Forms.MenuForms.Movies.Comments
             comment.SetMovieId(movie.GetId());
 
             CommentsServiceImpl.GetService().SendComment(comment);
+            MoviesServiceImpl.GetService().DownloadMoviesList();
+            List<Movie> movies = MoviesServiceImpl.GetService().GetMoviesList();
+
+            Movie update = movies.Find(x => x.GetId() == movie.GetId());
+            movie = update;
+            SetLabels();
         }
     }
 }
