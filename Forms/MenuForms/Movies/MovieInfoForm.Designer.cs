@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.commentButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.directLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.commentButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,23 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(762, 60);
             this.contentPanel.TabIndex = 2;
+            // 
+            // commentButton
+            // 
+            this.commentButton.AutoSize = true;
+            this.commentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.commentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.commentButton.Depth = 0;
+            this.commentButton.Location = new System.Drawing.Point(647, 15);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.commentButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Primary = false;
+            this.commentButton.Size = new System.Drawing.Size(102, 36);
+            this.commentButton.TabIndex = 3;
+            this.commentButton.Text = "Komentarze";
+            this.commentButton.UseVisualStyleBackColor = true;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
             // 
             // directLabel
             // 
@@ -87,22 +104,6 @@
             this.titleLabel.Size = new System.Drawing.Size(35, 19);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "title";
-            // 
-            // commentButton
-            // 
-            this.commentButton.AutoSize = true;
-            this.commentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.commentButton.Depth = 0;
-            this.commentButton.Location = new System.Drawing.Point(647, 15);
-            this.commentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.commentButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.commentButton.Name = "commentButton";
-            this.commentButton.Primary = false;
-            this.commentButton.Size = new System.Drawing.Size(102, 36);
-            this.commentButton.TabIndex = 3;
-            this.commentButton.Text = "Komentarze";
-            this.commentButton.UseVisualStyleBackColor = true;
-            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
             // 
             // MovieInfoForm
             // 

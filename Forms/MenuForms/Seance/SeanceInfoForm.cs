@@ -40,7 +40,8 @@ namespace DesktopApp.Forms.MenuForms.Seance
         private void SetLabels()
         {
             movieLabel.Text = "Film: " + seance.GetMovie().GetTitle();
-            hallLabel.Text = "Sala: " + seance.GetHall().GetId();
+            hallLabel.Text = "Sala: " + seance.GetHall().GetName();
+            sizeLabel.Text = "Rozmiar sali: " + seance.GetHall().GetSeats();
             dateLabel.Text = seance.GetDate();
 
             if (MainUserServiceImpl.GetInstance().GetUserRole() == Role.DEFAULT)

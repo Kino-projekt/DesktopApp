@@ -78,7 +78,7 @@
             this.panel7.Location = new System.Drawing.Point(19, 499);
             this.panel7.Margin = new System.Windows.Forms.Padding(10);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(776, 60);
+            this.panel7.Size = new System.Drawing.Size(762, 60);
             this.panel7.TabIndex = 24;
             // 
             // panel6

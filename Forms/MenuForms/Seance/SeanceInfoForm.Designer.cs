@@ -30,13 +30,14 @@
         {
             this.contentPanel = new System.Windows.Forms.Panel();
             this.reservationPanel = new System.Windows.Forms.Panel();
+            this.reservationButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.seatsNumerField = new System.Windows.Forms.NumericUpDown();
             this.hallLabel = new MaterialSkin.Controls.MaterialLabel();
             this.movieLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.reservationButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.sizeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.reservationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatsNumerField)).BeginInit();
@@ -45,6 +46,7 @@
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.sizeLabel);
             this.contentPanel.Controls.Add(this.reservationPanel);
             this.contentPanel.Controls.Add(this.hallLabel);
             this.contentPanel.Controls.Add(this.movieLabel);
@@ -66,6 +68,46 @@
             this.reservationPanel.Name = "reservationPanel";
             this.reservationPanel.Size = new System.Drawing.Size(248, 60);
             this.reservationPanel.TabIndex = 4;
+            // 
+            // reservationButton
+            // 
+            this.reservationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reservationButton.Depth = 0;
+            this.reservationButton.Location = new System.Drawing.Point(139, 31);
+            this.reservationButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reservationButton.Name = "reservationButton";
+            this.reservationButton.Primary = true;
+            this.reservationButton.Size = new System.Drawing.Size(97, 22);
+            this.reservationButton.TabIndex = 6;
+            this.reservationButton.Text = "Rezerwuje!";
+            this.reservationButton.UseVisualStyleBackColor = true;
+            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(17, 31);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel2.TabIndex = 5;
+            this.materialLabel2.Text = "Numer:";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(51, 5);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(146, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Rezerwacja miejsca:";
             // 
             // seatsNumerField
             // 
@@ -114,44 +156,18 @@
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "date";
             // 
-            // materialLabel1
+            // sizeLabel
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(51, 5);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(146, 19);
-            this.materialLabel1.TabIndex = 4;
-            this.materialLabel1.Text = "Rezerwacja miejsca:";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(17, 31);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(58, 19);
-            this.materialLabel2.TabIndex = 5;
-            this.materialLabel2.Text = "Numer:";
-            // 
-            // reservationButton
-            // 
-            this.reservationButton.Depth = 0;
-            this.reservationButton.Location = new System.Drawing.Point(139, 31);
-            this.reservationButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.reservationButton.Name = "reservationButton";
-            this.reservationButton.Primary = true;
-            this.reservationButton.Size = new System.Drawing.Size(97, 22);
-            this.reservationButton.TabIndex = 6;
-            this.reservationButton.Text = "Rezerwuje!";
-            this.reservationButton.UseVisualStyleBackColor = true;
-            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
+            this.sizeLabel.AutoSize = true;
+            this.sizeLabel.Depth = 0;
+            this.sizeLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.sizeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sizeLabel.Location = new System.Drawing.Point(244, 34);
+            this.sizeLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sizeLabel.Name = "sizeLabel";
+            this.sizeLabel.Size = new System.Drawing.Size(33, 19);
+            this.sizeLabel.TabIndex = 5;
+            this.sizeLabel.Text = "hall";
             // 
             // SeanceInfoForm
             // 
@@ -181,5 +197,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton reservationButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel sizeLabel;
     }
 }
