@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.sizeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.reservationPanel = new System.Windows.Forms.Panel();
             this.reservationButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -37,7 +38,6 @@
             this.hallLabel = new MaterialSkin.Controls.MaterialLabel();
             this.movieLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.sizeLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.reservationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatsNumerField)).BeginInit();
@@ -57,6 +57,19 @@
             this.contentPanel.Size = new System.Drawing.Size(762, 60);
             this.contentPanel.TabIndex = 3;
             // 
+            // sizeLabel
+            // 
+            this.sizeLabel.AutoSize = true;
+            this.sizeLabel.Depth = 0;
+            this.sizeLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.sizeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.sizeLabel.Location = new System.Drawing.Point(324, 29);
+            this.sizeLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sizeLabel.Name = "sizeLabel";
+            this.sizeLabel.Size = new System.Drawing.Size(33, 19);
+            this.sizeLabel.TabIndex = 5;
+            this.sizeLabel.Text = "hall";
+            // 
             // reservationPanel
             // 
             this.reservationPanel.Controls.Add(this.reservationButton);
@@ -64,9 +77,9 @@
             this.reservationPanel.Controls.Add(this.materialLabel1);
             this.reservationPanel.Controls.Add(this.seatsNumerField);
             this.reservationPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.reservationPanel.Location = new System.Drawing.Point(514, 0);
+            this.reservationPanel.Location = new System.Drawing.Point(516, 0);
             this.reservationPanel.Name = "reservationPanel";
-            this.reservationPanel.Size = new System.Drawing.Size(248, 60);
+            this.reservationPanel.Size = new System.Drawing.Size(246, 60);
             this.reservationPanel.TabIndex = 4;
             // 
             // reservationButton
@@ -123,7 +136,7 @@
             this.hallLabel.Depth = 0;
             this.hallLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.hallLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hallLabel.Location = new System.Drawing.Point(244, 9);
+            this.hallLabel.Location = new System.Drawing.Point(324, 4);
             this.hallLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.hallLabel.Name = "hallLabel";
             this.hallLabel.Size = new System.Drawing.Size(33, 19);
@@ -155,19 +168,6 @@
             this.dateLabel.Size = new System.Drawing.Size(38, 19);
             this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "date";
-            // 
-            // sizeLabel
-            // 
-            this.sizeLabel.AutoSize = true;
-            this.sizeLabel.Depth = 0;
-            this.sizeLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.sizeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.sizeLabel.Location = new System.Drawing.Point(244, 34);
-            this.sizeLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.sizeLabel.Name = "sizeLabel";
-            this.sizeLabel.Size = new System.Drawing.Size(33, 19);
-            this.sizeLabel.TabIndex = 5;
-            this.sizeLabel.Text = "hall";
             // 
             // SeanceInfoForm
             // 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.dateLabel = new MaterialSkin.Controls.MaterialLabel();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +45,19 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(776, 60);
             this.contentPanel.TabIndex = 0;
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Depth = 0;
+            this.dateLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dateLabel.Location = new System.Drawing.Point(642, 9);
+            this.dateLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(38, 19);
+            this.dateLabel.TabIndex = 3;
+            this.dateLabel.Text = "date";
             // 
             // descriptionLabel
             // 
@@ -71,19 +84,6 @@
             this.titleLabel.Size = new System.Drawing.Size(35, 19);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "title";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Depth = 0;
-            this.dateLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dateLabel.Location = new System.Drawing.Point(567, 9);
-            this.dateLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(38, 19);
-            this.dateLabel.TabIndex = 3;
-            this.dateLabel.Text = "date";
             // 
             // NewsInfoForm
             // 
