@@ -18,7 +18,7 @@ namespace DesktopApp.Backend.Controllers.Connection.AdminConnections.Methods
             if (response.StatusCode == HttpStatusCode.NoContent)
                 NotifitactionForm.ShowMessage("Usunięty element: "+name);
             else
-                DialogMessage.ShowInfo("Błąd usuwania eleemntu: "+name);
+                DialogMessage.ShowInfo("Błąd usuwania elemntu: "+name);
         }
 
         public static void Delete(Article article)
